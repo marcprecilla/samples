@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<!--[if lt IE 10]><html class="no_ie"><![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="robots" content="noindex,nofollow">
+
+  <%= erb(:"layouts/_facebook_meta_tags", :layout => false, :locals => locals) %>
+  <%= erb(:"layouts/_ga", :layout => false, :locals => locals) %>
+
+  <title><%= content_for?(:title) ? (:title) : "app" %></title>
+
+<% if ENV["RACK_ENV"] == "production" %>
+<!-- start Mixpanel -->
+<script type="text/javascript">(function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="//cdn.mxpnl.com/libs/mixpanel-2.2.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
+mixpanel.init("a92617833ec4893e115882fa22253d9a");</script>
+<!-- end Mixpanel -->
+<script src="https://js.pusher.com/2.2/pusher.min.js"></script>
+<% else %>
+
+  <% if ENV["ENABLE_PUSHER"].nil? %>
+    <script src="https://js.pusher.com/2.2/pusher.min.js"></script>
+  <% elsif ENV["ENABLE_PUSHER"] == 1%>
+    <script src="https://js.pusher.com/2.2/pusher.min.js"></script>
+  <% end %>
+
+<% end %>
+
+  <!-- <link rel="icon" href="/assets/favicon.png" size="32x32"/> -->
+  <%= javascript_tag "application.min.js" %>
+  <%= stylesheet_link_tag    "application.css", :media => "all" %>
+
+  <script>
+    <% unless @user.nil? %>
+    APP.userData.id = "<%=@user[:id] %>"
+    <% end %>
+
+    <% unless @admin_user.blank? %>
+    APP.userData.id = "<%=@admin_user %>"
+    <% end %>
+  </script>
+
+  <% if content_for?(:javascript)  %>
+    <%= yield_content :javascript %>
+  <% end %>
+
+</head>
+<body id="" class="template-app <%= yield_content :additional_body_css_classes %>"><div id="body-wrapper">
+  <% if content_for?(:header_content)  %>
+    <%= yield_content :header_content %>
+  <% elsif defined? header_type and header_type == "company" %>
+    <%= erb(:"layouts/header_company", :layout => false, :locals => locals) %>
+  <% elsif defined? header_type and header_type == "developer" %>
+    <%= erb(:"layouts/header_developer", :layout => false, :locals => locals) %>
+  <% elsif defined? header_type and header_type == "pages" %>
+    <%= erb(:"layouts/header_pages", :layout => false, :locals => locals) %>
+  <% elsif defined? header_type and header_type == "generic" %>
+    <%= erb(:"layouts/header_generic", :layout => false, :locals => locals) %>
+  <% else %>
+    <%= erb(:"layouts/header_blank", :layout => false) %>
+  <% end %>
+
+  <div id="main-content">
+
+    <% if content_for?(:page_notification)  %>
+      <div id="page-notification" data-admin-id="<% unless session[:admin].nil? %><%=session[:admin][:id] %><% end %>" data-user-id="<% unless session[:user_id].nil? %><%=session[:user_id] %><% end %>">
+        <div class="layout-centered-content"><div class="notification-container">
+          <a class="btn-close-1 close-button">&nbsp;</a>
+          <%= yield_content :page_notification %>
+        </div></div>
+      </div>
+    <% end %>
+
+  <%= yield %>
+  </div>
+
+  <% if content_for?(:footer_content)  %>
+    <%= yield_content :footer_content %>
+  <% else %>
+    <% #erb(:"layouts/footer", :layout => false) %>
+  <% end %>
+
+  <%= erb(:"layouts/alert", :layout => false) %>
+
+  <%= erb(:"layouts/common_modals", :layout => false) %>
+  <%= erb(:"layouts/_fb_sdk", :layout => false) %>
+</div>
+
+  <script type="text/javascript">
+    (function() {
+      function async_load() {
+        var s = document.createElement('script');
+        s.type = 'text/javascript'; s.async = true;
+        s.src = '//d3itxuyrq7vzpz.cloudfront.net/assets/reamaze.js';
+        var x = document.getElementsByTagName('script')[0];
+        x.parentNode.insertBefore(s, x);
+      }
+      if (window.attachEvent) {
+        window.attachEvent('onload', async_load);
+      } else {
+        window.addEventListener('load', async_load, false);
+      }
+    })();
+  </script>
+  <script type="text/javascript">
+    var _support = _support || {};
+    _support['account'] = 'app-inc';
+    _support['ui'] = {
+      widget: true
+    };
+  </script>
+
+
+  </body>
+</html>

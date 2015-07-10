@@ -1,0 +1,120 @@
+.position-relative {
+  position:relative;
+  top:0px;
+  left:0px;
+}
+
+.text-as-graphic {
+  display:inline-block;
+  height:0px;
+  overflow:hidden;
+}
+
+.header-style-1 {
+  position:fixed;
+  width:100% !important;
+  z-index:1000;
+  transition: all 0.5s ease;
+  background:none;
+}
+
+.microbrew-1 {
+  font-family:MicrobrewThree, Farao, Georgia, sans-serif;
+  color:$colorgray-1;
+  font-size:28px;
+}
+
+.choplin-1 {
+  font-family:Choplin, Georgia, sans-serif;
+  color:$colorgray-1;
+  font-size:16px;
+}
+
+.georgia-1 {
+  font-family:Georgia, sans-serif;
+  color:$colorblack-1;
+  font-size:16px;
+  line-height:26px;
+}
+
+.transition-all {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.bg-texture-1 {
+  background:url(#{$imgrooturl}redesign_2014/bg.texture.01.png) 0px 0px repeat;
+  -moz-box-shadow:    inset 0 0 20px rgba(73,58,43,0.5);
+  -webkit-box-shadow: inset 0 0 20px rgba(73,58,43,0.5);
+  box-shadow:         inset 0 0 20px rgba(73,58,43,0.5);
+}
+
+.bg-texture-2 {
+  background:url(#{$imgrooturl}redesign_2014/bg.texture.02.jpg) 0px 0px repeat;
+  -moz-box-shadow:    inset 0 0 20px rgba(73,58,43,0.5);
+  -webkit-box-shadow: inset 0 0 20px rgba(73,58,43,0.5);
+  box-shadow:         inset 0 0 20px rgba(73,58,43,0.5);
+}
+
+.bg-texture-3 {
+  background:url(#{$imgrooturl}redesign_2014/bg.texture.03.png) 0px 0px repeat;
+}
+
+.bg-texture-4 {
+  background:url(#{$imgrooturl}redesign_2014/bg.texture.04.png) 0px 0px repeat;
+}
+
+.border-distressed {
+  border:1px $colorblack-1 solid;
+  border-image:url(#{$imgrooturl}redesign_2014/rule.03.png) 1 1 1 1 repeat;
+
+  &.mustard {
+    border-image:url(#{$imgrooturl}redesign_2014/rule.mustard.01.png) 1 1 1 1 repeat;
+
+    &.top-only {
+      border-left:0px;
+      border-right:0px;
+      border-bottom:0px;
+    }
+
+    &.bottom-only {
+      border-left:0px;
+      border-right:0px;
+      border-top:0px;
+    }
+
+  }
+}
+
+.text-normal {
+  font-family:Georgia, serif;
+  font-size:16px;
+  line-height:26px;
+}
+
+.short-rule-1 {
+  background:url(#{$imgrooturl}redesign_2014/rule.04.png) 0px bottom no-repeat;
+  padding-bottom:15px;
+  margin-bottom:15px;
+}
+
+.framed-1 {
+  border:1px #515151 solid;
+  -moz-box-shadow: 2px 2px 5px #000;
+  -webkit-box-shadow: 2px 2px 5px #000;
+  box-shadow: 2px 2px 5px #000;
+}
+
+.inner-glow-1 {
+  -webkit-box-shadow: inset 0 0 15px rgba(255,216,0,0.5);
+  -moz-box-shadow: inset 0 0 15px rgba(255,216,0,0.5);
+  box-shadow: inset 0 0 15px rgba(255,216,0,0.5);
+}
+
+.bg-yellow-tape {
+  background:url(#{$imgrooturl}redesign_2014/bg.yellow-tape.gif) 0px 0px repeat;
+  padding:10px;
+  display:inline-block;
+}

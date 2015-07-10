@@ -1,0 +1,264 @@
+<script class="match-pool-profile-modal-template" type="text/x-handlebars-template">
+
+<div class="profile-header">
+
+  <div class="floating-content">
+
+    <div class="circle-graph-container black-140">
+    <svg class="svg-graphic" width="140" height="140" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+          <defs>
+               <clipPath id="hex-mask-main-{{id}}">
+                 <path d="M32,22 L32,0 A32,32 0 1,1 32,0z" fill="#FF8888" stroke="#0000FF" stroke-width="2" class="circle-graph-path" data-radius="70" data-percentage="{{#if score}}{{score}}{{else}}0{{/if}}" />
+                </clipPath>
+           </defs>
+           <a xlink:href="#">
+             {{#ifCond score '>' 85}}
+             <image clip-path="url(#hex-mask-main-{{id}})" height="140" width="140" xlink:href="/img/circlegraph.black.green.140.on.png" preserveAspectRatio="xMidYMid slice" />
+             {{else}}
+             <image clip-path="url(#hex-mask-main-{{id}})" height="140" width="140" xlink:href="/img/circlegraph.black.yellow.140.on.png" preserveAspectRatio="xMidYMid slice" />
+             {{/ifCond}}
+          </a>
+
+    </svg>
+    </div>
+    <div class="profile-header-img-container">
+      <div class="profile-header-img" style="background:url({{profile_img_url}}) center center no-repeat; background-size:cover;">image</div>
+    </div>
+
+    <div class="triangle">^</div>
+    <a class="modal-close-button btn-close-4" href="#">close</a>
+
+  </div>
+
+  <div class="profile-header-label">
+    <div class="score"><span class="{{#ifCond score '>' 85}}greentext-1{{else}}yellowtext-1{{/ifCond}}">{{score}}<super>%</super></span></div>
+    {{name}}
+    <div class="more-info">
+      {{#if primary_role}}Primary Role: {{primary_role_label}} &nbsp; {{/if}}
+      {{#if search_status}}Status: {{search_status}}{{/if}}
+    </div>
+  </div>
+
+</div>
+
+<!-- Nav tabs -->
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a href="#job-skills" role="tab" data-toggle="tab">Job Skills</a></li>
+  <li role="presentation"><a href="#about" role="tab" data-toggle="tab">About</a></li>
+  <li role="presentation"><a href="#work-education" role="tab" data-toggle="tab">Work/Education</a></li>
+  <li role="presentation"><a href="#all-skills" role="tab" data-toggle="tab">All Skills</a></li>
+  <li role="presentation"><a href="#endorsements" role="tab" data-toggle="tab">Endorsements</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane active" id="job-skills">
+
+    <div class="viewport-container">
+    <div class="row-container cf force-one-row">
+    {{#each skills }}
+
+      {{#ifCond points '>' 0}}
+
+      <div class="modal-skill-container">
+        <div class="skill-name">{{skill}}</div>
+        <div class="is-required">{{#ifCond weight '>=' 5}}Required{{else}}Bonus{{/ifCond}}</div>
+
+        <div class="circle-graph-container med-118">
+          <svg class="svg-graphic" width="118" height="118" viewBox="0 0 118 118" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+                <defs>
+                     <clipPath id="hex-mask-modal-skill-{{@index}}">
+                       <path d="M32,22 L32,0 A32,32 0 1,1 32,0z" fill="#FF8888" stroke="#0000FF" stroke-width="2" class="circle-graph-path" data-radius="59" data-percentage="{{#if score}}{{score}}{{else}}0{{/if}}" />
+                      </clipPath>
+                 </defs>
+                 <a xlink:href="#">
+                    {{#ifCond score '>' 85}}
+                    <image clip-path="url(#hex-mask-modal-skill-{{@index}})" height="118" width="118" xlink:href="/img/circlegraph.green.118.on.png" preserveAspectRatio="xMidYMid slice" />
+                    {{else}}
+                    <image clip-path="url(#hex-mask-modal-skill-{{@index}})" height="118" width="118" xlink:href="/img/circlegraph.yellow.118.on.png" preserveAspectRatio="xMidYMid slice" />
+                    {{/ifCond}}
+                </a>
+
+          </svg>
+
+          <div class="score-container {{#ifCond score '>' 85}}green{{else}}yellow{{/ifCond}}">{{score}}<super>%</super></div>
+
+        </div>
+
+        <div class="requirement-content">
+
+              <div class="slider-results" data-percentage="{{developer_level_percentage}}" data-required-percentage="{{level_percentage}}">
+                Level
+                <span class="slider-value">{{level_requirement}} </span>
+              </div>
+
+              <div class="slider-results" data-percentage="{{developer_experience_percentage}}" data-required-percentage="{{experience_percentage}}">
+                Experience
+                <span class="slider-value">{{experience_requirement}}</span>
+              </div>
+
+              <!--<div class="legend-container"><b>Required</b>  Level:{{level_requirement}}, Exp: {{experience_requirement}}</div>-->
+
+        </div>
+
+      {{else}}
+
+        <div class="circle-graph-container med empty">&nbsp;</div>
+        <div class="score-container">0<super>%</super></div>
+
+      {{/ifCond}}
+
+      </div>
+    {{/each}}
+    </div>
+    </div>
+
+  </div>
+  <div role="tabpanel" class="tab-pane" id="about">
+    <div>
+    <h5 class="style-1">Summary</h5>
+    {{about_me}}
+    </div>
+
+    <div class="cols-2 padded cf">
+      <div class="left-column">
+        <h5 class="style-1">Current location</h5>
+        {{#if city}}{{city}}, {{/if}}
+        {{#if state}}{{state}}, {{/if}}
+        {{zip}}
+      </div>
+      <div class="right-column">
+        <h5 class="style-1">Work Authorization</h5>
+        {{work_authorization}}
+      </div>
+    </div>
+
+    <div class="cols-2 padded cf">
+      <div class="left-column">
+        <h5 class="style-1">Phone Number</h5>
+        {{phone}}
+      </div>
+      <div class="right-column">
+        <h5 class="style-1">Job Types</h5>
+        {{#if job_types}} {{job_types}} {{else}} Full Time {{/if}}
+      </div>
+    </div>
+
+    <div class="cols-2 padded cf">
+
+      <div class="left-column">
+        <h5 class="style-1">Equity</h5>
+        {{#if equity}} Interested {{else}} Not Interested {{/if}}
+      </div>
+      <div class="right-column">
+        <h5 class="style-1">Desired Salary</h5>
+        {{#if desired_salary}} {{desired_salary}} {{else}} Not Available {{/if}}
+      </div>
+    </div>
+
+
+    <div class="cols-2 padded cf">
+
+      <div class="left-column">
+        <h5 class="style-1">Telecommute</h5>
+        {{#if telecomute}}
+          Not willing
+        {{else}}
+          Willing
+        {{/if}}
+      </div>
+      <div class="right-column">
+        <h5 class="style-1">Current Salary</h5>
+        {{#if salary}} {{salary}} {{else}} Not Available {{/if}}
+      </div>
+    </div>
+
+    {{#if relocate}}
+    <div class="paddingTop20">
+    <h5 class="style-1">Relocation</h5>
+      Interested in relocating to: {{relocation_area}}
+    </div>
+    {{/if}}
+
+
+
+  </div>
+  <div role="tabpanel" class="tab-pane" id="work-education">
+
+    <h5 class="style-1">Work Experience</h5>
+    <ul class="work-list">
+      {{#each work_exp }}
+      <li class="cf">
+        <div class="date-range">{{start_date_month}} {{start_date_year}} - {{#if end_date_year}}{{end_date_month}} {{end_date_year}}{{else}}Current{{/if}}</div>
+        <b>{{title}}{{#if title}},{{/if}}</b> {{company}}
+      </li>
+      {{/each}}
+    </ul>
+
+    <h5 class="style-1">Education</h5>
+    <ul class="work-list">
+      {{#each education }}
+      <li>
+        <div class="date-range">{{start_date}}-{{end_date}}</div>
+        <b>{{school}}</b> {{degree}}, {{field_of_study}}
+      </li>
+      {{/each}}
+    </ul>
+
+
+  </div>
+  <div role="tabpanel" class="tab-pane" id="all-skills">
+
+    {{#each developer_skills }}
+    <h5 class="style-1">{{skill}}</h5>
+    <div class="cols-3 padded-5 rigid cf">
+      <div class="left-column">
+
+        <div class="slider-results" data-percentage="{{level_percentage}}">
+          Level
+          <span class="slider-value">{{{level_label}}}</span>
+        </div>
+
+      </div>
+      <div class="middle-column">
+
+        <div class="slider-results" data-percentage="{{experience_percentage}}">
+          Experience
+          <span class="slider-value">{{{experience_label}}}</span>
+        </div>
+
+     </div>
+      <div class="right-column">
+
+        <div class="slider-results" data-percentage="{{like_percentage}}">
+          Like?
+          <span class="slider-value">{{{like_label}}}</span>
+        </div>
+
+
+      </div>
+    </div>
+
+    {{/each}}
+
+  </div>
+
+  <div role="tabpanel" class="tab-pane" id="endorsements">
+
+    {{#ifCond recommendations.length '<' 1}}<div style="text-align:center; padding:50px 0px;">No endorsements available.</div>{{/ifCond}}
+
+    {{#each recommendations }}
+      {{#ifCond status '==' 1}}
+      <div class="recommendation cf">
+        <div class="recommendation-name">{{name}}</div>
+        <div class="recommendation-title">{{work}}</div>
+        <div class="recommendation-body">{{body}}</div>
+      </div>
+      {{/ifCond}}
+    {{/each}}
+
+  </div>
+
+</div>
+
+</script>

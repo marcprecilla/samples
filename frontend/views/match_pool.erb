@@ -1,0 +1,72 @@
+<% content_for :additional_body_css_classes do %>page-company-match-pool<% end %>
+<%= erb(:"company/_match_pool_card", :layout => false) %>
+<%= erb(:"company/_match_pool_modal_profile", :layout => false) %>
+<%= erb(:"company/_match_pool_modal_confirm", :layout => false) %>
+<%= erb(:"company/_match_pool_modal_contact_info", :layout => false) %>
+<%= erb(:"company/_match_pool_modal_prescreen_questions", :layout => false) %>
+<%= erb(:"company/_match_pool_modal_hire", :layout => false) %>
+<%= erb(:"company/_match_pool_modal_introduction", :layout => false) %>
+<%= erb(:"company/_match_pool_modal_export", :layout => false, :locals => {:company => company}) %>
+
+<% if session[:admin][:show_help][:match_pool] == true %>
+  <% content_for :page_notification do %>
+    <div class="message" data-page="match_pool">
+      Here is where you can review candidates that we have matched you with and evaluate each. You can also easily review a candidate's full profile by clicking on their profile picture and/or profile icon at the bottom left of their card.
+    </div>
+  <% end %>
+<% end %>
+
+<script>
+  <% unless matches.nil? %>
+    APP.pageData.matches = JSON.parse('<%= matches.to_json.gsub("'", %q(\\\')).gsub(/"/, %q(\\\")).gsub(/\\n/, "\\\\\\\\n" ).gsub(/\\r/, "\\\\\\\\r" ).gsub(/\\t/, "\\\\\\\\t" ) %>');
+  <% else %>
+    APP.pageData.matches = [];
+  <% end %>
+
+  <% unless job.nil? %>
+    APP.pageData.job = JSON.parse('<%= job.to_json.gsub("'", %q(\\\')).gsub(/"/, %q(\\\")).gsub(/\\n/, "\\\\\\\\n" ).gsub(/\\r/, "\\\\\\\\r" ).gsub(/\\t/, "\\\\\\\\t" ) %>');
+  <% else %>
+    APP.pageData.job = {}
+  <% end %>
+
+  <% unless match_counts.nil? %>
+    APP.pageData.match_counts = JSON.parse('<%= match_counts.to_json.gsub("'", %q(\\\')).gsub(/"/, %q(\\\")).gsub(/\\n/, "\\\\\\\\n" ).gsub(/\\r/, "\\\\\\\\r" ).gsub(/\\t/, "\\\\\\\\t" ) %>');
+  <% else %>
+    APP.pageData.match_counts = {matches: 0, awaiting_reply: 0, intro_required: 0, total: 0}
+  <% end %>
+
+  <% unless company[:ats_provider].nil? %>
+    APP.pageData.ats_provider = "<%= company[:ats_provider] %>";
+  <% else %>
+    APP.pageData.ats_provider = '';
+  <% end %>
+
+</script>
+
+<div class="layout-centered-content">
+  <div class="main-content">
+
+    <div class="dashboard-header-container">
+
+      <h2 class="style-1"><%=job[:title] %> <span class="lighttext" style="display:none;"><%=job[:filled_positions] %>/<%=job[:open_positions] %> Hire<%if job[:open_positions] > 0 %>s<% end %></span></h2>
+      <div class="right-content">
+        <span id="match-counter"></span>
+        <a href="/company/socialshare/job/<%=job[:_id] %>" class="button-icon-share-2" style="margin-left:20px;">Share job</a>
+      </div>
+      <ul class="filter-list-arrows cf">
+        <li class="missing-left selected"><a href="new" class="">Matches</a></li>
+        <li><a href="pending" class="">Awaiting Reply</a></li>
+        <li class=""><a href="mutual-interest" class="">Intro Required</a></li>
+        <li class="missing-right"><a href="intro-sent" class="no-arrow">Intro Sent</a></li>
+        <li class="missing-all"><a href="all">All</a></li>
+      </ul>
+
+    </div>
+
+    <div class="empty-list-container"><div class="empty-list-card"><div class="icon">x</div><span class="empty-list-message"></span></div></div>
+    <div id="match-cards-container" class="card-list clearfix only-new <% if company_user[:prompt_for_action][:delete_match] %>show-prompts<% end %>" data-admin-id="<%=session[:admin][:id] %>" data-action="delete_match"></div>
+
+  </div>
+</div>
+
+<div id="focus-bg">&nbsp;</div>

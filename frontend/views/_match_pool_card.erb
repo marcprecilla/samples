@@ -1,0 +1,144 @@
+<script class="match-pool-card-template" type="text/x-handlebars-template">
+  <div class="card-viewport">
+    <div class="card-content dashboard" >
+      <h2 class="style-1 lighttext">{{name}}</h2>
+      <div class="meta-data">
+      {{#if city}}<div class="location">{{city}}</div>{{/if}}
+      {{#if current_company}}<div class="headline {{#ifCond city '==' ''}}position-left{{/ifCond}}">{{current_company}}</div>{{/if}}
+      </div>
+
+      <div class="stage">
+
+        <div class="img-container trigger-profile">
+          <div class="circle-graph-container med-118">
+
+            <svg class="svg-graphic" width="118" height="118" viewBox="0 0 118 118" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+                  <defs>
+                       <clipPath id="hex-mask-{{id}}">
+                         <path d="M32,22 L32,0 A32,32 0 1,1 32,0z" fill="#FF8888" stroke="#0000FF" stroke-width="2" class="circle-graph-path" data-radius="59" data-percentage="{{#if score}}{{score}}{{else}}0{{/if}}" />
+                        </clipPath>
+                   </defs>
+                   <a xlink:href="#">
+                     {{#ifCond score '>' 85}}
+                     <image clip-path="url(#hex-mask-{{id}})" height="118" width="118" xlink:href="/img/circlegraph.green.236.on.png" preserveAspectRatio="xMidYMid slice" />
+                     {{else}}
+                     <image clip-path="url(#hex-mask-{{id}})" height="118" width="118" xlink:href="/img/circlegraph.yellow.236.on.png" preserveAspectRatio="xMidYMid slice" />
+                     {{/ifCond}}
+                  </a>
+
+            </svg>
+
+          </div>
+
+          <div class="img" style="background:url({{profile_img_url}}) center center no-repeat; background-size:cover;">image</div>
+        </div>
+
+        {{#if popular}}<div class="popular-badge" data-toggle="tooltip" data-placement="top" title="Popular">Popular</div>{{/if}}
+        {{#if developer_interested}}<div class="developer-interested-badge" data-toggle="tooltip" data-placement="top" title="Developer Interested">Developer Interested</div>{{/if}}
+        <a href="#" class="button-icon-check button-interested show-only-for-new" alt="Interested" title="Interested">Interested</a>
+        <a href="#" class="button-icon-x button-not-interested-prompt show-only-for-new" alt="Not Interested" title="Not Interested">Not Interested</a>
+
+        <!--
+        <a href="#" class="button-icon-mail button-contact-info show-only-for-mutual-interest" alt="View Contact Info" title="View Contact Info">View Contact Info</a>
+        <a href="#" class="button-icon-hired button-hired show-only-for-mutual-interest {{#ifCond answers.length '<' 1}}raised{{/ifCond}}" alt="Mark This Candidate As Hired" title="Mark This Candidate As Hired">Mark This Candidate As Hired</a>
+        -->
+
+        <div class="liked">LIKED!!</div>
+        <div class="hired-stamp">HIRED</div>
+
+        <div class="score {{#ifCond score '>' 85}}green{{else}}yellow{{/ifCond}}" style="position:absolute; top:{{score_pos.y}}px; left:{{score_pos.x}}px"><span class="">{{score}}%<super></super></span></div>
+
+      </div>
+
+      <div class="button-slots cf cols-2 padded">
+        <div class="left-column">
+          {{#if show_intro}}
+          <a href="#" class="button-label-pencil button-send-intro" title="Send Intro">Send Intro</a>
+          {{else}}
+            {{#if show_export}}
+            <a href="#" class="button-label-export button-export" title="Export">Export</a>
+            {{else}}
+            <div class="empty-slot">&nbsp;</div>
+            {{/if}}
+          {{/if}}
+        </div>
+        <div class="right-column">
+          {{#if answers.length}}
+          <a href="#" class="button-label-question button-prescreen-questions" title="View Prescreen Questions">Prescreening</a>
+          {{else}}
+          <div class="empty-slot">&nbsp;</div>
+          {{/if}}
+        </div>
+      </div>
+
+      <div class="updating">updating...</div>
+
+
+    </div>
+
+    <div class="card-skills-content">
+      <div class="triangle">^</div>
+      <div class="viewport-container">
+        <div class="row-container force-one-row">
+        {{#each skills }}
+        <div class="skill-container">
+          <div class="circle-graph-container small-50">
+          <svg class="svg-graphic" width="52" height="52" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+                <defs>
+                     <clipPath id="hex-mask-skill-{{@index}}">
+                       <path d="M32,22 L32,0 A32,32 0 1,1 32,0z" fill="#FF8888" stroke="#0000FF" stroke-width="2" class="circle-graph-path" data-radius="26" data-percentage="{{#if score}}{{score}}{{else}}0{{/if}}" />
+                      </clipPath>
+                 </defs>
+                 <a xlink:href="#">
+                   {{#ifCond score '>' 85}}
+                   <image clip-path="url(#hex-mask-skill-{{@index}})" height="52" width="52" xlink:href="/img/circlegraph.green.50.on.png" preserveAspectRatio="xMidYMid slice" />
+                   {{else}}
+                   <image clip-path="url(#hex-mask-skill-{{@index}})" height="52" width="52" xlink:href="/img/circlegraph.yellow.50.on.png" preserveAspectRatio="xMidYMid slice" />
+                   {{/ifCond}}
+                </a>
+
+          </svg>
+
+          <div class="score-container {{#ifCond score '>' 85}}green{{else}}yellow{{/ifCond}}">{{score}}<super>%</super></div>
+
+          </div>
+          <div class="info-container">
+            {{skill}}
+            <div class="requirement">{{#ifCond weight '>=' 5}}Required{{else}}Bonus{{/ifCond}}</div>
+          </div>
+        </div>
+        {{/each}}
+        </div>
+
+      </div>
+    </div>
+
+    <div class="card-details">{{state_change_date}} - {{match_pool_label}}</div>
+
+    <div class="card-edit-content">
+      <a href="#" class="button-profile trigger-profile">Profile</a>
+      <div class="button-share center-element tooltip-trigger" data-toggle="popover" data-content="" data-tooltip-placement="bottom" data-tooltip-trigger="click">
+        Share
+        <div class="tooltip-content">
+          <form class="share-form form-layout-1">
+            <input type="text" class="text-input-3 med-1 graybg" name="public_page_url" value="{{share_link}}" id="clipboard-target-{{id}}" />
+            <input type="button" class="button-1 size-minus-2 button-copy" data-clipboard-text="{{share_link}}" value="COPY" />
+          </form>
+        </div>
+
+      </div>
+      <div class="button-gear tooltip-trigger" data-toggle="popover" data-content="" data-tooltip-placement="bottom" data-tooltip-trigger="click" data-tooltip-container="body" style="display:none;">
+        Export
+        <div class="tooltip-content">
+          {{#ifCond status_integer '>' 3}}
+            <span class="disabledtext-1">Move To app Tracking</span>
+          {{else}}
+            <a href="#" class="" onclick="APP.moveToATS('{{id}}')">Move To app Tracking</a>
+          {{/ifCond}}
+        </div>
+      </div>
+      <a href="#" class="button-trash button-not-interested-prompt">Delete</a>
+    </div>
+
+  </div>
+</script>
