@@ -1,0 +1,34 @@
+<% content_for :title, 'Settings' %>
+
+<% content_for :header_bar do %>
+  <input type="button" href="action:toggleSideBar" id="navbar-button-left" class="navbar-button menu" App-data-state="menu" value="Previous" />
+  <span id="title">Settings</span>
+<% end %>
+
+<% content_for :section_header do %>
+<div class="user-header">
+  <div class="title-container">
+    <h1 class="title-header">Settings</h1>
+  </div>
+</div>
+<% end %>
+
+<div class="cf">
+<div class="side-container">
+    <%= render 'users/notifications_settings_panel' %>
+</div>
+
+<div class="container">
+  <%= link_to 'Edit Profile', edit_user_path, class: 'btn btn-border btn-block desktop-modal-load' %>
+
+  <%= link_to 'Notifications', settings_path(flow: 'notifications'), class: 'btn btn-border btn-block desktop-modal-load hidden-desktop' %>
+
+  <%= link_to 'Invite Others', new_invite_path, class: 'btn btn-border btn-block desktop-modal-load' %>
+
+  <%= link_to 'Reset Password', forgot_password_path, class: 'btn btn-border btn-block desktop-modal-load' %>
+
+  <%= link_to 'Contact Us', 'mailto:support@Appinc.com', class: 'btn btn-border btn-block' %>
+
+  <%= link_to 'Manage Subscription', settings_path(flow: 'subscription'), class: 'btn btn-border btn-block desktop-modal-load' %>
+</div>
+</div>

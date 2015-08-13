@@ -1,0 +1,8 @@
+<% if current_user %>
+  <div class="fixed-bar">
+    <%= form_tag terms_path(accepted: true) do %>
+        <p>By clicking "Accept", I agree to the<br/><%= link_to 'Terms of Use', terms_path %> & <%= link_to 'Privacy Policy', privacy_path %>.</p>
+        <%= submit_tag 'Accept', class: 'btn btn-primary btn-large' %>
+    <% end %>
+  </div>
+<% end %>

@@ -1,0 +1,215 @@
+<% content_for :title do %>App - Personality Assessment<% end %>
+
+<% content_for :header do %>
+  <%= render "layouts/desktop_header" %>
+<% end %>
+
+<% content_for :header_bar do %>
+
+    <input type="button" href="#" id="navbar-button-left" class="navbar-button none" App-data-state="none" value="Previous" />
+    <span id="title">Your Results</span>
+    <input type="button" href="" id="navbar-button-right" class="navbar-button none" App-data-state="none" value="Next" />
+
+<% end %>
+
+<% content_for :additional_body_css_classes do %>assessment-layout-1<% end %>
+
+<div class="screen">
+
+  <div class="dark-header-row desktop-results-header"><div class="content">
+    <h1 class="style-7">Your Results</h1>
+    <div class="desktop-results-description">You've started building your Mind Profile!  See the results below.</div>
+    <ul class="results-progress-indicator">
+      <li class="marker-skills">
+        <label>STEP 1</label>
+        <div class="marker-icon skills">x</div>
+        <div class="flex-nav-container">
+          <a class="" data-flex-rel="0" href="#">x</a>
+        </div>
+      </li>
+
+      <!--
+      <li class="marker-training">
+        <label>STEP 2</label>
+        <div class="marker-icon training">x</div>
+        <div class="flex-nav-container">
+          <a class="" data-flex-rel="1" href="#">x</a>
+        </div>
+      </li>
+      -->
+    </ul>
+  </div></div>
+
+  <div class="page-flexslider">
+    <ul class="slides">
+
+      <!--
+       <li class="skills-intro-page results-page" data-add-body-class="" data-title="Brain Profile" data-marker-rel="skills" data-marker-description="The next step in building your profile is determining a baseline for your <b>Skills</b>."><div class="slide-content">
+         <div class="dark-header-row"><div class="content">
+           The next step in building your profile is determining a baseline for your Skills.
+         </div></div>
+         <div class="brainmap">
+
+           <div class="map skills">
+
+             <div class="marker-icon skills glowing">x</div>
+             <div class="marker-label skills active">
+               Skills
+               <div class="pointer">v</div>
+              </div>
+
+           </div>
+
+         </div>
+
+         <div class="button-container">
+           <button class="btn btn-border-simple btn-block pill lime size-plus-1 btn-right-arrow flex-next">Continue to Skills</button>
+         </div>
+
+       </div></li>
+       -->
+
+
+      <li class="skill-page results-page" data-add-body-class="" data-title="Part 2 <span class='bluetext'>Skills</span>" data-marker-rel="skills" data-marker-description="Based on our assessment, we’ve determined which of your <b>Skills</b> has the most potential for growth."><div class="slide-content">
+
+        <div class="dark-header-row"><div class="content">
+            Your training plan will focus on improving <%=@benefit1%> and <%=@benefit2%>.
+        </div></div>
+
+        <div class="page-description visible-desktop">
+          <h5>Your mind's core skills</h5>
+          Your mind has a set of core skills that help you deal with the stressors of everyday life. Strengthening these skills will help you become more resilient to stress, perform better and be happier.
+        </div>
+
+
+        <div class="desktop-slide-header visible-desktop">
+          We’ve determined that you have the most potential for growth in <b><%=@benefit1%></b> and <b><%=@benefit2%></b>.
+          <div class="marker-icon training">x</div>
+        </div>
+
+
+        <div class="desktop-focus-area">
+
+            <ul class="core-skills cf">
+              <li class="skill-focus" data-percentage="<%=percent_for_value(@benefit_score[:focus])%>">
+                <div class="active-img">Focus</div>
+                <label>Focus</label>
+              </li>
+              <li class="skill-positivity" data-percentage="<%=percent_for_value(@benefit_score[:positivity])%>">
+                <div class="active-img">Positivity</div>
+                <label>Positivity</label>
+              </li>
+              <li class="skill-sleep" data-percentage="<%=percent_for_value(@benefit_score[:sleep])%>">
+                <div class="active-img">Sleep</div>
+                <label>Sleep</label>
+              </li>
+              <li class="skill-social" data-percentage="<%=percent_for_value(@benefit_score[:social])%>">
+                <div class="active-img">Social</div>
+                <label>Social</label>
+              </li>
+              <li class="marker-icon skills size-minus-1">x</li>
+            </ul>
+
+        </div>
+
+          <div class="button-container">
+            <!--<button id="view-action-plan-1" class="btn btn-border-simple btn-block pill lime size-plus-1 btn-right-arrow flex-next">View Action Plan</button>-->
+            <a href="<%= root_path %>register<% if current_user %>?name=<%=current_user.name%>&email=<%=current_user.email%><% end %>" id="unlock-action-plan" class="btn btn-border-simple btn-block pill orange size-plus-1 btn-unlock">Unlock Action Plan</a>
+          </div>
+
+      </div></li>
+
+      <% if false  %>
+
+      <li class="training-intro-page results-page" data-add-body-class="" data-title="Part 3 <span class='bluetext'>Action Plan</span>" data-marker-rel="training" data-marker-description="Based on what we know about you, we’ve put together your very own <b>Action Plan</b>."><div class="slide-content">
+        <div class="dark-header-row"><div class="content">
+          Based on what we know about you, we’ve put together your very own plan.
+        </div></div>
+        <div class="brainmap">
+
+          <div class="map training">
+
+            <div class="marker-icon training glowing">x</div>
+            <div class="marker-label action-plan active">
+              Action Plan
+              <div class="pointer">v</div>
+             </div>
+
+          </div>
+
+        </div>
+
+        <div class="button-container">
+          <button  id="view-action-plan-2" class="btn btn-border-simple btn-block pill lime size-plus-1 btn-right-arrow flex-next">View Action Plan</button>
+        </div>
+
+      </div></li>
+
+
+      <li class="action-plan-page results-page" data-add-body-class="" data-title="Unlock Action Plan" data-marker-rel="training" data-marker-description="Your <b>Action Plan</b> will help you strengthen your brain’s Skills."><div class="slide-content">
+        <div class="dark-header-row"><div class="content">
+            Your weekly action plan is set and ready to go!
+        </div></div>
+
+        <div class="page-description visible-desktop">
+          <h5>Your personalized Action Plan is specially tailored for you</h5>
+          Your action plan is made up of a series of activities that we will prescribe on a weekly basis. These activities will help you strengthen your mind’s core skill and will put you on the path towards becoming happier, more resilient and achieving better performance.
+        </div>
+
+
+        <div class="desktop-slide-header visible-desktop">
+          Action Plan
+        </div>
+
+
+        <div class="desktop-focus-area">
+
+        <ul class="activity-list">
+              <li data-img-src="https://s3.amazonaws.com/s3.stresslessapp.myApp.com/interventions/savoring_album_sight.jpg" class="subitem has-icon locked daytime positivity" data-time="10 min">Savor the Sights</li>
+              <li data-img-src="https://s3.amazonaws.com/s3.stresslessapp.myApp.com/interventions/diaphragmatic_breathing.jpg" class="subitem has-icon locked daytime focus" data-time="10 min">Breathe Deeply</li>
+              <li data-img-src="https://s3.amazonaws.com/s3.stresslessapp.myApp.com/interventions/thank_bank_work.jpg" class="subitem has-icon locked daytime positivity" data-time="10 min">Inspire Yourself<!--<div class="detail-icon gain">18% boost in <b>Positivity</b></div>--></li>
+        </ul>
+
+        </div>
+
+        <div class="button-container">
+          <a href="/subscriptions" id="unlock-action-plan" class="btn btn-border-simple btn-block pill orange size-plus-1 btn-unlock">Unlock Action Plan</a>
+        </div>
+
+
+      </div></li>
+
+      <% end %>
+
+
+    </ul>
+  </div>
+
+
+
+</div>
+
+<div id="results-submit-modal" class="modal hide fade modal-darkbluebg">
+<div class="modal-body">
+  <div class="text-content">
+    <h3>Save your results &amp; view your action plan</h3>
+    Before continuing we need your e-mail, so you can return to review your results.
+  </div>
+  <form action="<%=@assessment.uuid%>">
+    <% if current_user && current_user.email %>
+      <%= text_field_tag :email, @email, placeholder: 'Your email', class: 'text-input-2', value: current_user.email %>
+    <% else %>
+      <%= text_field_tag :email, @email, placeholder: 'Your email', class: 'text-input-2' %>
+    <% end %>
+
+    <div class="error-container"></div>
+  </form>
+  <div class="button-container cf">
+     <button type="button" class="btn btn-block btn-border-simple lime-2 pill" data-dismiss="modal" aria-hidden="true">Save Results &amp; View Plan</button>
+     <% if !current_user || !current_user.email %><a class="btn btn-border-simple btn-block pill facebook size-plus-1" href="/auth/facebook">or Connect with Facebook</a><% end %>
+  </div>
+</div>
+
+<% content_for :footer do %>
+  <%= render "layouts/desktop_footer" %>
+<% end %>

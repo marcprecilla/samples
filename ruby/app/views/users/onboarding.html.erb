@@ -1,0 +1,142 @@
+<% if @show_intro %>
+  <%= render "layouts/splash_screen" %>
+<% end %>
+
+
+<div class="container">
+  <%= form_for @user, url: user_path do |f| %>
+
+  <% if @show_intro %>
+    <div id="start" class="screen progress-exclude">
+      <div class="start-padding">
+        <!--<h1 class="style-5">Hi Hamet!</h1>-->
+        <h2>Chapter 1:<br />Strengthen Your Core.</h2>
+        <div class="description">
+          <p>A strong mind is the foundation for a strong, purposeful life. Our experts have crafted your first program to train the core skills of your mind. Practice regularly and you will see a significant boost in your daily performance.</p>
+
+          <div class="welcome-graphic-brain">Brain</div>
+
+          <div id="welcome-audio-player" class="audio-player-1" data-audio="http://s3.stresslessapp.myApp.com.s3.amazonaws.com/welcome_script_v2.mp3" data-audio-duration="75">
+
+            <div class="audio-control-interface">
+              <div class="buffering"></div>
+              <div class="timeline">
+                <div class="timeline-controls"></div>
+                <div class="playhead"></div>
+              </div>
+              <div class="jplayer"></div>
+            </div>
+
+            <div class="welcome-button-container">
+              <a href="#" class="btn btn-border btn-block" tabindex="1" id="welcome-audio-button">Play</a>
+            </div>
+          </div>
+
+        </div>
+
+        <%= f.label :receive_email_notifications, class: 'checkbox' do %>
+          <%= f.check_box :receive_email_notifications %>
+          Get alerts when my weekly action plan is ready via e-mail.
+        <% end %>
+
+        <div class="start-button-container"><div class="content-wrapper"><button type="button" class="btn btn-border next btn-block">Start Your Journey</button></div></div>
+
+      </div>
+    </div>
+    <% end %>
+
+
+    <div id="gender" class="screen vertical-center">
+      <div class="navbar navbar-fixed-top override-bs"><div class="navbar-container">
+      <input type="button" href="action:previousState" id="navbar-button-left" class="navbar-button back" App-data-state="back" value="Previous" />
+      <span id="title">Are you..?</span>
+      </div></div>
+
+      <div class="btn-group btn-group-circle next" data-toggle="buttons-radio">
+      <% User::GENDERS.each do |v| %>
+        <% btn_class = (@user.gender == v ? 'btn active ' : 'btn ') + v %>
+        <button type="button" value="<%= v %>" class="<%= btn_class %>"><%= v.capitalize %></button>
+      <% end %>
+      </div>
+      <%= f.hidden_field :gender %>
+    </div>
+
+    <div id="relationship_status" class="screen vertical-center">
+      <div class="navbar navbar-fixed-top override-bs"><div class="navbar-container">
+      <input type="button" href="action:previousState" id="navbar-button-left" class="navbar-button back" App-data-state="back" value="Previous" />
+      <span id="title">Are you..?</span>
+      </div></div>
+
+      <div class="btn-group next btn-group-radio short-delay" data-toggle="buttons-radio">
+      <% User::RELATIONSHIP_STATUSES.each do |v| %>
+        <% btn_class = @user.relationship_status == v ? 'btn active' : 'btn' %>
+        <%= f.button v, value: v, type: 'button', class: btn_class %>
+      <% end %>
+      </div>
+      <%= f.hidden_field :relationship_status %>
+    </div>
+
+    <div id="age_demographic" class="screen">
+      <div class="navbar navbar-fixed-top override-bs"><div class="navbar-container">
+      <input type="button" href="action:previousState" id="navbar-button-left" class="navbar-button back" App-data-state="back" value="Previous" />
+      <span id="title">About You</span>
+      </div></div>
+
+        <p class="header-1">How old are you?</p>
+      <div class="btn-group next btn-group-radio short-delay" data-toggle="buttons-radio">
+      <% User::AGE_DEMOGRAPHICS.each do |v| %>
+        <% btn_class = @user.age_demographic == v ? 'btn active' : 'btn' %>
+        <%= f.button v, value: v, type: 'button', class: btn_class %>
+      <% end %>
+      </div>
+      <%= f.hidden_field :age_demographic %>
+    </div>
+
+    <div id="profile" class="screen">
+      <div class="navbar navbar-fixed-top override-bs"><div class="navbar-container">
+      <input type="button" href="action:previousState" id="navbar-button-left" class="navbar-button back" App-data-state="back" value="Previous" />
+      <span id="title">About You</span>
+      </div></div>
+
+        <div class="photo-container">
+          <% if @photo_upload_enabled %>
+          <button id="onboarding-photo-button" type="button" value="" class="btn btn-circle photo size-plus-1" data-image-url="<%= @user.profile_image_url%>"></button>
+
+          <div id="photo-modal" class="modal hide fade modal-bluebg">
+          <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          </div>
+          <div class="modal-body">
+
+          </div>
+          </div>
+          <% end %>
+
+        </div>
+
+        <div class="description">What's your name:</div>
+        <div class="name-container">
+          <%= f.text_field :name, placeholder: 'Enter your first name' %>
+        </div>
+
+       <%= f.button 'Next', class: 'btn btn-border btn-block next', type: 'submit' %>
+
+    </div>
+
+
+    <div style="visibility:hidden; height:0px; overflow:hidden;">
+      <%= cloudinary_js_config %>
+      <%= cl_image_upload_tag("image_id", :public_id => "profile_#{@user.uuid}", :crop => :limit, :width => 1000, :height => 1000,
+                            :html => {:id => "photo-input"}) %>
+
+      <div class="cloudinary-preview"></div>
+    </div>
+
+  <% end %>
+
+
+
+  <% content_for :canvas_footer do %>
+    <ul class="footer-progress"></ul>
+  <% end %>
+</div>

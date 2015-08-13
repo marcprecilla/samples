@@ -1,0 +1,306 @@
+<% @facebook_properties = {'og:image' => 'http://' + request.host + '/fb.brain.jpg','og:url' => request.url} %>
+
+<% content_for :title do %>App - Personality Assessment<% end %>
+
+<% content_for :header do %>
+  <%= render "layouts/desktop_header" %>
+<% end %>
+
+<% content_for :header_bar do %>
+
+    <input type="button" href="action:previousState" id="navbar-button-left" class="navbar-button back" App-data-state="App" value="Previous" />
+    <span id="title">&nbsp;</span>
+<% end %>
+
+<% content_for :additional_body_css_classes do %>bluebg assessment-layout-1<% end %>
+
+
+  <%= render "assessment/assessment_navigation" %>
+
+  <%= form_for :assessment, html:{id:'pam-question-form', class: (include_personality? ? "personality benefits " : "benefits") + " assessment-questions", style:""} do |f| %>
+
+  <div class="screen" id="start-screen" data-rel="name" data-title="" data-add-body-class="bluebg">
+    <div class="content">
+      <h1 class="style-7">Assess Your Stress Resilience</h1>
+      Take our assessment to get started on the path toward building your very own Mind Profile.
+
+      <ul class="assessment-category-list">
+        <li class="focus">Focus</li>
+        <li class="positivity">Positivity</li>
+        <li class="sleep">Sleep</li>
+        <li class="social">Social</li>
+      </ul>
+
+    </div>
+    <div class="button-container">
+      <a href="#" class="btn next btn-border-simple size-plus-1 btn-block lime-2 pill btn-right-arrow ga-tracked" data-ga-category="buttons" data-ga-action="submit" data-ga-label="Gave Name">Get Started</a>
+      <a href="/login" class="hidden-desktop btn btn-border-simple size-plus-1 btn-block pill btn-right-arrow-dark darkborder">Login</a>
+    </div>
+  </div>
+
+  <% if !current_user || !current_user.name %>
+  <div class="screen" id="name-screen" data-rel="name" data-title="" data-add-body-class="bluebg">
+    <div class="content">
+      <h1 class="style-7">Is Stress Blocking Your Life?</h1>
+      Focus, Positivity, Sleep and Social are the four fundamental skills required to shield yourself from the negative impacts of stress.  Let's see how resilient you are against stress!
+    </div>
+    <div class="input-container"><%= text_field_tag :name, @name, placeholder: 'Enter your name...', class: 'text-input-2 disable-enter-submit' %></div>
+    <div class="error-container"></div>
+    <div class="button-container">
+      <a id="submit-name-button" href="#" class="btn btn-border-simple size-plus-1 btn-block lime-2 pill btn-right-arrow ga-tracked" data-ga-category="buttons" data-ga-action="submit" data-ga-label="Gave Name">Submit</a>
+    </div>
+    <div class="visible-desktop">Please note that this assessment is optimized for mobile devices.  We'll reformat the display to fit your screen if you would like to continue via desktop.</div>
+  </div>
+  <% else %>
+    <%= hidden_field_tag "name", current_user.name %>
+  <% end %>
+
+    <div class="screen" id="welcome-screen" data-rel="welcome" data-title="" data-add-body-class="bluebg">
+      <div class="content">
+        <h1 class="style-7"><% if !current_user || !current_user.first_name %>Thanks <span class="dynamic-name"></span><% end %></h1>
+        <div class="graphic">graphic</div>
+        We're going to get started by asking a few basic questions about you. These questions will help us understand your personality and style, so we can craft an effective program for you.
+      </div>
+      <div class="button-container">
+        <a href="#" class="visible-desktop button-white-arrow-left back-link">Back</a>
+        <a href="#" class="btn next btn-border-simple size-plus-1 btn-block lime-2 pill btn-right-arrow">Let's get started.</a>
+      </div>
+    </div>
+
+    <% if !current_user || !current_user.gender %>
+    <div id="gender" class="screen group-demographics" data-rel="demographics" data-title="About You" data-add-body-class="">
+
+      <div class="page-description visible-desktop">
+        <h5>Your responses shape your program</h5>
+        Your demographic and personality information will help us create a personalized action plan designed to strengthen your mind.
+        <a href="#skip-assessment-modal" class="skip-link" data-toggle="modal">Skip Assessment</a>
+      </div>
+
+      <h3 class="style-2">I'm a...</h3>
+      <div class="btn-group btn-group-circle next" data-toggle="buttons-radio">
+        <% User::GENDERS.each do |v| %>
+          <% btn_class = ((@user && @user.gender == v) ? 'btn active ' : 'btn ') + v %>
+          <button type="button" value="<%= v %>" class="<%= btn_class %> ga-tracked" data-ga-category="buttons" data-ga-action="submit" data-ga-label="Gave Gender"><%= v.capitalize %></button>
+        <% end %>
+      </div>
+      <%= hidden_field_tag "demographics[gender]" %>
+
+      <div class="visible-desktop" style="padding-top:40px;"><a href="#" class="button-blue-arrow-left back-link">Back</a></div>
+
+    </div>
+    <% else %>
+      <%= hidden_field_tag "demographics[gender]", current_user.gender %>
+    <% end %>
+
+    <% if !current_user || !current_user.date_of_birth %>
+    <div id="birthdate" class="screen group-demographics" data-rel="demographics" data-title="About You" data-add-body-class="">
+
+      <div class="page-description visible-desktop">
+        <h5>Your responses shape your program</h5>
+        Your demographic and personality information will help us create a personalized action plan designed to strengthen your mind.
+        <a href="#skip-assessment-modal" class="skip-link" data-toggle="modal">Skip Assessment</a>
+      </div>
+
+        <h3 class="style-2">My birthdate is...</h3>
+        <div class="desktop-focus-area">
+        <select name="demographics[date_of_birth][month]">
+          <option value="01">January</option>
+          <option value="02">February</option>
+          <option value="03">March</option>
+          <option value="04">April</option>
+          <option value="05">May</option>
+          <option value="06">June</option>
+          <option value="07">July</option>
+          <option value="08">August</option>
+          <option value="09">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
+
+        <select name="demographics[date_of_birth][day]">
+          <% for i in 1..31 %>
+          <option value="<%=i %>"><%=i %></option>
+          <% end %>
+        </select>
+
+        <select name="demographics[date_of_birth][year]">
+          <% for i in 1920..2013 %>
+          <option value="<%=i %>"<% if i == 1960 %>SELECTED<% end %>><%=i %></option>
+          <% end %>
+        </select>
+
+        <div class="button-container cf">
+          <a href="#" class="btn next btn-block btn-border-simple size-plus-1 blue pill btn-right-arrow ga-tracked" data-ga-category="buttons" data-ga-action="submit" data-ga-label="Gave DOB">Continue</a>
+        </div>
+        </div>
+
+        <div class="visible-desktop" style="padding-top:40px;"><a href="#" class="button-blue-arrow-left back-link">Back</a></div>
+
+    </div>
+
+    <% else %>
+      <%= hidden_field_tag "demographics[date_of_birth][month]", current_user.date_of_birth.month %>
+      <%= hidden_field_tag "demographics[date_of_birth][day]", current_user.date_of_birth.day %>
+      <%= hidden_field_tag "demographics[date_of_birth][year]", current_user.date_of_birth.year %>
+    <% end %>
+
+    <div id="relationship_status" class="screen group-demographics" data-rel="demographics" data-title="About You" data-add-body-class="">
+
+      <div class="page-description visible-desktop">
+        <h5>Your responses shape your program</h5>
+        Your demographic and personality information will help us create a personalized action plan designed to strengthen your mind.
+        <a href="#skip-assessment-modal" class="skip-link" data-toggle="modal">Skip Assessment</a>
+      </div>
+
+      <h3 class="style-2">I am...</h3>
+
+        <div class="btn-group next btn-group-radio btn-group-circle-simple with-label short-delay" data-toggle="buttons-radio">
+        <% User::RELATIONSHIP_STATUSES.each do |v| %>
+          <% btn_class = (@user && @user.relationship_status == v) ? 'btn active' : 'btn' %>
+          <%= f.button v, value: v, type: 'button', class: btn_class %>
+        <% end %>
+        </div>
+        <%= hidden_field_tag "demographics[relationship_status]" %>
+
+        <div class="visible-desktop" style="padding-top:40px;"><a href="#" class="button-blue-arrow-left back-link">Back</a></div>
+
+      </div>
+
+    <% if include_personality? %>
+
+
+      <%
+
+        @group_names = ["demographics","focus","positivity","sleep","social"];
+        @group_name_index = 0;
+        @curr_question = @benefits_questions[:focus];
+        @transition_message = '';
+
+        @big_five_questions.each_with_index do |question, index|
+
+      %>
+
+      <%
+
+        case index
+          when 0
+            @group_name_index = 0;
+            @input_name = "benefits[demographics]";
+            @transition_message = '';
+            @group_directions = "Step 1: Please start by giving us some basic information<br /><b>about you</b>.";
+          when 2
+            @group_name_index = 1;
+            @curr_question = @benefits_questions[:focus];
+            @transition_message = "Now we’re going to ask you some questions about your ability to <b>focus</b>...";
+            @group_directions = "Step 2: Please answer some questions about your ability to <b>Focus</b>";
+          when 4
+            @group_name_index = 2;
+            @curr_question = @benefits_questions[:positivity];
+            @transition_message = "Now we’re going to ask you some questions about your ability to be <b>positive</b>...";
+            @group_directions = "Step 3: Please answer some questions about your<br />ability to be <b>Positive</b>";
+           when 6
+            @group_name_index = 3;
+            @curr_question = @benefits_questions[:sleep];
+            @transition_message = "Now we’re going to ask you some questions about your ability to <b>sleep</b>...";
+            @group_directions = "Step 4: Please answer some questions about your ability to <b>Sleep</b>";
+          when 8
+            @group_name_index = 4;
+            @curr_question = @benefits_questions[:social];
+            @transition_message = "Now we’re going to ask you some questions about your ability to be <b>social</b>...";
+            @group_directions = "Step 5: Please answer some questions about your<br />ability to be <b>Social</b>";
+        end
+
+          @group_input_name = "benefits[" + @group_names[@group_name_index] + "]";
+
+        %>
+
+        <% if @group_name_index != 0 && index % 2 == 0 %>
+
+            <div id="transition-screen-demographics" class="screen transition-screen" data-rel="<%= @group_names[@group_name_index] %>" data-title="<%= @group_names[@group_name_index] %>" data-add-body-class="darkbluebg">
+              <h1 class="style-7">You’re doing great!</h1>
+              <ul class="section-list cf">
+                <li>
+                  <div class="transition-graphic active <%= @group_names[@group_name_index - 1] %>"><%= @group_names[@group_name_index - 1] %></div>
+                  <div class="left-fade">fade</div>
+                </li>
+                <li class="">
+                  <div class="transition-graphic <%= @group_names[@group_name_index] %>"><%= @group_names[@group_name_index] %></div>
+                </li>
+              </ul>
+              <div class="content">
+                <%=@transition_message.html_safe %>
+              </div>
+              <div class="button-container cf">
+                <a href="#" class="visible-desktop button-white-arrow-left back-link">Back</a>
+                <a href="#" class="btn next btn-block btn-border-simple size-plus-1 lime-2 pill btn-right-arrow">Continue</a>
+              </div>
+            </div>
+
+          <div class="screen multi-select-question group-<%= @group_names[@group_name_index] %>" data-rel="<%= @group_names[@group_name_index] %>" data-title="<%= @group_names[@group_name_index] %>" data-add-body-class="" data-directions="<%= @group_directions.html_safe %>">
+            <%= render "assessment/question_multiselect", question: @curr_question, input_name: @group_input_name, f: f %>
+          </div>
+        <% end %>
+
+          <div id="single-select-question-<%=index %>" class="screen single-select-question group-<%= @group_names[@group_name_index] %> <%= (@big_five_questions.length - 1) == index ? ' last' : '' %>" data-rel="<%= @group_names[@group_name_index] %>" data-title="<%= @group_names[@group_name_index] %>" data-add-body-class="" data-directions="<%= @group_directions.html_safe %>">
+              <%= render "assessment/question_slider", index: index, question: question %>
+          </div>
+
+      <% end %>
+
+      <%
+
+        else
+          #do not show personality
+      %>
+
+        <div class="screen multi-select-question group-focus" data-rel="focus" data-title="focus" data-add-body-class="">
+          <%= render "assessment/question_multiselect", question: @benefits_questions[:focus], input_name: 'benefits[focus]', f: f %>
+        </div>
+        <div class="screen multi-select-question group-positivity" data-rel="positivity" data-title="positivity" data-add-body-class="">
+          <%= render "assessment/question_multiselect", question: @benefits_questions[:positivity], input_name: 'benefits[positivity]', f: f %>
+        </div>
+        <div class="screen multi-select-question group-sleep" data-rel="sleep" data-title="sleep" data-add-body-class="">
+          <%= render "assessment/question_multiselect", question: @benefits_questions[:sleep], input_name: 'benefits[sleep]', f: f %>
+        </div>
+        <div class="screen multi-select-question group-social" data-rel="social" data-title="social" data-add-body-class="">
+          <%= render "assessment/question_multiselect", question: @benefits_questions[:social], input_name: 'benefits[social]', f: f %>
+        </div>
+
+      <% end %>
+
+
+    <% end %>
+
+
+ <div class="screen" id="congratulations-screen" data-rel="welcome" data-title="" data-add-body-class="bluebg">
+   <div class="content">
+     <h1 class="style-7">Congratulations <span class="dynamic-name"></span></h1>
+     We’ve backed up your data to the cloud, please
+     click the button to view your Assessment Results..
+   </div>
+  <div class="button-container"><a href="#" class="btn btn-border-simple size-plus-1 btn-block lime-2 pill btn-right-arrow">View Mind Profile.</a></div>
+ </div>
+
+
+ <!--
+ <div id="skip-assessment-modal" class="modal hide fade modal-darkbluebg">
+ <div class="modal-body">
+   <div class="text-content">Are you sure you want to skip this assessment &amp; purchase a subscription?</div>
+   <div class="button-container cf">
+     <div class="left-content">
+      <button type="button" class="close btn btn-block btn-border-simple size-plus-1 pill" data-dismiss="modal" aria-hidden="true">No</button>
+     </div>
+     <div class="right-content">
+       <a href="<%=subscriptions_path%>" class="btn btn-block btn-border-simple size-plus-1 pill">Yes</a>
+     </div>
+   </div>
+ </div>
+ </div>
+ -->
+
+
+
+<% content_for :footer do %>
+  <%= render "layouts/desktop_footer" %>
+<% end %>

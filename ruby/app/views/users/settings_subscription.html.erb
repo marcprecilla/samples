@@ -1,0 +1,41 @@
+<% content_for :title, 'Subscription' %>
+
+<% content_for :header_bar do %>
+  <input type="button" href="<%=settings_path %>" id="navbar-button-left" class="navbar-button back" App-data-state="back" value="Previous" />
+  <span id="title">Subscription</span>
+<% end %>
+
+<div class="container">
+  <div id="manage-subscription">
+    <% case @status %>
+    <% when 'trialing' %>
+      <% if @canceling %>
+        Your trial period will end on <%= @trial_end %>.
+        <%= update_subscription_button %>
+      <% else %>
+        Your subscription is in trial mode and will convert to a full subscription after <%= @period_end %>.
+        <%= cancel_subscription_button %>
+      <% end %>
+    <% when 'active' %>
+      <% if @canceling %>
+        Your subscription is currently active. It is set to expire on <%= @period_end %>.
+        <%= update_subscription_button %>
+      <% else %>
+        Your subscription is active through <%= @period_end %>. It will renew automatically.
+        <%= cancel_subscription_button %>
+      <% end %>
+    <% when 'past_due' %>
+      Your subscription is past due.
+      <%= update_subscription_button %>
+    <% when 'canceled' %>
+      Your subscription is no longer active.
+      <%= update_subscription_button %>
+    <% when 'unpaid' %>
+      Your subscription has been canceled due to non-payment.
+      <%= update_subscription_button %>
+    <% else %>
+      You have no subscription.
+      <%= update_subscription_button %>
+    <% end %>
+  </div>
+</div>

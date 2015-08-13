@@ -1,0 +1,48 @@
+<% submit_text ||= 'Save' %>
+<% flow ||= 'notifications' %>
+
+<div id="notification-settings">
+  <%= form_for @user, url: user_path(flow: flow), builder: BootstrapHelper::BootstrapFormBuilder do |f| %>
+
+    <div class="control-group">
+      <%= f.label :receive_email_notifications, 'Updates by E-mail:' %>
+      <%= f.hidden_field :receive_email_notifications %>
+      <div class="btn-group" data-toggle="buttons-radio">
+        <%= f.toggle_button :receive_email_notifications, 'On', state: true, class: 'btn', type: 'button' %>
+        <%= f.toggle_button :receive_email_notifications, 'Off', state: false, class: 'btn', type: 'button' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :receive_sms_notifications, 'Updates by SMS:' %>
+      <%= f.hidden_field :receive_sms_notifications %>
+      <div class="btn-group" data-toggle="buttons-radio">
+        <%= f.toggle_button :receive_sms_notifications, 'On', state: true, class: 'btn', type: 'button', data: {click: 'show', target: '#sms-options'} %>
+        <%= f.toggle_button :receive_sms_notifications, 'Off', state: false, class: 'btn', type: 'button', data: {click: 'hide', target: '#sms-options'} %>
+      </div>
+    </div>
+    <fieldset id="sms-options" class="well <%= ' hide' unless @user.receive_sms_notifications %>">
+      <% if @user.errors.any? %>
+      <div id="errors" class="alert alert-block alert-error">
+        <a href="#" class="close" data-dismiss="alert">&times;</a>
+        <p><%= @user.errors.full_messages.join(', ') %></p>
+      </div>
+      <% end %>
+
+      <div class="control-group">
+        <%= f.label :mobile_phone, 'Phone number (10-digit U.S. only):' %>
+        <%= f.telephone_field :mobile_phone, value: number_to_phone(@user.mobile_phone, area_code: true) %>
+      </div>
+      <div class="control-group">
+        <%= f.label :time_zone, 'Time zone:', class: 'control-label' %>
+        <div class="controls">
+          <%= f.collection_select :time_zone, ActiveSupport::TimeZone.us_zones, :name, :to_s, prompt: true %>
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="control-group button-container">
+
+      <%= button_tag submit_text, type: 'submit', class: 'btn btn-border-simple lime btn-block size-plus-1' %>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,24 @@
+  <div class="page-description visible-desktop">
+    <h5>Your responses shape your program</h5>
+    Your demographic and personality information will help us create a personalized action plan designed to strengthen your mind.
+  </div>
+
+  <h3 class="style-2"><%= question[:question] %></h3>
+
+  <ul data-toggle="buttons-checkbox" class="btn-group btn-group-checkbox checklist-1">
+    <li class="label">Select all that apply, or none.</li>
+  <% question[:responses].each_with_index do |response, index| %>
+    <% icon = question[:icons][index] %>
+    <li class="">
+      <button value="<%= response %>" type="button" name="button" class="btn <%=icon%>"><div class="icon"><%=response%></div></button>
+      <%= f.check_box(input_name, { :multiple => true }, response, nil) %>
+    </li>
+
+  <% end %>
+
+</ul>
+  <div class="button-container cf">
+    <div class="back-button-container visible-desktop back-link" style=""><a href="#" class="button-blue-arrow-left">Back</a></div>
+    <div class="continue-button-container"><a href="#" class="btn next btn-block btn-border-simple size-plus-1 lime-2 pill btn-right-arrow">Continue</a></div>
+    <div class="skip-button-container"><a href="#skip-assessment-modal" class="btn-skip" data-toggle="modal">Skip this assessment</a></div>
+  </div>

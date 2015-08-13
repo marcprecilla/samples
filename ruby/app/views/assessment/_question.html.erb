@@ -1,0 +1,21 @@
+  <h3 class="style-2" style="padding-bottom:20px;">
+    <span class="pam-question" App-data-question-index="0" style="display:block;"><%="#{question.text}..." %></span>
+  </h1>
+
+  <div data-toggle="buttons-radio" class="btn-group next short-delay btn-group-radio btn-group-circle-simple with-label">
+
+    <% question.response_descriptions.each_pair do |response_index, response_description|
+      cls = ''
+      cls = 'first' if response_index == 1
+      cls = 'last' if response_index == question.response_descriptions.length
+      %>
+      <button value="<%=response_index%>" type="button" name="button" class="btn" App-data-answer-stats="30"><%=response_description%></button>
+
+    <% end %>
+
+  </div>
+  <span class="submit-value"><%= hidden_field_tag "answers[#{question.uuid}]", 1 %></span>
+
+  <div class="button-container cf">
+    <a href="<%=subscriptions_path%>" class="btn btn-border-simple size-plus-1 circle btn-skip">Skip</a>
+  </div>

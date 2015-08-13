@@ -1,0 +1,22 @@
+<%= form_tag registration_path, method: :post, class: 'registration-form' do %>
+  <% if @user && @user.errors.any? %>
+  <div id="errors" class="alert alert-block alert-error">
+    <p><%= @user.errors.full_messages.join(', ') %></p>
+  </div>
+  <% end %>
+  
+  <%= hidden_field_tag :return_path, @return_path %>
+
+  <%= label_tag :first_name %>
+  <%= text_field_tag :first_name, current_first_name %>
+  <%= label_tag :last_name %>
+  <%= text_field_tag :last_name, current_last_name %>
+  <%= label_tag :email %>
+  <%= email_field_tag :email, current_email %>
+  <%= label_tag :password %>
+  <%= password_field_tag :password, @password %>
+  <%= label_tag :password_confirmation %>
+  <%= password_field_tag :password_confirmation, @password_confirmation %>
+
+  <%= button_tag 'Next', type: 'submit', class: 'btn btn-border-simple size-plus-2 btn-block blue' %>
+<% end %>

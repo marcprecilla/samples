@@ -1,0 +1,39 @@
+<% content_for :title, 'Register' %>
+
+<div class="screen vertical-center">
+<div class="container">
+
+  <div class="stress-less-title">
+    <h1 class="App-logo">App Live Better</h1>
+  </div>
+
+  <h1>Register to get your quiz results &amp; free exercises!</h1>
+
+  <!--
+  <%= link_to login_path(method: 'facebook'), class: 'btn btn-border btn-block facebook ga-tracked', data: {ga_category: 'buttons', ga_action: 'register', ga_label: 'fbconnect'} do %>
+    Connect with <span class="facebook">facebook</span>
+  <% end %>
+  -->
+
+
+  <%= form_tag registration_path, method: :post, html: {class: 'registration-form'} do %>
+    <% if @user && @user.errors.any? %>
+      <%= render 'errors', message: 'Could not register because of the following errors:' %>
+      <script>mixpanel.track("Failed Registration")</script>
+    <% end %>
+
+    <div class="fields">
+      <%= text_field_tag :name, @name, placeholder: 'Name', class: 'input-block-level' %>
+      <%= email_field_tag :email, @email, placeholder: 'Email Address', class: 'input-block-level' %>
+      <div class="smalltext paddingBottom10">Your quiz results will be e-mailed here.</div>
+      <%= password_field_tag :password, nil, placeholder: 'Password', class: 'input-block-level' %>
+      <%= password_field_tag :password_confirmation, nil, placeholder: 'Confirm Password', class: 'input-block-level' %>
+    </div>
+    <%= button_tag 'Register', type: 'submit', class: 'btn btn-border btn-block size-plus-1 ga-tracked', data: {ga_category: 'buttons', ga_action: 'register', ga_label: 'standard'} %>
+  <% end %>
+
+
+  <p>Already have an account? <%= link_to 'Sign in', login_path %></p>
+
+</div>
+</div>
