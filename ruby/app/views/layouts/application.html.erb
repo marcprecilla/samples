@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<!--[if lt IE 10]><html class="no_ie"><![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="description" content="app is a wellness innovation company developing the first adaptive behavioral health program for stress.">
+  <meta name="author" content="">
+
+  <link type="image/png" rel="apple-touch-icon-precomposed" sizes="114x114" href="/apple-touch-icon-114x114-precomposed.png" />
+  <link type="image/png" rel="apple-touch-icon-precomposed" sizes="72x72" href="/apple-touch-icon-72x72-precomposed.png" />
+  <link type="image/png" rel="apple-touch-icon-precomposed" href="/apple-touch-icon-57x57-precomposed.png" />
+  <link type="image/png" rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <title><%= content_for?(:title) ? yield(:title) : "app - Mind Fitness Program" %></title>
+  <!-- <link rel="icon" href="/assets/favicon.png" size="32x32"/> -->
+
+  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag google_fonts_link %>
+  <%= csrf_meta_tags %>
+
+  <%= tag :meta, name: 'stripe-key', content: ENV['STRIPE_PUBLISHABLE_KEY'] %>
+
+  <%= render 'layouts/facebook_meta_tags' %>
+  <%= render 'layouts/mixpanel_meta_tags' %>
+  <%= render 'layouts/google_analytics' %>
+  <%= render 'layouts/optimizely' %>
+
+  <%= content_for(:javascript) if content_for?(:javascript) %>
+  <%= yield(:styles) %>
+  <%= yield(:head) %>
+  <%= render "layouts/mixpanel_page_calls" %>
+</head>
+<body id="<%= @body_id || controller.controller_name %>" class="<%= controller.action_name %> mobile_scaffolding theme-app <%= content_for :additional_body_css_classes %>">
+  <%= content_for(:header) if content_for?(:header) %>
+
+  <%= render "layouts/sidenav" %>
+
+  <div id="main-canvas">
+    <div id="main" role="main" class="">
+      <%= render "layouts/tooltip" %>
+
+      <% if content_for? :header_bar %>
+        <div class="navbar navbar-fixed-top override-bs">
+          <div class="navbar-container">
+            <%= content_for :header_bar %>
+          </div>
+        </div>
+      <% end %>
+
+      <%= yield %>
+
+      <% if content_for? :canvas_footer %>
+        <div class="canvas-bottom">
+          <%= content_for :canvas_footer %>
+        </div>
+      <% end %>
+    </div><!--! end of #main -->
+  </div><!--! end of #main-canvas -->
+
+  <% if content_for? :footer %>
+      <%= content_for :footer %>
+  <% end %>
+
+  <%= render "layouts/common_modals" %>
+
+  <%= render "layouts/cloudinary" %>
+  <%= render 'layouts/crazy_egg' %>
+</body>
+</html>

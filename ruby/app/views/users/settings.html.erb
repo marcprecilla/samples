@@ -1,7 +1,7 @@
 <% content_for :title, 'Settings' %>
 
 <% content_for :header_bar do %>
-  <input type="button" href="action:toggleSideBar" id="navbar-button-left" class="navbar-button menu" App-data-state="menu" value="Previous" />
+  <input type="button" href="action:toggleSideBar" id="navbar-button-left" class="navbar-button menu" app-data-state="menu" value="Previous" />
   <span id="title">Settings</span>
 <% end %>
 
@@ -27,7 +27,7 @@
 
   <%= link_to 'Reset Password', forgot_password_path, class: 'btn btn-border btn-block desktop-modal-load' %>
 
-  <%= link_to 'Contact Us', 'mailto:support@Appinc.com', class: 'btn btn-border btn-block' %>
+  <%= link_to 'Contact Us', 'mailto:support@appinc.com', class: 'btn btn-border btn-block' %>
 
   <%= link_to 'Manage Subscription', settings_path(flow: 'subscription'), class: 'btn btn-border btn-block desktop-modal-load' %>
 </div>

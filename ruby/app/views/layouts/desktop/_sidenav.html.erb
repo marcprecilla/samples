@@ -1,0 +1,23 @@
+<div id="desktop-sidebar-left" app-data-state="off">
+    <ul>
+
+      <li class="menu-dashboard first <% if @menu_section == 'toolkit' %>selected<% end %>"><%= link_to "Dashboard", action_plan_index_path, class: 'show-loading-modal' %></li>
+      <li class="menu-visionboard <% if @menu_section == 'visionboard' %>selected<% end %>"><%= link_to "Vision Board", '/visionboard', class: 'show-loading-modal' %></li>
+
+      <% if defined?(current_user) && current_user.stripe_subscription_active? %>
+
+      <li class="menu-activity-feed <% if @menu_section == 'activity-feed' %>selected<% end %>"><%= link_to "Exercises", intervention_index_path, class: 'desktop-modal-load' %></li>
+      <!--<li class="menu-toolkit <% if @menu_section == 'progress' %>selected<% end %>"><%= link_to "Progress", progress_path %> </li>-->
+      <!--<li class="menu-toolkit <% if @menu_section == 'toolkit' %>selected<% end %>"><%= link_to "Mind Training", action_plan_index_path %></li>-->
+
+      <% else %>
+        <li class="menu-visionboard disabled"><%= link_to "Vision Board", '/subscriptions' %></li>
+        <li class="menu-activity-feed disabled"><%= link_to "Exercises", '/subscriptions' %></li>
+      <% end %>
+
+      <li class="menu-about <% if @menu_section == 'about' %>selected<% end %>"><%= link_to "About", about_path, class: 'desktop-modal-load' %></li>
+      <li class="menu-faq <% if @menu_section == 'faq' %>selected<% end %>"><%= link_to "FAQ", "/faq", class: 'desktop-modal-load' %></li>
+      <li class="menu-settings <% if @menu_section == 'settings' %>selected<% end %>"><%= link_to "Settings", settings_path %></li>
+      <li class="menu-biomarkers disabled"><%= link_to "Biomarkers", "/" %></li>
+    </ul>
+</div>

@@ -1,0 +1,72 @@
+<% content_for :header_bar do %>
+
+<input type="button" href="action:previousState" id="navbar-button-left" class="navbar-button back" app-data-state="app" value="Previous" />
+<span id="title">Add Photos</span>
+<input type="button" href="#" id="navbar-button-right" class="navbar-button none" app-data-state="none" value="Invite" />
+
+<% end %>
+
+<div class="screen add-image-screen">
+
+  <div class="content">
+
+  <div class="header-row">
+    <div class="btn btn-square-simple <%=(@thank.color.nil? || @thank.color == '') ? 'random-color' : @thank.color %> size-minus-2 word-overflow-shrink" char-limit="8">I am grateful for <b><%=@thank.text%></b></div>
+    <div class="title">Add up to 4 photos.</div>
+  </div>
+
+  <%= form_tag("/thanks/#{@thank.uuid}", :method => :put, :id => 'image-upload-form', :class => 'gallery-carousel') do  %>
+  <div class="flexslider-mini-gallery" data-max-images="4">
+    <ul class="slides">
+      <% for image_url in @thank.image_urls %>
+      <li class="" style="">
+        <a onclick="window.removeFromGallery(this)" class="remove-button" href="#">x</a>
+        <div class="img-container"><div style="background:url(<%=image_url%>) 0px 0px no-repeat; background-size:cover;" class="img-container-content">x</div></div>
+        <input type="hidden" value="<%=image_url%>" name="images[]">
+      </li>
+      <% end %>
+
+      <li class="" style="">
+        <a href="#" class="btn btn-square-simple plus" id="button-take-photo">+</a>
+      </li>
+    </ul>
+  </div>
+  <% end %>
+
+  <div class="bottom-button-container">
+    <ul class="buttons">
+      <li><a href="#" class="btn btn-border-simple btn-block lime pill size-plus-1 upload-button">Save &amp; Upload</a></li>
+      <li><a href="/visionboard" class="btn btn-border-simple btn-block pill size-plus-1">Cancel Upload</a></li>
+    </ul>
+  </div>
+
+
+  </div>
+
+</div>
+
+<div class="screen completion-screen">
+
+  <div class="content">
+
+    <div class="top-content">
+
+      <h1><%=encouragement_salutation%>, <%=current_user.first_name%>!</h1>
+
+      <div class="message"><%=humorous_encouragement%></div>
+
+    </div>
+
+  </div>
+
+  <div class="bottom-button-container">
+    <ul class="buttons">
+      <li><a href="/visionboard" class="btn btn-border-simple btn-block lime pill size-plus-1">View Vision Board</a></li>
+      <li><a href="/toolkit" class="btn btn-border-simple btn-block lime pill size-plus-1">Continue Training</a></li>
+    </ul>
+  </div>
+
+</div>
+
+
+

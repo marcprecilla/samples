@@ -1,0 +1,91 @@
+<div class="timeline-container">
+
+<% if @timeline.length > 0 %>
+
+<div class="timeline-viewport">
+<ul class="progress-activity-day-list cf">
+<%
+
+  week_num = 0
+  show_week_header = true
+  @timeline2 = @timeline
+  @timeline.each_with_index do |item,i|
+    timestamp = item.timestamp_for_day
+    if i < @timeline2.count - 1
+      next_item = @timeline2[i+1]
+
+      if next_item.type == :new_week
+        week_num = next_item.plan.week
+        show_week_header = true
+      else
+        show_week_header = false
+      end
+
+    end
+    points = item.points || 0
+%>
+
+<%
+  if points > 0 || show_week_header
+
+    # item is of type TimelineEntry, defined in ProgressController
+    case item.type.to_sym
+    when :new_day %>
+      <%= render "progress/new_day", plan:item.plan, points:points, day_of_week:item.day_of_week, week_number:week_num, timestamp:timestamp, show_week_header:show_week_header %>
+    <% when :new_week%>
+
+    <% when :intervention, :completed_assigned_intervention %>
+      <%= render "progress/intervention", action_item:item.action_item, activity:item.activity, points:points, timestamp:timestamp%>
+    <% when :check, :checkin %>
+      <%= render "progress/checkin", action_item:item.action_item, points:points, timestamp:timestamp%>
+
+    <% when :intention, :intention_added %>
+      <%= render "progress/generic", css_class:'intention', title:'Intention', action_item:item.action_item, points:points, timestamp:timestamp%>
+    <% when :visionboard_intention, :intention_visualized %>
+      <%= render "progress/generic", css_class:'intention', title:'Intention Visionboard', action_item:item.action_item, points:points, timestamp:timestamp%>
+
+    <% when :thank, :thank_added %>
+      <%= render "progress/generic", css_class:'thank', title:'Thank', action_item:item.action_item, points:points, timestamp:timestamp%>
+    <% when :visionboard_thank, :thank_visualized %>
+      <%= render "progress/generic", css_class:'thank', title:'Thank Visionboard', action_item:item.action_item, points:points, timestamp:timestamp%>
+
+    <% when :baseline_assessment, :completed_baseline_assessment %>
+      <%= render "progress/generic", css_class:'checkin baseline', title:'Your Starting Point', action_item:item.action_item, points:points, timestamp:timestamp%>
+
+    <% when :completed_360_assessment %>
+      <%= render "progress/generic", css_class:'three_sixty', title:'Inner 360', action_item:item.action_item, points:points, timestamp:timestamp%>
+
+    <% when :happy_face, :completed_happy_face_intervention %>
+      <%= render "progress/generic", css_class:'happy_face', title:'e-Motion Happy', action_item:item.action_item, points:points, timestamp:timestamp%>
+
+    <% else
+      raise "INVALID TIMELINE TYPE: #{item.type}"
+    end
+
+  end
+%>
+
+</li>
+
+<% end %>
+</ul>
+</div>
+
+<ul class="timeline-list">
+  <li>WEEK 1</li>
+  <li class="last">THIS WEEK</li>
+</ul>
+
+<div class="timeline-indicator"><div>x</div></div>
+
+
+<% else %>
+  <div class="no-data-container">
+    <h3>There is no data</h3>
+    Complete some exercises in your dashboard
+    <div class="button-container"><%= link_to "Go To Dashboard", action_plan_index_path, class: "btn btn-border-simple pill lime size-minus-1" %></div>
+  </div>
+
+<% end %>
+
+</div>

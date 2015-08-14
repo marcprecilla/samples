@@ -1,0 +1,110 @@
+<% content_for :title do %>app - Personality Assessment<% end %>
+
+<% content_for :header do %>
+  <%= render "layouts/desktop_header" %>
+<% end %>
+
+<% content_for :additional_body_css_classes do %>assessment-layout-1 bluebg<% end %>
+
+  <div class='header-container'>
+    <h2 class="style-1">Congratulations!</h2>
+    Click the icons below to see your scores in all Mind Fitness categories.
+  </div>
+
+<div class="screen">
+
+  <h2 class="score-header">Mindfulness: <%= score_label_for_level(@focus_level)%></h2>
+
+  <div class="cf">
+  <div class="meter-container">
+
+    <div class="color-meter <%=ruby_to_css_class @focus_level%>">
+      <div class="needle">^</div>
+    </div>
+
+  </div>
+
+  <div class="info-container visible-desktop">
+  <%= score_explination_for(@focus_level, :focus)%>
+  </div>
+  </div>
+
+</div>
+
+<div class="screen">
+
+  <h2 class="score-header">Positivity: <%= score_label_for_level(@positivity_level)%></h2>
+
+  <div class="cf">
+  <div class="meter-container">
+
+    <div class="color-meter <%=ruby_to_css_class @positivity_level%>">
+      <div class="needle">^</div>
+    </div>
+
+  </div>
+
+  <div class="info-container visible-desktop">
+    <%= score_explination_for(@positivity_level, :positivity)%>
+  </div>
+  </div>
+
+</div>
+
+<div class="screen">
+
+  <h2 class="score-header">Social: <%= score_label_for_level(@social_level)%></h2>
+
+  <div class="cf">
+  <div class="meter-container">
+
+    <div class="color-meter <%=ruby_to_css_class @social_level%>">
+      <div class="needle">^</div>
+    </div>
+
+  </div>
+
+  <div class="info-container visible-desktop">
+    <%= score_explination_for(@social_level, :social) %> </div>
+  </div>
+
+</div>
+
+<div class="screen">
+
+  <div class="cf">
+  <h2 class="score-header">Sleep: <%= score_label_for_level(@sleep_level)%></h2>
+
+  <div class="meter-container">
+
+    <div class="color-meter  <%=ruby_to_css_class @sleep_level%>">
+      <div class="needle">^</div>
+    </div>
+
+  </div>
+
+  <div class="info-container visible-desktop">
+    <%= score_explination_for(@sleep_level, :sleep)%>
+  </div>
+  </div>
+
+</div>
+
+<ul class="category-nav-list">
+  <li><a href="0" class="btn btn-jump btn-circle size-minus-1 mindfulness active">&nbsp;</a></li>
+  <li><a href="1" class="btn btn-jump btn-circle size-minus-1 positivity">&nbsp;</a></li>
+  <li><a href="2" class="btn btn-jump btn-circle size-minus-1 social">&nbsp;</a></li>
+  <li><a href="3" class="btn btn-jump btn-circle size-minus-1 sleep">&nbsp;</a></li>
+</ul>
+
+<div class="baseline-results-button-container" style="">
+  <div class="buttons">
+  <a href="/action_plan" class="btn btn-block btn-border-simple size-plus-1 lime-2 pill btn-right-arrow">Go To Dashboard</a>
+  </div>
+</div>
+
+
+<% content_for :footer do %>
+  <%= render "layouts/desktop_footer" %>
+<% end %>
+

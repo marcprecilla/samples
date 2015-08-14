@@ -1,0 +1,46 @@
+<% content_for :header_bar do %>
+
+<input type="button" href="action:toggleSideBar" id="navbar-button-left" class="navbar-button menu" app-data-state="app" value="Previous" />
+<span id="title">Progress</span>
+<input type="button" href="" id="navbar-button-right" class="navbar-button none" app-data-state="none" value="Next" />
+
+<% end %>
+
+<div class="top-container"><div class="top-container-content">
+
+  <%= render "progress/activity_graph" %>
+
+</div></div>
+
+
+<div class="navbar">
+  <div class="navbar-inner">
+    <ul class="nav">
+      <li class="active"><a class="btn btn-jump no-styles" href="0">TIMELINE</a></li>
+      <li class=""><a class="btn btn-jump no-styles" href="1">METRICS</a></li>
+      <li class=""><a class="btn btn-jump no-styles" href="2">INSIGHTS</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="progress-viewport">
+<div id="timeline" class="screen allow-screen-url">
+  <%= render "progress/timeline" %>
+</div>
+
+<div id="trends" class="screen allow-screen-url">
+  <%= render "progress/trends" %>
+</div>
+
+<div id="analysis" class="screen allow-screen-url">
+  <%= render "progress/analysis" %>
+</div>
+
+</div>
+
+
+<% if @show_progress_walkthrough %>
+  <% content_for :footer do %>
+    <%= render "progress/progress_walkthrough" %>
+  <% end %>
+<% end %>

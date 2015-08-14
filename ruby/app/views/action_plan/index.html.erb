@@ -1,0 +1,24 @@
+<% content_for :header_bar do %>
+
+<input type="button" href="action:toggleSideBar" id="navbar-button-left" class="navbar-button menu" app-data-state="app" value="Previous" />
+<span id="title">Mind Training</span>
+<input type="button" href="/invite/new" id="navbar-button-right" class="navbar-button invite" app-data-state="none" value="Invite" />
+
+<% end %>
+
+<% if current_user.stripe_subscription_active? %>
+  <%= render "action_plan/action_plan_screens" %>
+<% else %>
+  <%= render "action_plan/locked_content" %>
+<% end %>
+
+  <h3 class="list-header">Research Lab</h3>
+  <ul class="blog-article-list article-list"></ul>
+
+
+
+<% if @show_action_plan_walkthrough %>
+  <% content_for :footer do %>
+    <%= render "action_plan/action_plan_walkthrough" %>
+  <% end %>
+<% end %>

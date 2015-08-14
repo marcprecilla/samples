@@ -1,0 +1,9 @@
+<% content_for :header_bar do %>
+
+<input type="button" href="action:toggleSideBar" id="navbar-button-left" class="navbar-button menu" app-data-state="app" value="Previous" />
+<span id="title">Vision Board</span>
+<input type="button" href="#" id="navbar-button-right" class="navbar-button none" app-data-state="none" value="Invite" />
+
+<% end %>
+
+<%= render "visionboard_items/visionboard_screen" %>

@@ -1,0 +1,115 @@
+<% content_for :header_bar do %>
+
+<input type="button" href="action:previousState" id="navbar-button-left" class="navbar-button back" app-data-state="app" value="Previous" />
+<span id="title"><%=@window_title%></span>
+<input type="button" href="" id="navbar-button-right" class="navbar-button none" app-data-state="none" value="Next" />
+
+<% end %>
+
+<% content_for :additional_body_css_classes do %>darkbluemodal<% end %>
+
+  <div class="tool-tip">
+  <div class="tip-container-content">
+    <div class="tip-container-header-content" data-ga-label="<%=@intervention.key %>">
+      <div class="braintooltip no-header">
+        Why this works
+      </div>
+    </div>
+
+    <div class="tip-container-body-content">
+       <%= @why_text.html_safe %><br></br>
+       <%= @why_source.html_safe %>
+    </div>
+  </div>
+  </div>
+
+
+<div id="segmented-intervention">
+
+<div class="screen-1 screen">
+<div class="main-content-wrapper">
+
+  <div class="audio-slideshow-container">
+  <div id="audio-slideshow" class="audio-slideshow slider-carousel" data-audio="<%=@intervention.audio_url%>" data-audio-duration="<%=@intervention.audio_duration%>">
+    <div class="img-container"><div class="img-content" style="background:url(<%=@image_urls.first%>) 0px 0px no-repeat; background-size:100%;">
+      <div class="content">
+        <!--<a href="#" class="help-icon">Help</a>-->
+      </div>
+    </div></div>
+    <ul class="audio-slides slides">
+    <% for transition in @intervention.transitions %>
+      <li class="darkbg" style="" data-slide-time="<%= transition[:time] %>">
+        <div class="content">
+          <label><span><%= transition[:text].html_safe %></span></label>
+        </div>
+      </li>
+    <% end %>
+    </ul>
+
+    <div class="audio-control-interface">
+      <div class="buffering"></div>
+      <div class="time-container">
+        <span class="play-time"></span> / <span class="total-time"></span>
+      </div>
+      <div class="timeline">
+        <div class="timeline-controls"></div>
+        <div class="playhead"></div>
+      </div>
+      <div class="jplayer"></div>
+    </div>
+
+  </div>
+  </div>
+
+
+</div>
+
+<div class="section-row"><div class="main-controls-container">
+  <div class="screen-1">
+    <div class="state-1"><a href="#" class="btn btn-border-simple lime btn-block size-plus-1 pill btn-right-arrow ga-tracked" id="start-button" data-ga-category="audio" data-ga-action="play" data-ga-label="<%=@intervention.key %>">Start</a></div>
+  </div>
+
+</div></div>
+
+
+<div class="footer-button-row" style="display:none;">
+<a href="#" class="button-1" id="skip-button"><span>Skip</span></a>
+</div>
+
+</div>
+
+<div class="screen-2 screen">
+  <%= form_tag('/activity', method: :post, id:'intervention-action-form') do  %>
+
+    <%= hidden_field_tag 'intervention_uuid', @intervention.uuid %>
+
+  <h3 class="row-header-2">ADD PHOTO &amp; COMMENT</h3>
+
+  <div class="gallery-carousel">
+  <div class="flexslider-mini-gallery">
+    <ul class="slides">
+      <li class="" style="">
+        <a href="#" class="button-gallery-add" onclick="window.togglePopunder(); return false">+</a>
+      </li>
+    </ul>
+  </div>
+  </div>
+
+  <div class="container-fluid" style="padding:0px 15px 10px 15px;">
+        <textarea class="flickr-input-field" name="description"></textarea>
+        <div class="flickr-details">This product uses the Flickr API but is not endorsed or certified by Flickr. We are not responsible for the content that is displayed.</div>
+  </div>
+
+  <% end %>
+
+  <div class="section-row"><div class="main-controls-container">
+      <a href="#" class="btn btn-border-simple lime pill btn-block size-plus-1 do-action-button btn-check" id="do-action-button">Done</a>
+  </div></div>
+
+
+</div>
+
+
+</div>
+
+<%= render "intervention/photo" %>

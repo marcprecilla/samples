@@ -1,0 +1,40 @@
+<% @facebook_properties = {'og:title' => 'app Invitation'} %>
+
+<% content_for :title do %>app - Baseline Assessment<% end %>
+
+
+<% content_for :header do %>
+  <%= render "layouts/desktop_header" %>
+<% end %>
+
+<% content_for :header_bar do %>
+
+    <input type="button" href="#" id="navbar-button-left" class="navbar-button none" app-data-state="none" value="Previous" />
+    <span id="title"></span>
+    <input type="button" href="" id="navbar-button-right" class="navbar-button none" app-data-state="none" value="Next" />
+
+<% end %>
+
+<% content_for :additional_body_css_classes do %>assessment-layout-1 bluebg<% end %>
+
+
+
+<div class="screen message-screen" id="assessment-welcome-screen" data-add-body-class="bluebg" data-title="">
+
+  <h1 class="screen-title">Thanks <%=@invitee_name%>!</h1>
+  <div class="screen-graphic"><div class="default-img">x</div></div>
+  <div class="screen-description">We’re going to ask you a few questions about your friend <%= @invitation.try(:sender).try(:first_name) %>. This will only take about 5 minutes.</div>
+
+  <ul class="message-button-container">
+    <li>
+      <%= link_to 'Continue', edit_three_sixty_assessment_path(@invitation.try(:subject), {invitation_uuid: @invitation.try(:uuid)}), class: 'btn btn-block btn-border-simple lime size-plus-1 btn-arrow-right pill' %>
+    </li>
+  </ul>
+
+
+</div>
+
+<% content_for :footer do %>
+  <%= render "layouts/desktop_footer" %>
+<% end %>
+

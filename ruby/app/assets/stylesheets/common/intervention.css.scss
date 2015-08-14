@@ -1,0 +1,194 @@
+// Place all the styles related to the Mobile/Offline controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#intervention,
+#activity {
+
+  .state-1 {
+    display:block;
+  }
+
+  .state-2,
+  .screen-2 {
+    display:none;
+  }
+
+  .main-img-container {
+    padding:10px;
+  }
+
+  .main-content-wrapper {
+    padding:10px 0px 20px 0px;
+  }
+
+  .gallery-carousel {
+    width:290px;
+    padding:10px 0px;
+    margin:0px auto;
+    position:relative;
+    top:0px;
+
+    img {
+      border:1px #717171 solid;
+    }
+
+    .flex-control-nav {
+      bottom:5px;
+    }
+
+    @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+      .flex-control-nav {
+        display:none;
+      }
+    }
+
+    li {
+      position:relative;
+      top:0px;
+    }
+
+    .remove-button {
+      display:block;
+      padding:12px 0px 0px 0px;
+      height:0px;
+      overflow:hidden;
+      width:12px;
+      background: url(/img/mobile/close.png) 0px 0px no-repeat;
+      background-size:12px 12px;
+      position:absolute;
+      top:6px;
+      right:14px;
+    }
+
+  }
+
+  .button-gallery-add {
+    display:block;
+    width:92px;
+    padding:92px 0px 0px 0px;
+    border:0px;
+    height:0px;
+    overflow:hidden;
+    background:url(mvp.graphics.general.png) -250px -350px no-repeat;
+    background-size:500px 2000px;
+  }
+
+  textarea {
+    font-family: $sansFontFamily;
+    color:#000000;
+    display:block;
+    font-size:115%;
+    padding:15px;
+    width:100%;
+    -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;
+    margin:0px;
+    height:97px;
+    border:1px #c2c2c2 solid;
+    margin:0px auto;
+    box-shadow: 1px 1px 3px rgba(0,0,0,.1) inset;
+    -moz-box-shadow: 1px 1px 3px rgba(0,0,0,.1) inset;
+    -moz-border-radius: 5px; -webkit-border-radius: 5px; -khtml-border-radius: 5px; border-radius: 5px;
+    background:#fff;
+  }
+
+  .main-content-wrapper {
+    padding:10px 0px 20px 0px;
+  }
+
+  .flickr-details {
+    font-size:85%;
+    padding-top:10px;
+    margin:0px;
+  }
+
+
+  .clr{
+    clear: both;
+    padding: 0;
+    height: 0;
+    margin: 0;
+  }
+
+  .footer-button-row {
+    #skip-button {
+      border-radius:0px;
+      padding-left:0px;
+      padding-right:0px;
+    }
+  }
+
+}
+
+#intervention.index {
+  .nav-container {
+    width:100%;
+    position:fixed;
+    top:46px;
+    left:0px;
+    z-index:200;
+    height:45px;
+    overflow:hidden;
+    box-shadow: 1px 1px 5px rgba(0,0,0,.6);
+    -moz-box-shadow: 1px 1px 5px rgba(0,0,0,.6);
+    transition: height 0.5s;
+  }
+
+  .activity-list {
+    padding-top:55px;
+  }
+
+  .header-button {
+    h2 {
+      text-align:left;
+      padding-left:13px;
+      text-transform:uppercase;
+    }
+    &:hover {
+      text-decoration:none;
+    }
+  }
+
+  ul.nav-list {
+    margin:0px;
+    padding:0px;
+    background: #ffffff;
+    background: -moz-linear-gradient(top,  #ffffff 0%, #f7f7f7 13%, #eeeeee 82%, #dedede 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(13%,#f7f7f7), color-stop(82%,#eeeeee), color-stop(100%,#dedede));
+    background: -webkit-linear-gradient(top,  #ffffff 0%,#f7f7f7 13%,#eeeeee 82%,#dedede 100%);
+    background: -o-linear-gradient(top,  #ffffff 0%,#f7f7f7 13%,#eeeeee 82%,#dedede 100%);
+    background: -ms-linear-gradient(top,  #ffffff 0%,#f7f7f7 13%,#eeeeee 82%,#dedede 100%);
+    background: linear-gradient(to bottom,  #ffffff 0%,#f7f7f7 13%,#eeeeee 82%,#dedede 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#dedede',GradientType=0 );
+
+    li {
+      list-style-type:none;
+      border-top:1px #f8f8f8 solid;
+      border-bottom:1px #e4e4e4 solid;
+      border-left:1px #fcfcfc solid;
+      border-right:1px #fcfcfc solid;
+      padding:12px 13px;
+
+      a {
+        display:block;
+        font-size:12px;
+        font-weight:bold;
+        color:#000;
+        text-transform:uppercase;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width : 960px) {
+  #intervention.index {
+    .nav-container {
+      position:absolute;
+      top:-20px;
+    }
+
+    .list-content-container {
+      max-width:305px;
+    }
+  }
+}

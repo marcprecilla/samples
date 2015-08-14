@@ -1,0 +1,14 @@
+<% if !current_user.stripe_subscription_active? %>
+
+<div class="locked-feature <%=(defined? classes) ? classes : '' %>"><div class="vertically-center cf">
+
+  <div class="locked-graphic">locked</div>
+  <div class="message">
+	<SPAN></SPAN>Start building your mind profile to unlock your <%=feature%>.</div>
+  <div class="button-container">
+    	<%= link_to 'Unlock', subscriptions_path, class: 'btn btn-border-simple size-minus-1 pill lime button-arrow-right' %>
+  </div>
+
+</div></div>
+
+<% end %>

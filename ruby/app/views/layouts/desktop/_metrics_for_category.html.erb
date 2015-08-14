@@ -1,0 +1,155 @@
+<div class="metric-screen cf <%= active ? 'active' : '' %>">
+
+<!--<h4><%=category.to_s.titlecase%> Details</h4>-->
+
+  <div class="column check-in-results">
+
+    <h5 class="description-header">app Evaluation</h5>
+    <span class="graytext">Results of your last evaluation.</span>
+
+    <div class="relative-position">
+
+      <div class="content-container">
+
+      <% baseline_meter_level = baseline_dial_meter_class_for_level @baseline_levels[category]%>
+      <% three_sixty_meter_level = three_sixty_dial_meter_class_for_level @three_sixty_levels[category] if @three_sixty_levels %>
+
+      <% if baseline_meter_level %>
+      <div class="dial-meter">
+
+
+          <% if @three_sixty_levels %>
+                  <!-- <div class="average-results <%=three_sixty_meter_level%>">^</div>-->
+          <% end %>
+
+
+         <div class="user-results <%=baseline_meter_level%>">^</div>
+         <!--
+        <span href="#" class="chat-button">x</span>
+        -->
+
+      </div>
+
+      <div class="legend-container" style="display:none;">
+        <div class="legend-<%=baseline_meter_level%>"><%=baseline_meter_level.try(:titlecase)%></div>
+
+        <% if @three_sixty_levels %>
+          <div class="legend-<%=three_sixty_meter_level.downcase%>"><%=three_sixty_meter_level.titlecase%></div>
+        <% end %>
+
+      </div>
+
+      <div class="check-in-result-explanation"><div class="scrollable-content">
+        <%= score_explination_for(@baseline_levels[category], category)%>
+      </div></div>
+
+      <%else%>
+
+      <div class="dial-meter empty highlight">dial</div>
+      <div class="button-container"><a href="/assessment" class="btn btn-border-simple lime pill size-minus-1">Start Here</a></div>
+
+      <%end%>
+
+      </div>
+
+      </div>
+
+  </div>
+
+  <div class="column check-in-results">
+
+    <h5 class="description-header">Inner 360</h5>
+    <span class="graytext">But what do your friends &amp; family think?</span>
+
+    <div class="relative-position">
+
+      <div class="content-container">
+
+      <% if @three_sixty_levels %>
+
+      <div class="dial-meter">
+
+        <div class="average-results <%=three_sixty_meter_level%>">^</div>
+         <!--
+        <span href="#" class="chat-button">x</span>
+        -->
+
+      </div>
+
+      <div class="legend-container" style="display:none;">
+        <div class="legend-<%=baseline_meter_level%>"><%=baseline_meter_level.try(:titlecase)%></div>
+
+        <% if @three_sixty_levels %>
+          <div class="legend-<%=three_sixty_meter_level.downcase%>"><%=three_sixty_meter_level.titlecase%></div>
+        <% end %>
+
+      </div>
+
+      <div class="check-in-result-explanation"><div class="scrollable-content">
+        <%= score_explination_for(@baseline_levels[category], category)%>
+      </div></div>
+
+      <%elsif baseline_meter_level %>
+
+        <div class="dial-meter empty highlight">dial</div>
+        <div class="button-container"><a href="/invitations?invitation_type=three_sixty" class="btn btn-border-simple lime pill size-minus-1 desktop-modal-load">Start Here</a></div>
+
+      <%else%>
+
+      <div class="dial-meter empty">dial</div>
+
+      <%end%>
+
+      </div>
+
+      </div>
+
+  </div>
+
+
+  <div class="column">
+      <h5 class="description-header">Insights</h5>
+      <span class="graytext">Here are some tips from the team.</span>
+
+      <div class="relative-position">
+
+      <% if @show_trends_and_analysis %>
+      <div class="content-container panels-container" id="insights-panel-<%=category%>">
+
+        <ul class="analysis cf">
+
+          <li class="active" data-img-src="http://s3.stresslessapp.myapp.com.s3.amazonaws.com/app/<%=category%>_analysis.png">
+
+            <div class="panel-navigation">
+              <a href="#" class="button-left">&lt;</a>
+              <a href="#" class="button-right">&gt;</a>
+              <span></span>
+            </div>
+
+            <div class="text-content"><div class="scrollable-content">
+              <%=@analysis[category].try(:html_safe) %>
+          </div></div>
+          </li>
+
+        </ul>
+      </div>
+
+      <% else %>
+
+      <div class="content-container">
+        <div class="no-data-container">
+          <h3>Not Enough Data Yet</h3>
+          <div class="no-data-description">Come back later for insights on your progress</div>
+        </div>
+      </div>
+
+      <% end %>
+
+      <%= render "layouts/locked_feature", feature:"insights", classes: 'layout-small' %>
+
+      </div>
+
+  </div>
+
+
+</div>

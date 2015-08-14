@@ -1,0 +1,8 @@
+form = $("#email-invite-form");
+form_message_container = form.find('#dynamic-messages');
+
+form_message_container.children('.alert-error').remove();
+form_message_container.append("<%= escape_javascript render('email_invite', {invite: @invite}) %>");
+$('input#recipient_name').val('')
+$('input#recipient').val('')
+attachAutoCloseFunction();

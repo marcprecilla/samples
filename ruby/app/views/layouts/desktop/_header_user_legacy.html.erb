@@ -1,0 +1,99 @@
+<div class="user-header-legacy">
+
+  <div class="title-container">
+
+    <div class="login-container">
+    <% unless @user %>
+      Already have an account? &nbsp;
+      <a href="/login" class="btn btn-border-simple size-minus-1">Login</a>
+    <% else %>
+      <a href="#" class="mirror-button">v</a>
+      <div class="avatar" style="background:url(<%= profile_image_url%>) 0px 0px no-repeat; background-size:cover;">x</div>
+    <% end %>
+    </div>
+
+    <h1 class="title-header">
+      <%= @user.first_name%><%=  @user.first_name[-1, 1] == 's' ? "'" : "'s" %> Life Dashboard
+
+      <div class="login-info">
+        <span>Today’s Date  <b><%=Time.now.strftime("%d %b %y")%></b></span>
+        <span>Last Login  <b><%=last_login_string%></b></span>
+      </div>
+
+    </h1>
+
+  </div>
+
+  <div class="profile-expander">
+
+    <div class="profile-info-container">
+      <div class="profile-info-content cf">
+
+        <div class="left-content">
+          <div class="avatar">
+            <div class="inner" style="background:url(<%= profile_image_url%>) 0px 0px no-repeat; background-size:cover;">x</div>
+            <a href="#" class="icon">x</a>
+          </div>
+
+
+          <div id="avatar-upload" style="visibility:hidden; height:0px; overflow:hidden;">
+            <%= cloudinary_js_config %>
+            <%= form_for @user, url: user_path do |f|  %>
+            <%= f.hidden_field :profile_image_url %>
+            <input type="hidden" name="flow" value="update-avatar" />
+            <%= cl_image_upload_tag("image_id", :public_id => "profile_#{@user.uuid}", :crop => :limit, :width => 1000, :height => 1000,
+                                  :html => {:id => "avatar-photo-input"}) %>
+            <% end %>
+
+            <div class="cloudinary-preview"></div>
+          </div>
+
+          <h2 class="user-name"><%= @user.first_name%></h2>
+
+          <h5 class="sub-header">Engagement Metrics</h5>
+          <%= render "layouts/desktop/metrics_engagement" %>
+
+          <%= render "layouts/desktop/metrics_personality" %>
+
+
+          <!--<h3 class="member-since">Member since <%=current_enrollment.created_at.strftime("%b %y")%></h3>-->
+
+
+        </div>
+
+        <div class="right-content">
+
+          <h4>Mind Fitness Metrics <span class="details">(This week - <%=week_date_string_for_action_plan_with_year(current_action_plan)%>)</span></h4>
+
+          <div class="mind-metrics-description">
+            <b>Weekly Trends</b><br />
+            Here’s how your metrics are trending on a weekly basis. Click each one for details.
+          </div>
+
+          <div class="relative-position">
+          <%= render "layouts/desktop/metrics_mind" %>
+          </div>
+
+          <!-- these require @baseline_levels -->
+
+
+          <%
+            prepare_baseline_assessment_attributes(current_enrollment) unless @baseline_levels
+            prepare_three_sixty_assessment_attributes(current_enrollment) unless @baseline_levels
+          %>
+
+          <%= render "layouts/desktop/metrics_for_category", active: true, category: :focus %>
+          <%= render "layouts/desktop/metrics_for_category", active: false, category: :positivity %>
+          <%= render "layouts/desktop/metrics_for_category", active: false, category: :sleep %>
+          <%= render "layouts/desktop/metrics_for_category", active: false, category: :social %>
+
+
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>

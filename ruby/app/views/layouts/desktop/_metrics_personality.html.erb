@@ -1,0 +1,26 @@
+<% if @personality_results && @personality_results.length > 0 && false %>
+<div class="relative-position">
+<h5 class="sub-header">Personality Traits</h5>
+<ul class="personality-traits-list">
+  <% for result in @personality_results %>
+  <li class="<%=result[:symbol]%>"><%=result[:name]%> <a href="#" class="tooltip-modal-trigger" data-toggle="popover" data-original-title="<%=result[:name]%>" data-content="<%=result[:description]%>">?</a></li>
+  <% end %>
+</ul>
+
+<% if !current_enrollment.personality_assessment_completed? %>
+  <%= render "layouts/locked_feature", feature:"trends" %>
+<% end %>
+</div>
+
+<% end %>
+
+<% if @personality_results && @personality_results.length > 0 %>
+<div class="personality-traits-container">
+<ul class="personality-traits-list">
+  <% for result in @personality_results %>
+  <li class=""><%=result[:name]%></li>
+  <% end %>
+</ul>
+<div class="wedge">^</div>
+</div>
+<% end %>

@@ -1,0 +1,18 @@
+form = $("#email-invite-form")
+form_message_container = form.find('#dynamic-messages');
+previous_form_message_alert_container = form_message_container.children('.alert-error');
+if(previous_form_message_alert_container.length > 0) {
+  previous_form_message_alert_container.show().animate(
+    { opacity: 0 },300,'swing',function(){
+      previous_form_message_alert_container.remove();
+      form_message_container.prepend("<%= escape_javascript render('errors') %>");
+      form_message_container.children('.alert-error').show().animate({ opacity: 1 },300,'swing');
+    }
+  );
+} else {
+
+  form_message_container.prepend("<%= escape_javascript render('errors') %>");
+  form_message_container.children('.alert-error').show().animate({ opacity: 1 },300,'swing');
+
+}
+

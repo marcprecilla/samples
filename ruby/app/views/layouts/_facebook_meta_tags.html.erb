@@ -1,0 +1,12 @@
+<% @facebook_properties ||= {} %>
+<% @facebook_properties['og:title'] ||= 'app' %>
+<% @facebook_properties['og:type'] ||= 'website' %>
+<% @facebook_properties['og:url'] ||= 'https://' + (ENV['DOMAIN_NAME'] || 'train.myapp.com') %>
+<% @facebook_properties['og:image'] ||= '' %>
+<% @facebook_properties['og:site_name'] ||= 'app' %>
+<% @facebook_properties['fb:admins'] ||= '670564530' %>
+<% @facebook_properties['og:description'] ||= 'app is a wellness innovation company developing the first adaptive behavioral health program for stress.' %>
+
+<% @facebook_properties.each do |key, value| %>
+<meta property="<%= key %>" content="<%= value %>" />
+<% end %>

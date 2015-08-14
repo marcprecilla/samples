@@ -1,0 +1,138 @@
+<% @facebook_properties = {'og:image' => 'http://' + request.host + '/fb.brain.jpg','og:url' => request.url} %>
+
+<% content_for :title do %>app - Baseline Assessment<% end %>
+
+
+<% content_for :header do %>
+  <%= render "layouts/desktop_header" %>
+<% end %>
+
+<% content_for :header_bar do %>
+
+    <input type="button" href="action:previousState" id="navbar-button-left" class="navbar-button back" app-data-state="app" value="Previous" />
+    <span id="title">Your Mind Profile</span>
+    <input type="button" href="" id="navbar-button-right" class="navbar-button none" app-data-state="none" value="Next" />
+
+<% end %>
+
+
+<% if @is_mini_assessment %>
+  <% content_for :additional_body_css_classes do %>assessment-layout-1 bluebg mini-baseline<% end %>
+  <%= render "baseline_assessments/mini_assessment_navigation" %>
+<% else %>
+  <% content_for :additional_body_css_classes do %>assessment-layout-1 bluebg<% end %>
+  <%= render "baseline_assessments/assessment_navigation" %>
+<% end %>
+
+  <%= form_tag baseline_assessments_path, id:'pam-question-form', class: "baseline_assessment assessment-questions" do |f| %>
+
+      <div class="screen" id="start-screen" data-rel="name" data-title="" data-add-body-class="bluebg">
+        <div class="content">
+          <h1 class="style-7"><!--Build your Mind Fitness Profile-->Is Your Stress Shield Strong Enough?</h1>
+          Focus, Positivity, Sleep and Social are the four fundamental skills required to shield yourself from the negative impacts of stress. Let's start off by assessing your Positivity.
+          <!--
+          We're going to ask you a few simple questions about Positivity to learn how your mind perceives your circumstances. Any information you share with us is completely private and not shared with a 3rd party.-->
+          <!--Take our assessment to get started on the path toward building your very own Mind Profile.-->
+
+          <ul class="assessment-category-list">
+            <li class="focus">Focus</li>
+            <li class="positivity">Positivity</li>
+            <li class="sleep">Sleep</li>
+            <li class="social">Social</li>
+          </ul>
+
+        </div>
+        <div class="button-container">
+          <a href="#" class="btn next btn-border-simple size-plus-1 btn-block lime-2 pill btn-right-arrow ga-tracked" data-ga-category="buttons" data-ga-action="submit" data-ga-label="Gave Name">Get Started</a>
+          <a href="/login" class="hidden-desktop btn btn-border-simple size-plus-1 btn-block pill btn-right-arrow-dark darkborder">Login</a>
+        </div>
+      </div>
+
+
+      <%
+          previous_category = "";
+          @questions.each_with_index do |question, index|
+          category = BaselineAssessment.category_for_subcatagory(question.category)
+          description = description_for_category(category)
+          need_transition_screen = (previous_category != category && previous_category != "")
+          transition_message = ""
+
+          if category == :focus
+              transition_message = "Now we’re going to ask you some questions about your ability to <b>focus</b>...";
+          elsif category ==  :positivity
+              transition_message = "Now we’re going to ask you some questions about your ability to be <b>positive</b>...";
+          elsif category ==  :sleep
+              transition_message = "Now we’re going to ask you some questions about your ability to <b>sleep</b>...";
+          elsif category ==  :social
+              transition_message = "Now we’re going to ask you some questions about your ability to be <b>social</b>...";
+          end
+
+      %>
+
+        <% if need_transition_screen %>
+
+          <div class="screen transition-screen" data-rel="<%=category %>" data-title="<%=category %>" data-add-body-class="darkbluebg" style="border-top:0px;">
+            <h1 class="style-7">You’re doing great!</h1>
+            <ul class="section-list cf">
+              <li>
+                <div class="transition-graphic active <%=previous_category %>"><%=previous_category %></div>
+                <div class="left-fade">fade</div>
+              </li>
+              <li class="">
+                <div class="transition-graphic <%=category %>"><%=category %></div>
+              </li>
+            </ul>
+            <div class="content">
+              <%=transition_message.html_safe %>
+            </div>
+            <div class="button-container cf">
+              <a href="#" class="visible-desktop button-white-arrow-left back-link">Back</a>
+              <a href="#" class="btn next btn-block btn-border-simple size-plus-1 lime-2 pill btn-right-arrow">Continue</a>
+            </div>
+          </div>
+
+        <% end %>
+
+        <% if index == 6 && @is_mini_assessment && false %>
+
+          <div class="screen transition-screen" data-rel="positivity" data-title="positivity" data-add-body-class="darkbluebg" style="border-top:0px;">
+            <h1 class="style-7">You're almost done!</h1>
+            <ul class="section-list cf">
+              <li>
+                <div class="transition-graphic active positivity">positivity</div>
+              </li>
+              <li class="">
+                <div class="transition-graphic positivity">positivity</div>
+              </li>
+            </ul>
+            <div class="content">
+              Just a few more quick questions to go!
+            </div>
+            <div class="button-container cf">
+              <a href="#" class="visible-desktop button-white-arrow-left back-link">Back</a>
+              <a href="#" class="btn next btn-block btn-border-simple size-plus-1 lime-2 pill btn-right-arrow">Continue</a>
+            </div>
+          </div>
+
+        <% end %>
+
+
+          <div id="single-select-question-<%=index %>" class="screen single-select-question group-<%= category %> <%= (@questions.length - 1) == index ? ' last' : '' %> <%= @is_mini_assessment ? ' narrow' : '' %>" data-rel="<%= category %>" data-title="<%= category %>" data-add-body-class="" data-directions="<%= description %>" style="border-top:0px;" data-question-index="<%=index + 1%>">
+              <%= render "baseline_assessments/question_slider", index: index, question: question %>
+          </div>
+      <%
+
+      previous_category = category
+
+      end
+
+      %>
+
+      <!--<%= button_tag "Submit Answers", type: 'submit', class: 'btn btn-border-simple lime btn-block size-plus-1' %>-->
+
+  <%end%>
+
+
+<% content_for :footer do %>
+  <%= render "layouts/desktop_footer" %>
+<% end %>

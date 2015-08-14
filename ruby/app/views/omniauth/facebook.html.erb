@@ -1,0 +1,80 @@
+<% content_for :header do %>
+
+<div class="desktop-header visible-desktop">
+  <div class="content">
+
+    <div class="stress-less-title">
+      <h1 class="app-logo left-align">app Live Better</h1>
+    </div>
+  </div>
+</div>
+
+<% end %>
+
+<% content_for :additional_body_css_classes do %>bluebg<% end %>
+
+<div id="facebook-connect" class="container">
+  <div class="panel">
+    <h2>You're connected!</h2>
+    <%= form_for @user, url: registration_path, method: :post do |f| %>
+      <%= f.hidden_field :first_name %>
+      <%= f.hidden_field :last_name %>
+      <%= f.hidden_field :email %>
+      <%= f.hidden_field :facebook_identifier %>
+      <%= f.hidden_field :profile_image_url %>
+      <%= f.hidden_field :gender %>
+      <%= f.hidden_field :date_of_birth %>
+
+      <div class="fancy-facebook-image">Fancy Facebook Image</div>
+      <div class="button-container">
+        <%= f.button 'Continue', type: 'submit', class: 'btn btn-border-simple size-plus-1 btn-block lime-2 pill' %>
+      </div>
+    <% end %>
+
+    <div id="link-account" class="accordion">
+      <div class="accordion-group">
+        <div class="accordion-heading">
+          <a class="accordion-toggle <%= 'collapsed' unless flash.alert %>" data-toggle="collapse" data-parent="#link-account" href="#link-account-body">
+            Have an existing app account?
+          </a>
+        </div>
+        <div id="link-account-body" class="accordion-body collapse <%= 'in' if flash.alert %>">
+          <%= form_tag login_path, method: :post do %>
+            <% if flash.alert %>
+              <p class="alert alert-error">
+                <a class="close" data-dismiss="alert" href="#">&times;</a>
+                <%= flash.alert %>
+              </p>
+            <% end %>
+
+            <%= hidden_field_tag :return_path, 'facebook' %>
+            <%= hidden_field_tag :facebook_identifier, @user.facebook_identifier %>
+            <%= hidden_field_tag :first_name, @user.first_name %>
+            <%= hidden_field_tag :last_name, @user.last_name %>
+            <%= hidden_field_tag :profile_image_url, @user.profile_image_url %>
+            <%= hidden_field_tag :gender, @user.gender %>
+            <%= hidden_field_tag :date_of_birth, @user.date_of_birth %>
+
+              <%= text_field_tag :email, @email, placeholder: 'Your email', class: 'text-input-2' %>
+              <%= password_field_tag :password, @password, placeholder: 'Password', class: 'text-input-2' %>
+
+              <%= button_tag 'Link Accounts', type: 'submit', class: 'btn btn-border-simple size-plus-1 btn-block lime-2 pill' %>
+
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% content_for :footer do %>
+
+<div class="desktop-footer visible-desktop">
+  <div class="content">
+
+    <div class="copyright">Copyright &copy; 2013 app, Inc. All Rights Reserved</div>
+
+  </div>
+</div>
+
+<% end %>

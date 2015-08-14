@@ -1,0 +1,18 @@
+  <div class="walkthrough-content">
+    <h5>Don’t forget to add app to your home screen</h5>
+    <div style="text-align:left">
+      <% case %>
+      <% when browser.android? %>
+        - Tap <span class="icons-bookmark-menu">bookmark</span> to open your handset's menu.<br />
+        - Select "Add shortcut to home".<br />
+        - Open app on your phone
+      <% when browser.iphone?, browser.ipad?, browser.ipod? %>
+        - Click <span class="<%= browser.ios7? ? "icons-bookmark-ios-seven" : "icons-bookmark" %>">bookmark</span> <%= browser.ipad? ? "above" : "below" %><br />
+        - Select "Add to Home".
+      <% end %>
+    </div>
+  </div>
+  <% unless browser.android? || browser.ipad? %>
+    <div class="point-down" style="position:absolute;bottom:0px;">v</div>
+  <% end %>
+  <div style="padding:24px 0px 0px 0px; height:0px;">&nbsp;</div>

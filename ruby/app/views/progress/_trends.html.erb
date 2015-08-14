@@ -1,0 +1,34 @@
+  <% if @show_trends_and_analysis %>
+
+  <div class="quadrant-container">
+
+    <div class="quadrant area-1 up"><div class="content">
+      <label>Focus</label>
+      <div class="value"><%=@focus_change%><super>%</super></div>
+    </div></div>
+
+    <div class="quadrant area-2 up"><div class="content">
+      <label>Positivity</label>
+      <div class="value"><%=@positivity_change%><super>%</super></div>
+    </div></div>
+
+    <div class="quadrant area-3 down"><div class="content">
+      <label>Sleep</label>
+      <div class="value"><%=@sleep_change%><super>%</super></div>
+    </div></div>
+
+    <div class="quadrant area-4 down"><div class="content">
+      <label>Relationships</label>
+      <div class="value"><%=@social_change%><super>%</super></div>
+    </div></div>
+
+  </div>
+
+  <% else %>
+
+    <div class="no-data-container">
+      <h3>No data available</h3>
+      Data will be available after the second week
+    </div>
+
+  <% end %>

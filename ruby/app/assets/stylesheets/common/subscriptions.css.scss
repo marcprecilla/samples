@@ -1,0 +1,818 @@
+// Place all the styles related to the subscriptions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#manage-subscription {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#subscription-confirmation {
+  margin: 30px auto;
+  max-width: 320px;
+
+  h1 {
+    font-family: Novecento;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: normal;
+    text-align: center;
+  }
+
+  h2 {
+    font-family: Novecento;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: normal;
+    text-align: left;
+  }
+
+  .border-bottom-style-1 {
+    margin-bottom: 20px;
+    padding-bottom: 35px;
+    border-bottom: 1px #dfdfdf solid;
+  }
+}
+
+body#subscriptions {
+  color: $dark-blue;
+  font-family: $sansFontFamily;
+  font-weight:300;
+  font-size: 14px;
+  line-height: 150%;
+  background:url(pages/bg.texture-1.gif) 0px 0px repeat;
+
+  /* for older versions of bootstrap */
+  .text-center {
+    text-align: center;
+  }
+
+  #main {
+    padding-top:20px;
+    padding-bottom:20px;
+  }
+
+  #header {
+
+    .centered-layout-container {
+      padding-left:10px;
+      padding-right:10px;
+    }
+
+    img.main-logo-solo {
+      position:relative;
+      top:23px;
+      left:7px;
+    }
+
+    .navbar-fixed-top {
+      background:none;
+      border:0px;
+    }
+
+  }
+
+  .container {
+    width:auto;
+
+    .hero-container {
+      padding-top:0px;
+      text-align:center;
+      padding:50px 0px 40px 0px;
+      background:url(bg.purplewater.jpg) center 0px no-repeat;
+
+      h1 {
+        font-family: Novecento;
+        font-size: 31px;
+        font-weight: 300;
+        line-height: normal;
+        margin: 0 auto;
+        color:#fff;
+      }
+
+      .centered-content {
+        margin: 0 auto;
+        padding: 5px 0px;
+        max-width: 960px;
+      }
+
+    }
+
+  }
+
+  h5 {
+    font-size:20px;
+    color:#999999;
+  }
+
+  .page-header {
+    margin-bottom: 50px;
+    padding: 0 10px;
+    border: none;
+  }
+
+  .offer-container {
+    position: relative;
+    padding-top:55px;
+    color:#fff;
+  }
+
+  .features-container {
+
+    h1 {
+      font-family: Novecento;
+      font-size: 31px;
+      font-weight: 300;
+      line-height: normal;
+      margin: 0 auto;
+      color:#000;
+      text-align:center;
+      margin:0px;
+      padding:45px 0px 55px 0px;
+    }
+
+    .centered-content {
+      margin: 0 auto;
+      padding: 5px 10px;
+      max-width: 600px;
+    }
+
+    .col-left {
+      width:300px;
+      display:inline-block;
+      vertical-align:top;
+    }
+
+    .col-right {
+      width:170px;
+      display:inline-block;
+      vertical-align:top;
+
+      ul {
+        li {
+          padding-right:0px;
+        }
+      }
+    }
+
+    h3 {
+      font-size:24px;
+      font-weight:300;
+      line-height:normal;
+      text-align:left;
+      margin:0px;
+      padding:0px 0px 30px 0px;
+    }
+
+    ul {
+      margin:0px;
+
+      li {
+        background:url(pages/app.graphics.pages.png) 0px -1400px no-repeat;
+        padding:0px 30px 15px 30px;
+        text-align:left;
+        font-size:16px;
+        line-height:normal;
+        list-style-type:none;
+
+        &.document {
+          background:url(pages/app.graphics.pages.png) 0px -2200px no-repeat;
+        }
+
+        &.graph {
+          background:url(pages/app.graphics.pages.png) -0px -2400px no-repeat;
+        }
+
+        &.brain {
+          background:url(pages/app.graphics.pages.png) -500px -2200px no-repeat;
+        }
+
+        &.vitals {
+          background:url(pages/app.graphics.pages.png) -500px -2400px no-repeat;
+        }
+
+        &.music {
+          background:url(pages/app.graphics.pages.png) 0px -1900px no-repeat;
+        }
+      }
+    }
+  }
+
+  .plans-container {
+    width:auto;
+
+    .plan {
+      display:inline-block;
+      width:290px;
+      vertical-align:middle;
+      margin:0px 5px 20px 5px;
+      box-shadow: 1px 1px 10px rgba(0,0,0,.15);
+      -moz-box-shadow: 1px 10px 1px rgba(0,0,0,.15);
+      border-radius: 18px;
+      font-size:20px;
+      color:#999999;
+      font-weight:100;
+      background:rgba(255,255,255,0.95);
+      padding:0px;
+      position:relative;
+      top:0px;
+      left:0px;
+      text-align:left;
+
+      &.large {
+        width:340px;
+
+        h3 {
+          font-size:24px;
+          strong {
+            font-size:80px;
+            line-height:80px;
+
+            super {
+              position:relative;
+              top:-18px;
+            }
+          }
+        }
+      }
+
+      .plan-border {
+        padding:30px 20px 20px 20px;
+      }
+
+      p {
+        margin:0px;
+      }
+
+      .best-value {
+        display:block;
+        width:90px;
+        padding:90px 0px 0px 0px;
+        height:0px;
+        overflow:hidden;
+        background:url(pages/app.graphics.pages.png) right -1600px no-repeat;
+        position:absolute;
+        top:0px;
+        right:0px;
+      }
+
+      .most-popular {
+        display:block;
+        width:110px;
+        padding:110px 0px 0px 0px;
+        height:0px;
+        overflow:hidden;
+        background:url(pages/app.graphics.pages.png) right -1400px no-repeat;
+        position:absolute;
+        top:0px;
+        right:0px;
+      }
+
+      h5 {
+        font-family: Novecento;
+        font-size:24px;
+        font-weight:300;
+        line-height:normal;
+        color:#000;
+        margin:0px;
+        padding:0px 0px 12px 0px;
+      }
+
+      h3 {
+        font-weight:100;
+        color:#000;
+        font-size:20px;
+        padding:0px 0px 12px 0px;
+        margin:0px;
+
+        strong {
+          font-size:60px;
+          line-height:60px;
+          font-weight:100;
+          letter-spacing:-0.04em;
+
+          super {
+            font-size:20px;
+            vertical-align:top;
+            position:relative;
+            top:-14px;
+          }
+
+        }
+      }
+
+      .discount {
+        color: #090;
+      }
+
+      .features-list {
+        margin:0px;
+
+        li {
+          list-style-type:none;
+          padding:0px 0px 10px 0px;
+          font-size:20px;
+        }
+      }
+
+      .plan-info {
+        margin-bottom: 0px;
+      }
+
+      .discount-text {
+        font-size:20px;
+        font-weight:bold;
+        color:#a1cf05;
+        padding:10px 0px 10px 0px;
+      }
+
+      .plan-details {
+        padding-top:20px;
+        font-size:14px;
+      }
+
+      .breakdown {
+        border-top: 1px #dddddd solid;
+        margin-top: 10px;
+        padding-top: 15px;
+        font-weight: bold;
+        color: #000;
+
+        .total {
+          float: right;
+        }
+      }
+
+      .recurring {
+        margin-top: 10px;
+        text-align: center;
+      }
+
+      form {
+        margin:0px;
+        overflow:hidden;
+        position:relative;
+        top:0px;
+
+        ul {
+          margin: 5px 0 0 0;
+          padding: 0;
+        }
+
+        h5 {
+          padding-bottom:30px;
+        }
+
+        .btn-border-simple {
+          margin:20px 0px;
+        }
+
+        label {
+          font-family: Novecento;
+          font-size:20px;
+          font-weight:300;
+          line-height:normal;
+          margin:12px 0px 7px 0px;
+
+          &.use_cc_icons {
+            background:url(pages/app.graphics.pages.png) right -1800px no-repeat;
+          }
+        }
+
+        input[type="text"], input[type="email"], input[type="password"] {
+          width:92%;
+          font-family: $sansFontFamily;
+          font-size:20px;
+          font-weight:300;
+          box-shadow:0 0 5px rgba(0, 0, 0, 0.15) inset;
+          border-radius:5px;
+          padding:10px;
+        }
+
+        .layout-50-left input[type="text"],
+        .layout-50-right input[type="text"] {
+          width:80%;
+        }
+
+        select {
+          width:auto;
+        }
+
+        .input-box {
+          background-color:#fafafa;
+          padding:20px 15px;
+          border-radius:5px;
+          border:1px #dedede solid;
+          margin:12px 0px 7px 0px;
+
+          label {
+            display:inline;
+            font-size:16px;
+            margin:0px 10px 0px 0px;
+          }
+
+          input {
+            width:108px;
+            display:inline-block;
+            vertical-align:middle;
+            margin:0px;
+          }
+        }
+      }
+    }
+
+    .plan-details {
+      padding-top:40px;
+      font-size:14px;
+
+      a {
+        color:#fff;
+        text-decoration:underline;
+      }
+    }
+
+  }
+
+  .navbar.navbar-fixed-top {
+    display:none;
+  }
+
+}
+
+@media only screen and (max-width : 980px) {
+
+  #header {
+    .navbar.navbar-fixed-top {
+        position:fixed !important;
+        margin-left:0px;
+        margin-right:0px;
+
+        a.app-logo {
+          display:block;
+          background:url(pages/app.logo.png) 0px 8px no-repeat;
+          background-size:63px 24px;
+          width:73px;
+          padding:32px 0px 0px 0px;
+          height:0px;
+          overflow:hidden;
+          font-size:20px;
+        }
+
+        .nav-collapse.in.collapse {
+          margin-top:10px;
+        }
+
+        .mask {
+          display:none;
+        }
+
+    }
+  }
+
+  body#subscriptions {
+    padding-left:0px;
+    padding-right:0px;
+
+    .hero-container {
+      .centered-layout-container {
+        padding-bottom:20px;
+        h1 {
+          font-size:24px;
+          width:auto;
+        }
+      }
+    }
+
+    .features-container {
+      position:static;
+      width:80%;
+      margin:20px auto;
+
+      ul {
+        li {
+          font-size:14px;
+          padding-top:3px;
+          padding-bottom:10px;
+          padding-left:35px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width : 480px) {
+
+  body#subscriptions {
+    padding-left:0px;
+    padding-right:0px;
+
+    .container {
+
+      .hero-container {
+        background:url(bg.purplewater.jpg) center 0px no-repeat;
+        background-size:cover;
+      }
+
+    }
+
+    .plans-container {
+      width:300px;
+      margin:0px auto;
+
+      .plan {
+        display:block;
+        margin:0px 0px 20px 0px;
+
+        &.large {
+          width:290px;
+
+          h3 {
+            font-size:20px;
+            strong {
+              font-size:40px;
+              line-height:40px;
+            }
+          }
+        }
+
+        .plan-border {
+          padding:20px;
+
+          h3 {
+            strong {
+              font-size:40px;
+            }
+          }
+
+          form {
+
+            h5 {
+              font-size:20px;
+            }
+
+            label {
+              font-size:16px;
+            }
+
+            input[type="text"], input[type="email"], input[type="password"] {
+              width:90%;
+              font-size:16px;
+            }
+
+            .layout-50-left input[type="text"],
+            .layout-50-right input[type="text"] {
+              width:75%;
+            }
+
+            .input-box {
+              padding:15px 10px;
+
+              label {
+                font-size:16px;
+              }
+
+              input {
+                width:58px;
+              }
+            }
+
+            .terms-container {
+              font-size:14px;
+            }
+          }
+
+        }
+      }
+    }
+
+    .features-container {
+      width:300px;
+    }
+
+    .navbar.navbar-fixed-top {
+      display:block;
+    }
+
+    .btn.btn-border-simple {
+
+      &.size-plus-2, &.size-plus-3 {
+
+        font-size:14px;
+        line-height:14px;
+        font-weight:bold;
+        border-radius: 9px;
+        border: 0px;
+        padding: 5px;
+
+        .inner-border {
+          border-radius: 5px;
+          padding:1px;
+
+          .inner {
+            border-radius: 5px;
+            padding: 8px 15px 8px 15px;
+          }
+
+        }
+
+      }
+
+    }
+
+    .features-container {
+
+      .centered-content {
+        padding:0px;
+      }
+
+      .col-left {
+        width:auto;
+        float:none;
+        padding-bottom:20px;
+        display:block;
+      }
+
+      .col-right {
+        width:auto;
+        float:none;
+        display:block;
+      }
+    }
+
+  }
+}
+
+
+@media only screen and (min-width : 980px) {
+  #header {
+
+    .navbar {
+      margin:0px auto;
+      max-width:940px;
+
+      a.app-logo {
+        display:none;
+      }
+
+    }
+
+    .centered-layout-container {
+      margin:0px auto;
+      max-width:940px;
+      position:relative;
+      padding-left:0px;
+      padding-right:0px;
+    }
+
+    .navbar-inner {
+      border-radius: 9px;
+      border: 0px;
+      padding: 5px;
+      background: -moz-linear-gradient(top,  rgba(222,222,222,0.5) 0%, rgba(255,255,255,0.5) 100%);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(222,222,222,0.5)), color-stop(100%,rgba(255,255,255,0.5)));
+      background: -webkit-linear-gradient(top,  rgba(222,222,222,0.5) 0%,rgba(255,255,255,0.5) 100%);
+      background: -o-linear-gradient(top,  rgba(222,222,222,0.5) 0%,rgba(255,255,255,0.5) 100%);
+      background: -ms-linear-gradient(top,  rgba(222,222,222,0.5) 0%,rgba(255,255,255,0.5) 100%);
+      background: linear-gradient(to bottom,  rgba(222,222,222,0.5) 0%,rgba(255,255,255,0.5) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80dedede', endColorstr='#80ffffff',GradientType=0 );
+      box-shadow: none;
+      -moz-box-shadow: none;
+      width:auto;
+      display:inline-block !important;
+      position:absolute;
+      top:20px;
+      right:0px;
+
+      .container {
+        position:relative;
+        top:0px;
+        padding:0px;
+        min-height:36px;
+        border-radius:8px;
+        display:inline-block !important;
+        width:auto;
+
+        .mask {
+          position:absolute;
+          top:0px;
+          left:0px;
+          width:100%;
+          height:38px;
+          box-shadow: 0px 0px 5px rgba(0,0,0,.25) inset;
+          border-radius: 5px;
+          pointer-events: none;
+          padding:0px;
+          min-width:none;
+        }
+
+        .nav {
+          border-radius: 9px;
+          margin:0px;
+          position:relative;
+          top:0px;
+          left:0px;
+
+          li a {
+            padding: 8px 15px 8px 15px;
+            @include gradient-vertical(#ffffff,#e4e4e4);
+            font-family: $sansFontFamily;
+            font-weight:400;
+            font-size:12px;
+            border-top:1px #a4a4a4 solid;
+            border-right:1px #a4a4a4 solid;
+            border-bottom:1px #a4a4a4 solid;
+            text-shadow:none;
+            color:#000;
+          }
+
+          li.active a {
+            @include gradient-vertical(#e4e4e4,#bcbcbc);
+            color:#fff;
+          }
+
+          li:first-child a {
+            border-left:1px #a4a4a4 solid;
+            -moz-border-radius-bottomleft: 5px; -webkit-border-bottom-left-radius: 5px; -khtml-border-bottom-left-radius: 5px; border-bottom-left-radius: 5px;
+            -moz-border-radius-topleft: 5px; -webkit-border-top-left-radius: 5px; -khtml-border-top-left-radius: 5px; border-top-left-radius: 5px;
+          }
+
+          li:last-child a {
+            -moz-border-radius-topright: 5px; -webkit-border-top-right-radius: 5px; -khtml-border-top-right-radius: 5px; border-top-right-radius: 5px;
+            -moz-border-radius-bottomright: 5px; -webkit-border-bottom-right-radius: 5px; -khtml-border-bottom-right-radius: 5px; border-bottom-right-radius: 5px;
+          }
+
+        }
+
+
+      }
+
+    }
+
+
+  }
+
+  body#subscriptions {
+
+    &.confirm {
+      #main-canvas {
+        #main {
+          box-shadow:none;
+        }
+      }
+    }
+
+    .desktop-header {
+      font-family: Novecento;
+      font-size: 40px;
+      text-align:center;
+      margin:40px 0px 0px 0px;
+      background:none;
+    }
+
+    #subscription-confirmation {
+      max-width:none;
+
+      h2 {
+        font-size:27px;
+      }
+
+      #notification-settings {
+        max-width:500px;
+        margin:0px auto;
+        .control-group {
+          label {
+            font-size: 20px;
+          }
+        }
+      }
+
+      #sms-options {
+        .control-group {
+          input {
+            width: 97%;
+          }
+
+          select {
+            width: 100%;
+          }
+        }
+      }
+
+    }
+  }
+}
+
+
+@media only screen and (max-width : 770px) {
+  body#subscriptions {
+
+    #product-site-top-nav-container {
+      display:none;
+    }
+
+    .navbar.navbar-fixed-top {
+      display:block;
+    }
+
+  }
+}

@@ -1,0 +1,21 @@
+<%= form_tag subscriptions_path, method: :post, class: 'cc-form', id: 'cc-form' do %>
+  <div id="errors" class="alert alert-block alert-error <%= 'hide' unless flash.alert %>">
+    <p><%= flash.alert %></p>
+  </div>
+
+  <%= hidden_field_tag :stripe_customer_id, current_user.stripe_customer_id %>
+  <%= hidden_field_tag :plan_uuid, current_plan.uuid %>
+  <%= hidden_field_tag :stripe_card_token %>
+
+  <%= label_tag :card_number, 'Card number', class: 'use_cc_icons' %>
+  <%= text_field_tag :card_number, nil, name: nil, data: {stripe: 'number'} %>
+  <%= label_tag :exp_month, 'Expiration' %>
+  <%= select_month nil, {add_month_numbers: true}, {name: nil, id: 'exp_month', data: {stripe: 'exp_month'}} %>
+  <%= select_year nil, {start_year: Time.now.year}, {name: nil, id: 'exp_year', data: {stripe: 'exp_year'}} %>
+  <%= label_tag :zip, 'ZIP' %>
+  <%= text_field_tag :zip, nil, name: nil, data: {stripe: 'address_zip'} %>
+  <%= label_tag :cvc, 'CVC Code' %>
+  <%= text_field_tag :cvc, nil, name: nil, data: {stripe: 'cvc'} %>
+
+  <%= button_tag 'Submit', type: 'submit', class: 'btn btn-border-simple size-plus-2 btn-block green-2', id: 'submit-cc-form' %>
+<% end %>

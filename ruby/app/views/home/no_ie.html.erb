@@ -1,0 +1,77 @@
+<% content_for :header do %>
+  <div id="header"><div class="centered-layout-container">
+
+      <%= link_to root_path do %>
+        <%= image_tag 'app.logo.02.png', alt: 'app', width: 141, height: 48, class: 'main-logo-solo hidden-tablet hidden-phone' %>
+      <% end %>
+
+    <%= render 'layouts/pages/top_nav' %>
+
+  </div></div>
+<% end %>
+
+<% content_for :additional_body_css_classes do %>skip-resize-canvas texture-1<% end %>
+
+<% content_for :main do %>
+
+  <div id="main" class="">
+
+<div class="hero-container">
+  <div class="centered-layout-container">
+
+    <h1 class="style-1">Sorry, this browser is not supported</h1>
+
+  </div>
+</div>
+
+<div class="centered-layout-container stack-container cf">
+
+
+  <div class="content-stack">
+    <h5 class="style-1">Our supported browsers are:</h5>
+    <ul>
+      <li>
+        <div class="graphic-ie">Internet Explorer</div>
+        <label>Internet Explorer 10 &amp; above</label>
+      </li>
+      <li class="expanded">
+        <div class="graphic-ff">Firefox</div>
+        <label>Firefox</label>
+      </li>
+      <li class="expanded">
+        <div class="graphic-chrome">Chrome</div>
+        <label>Chrome</label>
+      </li>
+      <li class="expanded">
+        <div class="graphic-safari">Safari</div>
+        <label>Safari</label>
+      </li>
+    </ul>
+
+  </div>
+
+  <div class="content-stack">
+    <h5 class="style-1">You can also access our site from your mobile device:</h5>
+    <ul>
+      <li>
+        <div class="graphic-iphone">iPhone 4 &amp; 5</div>
+        <label>iPhone 4 &amp; 5</label>
+      </li>
+      <li>
+        <div class="graphic-android">Android</div>
+        <label>Android</label>
+      </li>
+      <li>
+        <div class="graphic-ipad">iPad</div>
+        <label>iPad</label>
+      </li>
+    </ul>
+
+  </div>
+
+</div>
+
+
+
+
+<% end %>

@@ -1,0 +1,67 @@
+// Place all the styles related to the test controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body#test {
+  h1 {
+    font-size: 36px;
+    line-height: 150%;
+    margin: 20px;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 24px;
+    line-height: 150%;
+    margin-top: 0;
+    border-bottom: 1px solid #999;
+  }
+  
+  h3 {
+    font-size: 18px;
+    line-height: 150%;
+    margin-top: 20px;
+    border-bottom: 1px solid #999;
+  }
+  
+  dl {
+    overflow: hidden;
+    margin: 0;
+    margin-bottom: 10px;
+
+    dt {
+      clear: both;
+      float: left;
+    }
+
+    dd {
+      float: left;
+    }
+  }
+
+  form {
+    margin: 0;
+
+    &.form-inline, &.button_to {
+      margin: 10px 0;
+    }
+  }
+
+  .inline-block {
+    display: inline-block;
+  }
+
+  .well {
+    position: relative;
+  }
+
+  div.delete {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+  }
+
+  .row-fluid {
+    margin-bottom: 5px;
+  }
+}

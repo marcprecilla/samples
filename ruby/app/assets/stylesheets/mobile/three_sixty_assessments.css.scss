@@ -1,0 +1,101 @@
+// Place all the styles related to the three_sixty_assessments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#three_sixty_assessments {
+
+  .screen {
+
+    .message-button-container {
+      max-width:300px;
+      margin:0px auto;
+
+      li {
+        list-style-type:none;
+        padding-top:10px;
+      }
+    }
+
+    &.message-screen {
+
+      color:#fff;
+      text-align:center;
+
+      .screen-title {
+        font-size:30px;
+        font-weight:300;
+      }
+
+      .screen-description {
+        font-size:20px;
+        padding:0px 0px 20px 0px;
+      }
+
+      .message-button-container {
+        padding:15px 10px;
+      }
+    }
+
+
+
+    &#assessment-intro-screen {
+
+      .screen-title {
+        padding:40px 0px 30px 0px;
+      }
+
+      .category-list {
+        margin:0px;
+        max-width:300px;
+        margin:0px auto;
+
+        li {
+          list-style-type:none;
+          width:115px;
+          display:inline-block;
+          font-size:18px;
+          line-height:18px;
+          font-weight:bold;
+          padding-bottom:8px;
+
+          .graphic {
+            padding:90px 0px 0px 0px;
+            height:0px;
+            overflow:hidden;
+          }
+
+          &.focus .graphic {
+            background:url(mvp.graphics.360.png) center -900px no-repeat;
+            background-size:500px 1500px;
+          }
+
+          &.positivity .graphic {
+            background:url(mvp.graphics.360.png) center -1000px no-repeat;
+            background-size:500px 1500px;
+          }
+
+          &.sleep .graphic {
+            background:url(mvp.graphics.360.png) center -1100px no-repeat;
+            background-size:500px 1500px;
+          }
+
+          &.social .graphic {
+            background:url(mvp.graphics.360.png) center -1200px no-repeat;
+            background-size:500px 1500px;
+          }
+
+
+        }
+      }
+
+    }
+
+    &.assessment-rank-screen {
+
+
+    }
+
+  }
+
+
+}

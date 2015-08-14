@@ -1,0 +1,25 @@
+<script type="text/javascript">
+
+  _gaq.push(['_addTrans',
+     '<%= purchase_information[:transaction_id] %>',  // transaction ID - required
+     '<%= purchase_information[:store_name] %>',      // affiliation or store name
+     '<%= purchase_information[:total] %>',           // total - required
+     '<%= purchase_information[:tax] %>',             // tax
+     '<%= purchase_information[:shipping] %>',        // shipping
+     '<%= purchase_information[:city] %>',            // city
+     '<%= purchase_information[:state] %>',           // state or province
+     '<%= purchase_information[:country] %>'          // country
+  ]);
+  _gaq.push(['_addItem',
+     '<%= purchase_information[:transaction_id] %>',  // transaction ID - necessary to associate item with transaction
+     '<%= purchase_information[:sku] %>',             // SKU/code - required
+     '<%= purchase_information[:product_name] %>',    // product name
+     '<%= purchase_information[:category] %>',        // category or variation
+     '<%= purchase_information[:unit_price] %>',      // unit price - required
+     '<%= purchase_information[:quantity] %>'         // quantity - required
+  ]);
+  _gaq.push(['_trackTrans']);
+
+  window.optimizely = window.optimizely || [];
+  window.optimizely.push(['trackEvent', 'purchase', '<%= purchase_information[:total]*100.0 %>']);
+</script>

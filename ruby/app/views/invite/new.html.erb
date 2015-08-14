@@ -1,0 +1,31 @@
+<% content_for :header_bar do %>
+
+<input type="button" href="action:previousState" id="navbar-button-left" class="navbar-button back" app-data-state="app" value="Previous" />
+<span id="title">About You</span>
+
+<% end %>
+
+
+<div class="container">
+  <%= form_for :invite_index_path, :url => { :action => "create" } do |f| %>
+
+  <div id="invite-container" class="screen vertical-center">
+      <h1 class="style-5">Invite Your Friends!</h1>
+      <div class="button-container">
+        <%= link_to '', facebook_share_url, class: 'btn btn-square invite-facebook size-plus-2' %>
+        <%= link_to '', email_share_url, class: 'btn btn-square invite-email size-plus-2 ga-tracked', data: {ga_category: 'buttons', ga_action: 'invite', ga_label: @invitesrc} %>
+      </div>
+      <div class="description">
+        By tapping on the Facebook button, we'll direct you to post on your wall.
+      </div>
+      <div><%= f.button 'Continue', class: 'btn btn-border btn-block', type: 'submit' %></div>
+
+    </div>
+
+
+  <% end %>
+
+  <%= render "layouts/fb_sdk" %>
+
+
+</div>

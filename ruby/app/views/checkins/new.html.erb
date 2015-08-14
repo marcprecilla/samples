@@ -1,0 +1,27 @@
+<% content_for :header_bar do %>
+
+<input type="button" href="action:previousState" id="navbar-button-left" class="navbar-button back" app-data-state="app" value="Previous" />
+<span id="title"><%=@window_title%></span>
+<input type="button" href="" id="navbar-button-right" class="navbar-button none" app-data-state="none" value="Next" />
+
+<% end %>
+
+<% content_for :additional_body_css_classes do %>nobgmodal<% end %>
+
+<!-- (same as in assessment/view templates -->
+
+<%= form_tag checkins_path, method: :post, id: 'pam-question-form', class: 'benefits assessment-questions' do |f| %>
+      <span class="submit-value"></span>
+
+  <% @questions.each_with_index do |question, index| %>
+      <span class="submit-value"><%= hidden_field_tag "answers[#{question.uuid}]", rand(5)+1 %></span>
+
+      <div id="" class="screen single-select-question" data-rel="" data-title="<%=question.category[/[a-z]+/].titleize %>  Check-In" data-add-body-class="" data-directions="" data-points="25">
+          <%= render "checkins/question_slider", index: index, question: question %>
+      </div>
+
+
+  <%end%>
+  <!--<%= submit_tag 'Submit', class: 'btn' %>-->
+<% end %>
+

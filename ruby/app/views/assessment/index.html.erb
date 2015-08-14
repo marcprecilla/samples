@@ -1,6 +1,6 @@
 <% @facebook_properties = {'og:image' => 'http://' + request.host + '/fb.brain.jpg','og:url' => request.url} %>
 
-<% content_for :title do %>App - Personality Assessment<% end %>
+<% content_for :title do %>app - Personality Assessment<% end %>
 
 <% content_for :header do %>
   <%= render "layouts/desktop_header" %>
@@ -8,7 +8,7 @@
 
 <% content_for :header_bar do %>
 
-    <input type="button" href="action:previousState" id="navbar-button-left" class="navbar-button back" App-data-state="App" value="Previous" />
+    <input type="button" href="action:previousState" id="navbar-button-left" class="navbar-button back" app-data-state="app" value="Previous" />
     <span id="title">&nbsp;</span>
 <% end %>
 

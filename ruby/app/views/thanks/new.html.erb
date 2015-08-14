@@ -1,0 +1,102 @@
+  <% content_for :header_bar do %>
+
+  <input type="button" href="action:previousState" id="navbar-button-left" class="navbar-button back" app-data-state="app" value="Previous" />
+  <span id="title">Be Thankful</span>
+  <input type="button" href="#" id="navbar-button-right" class="navbar-button none" app-data-state="none" value="Invite" />
+
+  <% end %>
+
+
+
+
+  <%= form_tag thanks_path, class: "intention-thanks", html:{id:'', style:""} do |f| %>
+
+        <span class="submit-value"></span>
+
+        <div class="screen question-screen">
+
+          <div class="dark-header-row"><div class="content">
+            Take a moment to pause &amp; think about something you are grateful for.
+          </div></div>
+
+          <div class="content">
+
+          <div class="label-text">I'm grateful for...</div>
+
+          <div class="input-container">
+            <div class="textarea-container">
+              <%= text_field_tag "other_intention", '', id: 'other-intention-text', placeholder: 'Fill in the blank...', class: 'use-char-counter disable-enterkey-submit', maxlength: '20' %>
+              <%= hidden_field_tag "other_color", "", id: 'other-intention-color' %>
+              <div class="char-counter"></div>
+              <div class="instructions">e.g.: <%= some_sample_thanks(2, current_user).join(', ') %> </div>
+            </div>
+          </div>
+
+          <div class="bottom-button-container">
+            <div class="error-container errortext-1"></div>
+            <ul class="buttons">
+              <li><a href="#" class="btn continue btn-border-simple btn-block lime pill size-plus-1">Continue</a></li>
+            </ul>
+          </div>
+
+          <div class="skip-button-container"><a href="/toolkit" class="">Skip This Exercise</a></div>
+
+          </div>
+        </div>
+
+
+        <div class="screen answer-screen">
+
+          <div class="dark-header-row desktop-results-header"><div class="content">
+            Your thanks will form part of your Mind Stream. You can add photos too!
+          </div></div>
+
+          <div class="content">
+
+            <div class="top-content">
+
+              <div class="label-text">You just said...</div>
+
+              <div class="buttons-container"></div>
+
+            </div>
+
+          </div>
+
+          <div class="bottom-button-container">
+            <ul class="buttons">
+              <li><a href="#" id="button-add-another" class="btn btn-border-simple btn-block pill size-plus-1">Add Another</a></li>
+              <li><a href="#" id="button-finish" class="btn btn-border-simple btn-block lime pill size-plus-1">Save and Finish</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+
+        <div class="screen completion-screen">
+
+          <div class="content">
+
+            <div class="top-content">
+
+              <h1><%=encouragement_salutation%>, <%=current_user.first_name%>!</h1>
+
+              <div class="message"><%=humorous_encouragement%></div>
+
+            </div>
+
+          </div>
+
+          <div class="bottom-button-container">
+            <ul class="buttons">
+              <li><a href="/visionboard" class="btn btn-border-simple btn-block lime pill size-plus-1">View Vision Board</a></li>
+              <li><a href="/toolkit" class="btn btn-border-simple btn-block lime pill size-plus-1">Continue Training</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+
+
+    <%end%>
+

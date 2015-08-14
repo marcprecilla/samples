@@ -1,0 +1,48 @@
+  <%= render "three_sixty_assessments/question_side_description" %>
+
+  <h3 class="style-2" style="padding-bottom:20px;">
+    <span class="pam-question" app-data-question-index="0" style="display:block;">In what ways do you communicate with <%=@subject.first_name%>?</span>
+  </h3>
+
+  <div class="question-ranking">
+
+  <div class="desktop-focus-area">
+
+    <ul class="rank-list">
+      <li data-value="Person">
+        <div class="icon">-</div>
+        Person
+      </li>
+      <li data-value="Phone">
+        <div class="icon">-</div>
+        Phone
+      </li>
+      <li data-value="Text">
+        <div class="icon">-</div>
+        Text
+      </li>
+      <li data-value="Social">
+        <div class="icon">-</div>
+        Social
+      </li>
+      <li data-value="Email">
+        <div class="icon">-</div>
+        Email
+      </li>
+    </ul>
+
+    <div class="instructions">Please rank from most often to least often</div>
+
+  </div>
+
+
+  <span class="submit-value"><%= hidden_field_tag "ways_to_communicate", "person phone text social email" %>  <!-- ordered as appropriate --></span>
+
+  </div>
+
+  <div class="question-button-container cf">
+    <div class="back-button-container visible-desktop back-link" style=""><a href="#" class="button-blue-arrow-left">Back</a></div>
+    <div class="continue-button-container">
+      <a href="#" class="btn next btn-block btn-border-simple size-plus-1 lime-2 pill btn-right-arrow">Continue</a>
+    </div>
+  </div>

@@ -1,0 +1,451 @@
+// Place all the styles related to the three_sixty_assessments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#invitations {
+
+  .container.invitation {
+    text-align: center;
+  }
+
+  .screen {
+
+    .message-button-container {
+      max-width:300px;
+      margin:0px auto;
+
+      li {
+        list-style-type:none;
+        padding-top:10px;
+      }
+    }
+
+    &.message-screen {
+
+      color:#fff;
+      text-align:center;
+
+      .screen-title {
+        font-size:30px;
+        font-weight:300;
+      }
+
+      .screen-description {
+        font-size:20px;
+        padding:0px 0px 20px 0px;
+      }
+
+      .message-button-container {
+        padding:15px 10px;
+      }
+    }
+
+    &#assessment-welcome-screen {
+      .screen-title {
+        padding:40px 0px 30px 0px;
+      }
+
+      .screen-graphic {
+        padding:0px;
+        width:85px;
+        margin:0px auto;
+        height:115px;
+        background:url(mvp.graphics.360.png) center -750px no-repeat;
+        background-size:500px 1500px;
+        position:relative;
+
+        .profile-img {
+          width:58px;
+          height:58px;
+          border-radius:58px;
+          border:5px #fff solid;
+          position:absolute;
+          top:30px;
+          right:-30px;
+        }
+
+        .default-img {
+          display:block;
+          background:url(mvp.graphics.360.png) 0px -900px no-repeat;
+          background-size:500px 1500px;
+          width:64px;
+          height:0px;
+          overflow:hidden;
+          padding:64px 0px 0px 0px;
+          position:absolute;
+          top:33px;
+          right:-27px;
+        }
+      }
+
+      .screen-description {
+        padding-top:35px;
+      }
+    }
+
+
+    &#welcome-screen {
+      text-align:center;
+      color:#fff;
+      padding:0px 10px;
+
+      .welcome-title {
+        font-size:30px;
+      }
+
+      .welcome-graphic {
+        background:url(mvp.graphics.360.png) center -100px no-repeat;
+        background-size:500px 1500px;
+        padding:100px 0px 0px 0px;
+        height:0px;
+        overflow:hidden;
+      }
+      .welcome-description {
+        font-size:20px;
+        line-height:24px;
+        padding:0px 0px 20px 0px;
+      }
+    }
+
+    &#invite-sent-screen {
+      text-align:center;
+      color:#fff;
+
+      .screen-title {
+        font-size:30px;
+        padding-bottom:50px;
+        font-weight:300;
+      }
+
+      .screen-graphic {
+        background:url(mvp.graphics.360.png) center -600px no-repeat;
+        background-size:500px 1500px;
+        padding:100px 0px 0px 0px;
+        height:0px;
+        overflow:hidden;
+      }
+
+      .screen-description {
+        font-size:20px;
+        padding:25px 0px 20px 0px;
+      }
+
+      .message-button-container {
+        padding-top:50px;
+      }
+    }
+
+    &#email-screen {
+      #email-invite-list {
+        position:absolute;
+        top:70px;
+        left:0px;
+        width:260px;
+        padding:0px 25px;
+      }
+
+      #dynamic-messages {
+        .alert {
+          margin-bottom: 3px;
+        }
+
+        .fade {
+          @include transition(opacity .5s linear);
+        }
+      }
+    }
+
+    &#fb-screen {
+
+      .fullscreen-error-message {
+        max-width:260px;
+        margin:0px auto;
+        font-size:20px;
+        color:#000000;
+        padding-top:65px;
+        text-align:center;
+
+        .graphic {
+          padding:180px 0px 0px 0px;
+          height:0px;
+          overflow:hidden;
+          background:url(mvp.graphics.360.png) center -370px no-repeat;
+          background-size:500px 1500px;
+        }
+
+        .message-button-container {
+          padding:0px;
+          background:none;
+        }
+
+      }
+
+      form {
+        max-width:285px;
+        margin:0px auto;
+      }
+
+      .screen-description {
+        padding:20px;
+        font-size:20px;
+      }
+
+
+      .facebook-list {
+
+        margin:0px;
+
+        li {
+          list-style-type:none;
+
+          input[type=checkbox] {
+            display:none;
+          }
+
+          a {
+            outline: none;
+          }
+
+          &.on {
+
+            .checkbox-switch {
+              background:url(mvp.graphics.360.png) 0px -200px no-repeat;
+              background-size:500px 1500px;
+            }
+
+          }
+
+          .checkbox-switch {
+            display:inline-block;
+            float:right;
+            width:30px;
+            padding:30px 0px 0px 0px;
+            height:0px;
+            overflow:hidden;
+            background:url(mvp.graphics.360.png) 0px -297px no-repeat;
+            background-size:500px 1500px;
+          }
+
+        }
+
+      }
+
+      .message-button-container {
+        padding:15px 10px;
+        background-color:#fff;
+      }
+
+      .image-list {
+        clear:both;
+
+        li {
+          list-style-type:none;
+          padding:0px 10px;
+          border-left:1px #c2c2c2 solid;
+          border-right:1px #c2c2c2 solid;
+          border-bottom:1px #c2c2c2 solid;
+          background: #fafafa;
+          background: -moz-linear-gradient(top,  #fafafa 25%, #ececec 100%);
+          background: -webkit-gradient(linear, left top, left bottom, color-stop(25%,#fafafa), color-stop(100%,#ececec));
+          background: -webkit-linear-gradient(top,  #fafafa 25%,#ececec 100%);
+          background: -o-linear-gradient(top,  #fafafa 25%,#ececec 100%);
+          background: -ms-linear-gradient(top,  #fafafa 25%,#ececec 100%);
+          background: linear-gradient(to bottom,  #fafafa 25%,#ececec 100%);
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#ececec',GradientType=0 );
+          position:relative;
+          top:0px;
+          left:0px;
+
+          &.on {
+            background: #ffffe4;
+            background: -moz-linear-gradient(top,  #ffffe4 25%, #f8f7ca 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(25%,#ffffe4), color-stop(100%,#f8f7ca));
+            background: -webkit-linear-gradient(top,  #ffffe4 25%,#f8f7ca 100%);
+            background: -o-linear-gradient(top,  #ffffe4 25%,#f8f7ca 100%);
+            background: -ms-linear-gradient(top,  #ffffe4 25%,#f8f7ca 100%);
+            background: linear-gradient(to bottom,  #ffffe4 25%,#f8f7ca 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffe4', endColorstr='#f8f7ca',GradientType=0 );
+          }
+
+          strong {
+            color:#000;
+            font-weight:100;
+          }
+
+          a {
+            display:block;
+          }
+
+          .img-container {
+            padding:8px 0px 0px 0px;
+            width:65px;
+            height:54px;
+            position:absolute;
+            top:0px;
+            left:10px;
+
+            .img-padding {
+              -moz-border-radius: 54px; -webkit-border-radius: 54px; -khtml-border-radius: 54px; border-radius: 54px;
+              width:46px;
+              padding:4px;
+              background: rgb(230,230,230);
+              background: -moz-linear-gradient(top,  rgba(230,230,230,1) 0%, rgba(239,239,239,1) 14%, rgba(246,246,246,1) 100%);
+              background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(230,230,230,1)), color-stop(14%,rgba(239,239,239,1)), color-stop(100%,rgba(246,246,246,1)));
+              background: -webkit-linear-gradient(top,  rgba(230,230,230,1) 0%,rgba(239,239,239,1) 14%,rgba(246,246,246,1) 100%);
+              background: -o-linear-gradient(top,  rgba(230,230,230,1) 0%,rgba(239,239,239,1) 14%,rgba(246,246,246,1) 100%);
+              background: -ms-linear-gradient(top,  rgba(230,230,230,1) 0%,rgba(239,239,239,1) 14%,rgba(246,246,246,1) 100%);
+              background: linear-gradient(to bottom,  rgba(230,230,230,1) 0%,rgba(239,239,239,1) 14%,rgba(246,246,246,1) 100%);
+              filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e6e6', endColorstr='#f6f6f6',GradientType=0 );
+
+              .img {
+                -moz-border-radius: 45px; -webkit-border-radius: 45px; -khtml-border-radius: 45px; border-radius: 45px;
+                padding:45px 0px 0px 0px;
+                height:0px;
+                width:45px;
+                overflow:hidden;
+                border:1px #848484 solid;
+              }
+            }
+
+          }
+
+          .description {
+            padding:25px 11px 25px 70px;
+            min-height:16px;
+            font-size:122%;
+            color:#666666;
+            font-weight:100;
+            text-align:left;
+
+            .timestamp {
+              float:right;
+              padding-left:10px;
+              font-size:12px;
+              color:#cccccc;
+            }
+
+            .description-details-container {
+              clear:both;
+              font-size:12px;
+              line-height:12px;
+              color:#fff;
+              padding-top:9px;
+
+              .description-details {
+                display:inline-block;
+                padding:5px 8px;
+                border:1px #189aed solid;
+                background: #3ab1fc;
+                box-shadow: 0px 0px 2px rgba(255,255,255,.15) inset;
+                -moz-box-shadow: 0px 0px 2px rgba(255,255,255,.15) inset;
+                border-radius:3px;
+                position:relative;
+                top:0px;
+              }
+            }
+          }
+
+
+        }
+
+      }
+
+    }
+
+
+    .invite-form {
+      max-width:295px;
+      margin:0px auto;
+
+      .input-container {
+
+        padding:0px 5px 5px 5px;
+
+        .padded-content {
+          padding:5px;
+
+          input {
+            width:90%;
+          }
+        }
+
+      }
+
+
+      .screen-description {
+        padding:12px 15px;
+        font-size:20px;
+      }
+
+      ul.invite-list {
+
+        margin:0px;
+        max-height:180px;
+        overflow:auto;
+
+        li {
+          list-style-type:none;
+          font-size:20px;
+          color:#666666;
+          border-bottom:1px #cccccc solid;
+          padding:15px 48px 15px 8px;
+          position:relative;
+
+          &:first-child {
+            border-top:1px #cccccc solid;
+          }
+
+          .remove-item-button {
+            width:22px;
+            padding:22px 0px 0px 0px;
+            height:0px;
+            overflow:hidden;
+            background:url(mvp.graphics.360.png) 0px -700px no-repeat;
+            background-size:500px 1500px;
+            position:absolute;
+            top:10px;
+            right:10px;
+          }
+        }
+
+      }
+
+      ul.invite-list-2 {
+        margin:0px;
+
+        li {
+          list-style-type:none;
+          text-align:center;
+          font-size:15px;
+          font-weight:bold;
+          color:#666666;
+          background: #ffffe4;
+          background: -moz-linear-gradient(top,  #ffffe4 25%, #f8f7ca 100%);
+          background: -webkit-gradient(linear, left top, left bottom, color-stop(25%,#ffffe4), color-stop(100%,#f8f7ca));
+          background: -webkit-linear-gradient(top,  #ffffe4 25%,#f8f7ca 100%);
+          background: -o-linear-gradient(top,  #ffffe4 25%,#f8f7ca 100%);
+          background: -ms-linear-gradient(top,  #ffffe4 25%,#f8f7ca 100%);
+          background: linear-gradient(to bottom,  #ffffe4 25%,#f8f7ca 100%);
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffe4', endColorstr='#f8f7ca',GradientType=0 );
+          box-shadow: 0px 0px 2px rgba(0,0,0,.4);
+          -moz-box-shadow: 0px 0px 2px rgba(0,0,0,.4);
+          padding:10px 0px;
+          margin-bottom:10px;
+          border-radius:7px;
+
+        }
+      }
+
+      .message-button-container {
+        padding:15px 10px;
+        background-color:#fff;
+      }
+
+    }
+
+
+
+  }
+
+
+}

@@ -1,0 +1,40 @@
+<% content_for :title, 'Login' %>
+
+<div class="screen vertical-center">
+
+
+<div class="container">
+
+  <div class="stress-less-title">
+    <h1 class="app-logo">app Live Better</h1>
+  </div>
+
+  <h1>Login</h1>
+
+  <%= form_tag login_path, method: :post do %>
+    <% if flash.alert %>
+      <div class="alert alert-block alert-error">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <%= flash.alert %>
+      </div>
+    <% end %>
+
+    <div class="fields">
+      <%= email_field_tag :email, @email, placeholder: 'Email Address', class: 'input-block-level login-input-field' %>
+      <%= password_field_tag :password, @password, placeholder: 'Password', class: 'input-block-level login-input-field' %>
+      <p><%= link_to 'Forgot password', forgot_password_path %></p>
+    </div>
+
+    <%= button_tag 'Login', class: 'btn btn-border btn-block size-plus-1' %>
+  <% end %>
+
+  <p>New user? <%= link_to 'Click here', registration_path %></p>
+
+  <%= link_to login_path(method: 'facebook'), class: 'btn btn-border btn-block facebook' do %>
+    Connect with <span class="facebook">facebook</span>
+  <% end %>
+
+  <p class="paddingTop15"><%= link_to 'Learn More', 'http://www.myapp.com' %></p>
+
+</div>
+</div>

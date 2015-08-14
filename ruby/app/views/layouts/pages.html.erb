@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<!--[if lt IE 10]><html class="no_ie"><![endif]-->
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1">
+  <script src="//cdn.optimizely.com/js/181682372.js"></script>
+
+  <%= render 'layouts/facebook_meta_tags' %>
+  <%= render 'layouts/mixpanel_meta_tags' %>
+
+  <title><%= content_for?(:title) ? content_for(:title) : 'app' %></title>
+
+  <!-- <link rel="icon" href="/assets/favicon.png" size="32x32"/> -->
+
+  <%= stylesheet_link_tag "application_pages", :media => "all" %>
+  <%= stylesheet_link_tag google_fonts_link %>
+  <%= javascript_include_tag "application_pages" %>
+  <%= csrf_meta_tags %>
+
+  <%= render 'layouts/google_analytics' %>
+
+  <%= content_for(:javascript) if content_for?(:javascript) %>
+  <%= render "layouts/mixpanel_page_calls" %>
+
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
+
+</head>
+
+<body id="<%= controller.controller_name %>" class="<%= controller.action_name %> mobile_scaffolding <%= content_for :additional_body_css_classes %>">
+  <%= content_for(:header) if content_for?(:header) %>
+  <%= content_for(:main) if content_for?(:main) %>
+  <%= content_for(:footer) if content_for?(:footer) %>
+  <%= render 'layouts/crazy_egg' %>
+</body>
+
+</html>

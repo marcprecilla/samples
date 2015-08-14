@@ -1,0 +1,142 @@
+// Place all the styles related to the Mobile/OfflineGuided controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#offline_guided {
+
+.main-content-wrapper {
+  padding:10px 0px 20px 0px;
+}
+
+
+.clr{
+  clear: both;
+  padding: 0;
+  height: 0;
+  margin: 0;
+}
+
+/* Component style */
+
+.audio-slideshow {
+  position: relative;
+}
+
+.audio-slideshow .audio-slides {
+  position: relative;
+  height:299px;
+}
+
+.audio-slideshow .audio-slides li {
+  position:absolute;
+  top:0px;
+  left:0px;
+  border:1px #717171 solid;
+}
+
+.audio-slideshow .audio-control-interface {
+  width: 100%;
+  height: 23px;
+}
+
+.audio-slideshow .play-pause-container, .audio-slideshow .time-container {
+  position: absolute;
+  bottom: 5px;
+  height: 18px;
+  font-weight: bold;
+  color: #777;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+  font-size:77%;
+}
+
+.buffering {
+  position: absolute;
+  bottom: 5px;
+  left:0px;
+  font-weight: bold;
+  color: #777;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+  font-size:77%;
+}
+
+.audio-slideshow .play-pause-container a {
+  outline: none;
+  text-indent: -99999px;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+}
+.audio-slideshow .play-pause-container a.audio-play {
+  background: transparent url(../images/play.png) no-repeat center center;
+}
+
+.audio-slideshow .play-pause-container a.audio-pause {
+  background: transparent url(../images/pause.png) no-repeat center center;
+}
+
+.audio-slideshow .audio-control-interface .time-container {
+  right: 3px;
+}
+
+.audio-slideshow .timeline {
+  position: absolute;
+  width: 100%;
+  background-color: #cccccc;
+  height: 5px;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  -moz-border-radius: 3px; -webkit-border-radius: 3px; -khtml-border-radius: 3px; border-radius: 3px;
+}
+
+.audio-slideshow .timeline .playhead {
+  position: absolute;
+  height: 5px;
+  background: #333;
+  width: 0;
+  -moz-border-radius: 3px; -webkit-border-radius: 3px; -khtml-border-radius: 3px; border-radius: 3px;
+}
+
+.marker {
+  width: 3px;
+  height: 3px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 1px rgba(0,0,0,0.4) inset;
+  position: absolute;
+  background: #B8BAC6;
+  top: 1px;
+}
+
+.marker span {
+  padding: 5px;
+  position: absolute;
+  bottom: 20px;
+  opacity: 0;
+  left: -50px;
+  z-index: -1;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+  background: #f5f6f6;
+  background: -moz-linear-gradient(top, #f5f6f6 0%, #dbdce2 21%, #b8bac6 49%, #dddfe3 80%, #f5f6f6 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f5f6f6), color-stop(21%,#dbdce2), color-stop(49%,#b8bac6), color-stop(80%,#dddfe3), color-stop(100%,#f5f6f6));
+  background: -webkit-linear-gradient(top, #f5f6f6 0%,#dbdce2 21%,#b8bac6 49%,#dddfe3 80%,#f5f6f6 100%);
+  background: -o-linear-gradient(top, #f5f6f6 0%,#dbdce2 21%,#b8bac6 49%,#dddfe3 80%,#f5f6f6 100%);
+  background: -ms-linear-gradient(top, #f5f6f6 0%,#dbdce2 21%,#b8bac6 49%,#dddfe3 80%,#f5f6f6 100%);
+  background: linear-gradient(top, #f5f6f6 0%,#dbdce2 21%,#b8bac6 49%,#dddfe3 80%,#f5f6f6 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f6f6', endColorstr='#f5f6f6',GradientType=0 );
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.marker span img {
+  display: block;
+}
+
+.marker:hover span {
+  opacity: 1;
+  z-index: 100;
+}
+
+}

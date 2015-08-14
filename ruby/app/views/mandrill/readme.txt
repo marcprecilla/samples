@@ -1,0 +1,1 @@
+These tempates are stored here for version control purposes.  However they are "live" only on https://mandrillapp.com/templates.  This should be kept in sync with the Mandrill template editor site.

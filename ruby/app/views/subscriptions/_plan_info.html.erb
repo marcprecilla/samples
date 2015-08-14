@@ -1,0 +1,28 @@
+<!-- expiring in one day given the current level of traffic.  As traffic increases, this should be lowered. -->
+<% cache(plan, expires_in:1.day) do %>
+<div class="plan-info">
+  <h5><%= plan.name %></h5>
+  <h3><strong><super>$</super><%= number_to_currency(plan.price_per_month, format: "%n") %></strong>/month</h3>
+  <p>
+    <%= plan.term %>
+    <% if plan.recurring? && plan.price_per_month != plan.price %>
+    <!--(recurring)-->
+    <% end %>
+
+    <%
+      discount = plan.discount_from_default_plan
+      if discount > 0
+    %>
+      <div class="discount-text">Save <%=discount%>%</div>
+    <% end %>
+
+    <% unless plan.price_per_month == plan.price %>= <%= number_to_currency plan.price %><% end %>
+
+  </p>
+  <!--
+  <% unless plan.price_per_month == plan.price %>
+    <p class="breakdown">Total: <span class="total"><%= number_to_currency plan.price %></span></p>
+  <% end %>
+  -->
+</div>
+  <% end %>

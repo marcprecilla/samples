@@ -1,0 +1,15 @@
+<li class="day-container cf" data-rel-score="<%= points %>" data-rel-timestamp="<%=timestamp %>">
+
+<div class="day-activity-container">
+
+  <ul class="day-activity-list">
+    <li>
+<% if activity %>
+      <div href="<%=activity_path(activity)%>" class="btn btn-square size-plus-1 smallimg" data-img-src="<%=activity_image_url(activity)%>"><%=activity.intervention.try(:name)%></div>
+<%end%>
+    </li>
+
+    </ul>
+</div>
+
+</li>

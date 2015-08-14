@@ -1,0 +1,260 @@
+<% content_for :header do %>
+  <div id="header"><div class="centered-layout-container">
+
+      <%= link_to root_path do %>
+        <%= image_tag 'pages/app.logo.png', alt: 'app', width: 126, height: 47, class: 'main-logo-solo hidden-tablet hidden-phone' %>
+      <% end %>
+
+    <%= render 'layouts/pages/top_nav' %>
+
+  </div></div>
+<% end %>
+
+<% content_for :additional_body_css_classes do %>skip-resize-canvas<% end %>
+
+<% content_for :main do %>
+  <div id="main" class="">
+
+<div class="hero-container">
+  <div class="centered-layout-container">
+    <a name="scroll-top" id="scroll-top"></a>
+    <h1 class="header-our-apps">You're ready to learn, We'LL teach. Unlock your path in Calm.</h1>
+
+  </div>
+</div>
+
+<div class="centered-layout-container cf">
+
+  <div class="features-container">
+    <h3>You Get</h3>
+    <ul>
+      <li>Daily Interactive Guides For Healthy Brain Functioning</li>
+      <li>Unlimited Access to Network of Stress Less Skill Building Activities </li>
+      <li>Progress &amp; Stress Tracking Tools</li>
+      <li>Improved Self-Awareness &amp; Resistance to Stress</li>
+      <li>Improved breathing, sleep &amp; productivity</li>
+    </ul>
+  </div>
+
+  <div class="form-container">
+
+    <%= form_tag subscriptions_path do %>
+
+    <div class="form-border">
+      <span class="best-value">Best Value</span>
+      <h5>Plan 1</h5>
+      <h3><b>$20</b>/mo</h3>
+      <ul class="features-list">
+        <li><span class="greentext">Save 33%</span></li>
+        <li>Three Month Subscription</li>
+        <li>14-Day Money Back Guarantee</li>
+      </ul>
+      <a href="#" class="btn btn-border-simple size-plus-2 btn-block bluetext" id="form-1-plan-selector">Select This Plan</a>
+
+      <div id="form-slider-1" class="paywall-flexslider">
+        <ul class="slides">
+          <li>
+
+            <h5><span class="bluetext">Step 1</span> Register</h5>
+
+            <%= label_tag :first_name %>
+            <%= text_field_tag :first_name %>
+            <%= label_tag :last_name %>
+            <%= text_field_tag :last_name %>
+            <%= label_tag :email %>
+            <%= email_field_tag :email %>
+
+            <div class="input-box">
+            <%= label_tag :promo_code %>
+            <%= text_field_tag :promo_code %>
+            </div>
+
+            <%= label_tag :password %>
+            <%= password_field_tag :password, nil %>
+            <%= label_tag :password_confirmation %>
+            <%= password_field_tag :password_confirmation %>
+
+            <div class="terms-container">
+              <input type="checkbox" name="accept_terms"/> Accept Terms of Service
+            </div>
+
+            <a href="#" class="btn btn-border-simple size-plus-2 btn-block blue slider-next">Next</a>
+            <a href="#" class="btn btn-border-simple size-plus-2 btn-block facebook">Connect with Facebook</a>
+
+            </li>
+
+            <li>
+
+              <h5><span class="bluetext">Step 2</span> Payment Info</h5>
+
+              <%= label_tag :card_number, nil, class: 'use_cc_icons' %>
+              <%= text_field_tag :card_number %>
+
+              <%= label_tag :expiration %>
+              <select>
+                <option>Month</option>
+                <option>January</option>
+                <option>February</option>
+                <option>March</option>
+                <option>April</option>
+                <option>May</option>
+                <option>June</option>
+                <option>July</option>
+                <option>August</option>
+                <option>September</option>
+                <option>October</option>
+                <option>November</option>
+                <option>December</option>
+              </select>
+
+               &nbsp;
+
+               <select>
+                 <option>Year</option>
+                 <option>2016</option>
+                 <option>2015</option>
+                 <option>2014</option>
+                 <option>2013</option>
+               </select>
+
+               <%= label_tag :name_on_card %>
+               <%= text_field_tag :name_on_card %>
+
+               <div class="cf">
+                 <div class="layout-50-left">
+                   <%= label_tag :zip %>
+                   <%= text_field_tag :zip %>
+                 </div>
+
+                 <div class="layout-50-right">
+                   <%= label_tag :cc_code %>
+                   <%= text_field_tag :cc_code %>
+                 </div>
+              </div>
+
+              <a href="#" class="btn btn-border-simple size-plus-2 btn-block blue">Submit</a>
+
+            </li>
+          </ul>
+        </div>
+
+    </div>
+    <% end %>
+
+    <%= form_tag subscriptions_path do %>
+    <div class="form-border">
+      <h5>Plan 2</h5>
+      <h3><b>$10</b>/mo</h3>
+
+      <ul class="features-list">
+        <li>Monthly Subscription</li>
+        <li>Cancel Anytime</li>
+      </ul>
+      <a href="#" class="btn btn-border-simple size-plus-2 btn-block bluetext" id="form-2-plan-selector">Select This Plan</a>
+
+      <div id="form-slider-2" class="paywall-flexslider">
+        <ul class="slides">
+          <li>
+
+            <h5><span class="bluetext">Step 1</span> Register</h5>
+
+            <%= label_tag :first_name %>
+            <%= text_field_tag :first_name %>
+            <%= label_tag :last_name %>
+            <%= text_field_tag :last_name %>
+            <%= label_tag :email %>
+            <%= email_field_tag :email %>
+
+            <div class="input-box">
+            <%= label_tag :promo_code %>
+            <%= text_field_tag :promo_code %>
+            </div>
+
+            <%= label_tag :password %>
+            <%= password_field_tag :password, nil %>
+            <%= label_tag :password_confirmation %>
+            <%= password_field_tag :password_confirmation %>
+
+            <div class="terms-container">
+              <input type="checkbox" name="accept_terms"/> Accept Terms of Service
+            </div>
+
+            <a href="#" class="btn btn-border-simple size-plus-2 btn-block blue slider-next">Next</a>
+            <a href="#" class="btn btn-border-simple size-plus-2 btn-block facebook">Connect with Facebook</a>
+
+            </li>
+
+            <li>
+
+              <h5><span class="bluetext">Step 2</span> Payment Info</h5>
+
+              <%= label_tag :card_number, nil, class: 'use_cc_icons' %>
+              <%= text_field_tag :card_number %>
+
+              <%= label_tag :expiration %>
+              <select>
+                <option>Month</option>
+                <option>January</option>
+                <option>February</option>
+                <option>March</option>
+                <option>April</option>
+                <option>May</option>
+                <option>June</option>
+                <option>July</option>
+                <option>August</option>
+                <option>September</option>
+                <option>October</option>
+                <option>November</option>
+                <option>December</option>
+              </select>
+
+               &nbsp;
+
+               <select>
+                 <option>Year</option>
+                 <option>2016</option>
+                 <option>2015</option>
+                 <option>2014</option>
+                 <option>2013</option>
+               </select>
+
+               <%= label_tag :name_on_card %>
+               <%= text_field_tag :name_on_card %>
+
+               <div class="cf">
+                 <div class="layout-50-left">
+                   <%= label_tag :zip %>
+                   <%= text_field_tag :zip %>
+                 </div>
+
+                 <div class="layout-50-right">
+                   <%= label_tag :cc_code %>
+                   <%= text_field_tag :cc_code %>
+                 </div>
+              </div>
+
+              <a href="#" class="btn btn-border-simple size-plus-2 btn-block blue">Submit</a>
+
+            </li>
+          </ul>
+        </div>
+
+
+    </div>
+    <% end %>
+
+
+
+  </div>
+
+</div>
+
+<a href="#scroll-top" class="btn-rule reverse smooth-scroll">Previous</a>
+
+
+  </div> <!-- main -->
+<% end %>
+
+<% content_for :footer do %>
+  <%= render 'layouts/pages/footer' %>
+<% end %>

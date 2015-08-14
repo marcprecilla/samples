@@ -1,0 +1,26 @@
+<div class="activity-graph-container">
+
+  <div class="points-summary cf">
+    <div class="points-container"><div class="content cf">
+      <label>Total</label> <b><%=@points_total%></b>
+    </div></div>
+    <div class="points-container"><div class="content cf">
+      <label>This Week</label> <b><%=@points_this_week%></b>
+    </div></div>
+  </div>
+
+  <div class="barchart-wrapper">
+    <div class="barchart-container" data-curr-page-index="0">
+      <div class="barchart-viewport">
+        <div class="barchart-content">
+          <ul class="barchart-data">
+            <% for timestamp in @graph_data.keys.sort %>
+              <li data-timestamp="<%=timestamp%>" data-previous-value="<%=0%>"><%=@graph_data[timestamp] %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

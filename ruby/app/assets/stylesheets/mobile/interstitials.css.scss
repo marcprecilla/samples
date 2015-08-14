@@ -1,0 +1,124 @@
+// ===========================
+// css for interstitials pages
+// ===========================
+//
+// Leave these styles unscoped so they work no matter which controller they get rendered in
+
+#bookmark_screen {
+
+  text-align:center;
+
+  h1 {
+    padding:33px 0px 0px 0px;
+  }
+
+  h1.style-5 {
+
+  }
+
+  .description {
+    font-size:130%;
+    line-height:140%;
+    padding:160px 10px 0px 10px;
+    background: url(mvp.graphics.onboarding.png) no-repeat center -279px;
+    background-size:500px 1500px;
+
+  }
+
+}
+
+#desktop_interstitial_screen {
+
+  .info-content-wrapper {
+    background:url(mvp.desktop-interstitial.bg-gradient.png) 0px 0px repeat-x;
+    text-align:center;
+
+    .info-content {
+      height:800px;
+      width:940px;
+      padding:0px;
+      margin:0px auto;
+      background:url(mvp.desktop-interstitial.bg.png) center 0px no-repeat;
+
+      .logo-container {
+        position:relative;
+        top:0px;
+        left:0px;
+        height:70px;
+        padding:57px 0px 0px 0px;
+        border-bottom:1px #e6e6e6 solid;
+        text-align:center;
+        color:#929292;
+        font-size:12px;
+
+        .logo-app-main {
+          display:block;
+          padding:75px 0px 0px 0px;
+          height:0px;
+          overflow:hidden;
+          background:url(mvp.graphics.desktop-interstitial.png) center 0px no-repeat;
+        }
+
+      }
+
+      .img-container {
+        padding:30px 0px 0px 0px;
+        h1 {
+          font-size:34px;
+          font-weight:100;
+          line-height:normal;
+          padding:0px 0px 20px 0px;
+          color:#8c8c8c;
+
+          a {
+            color:#8c8c8c;
+            font-weight:normal;
+          }
+        }
+
+        .iphone-container {
+          position:relative;
+          top:0px;
+          left:0px;
+
+          .iphone {
+            width:100%;
+            padding:608px 0px 0px 0px;
+            background:url(mvp.graphics.desktop-interstitial.png) center -800px no-repeat;
+            display:block;
+            position:absolute;
+            top:0px;
+            left:0px;
+            font-size:20px;
+            line-height:normal;
+            font-weight:100;
+            text-align:center;
+
+            a {
+              color:#333;
+              text-decoration:underline;
+            }
+
+            p.note {
+              color:#999999;
+            }
+
+          }
+
+        }
+      }
+    }
+
+  }
+
+  .di-footer-content {
+    background:white;
+    padding:112px 0px 60px 0px;
+    -moz-box-shadow: 0px 0px 7px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 0px 7px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 7px rgba(0,0,0,0.75);
+    color:#333;
+    height:100px;
+  }
+
+}

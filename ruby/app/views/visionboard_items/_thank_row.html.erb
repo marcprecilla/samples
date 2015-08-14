@@ -1,0 +1,7 @@
+<% if thank.image_urls[index] %>
+  <li class="image"><a href="<%=thank_url(thank)%>" class="desktop-modal-load" style="background:url(<%=thank.image_urls[index] %>) 0px 0px no-repeat; background-size:cover;"><%=index+1%></a></li>
+<% elsif index == thank.image_urls.count %>
+  <li><a href="<%=thank_url(thank)%>" class="btn btn-circle-simple size-minus-1 camera desktop-modal-load" data-mask-url="camera-mask"></a></li>
+<% else %>
+  <li class="blank">&nbsp;</li>
+<% end %>

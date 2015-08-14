@@ -1,0 +1,19 @@
+<h1><%=@report_name%> Report</h1>
+
+<% if flash.notice %>
+  <div class="flash alert alert-success">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <%= flash.notice %>
+  </div>
+<% end %>
+
+<div class="well">
+  <div>
+  <%= form_tag('', method:'get') do %>
+    <div>From <%= text_field_tag 'from', @from, :maxlength => 4 %> days ago to <%= text_field_tag 'to', @to, :maxlength => 4 %> days ago with limit of <%= text_field_tag 'limit', @limit, :maxlength => 4 %> and offset of <%= text_field_tag 'offset', @offset, :maxlength => 4 %>.  
+
+    <%= submit_tag "Update list", id:"update-list-form-submit", class:"btn btn-small btn-primary" %>
+    <%= submit_tag "Export as CSV", id:"export-csv-form-submit", class:"btn btn-small" %></div>
+  <% end %>
+  </div>
+</div>

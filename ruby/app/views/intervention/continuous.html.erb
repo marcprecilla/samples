@@ -1,0 +1,94 @@
+<% content_for :header_bar do %>
+
+<input type="button" href="action:previousState" id="navbar-button-left" class="navbar-button back" app-data-state="app" value="Previous" />
+<span id="title"><%=@window_title%></span>
+<input type="button" href="" id="navbar-button-right" class="navbar-button none" app-data-state="none" value="Next" />
+
+<% end %>
+
+  <div class="tool-tip">
+  <div class="tip-container-content">
+    <div class="tip-container-header-content" data-ga-label="<%=@intervention.key %>">
+      <div class="braintooltip no-header">
+        Why this works
+      </div>
+    </div>
+
+    <div class="tip-container-body-content">
+       <%= @why_text.html_safe %><br></br>
+       <%= @why_source.html_safe %>
+    </div>
+  </div>
+  </div>
+
+<div id="continuous-intervention">
+<div id="audio-slideshow-container" class="audio-slideshow-container">
+
+
+  <div class="main-content-wrapper">
+    <div id="audio-slideshow" class="audio-slideshow slider-carousel" data-audio="<%=@intervention.audio_url%>" data-audio-duration="<%=@intervention.audio_duration%>">
+      <div class="img-container"><div class="img-content" style="">
+          <div class="content">
+            <a href="#" class="help-icon">Help</a>
+          </div>
+      </div></div>
+
+      <ul class="audio-slides slides" style="">
+
+      <% for transition in @intervention.transitions %>
+        <li class="" style="background:url(<%= intervention_image_link(transition[:image],@day) %>) 0px 0px no-repeat; background-size:100%;" data-thumbnail="<%= intervention_image_link(transition[:image],@day) %>" data-slide-time="<%= transition[:time] %>">
+          <div class="content">
+            <label><span><%= transition[:text].html_safe %></span></label>
+          </div>
+        </li>
+     <% end %>
+      </ul>
+
+      <div class="audio-control-interface">
+        <div class="buffering"></div>
+        <div class="time-container">
+           <span class="total-time"></span>
+        </div>
+        <div class="timeline">
+          <div class="timeline-controls"></div>
+          <div class="playhead"></div>
+        </div>
+        <div class="jplayer"></div>
+      </div>
+
+      <span class="play-time large"></span>
+
+    </div>
+  </div>
+
+
+    <div class="section-row"><div class="main-controls-container">
+
+      <div class="state-1"><a href="#" class="btn btn-border-simple lime pill btn-right-arrow btn-block size-plus-1 ga-tracked" id="begin-button" data-ga-category="audio" data-ga-action="play" data-ga-label="<%=@intervention.key %>">Start</a></div>
+
+      <div class="state-2">
+
+        <div class="button-layout-1 cf">
+          <div class="main-button-container">
+            <div style="height:72px; overflow:hidden;">
+              <a href="#" class="btn btn-border-simple lime pill btn-block size-plus-1 button-pause-2" tabindex="1" id="start-button">Pause</a>
+            </div>
+          </div>
+          <div class="right-button-container">
+            <a href="" class="button-4 centered do-action-button"><span class="outer"><span class="inner"><span class="check">Done</span></span></span></a>
+          </div>
+        </div>
+
+      </div>
+
+        <%= form_tag('/activity', method: :post, id:'intervention-action-form', class:'continuous') do  %>
+
+          <%= hidden_field_tag 'intervention_uuid', @intervention.uuid %>
+          <% end %>
+
+    </div></div>
+
+</div>
+</div>
+
+<%= render "intervention/photo" %>

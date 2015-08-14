@@ -1,0 +1,75 @@
+<% content_for :header do %>
+  <%= render "layouts/product_site_top_nav" %>
+<% end %>
+
+<% content_for :header_bar do %>
+
+<input type="button" href="action:previousState" id="navbar-button-left" class="navbar-button back" app-data-state="app" value="Previous" />
+<span id="title">app</span>
+
+<% end %>
+
+<% content_for :additional_body_css_classes do %>skip-resize-canvas<% end %>
+
+<div class="container">
+
+  <div class="hero-container">
+
+    <div class="centered-content">
+      <h1>
+        Take a Deep Breath. Choose Your Plan. Stress Less.
+      </h1>
+
+
+      <div class="offer-container">
+
+        <div class="plans-container">
+          <%
+            current_offer.subscription_plans.each do |p|
+              @button_classes = 'btn btn-border-simple size-plus-2 btn-block green-2'
+          %>
+          <div class="plan <%= (p.best_value?) ? 'large-temp-disabled' : '' %>">
+            <div class="plan-border">
+              <%
+                if p.best_value?
+                  @button_classes = 'btn btn-border-simple size-plus-2 btn-block green-2'
+              %>
+                <span class="most-popular">Most Popular</span>
+              <% end %>
+
+              <%= render 'subscriptions/plan_info', plan: p %>
+
+              <%= link_to 'Select This Plan', subscriptions_path(plan_uuid: p.uuid), method: :post, class: @button_classes %>
+
+            </div>
+          </div>
+          <% end %>
+
+          <p class="text-center plan-details">
+            Plans auto-renew at the end of their term.  Cancel Anytime.
+            <% unless current_user %>
+              Already a user? <%= link_to 'Click here', login_path %>
+            <% end %>
+          </p>
+
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <%= render 'subscriptions/features' %>
+
+
+</div>
+
+<%= render "layouts/product_site_modal_nav" %>
+
+<% content_for :footer do %>
+  <%= render "layouts/product_site_footer" %>
+<% end %>
+

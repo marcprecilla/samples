@@ -1,0 +1,33 @@
+<% content_for :header_bar do %>
+
+<input type="button" href="action:toggleSideBar" id="navbar-button-left" class="navbar-button menu" app-data-state="app" value="Previous" />
+<span id="title">Activity Feed</span>
+<input type="button" href="" id="navbar-button-right" class="navbar-button none" app-data-state="none" value="Next" />
+
+<% end %>
+
+<% if @events.count == 0 %>
+  <h1 class="style-2">No activities completed yet.<br />Why don't you get started with Day 1?</h1>
+<% end %>
+
+<ul class="activity-list">
+
+  <% for event in @events; logger.info "event:#{event}; event.kind_of? ActionPlan = #{event.kind_of? ActionPlan}" %>
+
+  <% if event.kind_of? ActionPlan %>
+
+    <% earliest_activity = event.earliest_activity
+       if earliest_activity
+    %>
+      <li href="<%=activity_path(event.earliest_activity)%>" data-img-src="<%=event.action_items.last.intervention.image_url%>">You started Week <%=event.week%></li>
+    <% else %>
+      <li data-img-src="<%=event.action_items.last.intervention.image_url%>">You started Week <%=event.week%></li>
+    <% end %>
+
+  <% else %>
+  <li class="subitem complete has-icon" href="<%=activity_path(event)%>" data-img-src="<%=event.image_urls.first || image_for_intervention(event.intervention)%>"><%= event.intervention.name %></li>
+  <% end %>
+
+  <% end %>
+
+</ul>

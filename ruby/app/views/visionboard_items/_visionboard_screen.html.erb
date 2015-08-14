@@ -1,0 +1,68 @@
+<div class="visionboard-container">
+
+<% for item in @items %>
+
+  <% if item.kind_of? Intention; intention = item %>
+    <div class="vb-row intention-row  black drag-scrollable">
+      <ul class="cf dragger">
+        <li class="label"><a href="<%=intention_url(intention)%>" class="label-text desktop-modal-load">I intend to be <b><%=intention.text%></b></a></li>
+        <%= render "visionboard_items/intention_row", intention:intention, index:0 %>
+        <%= render "visionboard_items/intention_row", intention:intention, index:1 %>
+        <%= render "visionboard_items/intention_row", intention:intention, index:2 %>
+        <%= render "visionboard_items/intention_row", intention:intention, index:3 %>
+      </ul>
+    </div>
+
+  <% else; ; thank = item # Thank %>
+
+    <div class="vb-row thank-row black drag-scrollable">
+      <ul class="cf dragger">
+        <li class="label"><a href="<%=thank_url(thank)%>" class="label-text desktop-modal-load">I am thankful for <b><%=thank.text%></b></a></li>
+        <%= render "visionboard_items/thank_row", thank:thank, index:0 %>
+        <%= render "visionboard_items/thank_row", thank:thank, index:1 %>
+        <%= render "visionboard_items/thank_row", thank:thank, index:2 %>
+        <%= render "visionboard_items/thank_row", thank:thank, index:3 %>
+      </ul>
+    </div>
+
+  <% end # if %>
+
+<% end # items iteration %>
+
+
+  <div class="two-row">
+    <ul class="cf">
+      <li class="button-container"><a href="/intentions/new" class="btn btn-border-simple btn-block pill desktop-modal-load">Set Intention</a></li>
+      <li class="button-container"><a href="/thanks/new" class="btn btn-border-simple btn-block pill desktop-modal-load">Be Thankful</a></li>
+    </ul>
+  </div>
+
+  <div class="two-row">
+    <ul class="cf">
+      <li><div class="quote"><%= other_users_vision_board_entry %></div></li>
+      <li><div class="quote"><%= other_users_vision_board_entry %></div></li>
+    </ul>
+  </div>
+
+  <div class="two-row">
+    <ul class="cf">
+      <li><div class="quote"><%= other_users_vision_board_entry %></div></li>
+      <li><div class="quote"><%= other_users_vision_board_entry %></div></li>
+    </ul>
+  </div>
+
+</div>
+
+<svg height="0" style="position:absolute;">
+  <filter id="maskfilter">
+      <feColorMatrix in="SourceAlpha"
+                     type="matrix"
+                     values="0 0 0 1 0
+                             0 0 0 1 0
+                             0 0 0 1 0
+                             0 0 0 1 0" />
+  </filter>
+  <mask id="camera-mask">
+    <image xlink:href="/assets/icon.camera.png" height="38px" width="38px" filter="url(#maskfilter)" />
+  </mask>
+</svg>

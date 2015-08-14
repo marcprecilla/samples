@@ -1,0 +1,498 @@
+// Place all the styles related to the Mobile/Progress controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#progress {
+
+  .top-container {
+    text-align:center;
+    background-color:#fff;
+    .top-container-content {
+      max-width:320px;
+      margin:0px auto;
+    }
+
+    .barchart-wrapper {
+      padding:0px 10px;
+    }
+
+  }
+
+  .no-data-container {
+    padding:38px 0px 0px 0px;
+    font-family: $sansFontFamily;
+    font-weight:100;
+    font-size:12px;
+    line-height:normal;
+    color:#666666;
+    text-align:center;
+
+    h3 {
+      padding-top:70px;
+      background:url(mvp.icons.general.png) center -1000px no-repeat;
+      background-size:500px 2000px;
+      font-size:20px;
+      color:#000;
+      font-weight:100;
+      margin:5px 0px 0px 0px;
+    }
+
+    .button-container {
+      padding-top:10px;
+    }
+
+  }
+
+
+  .screen {
+    min-height:227px;
+    position:relative;
+    top:0px;
+    left:0px;
+  }
+
+  .navbar {
+    margin-bottom:0px;
+
+    .nav {
+      float:none;
+      margin:0px;
+      li {
+          width:33.3%;
+          text-align:center;
+          font-size:86%;
+
+          &.divider-vertical {
+            width:0px;
+          }
+
+          a {
+            border-right:1px #f2f2f2 solid;
+            border-left:1px #fff solid;
+             outline-style:none;
+          }
+
+          &:first-child {
+            a {
+              border-left:0px;
+            }
+          }
+
+          &:last-child {
+            a {
+              border-right:0px;
+            }
+          }
+
+          &.active {
+            a {
+              background:#d4d4d4;
+              color:#fff;
+              text-shadow:none;
+            }
+          }
+      }
+    }
+  }
+
+
+
+  #trends {
+
+    .quadrant-container {
+      max-width:320px;
+      margin:0px auto;
+      text-align:center;
+    }
+
+    .quadrant {
+      width:140px;
+      height:82px;
+      padding:16px 0px 0px 0px;
+      margin:7px 0px;
+      display:inline-block;
+      color:#009fff;
+      text-align:left;
+
+      .content {
+        margin:0px 9px;
+        height:82px;
+      }
+
+      label {
+        font-size:20px;
+        color:#000;
+        line-height:20px;
+        padding-bottom:12px;
+      }
+
+      .value {
+        font-weight:100;
+        font-size:43px;
+        line-height:25px;
+        padding-left:45px;
+
+        super {
+          font-weight:100;
+          font-size:25px;
+          position:relative;
+          top:-12px;
+        }
+      }
+
+      &.area-1 {
+        border-right:1px #d5d5d5 solid;
+
+        .content {
+          border-bottom:1px #d5d5d5 solid;
+        }
+      }
+
+      &.area-2 {
+        .content {
+          border-bottom:1px #d5d5d5 solid;
+        }
+      }
+
+      &.area-3 {
+        border-right:1px #d5d5d5 solid;
+      }
+
+      &.up {
+        .value {
+          background:url(mvp.icons.general.png) 0px -700px;
+          background-size:500px 2000px;
+        }
+      }
+
+      &.down {
+        .value {
+          background:url(mvp.icons.general.png) 0px -800px;
+          background-size:500px 2000px;
+        }
+      }
+
+
+    }
+
+  }
+
+  #analysis {
+
+    .btn.btn-square.size-plus-1.fullimg .outer .inner .image {
+      height:45px;
+    }
+
+    .btn.btn-square {
+
+      margin:0px;
+
+      &.mindfulness {
+        .image {
+          background:url(mvp.graphics.exercises.png) center -90px no-repeat;
+          background-size:500px 2000px;
+        }
+      }
+
+      &.gratitude {
+        .image {
+          background:url(mvp.graphics.exercises.png) center -398px no-repeat;
+          background-size:500px 2000px;
+        }
+      }
+
+
+      &.sleep {
+        .image {
+          background:url(mvp.graphics.exercises.png) center -692px no-repeat;
+          background-size:500px 2000px;
+        }
+      }
+
+     &.positivity {
+        .image {
+          background:url(mvp.graphics.exercises.png) center -996px no-repeat;
+          background-size:500px 2000px;
+        }
+      }
+
+    }
+
+
+  }
+
+  ul.progress-list {
+    margin:0px;
+
+    li {
+      list-style-type:none;
+      padding:13px 10px;
+      border-left:1px #c2c2c2 solid;
+      border-right:1px #c2c2c2 solid;
+      border-bottom:1px #c2c2c2 solid;
+      background: rgb(246,246,246);
+      background: -moz-linear-gradient(top,  rgba(246,246,246,1) 0%, rgba(239,239,239,1) 86%, rgba(230,230,230,1) 100%);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(246,246,246,1)), color-stop(86%,rgba(239,239,239,1)), color-stop(100%,rgba(230,230,230,1)));
+      background: -webkit-linear-gradient(top,  rgba(246,246,246,1) 0%,rgba(239,239,239,1) 86%,rgba(230,230,230,1) 100%);
+      background: -o-linear-gradient(top,  rgba(246,246,246,1) 0%,rgba(239,239,239,1) 86%,rgba(230,230,230,1) 100%);
+      background: -ms-linear-gradient(top,  rgba(246,246,246,1) 0%,rgba(239,239,239,1) 86%,rgba(230,230,230,1) 100%);
+      background: linear-gradient(to bottom,  rgba(246,246,246,1) 0%,rgba(239,239,239,1) 86%,rgba(230,230,230,1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', endColorstr='#e6e6e6',GradientType=0 );
+      position:relative;
+      top:0px;
+      left:0px;
+      font-size:86%;
+      line-height:normal;
+
+      h2 {
+        margin:0px 0px 0px 0px;
+        padding:3px 0px 0px 8px;
+        display:inline-block;
+        font-size:129%;
+        font-weight:100;
+        line-height:normal;
+        color:#000;
+        width:125px;
+        border-right:1px #d5d5d5 solid;
+        position:relative;
+        top:0px;
+        left:0px;
+        vertical-align:middle;
+
+        strong {
+          font-size:194%;
+          color:#009fff;
+          font-weight:100;
+          padding-top:6px;
+          display:block;
+        }
+
+        .border-triangle {
+          width:10px;
+          padding:13px 0px 0px 0px;
+          height:0px;
+          overflow:hidden;
+          background:url(mvp.graphics.general2.png) right -1300px no-repeat;
+          background-size:500px 2000px;
+          position:absolute;
+          top:25px;
+          right:-1px;
+          z-index:3000;
+        }
+
+      }
+
+      .content {
+        padding-left:12px;
+        border-left:1px #d5d5d5 solid;
+        display:inline-block;
+        vertical-align:middle;
+        position:relative;
+        top:0px;
+        left:-4px;
+      }
+
+    }
+  }
+
+  .progress-bar {
+      font-size:18px;
+      line-height:18px;
+      font-weight:bold;
+      color:#2a3e49;
+      border-radius: 58px;
+      border:1px #999 solid;
+      border-color: transparent;
+      padding: 5px;
+      @include gradient-vertical(#dddddd, white);
+      display:block;
+
+      .inner {
+        border-radius: 38px;
+        border:1px #b3b3b3 solid;
+        padding: 0px;
+        @include gradient-vertical(white, #dddddd);
+        display:block;
+        overflow:hidden;
+
+        .progress-marker {
+          display:block;
+          background-color:#19a8ff;
+          padding:20px 0px 0px 0px;
+          width:30px;
+          height:0px;
+          overflow:hidden;
+        }
+      }
+
+  }
+
+  .label-container {
+    label {
+      font-size:86%;
+      color:#000;
+      font-weight:100;
+      padding-top:4px;
+      line-height:normal;
+    }
+
+    label.progress-left {
+      width:50%;
+      float:left;
+    }
+
+    label.progress-right {
+      width:50%;
+      float:left;
+      text-align:right;
+    }
+  }
+
+
+  .progress-walkthrough {
+
+    font-family: $sansFontFamily;
+    font-weight:300;
+    color:#fff;
+    font-size:20px;
+
+    h3 {
+      font-size:30px;
+      font-weight:300;
+    }
+
+    .skip-tour-label {
+      width:70px;
+      padding:27px 0px 0px 0px;
+      background:url(mvp.icons.general.png) 35px -400px no-repeat;
+      background-size:500px 2000px;
+      position:absolute;
+      top:28px;
+      right:32px;
+      font-size:15px;
+      color:#fff;
+    }
+
+    .flex-control-nav {
+      display:none;
+    }
+
+    .nav-button-container {
+      margin-top:15px;
+    }
+
+    .slides {
+      li {
+        text-align:center;
+        position:relative;
+        top:0px;
+        font-size:20px;
+        line-height:26px;
+
+        .description {
+          padding:0px 20px;
+          max-width:320px;
+          margin:0px auto;
+        }
+      }
+    }
+
+    #slide-1 {
+      .slide-content {
+        padding:130px 0px 0px 0px;
+
+        .button-container {
+          width:153px;
+          margin:0px auto;
+          padding:20px 0px;
+        }
+      }
+    }
+
+    .page-flexslider {
+      height:100%;
+      .flex-viewport {
+        height:100%;
+      }
+    }
+
+    #slide-2 {
+      .slide-content {
+        padding:25px 0px 0px 0px;
+      }
+
+      .your-points-graphic {
+        background:url(mvp.graphics.tour.progress.png) center 0px no-repeat;
+        background-size:500px 1000px;
+        padding:201px 0px 0px 0px;
+        height:0px;
+        overflow:hidden;
+        margin-bottom:20px;
+        width:100%;
+      }
+
+    }
+
+    #slide-3 {
+      .slide-content {
+        padding:25px 0px 0px 0px;
+      }
+
+      .timeline-graphic {
+        background:url(mvp.graphics.tour.progress.png) center -250px no-repeat;
+        background-size:500px 1000px;
+        padding:224px 0px 0px 0px;
+        height:0px;
+        overflow:hidden;
+        margin-top:18px;
+        width:100%;
+      }
+
+    }
+
+    #slide-4 {
+      .slide-content {
+        padding:15px 0px 0px 0px;
+      }
+
+      .metrics-graphic {
+        background:url(mvp.graphics.tour.progress.png) center -500px no-repeat;
+        background-size:500px 1000px;
+        padding:249px 0px 0px 0px;
+        height:0px;
+        overflow:hidden;
+        width:100%;
+        margin-top:13px;
+      }
+
+    }
+
+    #slide-5 {
+      .slide-content {
+        padding:35px 0px 0px 0px;
+      }
+
+      .insights-graphic {
+        background:url(mvp.graphics.tour.progress.png) center -750px no-repeat;
+        background-size:500px 1000px;
+        padding:239px 0px 0px 0px;
+        height:0px;
+        overflow:hidden;
+        margin-top:12px;
+        width:100%;
+      }
+
+      .button-container {
+        width:153px;
+        margin:0px auto;
+        padding:20px 0px 0px 0px;
+      }
+
+
+    }
+
+
+  }
+
+
+}

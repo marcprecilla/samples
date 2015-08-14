@@ -1,0 +1,31 @@
+<% content_for :title, 'Home' %>
+
+<div class="container">
+  <div class="stress-less-title">
+    <h1 class="stress-less-logo"><span class="stress">Stress</span> <span class="less">Less</span></h1>
+    <!--<h2>30-Day Challenge</h2>-->
+    <div class="logo-container-outer"><div class="logo-container">
+      <div class='small-app'>Powered by app</div>
+    </div></div>
+  </div>
+
+  <ul class="activity-list">
+    <li class="subitem" data-img-src="/assets/mvp.splash.stress-less.png">Manage stress and build resilience.</li>
+    <li class="subitem" data-img-src="/assets/mvp.splash.productivity.jpg">Increase <strong>productivity</strong></li>
+    <li class="subitem" data-img-src="/assets/mvp.splash.breathing.jpg">Improve your <strong>breathing</strong></li>
+    <li class="subitem" data-img-src="/assets/mvp.splash.guru.jpg"><strong>Calm</strong> mind and body</li>
+    <li class="subitem" data-img-src="/assets/mvp.splash.sleep.jpg"><strong>Sleep</strong> better</li>
+  </ul>
+
+</div>
+
+<div id="buttons" class="">
+  <div class="content-wrapper cf">
+  <div class="layout-50-left">
+  <%= link_to 'Login', login_path, class: 'btn btn-border btn-block' %>
+  </div>
+  <div class="layout-50-right">
+  <%= link_to 'Register', registration_path, class: 'btn btn-border orange btn-block' %>
+  </div>
+  </div>
+</div>

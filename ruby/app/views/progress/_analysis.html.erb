@@ -1,0 +1,52 @@
+
+  <% if @show_trends_and_analysis%>
+  <ul class="progress-list">
+    <li class="cf">
+      <h2>
+        <a href="#" class="btn btn-square size-plus-1 fullimg" data-img-src="/assets/ph.be-happier.jpg"></a>
+        <span class="border-triangle">x</span>
+      </h2>
+      <div class="content">
+        <%=@analysis[:focus].try(:html_safe)%>
+      </div>
+    </li>
+    <li class="cf">
+      <h2>
+        <a href="#" class="btn btn-square size-plus-1 fullimg" data-img-src="/assets/ph.be-happier.jpg"></a>
+        <span class="border-triangle">x</span>
+      </h2>
+      <div class="content">
+        <%=@analysis[:positivity].try(:html_safe)%>
+      </div>
+    </li>
+    <li class="cf">
+      <h2>
+        <a href="#" class="btn btn-square size-plus-1 fullimg" data-img-src="/assets/ph.be-happier.jpg"></a>
+        <span class="border-triangle">x</span>
+      </h2>
+      <div class="content">
+        <%=@analysis[:sleep].try(:html_safe)%>
+
+      </div>
+    </li>
+    <li class="cf">
+      <h2>
+        <a href="#" class="btn btn-square size-plus-1 fullimg" data-img-src="/assets/ph.be-happier.jpg"></a>
+        <span class="border-triangle">x</span>
+      </h2>
+      <div class="content">
+        <%=@analysis[:social].try(:html_safe)%>
+
+      </div>
+    </li>
+  </ul>
+
+  <% else %>
+
+    <div class="no-data-container">
+      <h3>No data available</h3>
+      Data will be available after the second week
+    </div>
+
+  <% end %>
+

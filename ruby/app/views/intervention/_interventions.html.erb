@@ -1,0 +1,5 @@
+<ul class="activity-list">
+<% interventions.each do |intervention| %>
+  <li class="subitem has-icon blue-arrow <%=intervention.setting%> <%=category_sym_for_intervention_sym intervention.key%>" data-time="<%=intervention.duration%>" href="<%= url_for_new_activity(intervention.key) %>" data-img-src="<%=image_for_intervention(intervention)%>"><%= @intervention_names[intervention.key.to_sym] %></li>
+<% end %>
+</ul>

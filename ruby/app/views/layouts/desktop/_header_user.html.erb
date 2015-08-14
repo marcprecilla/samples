@@ -1,0 +1,69 @@
+<div class="user-header cf">
+
+  <div class="header-content-container">
+
+    <div class="avatar">
+      <div class="name-container"><div class="name-content"><%= @user.first_name%></div></div>
+      <div class="inner" style="background:#f6f6f6 url(<%= profile_image_url%>) 0px 0px no-repeat; background-size:cover;">x</div>
+      <a href="#" class="icon">x</a>
+      <%= render "layouts/desktop/metrics_personality" %>
+    </div>
+
+    <div id="avatar-upload" style="visibility:hidden; height:0px; overflow:hidden;">
+      <%= cloudinary_js_config %>
+      <%= form_for @user, url: user_path do |f|  %>
+      <%= f.hidden_field :profile_image_url %>
+      <input type="hidden" name="flow" value="update-avatar" />
+      <%= cl_image_upload_tag("image_id", :public_id => "profile_#{@user.uuid}", :crop => :limit, :width => 1000, :height => 1000,
+                            :html => {:id => "avatar-photo-input"}) %>
+      <% end %>
+
+      <div class="cloudinary-preview"></div>
+    </div>
+
+
+    <h1 class="title-header">
+      Mind Fitness Metrics
+    </h1>
+
+    <div class="mind-metrics-description">
+      Trends for the week of <%=week_date_string_for_action_plan_with_year(current_action_plan)%>
+    </div>
+
+    <div class="relative-position">
+
+    <% if defined?(current_user) && current_user.stripe_subscription_active? %>
+      <%= render "layouts/desktop/metrics_mind" %>
+    <% else %>
+      <%= render "layouts/desktop/metrics_mind_free" %>
+    <% end %>
+
+    <!-- these require @baseline_levels -->
+
+
+    <%
+      prepare_baseline_assessment_attributes(current_enrollment) unless @baseline_levels
+      prepare_three_sixty_assessment_attributes(current_enrollment) unless @baseline_levels
+    %>
+
+    <% if defined?(current_user) && current_user.stripe_subscription_active? %>
+
+      <%= render "layouts/desktop/metrics_for_category", active: false, category: :focus %>
+      <%= render "layouts/desktop/metrics_for_category", active: false, category: :positivity %>
+      <%= render "layouts/desktop/metrics_for_category", active: false, category: :sleep %>
+      <%= render "layouts/desktop/metrics_for_category", active: false, category: :social %>
+
+    <% else %>
+
+      <%= render "layouts/desktop/metrics_for_category_free", active: true, category: :positivity %>
+
+    <% end %>
+
+
+
+    </div>
+
+  </div>
+
+
+</div>

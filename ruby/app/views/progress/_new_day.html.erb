@@ -1,0 +1,16 @@
+<li class="day-container has-label cf" data-rel-score="<%= points %>" data-rel-timestamp="<%=timestamp %>">
+
+<% if show_week_header %>
+<h2 class="day-header">Week <%=week_number%></h2>
+<% end %>
+
+<div class="day-label">
+    <h3 class="header-circle darkblue">
+      <div class="top-label"><%=day_of_week.upcase%></div>
+      <b><%= points %></b>
+      POINTS
+    </h3>
+    <span class="border-triangle">x</span>
+</div>
+
+</li>

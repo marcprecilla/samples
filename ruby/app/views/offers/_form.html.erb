@@ -1,0 +1,25 @@
+<%= form_for @offer do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :available, class: 'checkbox' do %>
+    Available
+    <%= f.check_box :available %>
+  <% end %>
+
+  <%= field_set_tag 'Plans' do %>
+    <% @offer.subscription_plans.each do |p| %>
+      <%= label_tag "plans[#{p.uuid}]", class: 'checkbox' do %>
+        <%= p.name %> (<%= p.price_description %>)
+        <%= check_box_tag "plans[#{p.uuid}]", true %>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <div class="form-actions">
+    <%= f.submit 'Save', class: 'btn btn-primary' %>
+    <%= link_to 'Cancel', offers_path, class: 'btn' %>
+    <% if @offer.persisted? %>
+      <%= link_to 'Delete', offer_path(@offer), method: :delete, class: 'btn btn-danger' %>
+    <% end %>
+  </div>
+<% end %>

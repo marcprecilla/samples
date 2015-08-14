@@ -1,0 +1,16 @@
+<%= form_tag login_path, method: :post, class: 'login-form' do %>
+  <% if flash.alert %>
+  <div id="errors" class="alert alert-block alert-error">
+    <p><%= flash.alert %></p>
+  </div>
+  <% end %>
+
+  <%= hidden_field_tag :return_path, @return_path %>
+
+  <%= label_tag :email %>
+  <%= email_field_tag :email, @email, class: 'login-input-field' %>
+  <%= label_tag :password %>
+  <%= password_field_tag :password, @password, class: 'login-input-field' %>
+
+  <%= button_tag 'Next', type: 'submit', class: 'btn btn-border-simple size-plus-2 btn-block blue' %>
+<% end %>

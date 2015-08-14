@@ -1,0 +1,29 @@
+<div class="desktop-header">
+  <div class="content">
+
+    <ul class="header-links">
+      <!--
+      <li class="<%= 'active' if current_page? action_plan_index_path %>"><%= link_to 'My Dashboard', action_plan_index_path %></li>
+      <% if current_user && current_user.stripe_subscription_active? %>
+        <li><%= link_to 'Exercises', intervention_index_path, class: 'desktop-modal-load' %></li>
+      <% end %>
+      <li><%= link_to 'About', about_path, class: 'desktop-modal-load' %></li>
+      <li><%= link_to 'FAQs', faq_path, class: 'desktop-modal-load' %></li>
+      <li class="<%= 'active' if current_page? settings_path %>"><%= link_to 'Settings', settings_path %></li>
+      -->
+      <li class="social-buttons">
+          <a class="header-button-twitter" href="http://www.twitter.com/app">Follow us on</a>
+          <a class="header-button-fb" href="http://www.facebook.com/appinc">Follow us on</a>
+          <a href="mailto:support@appinc.com" class="header-button-email">Contact Us</a>
+          <a href="/invite/new" class="header-button-social desktop-modal-load">Invite Friends</a>
+      </li>
+      <li><%= link_to 'Logout', logout_path %></li>
+    </ul>
+
+
+    <div class="stress-less-title">
+      <h1 class="app-logo left-align">app Live Better</h1>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="camera-controls" style="visibility:hidden; height:0px; overflow:hidden;">
+  <%= cloudinary_js_config %>
+  <%= form_tag('/', :method => :post) do  %>
+  <%= cl_image_upload_tag(:image_id, :public_id => "thank_#{SecureRandom.uuid}", :crop => :limit, :width => 1000, :height => 1000,
+                        :html => {:id => "photo-input"}) %>
+  <% end %>
+
+  <div class="cloudinary-preview"></div>
+</div>
+
+<div id="photo-modal" class="modal hide fade modal-silverbg">
+<div class="modal-header">
+<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+</div>
+<div class="modal-body">
+
+</div>
+</div>

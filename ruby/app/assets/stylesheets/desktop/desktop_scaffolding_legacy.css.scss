@@ -1,0 +1,899 @@
+// Place all the styles related to the Mobile/Offline controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+body.desktop_scaffolding {
+
+.user-header-legacy {
+
+  padding:15px 0px 20px 0px;
+
+  .title-container {
+
+    width:945px;
+    height:48px;
+    margin:0px auto;
+    position:relative;
+    top:0px;
+    padding:0px 110px;
+
+    .title-header {
+      font-size:40px;
+      font-weight:300;
+      margin-bottom:2px;
+    }
+
+    .login-info {
+      display:inline-block;
+      font-size:14px;
+      text-align:right;
+
+      span {
+        padding-left:30px;
+
+        b {
+          font-weight:300;
+          color:#1e99e7;
+        }
+      }
+    }
+
+    .login-container {
+      width:107px;
+      height:53px;
+      position:absolute;
+      top:0px;
+      right:110px;
+
+      font-family: $sansFontFamily;
+      font-weight:300;
+      font-size:13px;
+      color:#999999;
+
+      border-radius:53px;
+      box-shadow: 0px 0px 3px rgba(0,0,0,0.45) inset;
+      @include gradient-vertical(#efefef,#ebebeb);
+
+
+      &.active {
+        position:absolute;
+        top:0px;
+        right:87px;
+        width:152px;
+        background:url(mvp.graphics.desktop.general.png) center -300px no-repeat;
+        box-shadow:none;
+
+        .avatar {
+          margin-left:27px;
+        }
+
+        .mirror-button {
+          margin-right:23px;
+          background:url(mvp.graphics.desktop.general.png) center -187px no-repeat;
+        }
+
+      }
+
+      .avatar {
+        width:42px;
+        padding:42px 0px 0px 0px;
+        height:0px;
+        overflow:hidden;
+        border-radius:42px;
+        border:0px #000000 solid;
+        margin:5px;
+      }
+
+      .mirror-button {
+        outline: none;
+        width:55px;
+        padding:50px 0px 0px 0px;
+        height:0px;
+        overflow:hidden;
+        background:url(mvp.graphics.desktop.general.png) center -87px no-repeat;
+        float:right;
+        display:block;
+      }
+
+    }
+
+
+  }
+
+  .profile-expander {
+    height:0px;
+    overflow:hidden;
+    width:100%;
+    transition: height 1s;
+    -webkit-transition: height 1s;
+  }
+
+  .profile-info-container {
+    background-color:#ececec;
+    border-top:1px #c3c3c3 solid;
+    border-bottom:1px #c3c3c3 solid;
+
+    .profile-info-content {
+      width:945px;
+      margin:0px auto;
+      padding:40px 110px;
+
+      .left-content {
+        width:290px;
+        padding:10px 50px 0px 0px;
+        float:left;
+        text-align:center;
+
+        .avatar {
+          display:inline-block;
+          padding:5px;
+          @include gradient-vertical(#e0e0e0,#f7f7f7);
+          border-radius:180px;
+          position:relative;
+          top:0px;
+          left:0px;
+
+          .inner {
+            display:block;
+            padding:170px 0px 0px 0px;
+            width:170px;
+            height:0px;
+            overflow:hidden;
+            border-radius:170px;
+            box-shadow: 0px 0px 10px #626262 inset;
+          }
+
+          .icon {
+            display:block;
+            background:url(mvp.graphics.desktop.general.png) -500px -1450px no-repeat;
+            width:36px;
+            height:0px;
+            padding:36px 0px 0px 0px;
+            overflow:hidden;
+            position:absolute;
+            top:147px;
+            left:147px;
+          }
+        }
+
+        .user-name {
+          font-size:40px;
+          font-weight:300;
+          margin:0px;
+        }
+
+        .member-since {
+          font-size:18px;
+          font-weight:300;
+          margin:0px;
+        }
+
+        .sub-header {
+          font-size:14px;
+          font-weight:bold;
+          color:#666666;
+          display:block;
+          text-align:left;
+          padding:25px 0px 0px 9px;
+        }
+
+        .personality-traits-list {
+          margin:0px;
+          border-bottom:1px #d4d4d4 solid;
+          li {
+            list-style-type:none;
+            border-top:1px #d4d4d4 solid;
+            padding:10px;
+            font-size:14px;
+            text-align:left;
+
+            a.tooltip-modal-trigger {
+              border-radius:18px;
+              background-color:#c9c9c9;
+              height:15px;
+              width:18px;
+              text-align:center;
+              padding:3px 0px 0px 0px;
+              display:inline-block;
+              float:right;
+              font-size:12px;
+              line-height:12px;
+              color:#fff;
+              vertical-align:middle;
+              position:relative;
+              top:3px;
+            }
+
+            .marker-icon {
+              display:inline-block;
+              vertical-align:middle;
+              padding-right:10px;
+
+                .outer {
+                  width:25px;
+                  height:25px;
+                  display:inline-block;
+                  border-radius:50%;
+                  @include gradient-vertical(#ffffff, #e4e4e4);
+                  padding:3px;
+
+                  .inner {
+                    border-radius:50%;
+                    @include gradient-vertical(#1c8dd4, #20a3f7);
+                    box-shadow: inset 0px 0px 2px rgba(0,0,0,0.75);
+
+                    .image {
+                      width:25px;
+                      padding:25px 0px 0px 0px;
+                      height:0px;
+                      overflow:hidden;
+                    }
+
+                  }
+              }
+
+            }
+
+            &.introverted, &.reserved {
+
+              .image {
+                background:url(mvp.graphics.assessment.results.png) center -806px no-repeat;
+                background-size:312px 936px;
+              }
+
+            }
+
+            &.extroverted {
+
+              .image {
+                background:url(mvp.graphics.assessment.results.png) -56px -806px no-repeat;
+                background-size:312px 936px;
+              }
+
+            }
+
+            &.agreeable, &.friendly {
+
+              .image {
+                background:url(mvp.graphics.assessment.results.png) center -839px no-repeat;
+                background-size:312px 936px;
+              }
+
+            }
+
+            &.spirited, &.free_spirited {
+
+              .image {
+                background:url(mvp.graphics.assessment.results.png) 8px -806px no-repeat;
+                background-size:312px 936px;
+              }
+
+            }
+
+            &.emotional {
+
+              .image {
+                background:url(mvp.graphics.assessment.results.png) 7px -836px no-repeat;
+                background-size:312px 936px;
+              }
+
+            }
+
+            &.independent {
+
+              .image {
+                background:url(mvp.graphics.assessment.results.png) -241px -806px no-repeat;
+                background-size:312px 936px;
+              }
+
+            }
+
+            &.traditional, &.practical {
+
+              .image {
+                background:url(mvp.graphics.assessment.results.png) -241px -839px no-repeat;
+                background-size:312px 936px;
+              }
+
+            }
+
+            &.stable, &.resilient {
+
+              .image {
+                background:url(mvp.graphics.assessment.results.png) -183px -806px no-repeat;
+                background-size:312px 936px;
+              }
+
+            }
+
+            &.conscientious {
+
+              .image {
+                background:url(mvp.graphics.assessment.results.png) -57px -837px no-repeat;
+                background-size:312px 936px;
+              }
+
+            }
+
+            &.open, &.imaginative {
+
+              .image {
+                background:url(mvp.graphics.assessment.results.png) -182px -837px no-repeat;
+                background-size:312px 936px;
+              }
+
+            }
+
+            &.skills {
+
+              .image {
+                background:url(mvp.graphics.assessment.results.png) center -571px no-repeat;
+                background-size:312px 936px;
+              }
+
+            }
+
+          }
+        }
+      }
+
+      .right-content {
+        width:605px;
+        float:left;
+
+        h4 {
+          font-size:18px;
+          margin:0px;
+          font-weight:bold;
+          padding:10px 0px 0px 0px;
+
+          .details {
+            font-weight:300;
+          }
+        }
+
+        .panels-container {
+
+          li {
+            display:none;
+
+            &.active {
+              display:block;
+            }
+          }
+
+          .panel-navigation {
+            font-size:18px;
+            text-align:center;
+            position:relative;
+            top:0px;
+            left:0px;
+            margin:15px 0px 0px 0px;
+            padding:10px 0px;
+            border-top:1px #ddd solid;
+            border-bottom:1px #ddd solid;
+            height:24px;
+
+            .button-left {
+              padding:32px 0px 0px 0px;
+              width:32px;
+              height:0px;
+              overflow:hidden;
+              background:url(mvp.graphics.desktop.general.png) 0px -900px no-repeat;
+              position:absolute;
+              top:4px;
+              left:0px;
+
+              &.disabled {
+                opacity:0.5;
+              }
+            }
+
+            .button-right {
+              padding:32px 0px 0px 0px;
+              width:32px;
+              height:0px;
+              overflow:hidden;
+              background:url(mvp.graphics.desktop.general.png) -500px -900px no-repeat;
+              position:absolute;
+              top:4px;
+              right:0px;
+
+              &.disabled {
+                opacity:0.5;
+              }
+            }
+          }
+
+        }
+
+        .metric-screen {
+          display:none;
+
+          &.active {
+            display:block;
+          }
+
+          h4 {
+            padding-bottom:5px;
+          }
+        }
+
+        .mind-metrics-description {
+          border-top:1px #dddddd solid;
+          margin-top:15px;
+          padding:20px 0px 15px 0px;
+          color:#666;
+
+          b {
+            color:#000;
+          }
+        }
+
+        .mind-metrics {
+          border-bottom:1px #dddddd solid;
+          padding-bottom:20px;
+          margin:10px 0px 10px 0px;
+          li {
+            list-style-type:none;
+            float:left;
+            border-radius:4px;
+            padding:12px 10px;
+            width:122px;
+            margin-right:10px;
+            box-shadow:0px 1px 1px #c0c0c0;
+            color:#666666;
+            background-color:#fff;
+            text-align:center;
+            position:relative;
+            top:0px;
+
+            a {
+              display:block;
+              color:#666666;
+              text-decoration:none;
+              outline: none;
+              position:relative;
+
+              &:hover {
+                text-decoration:none;
+              }
+            }
+
+            &.active {
+              background-color:#666666;
+              color:#fff;
+              box-shadow:-2px -2px 2px #000;
+
+              a {
+                display:block;
+                color:#fff;
+              }
+
+              label {
+                color:#fff;
+              }
+
+              &.focus {
+                label {
+                  background:url(mvp.graphics.desktop.general.png) 5px -1250px no-repeat;
+                }
+              }
+
+              &.positivity {
+                label {
+                  background:url(mvp.graphics.desktop.general.png) 5px -1300px no-repeat;
+                }
+              }
+
+              &.social {
+                label {
+                  background:url(mvp.graphics.desktop.general.png) 5px -1350px no-repeat;
+                }
+              }
+
+              &.sleep {
+                label {
+                  background:url(mvp.graphics.desktop.general.png) 5px -1400px no-repeat;
+                }
+              }
+
+              .selected-arrow {
+                display:block;
+              }
+
+            }
+
+            &.disabled {
+              .value {
+                opacity:0.2;
+              }
+              .exclamation {
+                display:block;
+              }
+              .time {
+                opacity:0.2;
+              }
+            }
+
+            &:last-child {
+              margin-right:0px;
+            }
+
+            label {
+              font-size:20px;
+              font-weight:300;
+              padding:0px 0px 10px 32px;
+              border-bottom:1px #e5e5e5 solid;
+              margin-bottom:10px;
+              color:#000;
+              width:81px;
+              margin:0px auto;
+            }
+
+            .value {
+              color:#000;
+              height:40px;
+              font-size:20px;
+              line-height:20px;
+              font-weight:bold;
+              padding:50px 0px 0px 62px;
+
+              super {
+                font-size:20px;
+                font-weight:bold;
+                position:relative;
+                top:0px;
+              }
+            }
+
+            .exclamation {
+              display:none;
+              padding:43px 0px 0px 0px;
+              height:0px;
+              width:43px;
+              overflow:hidden;
+              background:url(mvp.graphics.desktop.general.png) 0px -1450px no-repeat;
+              position:absolute;
+              top:-20px;
+              right:-20px;
+              z-index:1000;
+            }
+
+            .selected-arrow {
+              background:url(mvp.graphics.desktop.general.png) center -1800px no-repeat;
+              padding:12px 0px 0px 0px;
+              height:0px;
+              overflow:hidden;
+              position:absolute;
+              bottom:-29px;
+              display:none;
+              width:100%;
+              margin:0px;
+            }
+
+            &.highest {
+              .value {
+                background:url(mvp.graphics.desktop.general.png) 0px -485px no-repeat;
+                color:#b6e900;
+              }
+            }
+
+            &.high {
+              .value {
+                background:url(mvp.graphics.desktop.general.png) 0px -585px no-repeat;
+                color:#e1e900;
+              }
+            }
+
+            &.low {
+              .value {
+                background:url(mvp.graphics.desktop.general.png) 0px -685px no-repeat;
+                color:#fcba2f;
+              }
+            }
+
+            &.lowest {
+              .value {
+                background:url(mvp.graphics.desktop.general.png) 0px -785px no-repeat;
+                color:#fc862f;
+              }
+            }
+
+            &.focus {
+              label {
+                background:url(mvp.graphics.desktop.general.png) -495px -1250px no-repeat;
+              }
+            }
+
+            &.positivity {
+              label {
+                background:url(mvp.graphics.desktop.general.png) -495px -1300px no-repeat;
+              }
+            }
+
+            &.social {
+              label {
+                background:url(mvp.graphics.desktop.general.png) -495px -1350px no-repeat;
+              }
+            }
+
+            &.sleep {
+              label {
+                background:url(mvp.graphics.desktop.general.png) -495px -1400px no-repeat;
+              }
+            }
+
+          }
+        }
+
+
+        .column {
+          float:left;
+          width:280px;
+          padding:10px 20px 0px 20px;
+
+          &:last-child {
+            padding-right:0px;
+          }
+
+          .description-header {
+            font-weight:bold;
+            padding:0px;
+            margin:0px;
+          }
+
+          .content-container {
+            padding:12px 0px 0px 0px;
+            margin:10px 0px 0px 0px;
+            text-align:center;
+
+            .no-data-container {
+              background:url(mvp.graphics.desktop.general.png) center -980px no-repeat;
+              padding-top:100px;
+              color:#c1c1c1;
+              font-size:14px;
+              text-align:center;
+              font-weight:300;
+              padding-bottom:20px;
+
+              h3 {
+                margin:0px;
+                font-size:18px;
+                font-weight:bold;
+              }
+            }
+          }
+        }
+
+        .panels-container {
+
+          li {
+            display:none;
+
+            &.active {
+              display:block;
+            }
+          }
+
+        }
+
+        .analysis {
+          margin:0px 0px 10px 0px;
+
+          li {
+            list-style-type:none;
+            font-size:12px;
+            text-align:left;
+
+            &:last-child {
+              margin-right:0px;
+            }
+
+            .img-padding {
+              padding:0px;
+              .img {
+                padding:160px 0px 0px 0px;
+                height:0px;
+                overflow:hidden;
+                border-radius:4px;
+              }
+            }
+
+            .text-content {
+              padding:20px 0px;
+              font-size:14px;
+              line-height:24px;
+              border-bottom:1px #dcdcdc solid;
+
+              .scrollable-content {
+                height:120px;
+                overflow:auto;
+              }
+
+            }
+          }
+        }
+
+        .check-in-results {
+          padding-top:10px;
+          padding-left:0px;
+          border-right:1px #ddd solid;
+
+          .dial-meter {
+            position:relative;
+            top:0px;
+            width:273px;
+            padding:175px 0px 0px 0px;
+            height:0px;
+            overflow:hidden;
+            background:url(mvp.graphics.desktop.general.png) center -1500px no-repeat;
+            margin:0px auto;
+
+            .chat-button {
+              padding:50px 0px 0px 0px;
+              width:50px;
+              height:0px;
+              overflow:hidden;
+              background:url(mvp.graphics.desktop.general.png) center -1700px no-repeat;
+              position:absolute;
+              top:120px;
+              left:112px;
+            }
+
+            .average-results {
+              width:42px;
+              padding:115px 0px 0px 0px;
+              height:0px;
+              overflow:hidden;
+              background:url(mvp.graphics.desktop.general.png) -200px -1500px no-repeat;
+
+
+              &.highest {
+                transform:rotate(47deg);
+                -ms-transform:rotate(47deg);
+                -webkit-transform:rotate(47deg);
+                position:absolute;
+                top:43px;
+                left:181px;
+              }
+
+              &.high {
+                transform:rotate(22deg);
+                -ms-transform:rotate(22deg);
+                -webkit-transform:rotate(22deg);
+                position:absolute;
+                top:14px;
+                left:145px;
+              }
+
+              &.low {
+                transform:rotate(-22deg);
+                -ms-transform:rotate(-22deg);
+                -webkit-transform:rotate(-22deg);
+                position:absolute;
+                top:14px;
+                left:90px;
+              }
+
+              &.lowest {
+                transform:rotate(-52deg);
+                -ms-transform:rotate(-52deg);
+                -webkit-transform:rotate(-52deg);
+                position:absolute;
+                top:44px;
+                left:50px;
+              }
+
+            }
+
+            .user-results {
+              width:42px;
+              padding:115px 0px 0px 0px;
+              height:0px;
+              overflow:hidden;
+              background:url(mvp.graphics.desktop.general.png) 0px -1500px no-repeat;
+
+              &.highest {
+                transform:rotate(45deg);
+                -ms-transform:rotate(45deg);
+                -webkit-transform:rotate(45deg);
+                position:absolute;
+                top:43px;
+                left:181px;
+              }
+
+              &.high {
+                transform:rotate(20deg);
+                -ms-transform:rotate(20deg);
+                -webkit-transform:rotate(20deg);
+                position:absolute;
+                top:14px;
+                left:145px;
+              }
+
+              &.low {
+                transform:rotate(-20deg);
+                -ms-transform:rotate(-20deg);
+                -webkit-transform:rotate(-20deg);
+                position:absolute;
+                top:14px;
+                left:90px;
+              }
+
+              &.lowest {
+                transform:rotate(-50deg);
+                -ms-transform:rotate(-50deg);
+                -webkit-transform:rotate(-50deg);
+                position:absolute;
+                top:44px;
+                left:50px;
+              }
+
+            }
+
+          }
+
+          .legend-container {
+            text-align:center;
+            border-top:1px #dcdcdc solid;
+            border-bottom:1px #dcdcdc solid;
+            padding:8px 0px;
+
+            div {
+              width:55px;
+              padding:7px 0px 7px 45px;
+              color:#fff;
+              font-size:14px;
+              line-height:14px;
+              font-weight:100;
+              display:inline-block;
+              border-radius:25px;
+              text-align:left;
+            }
+
+            .legend-high {
+              background:#d3da00 url(mvp.graphics.desktop.general.png) 12px -1694px no-repeat;
+              margin-right:20px;
+            }
+
+            .legend-low {
+              background:#fc862f url(mvp.graphics.desktop.general.png) -188px -1694px no-repeat;
+            }
+
+            .legend-highest {
+              background:#d3da00 url(mvp.graphics.desktop.general.png) 12px -1694px no-repeat;
+              margin-right:20px;
+            }
+
+            .legend-lowest {
+              background:#fc862f url(mvp.graphics.desktop.general.png) -188px -1694px no-repeat;
+            }
+
+          }
+
+          .check-in-result-explanation {
+            padding:20px 0px;
+            border-bottom:1px #dcdcdc solid;
+
+            .scrollable-content {
+              height:120px;
+              overflow:auto;
+              text-align:left;
+              line-height:24px;
+            }
+          }
+
+
+        }
+
+      }
+
+
+    }
+  }
+
+}
+
+}

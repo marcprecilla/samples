@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Offers</h1>
+  <ul>
+    <% @offers.each do |offer| %>
+    <li>
+      <%= offer.name %> (<%= offer.token %>)
+      <%= link_to '[edit]', edit_offer_path(offer) %>
+      <%= link_to '[delete]', offer_path(offer), method: :delete %>
+    </li>
+    <% end %>
+  </ul>
+
+  <%= link_to 'New Offer', new_offer_path, class: 'btn' %>
+</div>

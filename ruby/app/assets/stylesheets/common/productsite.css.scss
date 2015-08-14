@@ -1,0 +1,434 @@
+#product-site-top-nav-container {
+
+    .button-menu {
+      padding:0px 0px 0px 0px;
+      display:block;
+      position:absolute;
+      top:10px;
+      left:12px;
+      font-family: Novecento;
+      font-size:14px;
+      font-weight:100;
+      color:#666;
+      text-decoration:none !important;
+      display:none;
+
+      &:hover {
+        color:#3ab1fc;
+        text-decoration:none;
+      }
+
+    }
+
+    .header-logo-link {
+      display:block;
+      margin:0px;
+      width:120px;
+      position:absolute;
+      top:10px;
+      left:0px;
+    }
+
+    img.main-logo {
+      display:block;
+      width:120px;
+      height:40px;
+    }
+
+    .social-links {
+      position:absolute;
+      top:0px;
+      right:10px;
+      width:150px;
+      text-align:right;
+      color:#666666;
+      font-family: Novecento;
+      font-size:14px;
+      font-weight:100;
+      padding-top:23px;
+
+      a {
+        color:#666666;
+        font-weight:100;
+
+        &:hover {
+          color:#3ab1fc;
+          text-decoration:none;
+        }
+
+        &.social-links-twitter {
+          width:21px;
+          padding:22px 0px 0px 0px;
+          height:0px;
+          overflow:hidden;
+          background:url(app.graphics.landing.stress.v0.png) center 0px no-repeat;
+          background-size:500px 2500px;
+          display:inline-block;
+          vertical-align:top;
+
+          &:hover {
+            background:url(app.graphics.landing.stress.v0.png) center -2425px no-repeat;
+            background-size:500px 2500px;
+          }
+        }
+
+        &.social-links-fb {
+          width:21px;
+          padding:22px 0px 0px 0px;
+          height:0px;
+          overflow:hidden;
+          background:url(app.graphics.landing.stress.v0.png) center -50px no-repeat;
+          background-size:500px 2500px;
+          display:inline-block;
+          vertical-align:top;
+
+          &:hover {
+            background:url(app.graphics.landing.stress.v0.png) center -2475px no-repeat;
+            background-size:500px 2500px;
+          }
+        }
+
+        &.social-links-login {
+          display:inline-block;
+          height:23px;
+          border-left:1px #e7e7e7 solid;
+          padding-left:10px;
+
+          span {
+            position:relative;
+            top:-2px;
+          }
+
+          &:active {
+            text-decoration:none;
+          }
+
+        }
+      }
+    }
+
+    .top-nav-links {
+      padding:23px 0px 0px 0px;
+      width:600px;
+      margin:0px auto;
+      text-align:center;
+
+      li {
+        list-style-type:none;
+        display:inline-block;
+          padding:0px 15px;
+
+        a {
+          font-family: Novecento;
+          font-size:14px;
+          color:#666;
+          font-weight:100;
+
+          &:hover, &.active {
+            color:#2ca8f7;
+            text-decoration:none;
+          }
+        }
+      }
+    }
+
+}
+
+
+
+#nav-modal {
+  background-color:#41b2f9;
+  box-shadow:none;
+  border-radius:0px;
+  border:0px;
+
+  .modal-body {
+    padding:38px;
+    max-height:440px;
+  }
+
+  .link-list {
+    font-family: Novecento;
+    font-size:20px;
+
+    li {
+      padding-top:20px;
+
+      &:first-child {
+        padding-top:10px;
+      }
+    }
+
+    a {
+      color:#fff;
+      font-weight:normal;
+    }
+
+    ul {
+      li {
+        font-weight:100;
+        padding-left:14px;
+
+        &:first-child {
+          padding-top:20px;
+        }
+
+        a {
+          font-weight:100;
+        }
+      }
+    }
+
+    &.left {
+      width:365px;
+      border-right:1px #7bc9fa solid;
+      float:left;
+      padding-left:22px;
+    }
+
+    &.right {
+      max-width:115px;
+      float:left;
+      font-size:14px;
+      padding-left:45px;
+    }
+
+  }
+
+  .button-list {
+    width:123px;
+    padding-top:30px;
+    position:absolute;
+    bottom:0px;
+    right:40px;
+
+    li {
+      padding-top:10px;
+    }
+
+    .btn-border-flat {
+      font-family:'Open Sans';
+      font-weight:bold;
+      color:#000;
+      padding:6px 0px;
+      display:block;
+      background-color:#f4f4f4;
+      border:1px #1585cd solid;
+      border-radius:5px;
+      text-align:center;
+    }
+
+    a.fb-connect-button {
+      width:123px;
+      padding:32px 0px 0px 0px;
+      height:0px;
+      overflow:hidden;
+      background:url(app.graphics.landing.simple.v0.png) 0px -2200px no-repeat;
+      display:block;
+    }
+
+  }
+
+  .button-close {
+    width:15px;
+    padding:15px 0px 0px 0px;
+    height:0px;
+    overflow:hidden;
+    background:url(app.graphics.landing.simple.v0.png) 0px -2300px no-repeat;
+    display:block;
+    position:absolute;
+    top:15px;
+    right:15px;
+  }
+
+}
+
+#product-site-footer {
+  background-color:#f0f0f0;
+  position:relative;
+  .centered-layout-container {
+    padding-top:70px;
+    padding-bottom:95px;
+
+    .copyright {
+
+      .copyright-logo {
+        padding-top:70px;
+        padding-bottom:0px;
+        background:#f0f0f0 url(app.graphics.landing.simple.v0.png) center -1000px no-repeat;
+        background-size:550px 2000px;
+      }
+
+    }
+  }
+
+  text-align:center;
+
+  .copyright {
+    font-size:13px;
+    color:#b9b9b9;
+    padding-bottom:30px;
+    line-height:150%;
+
+    a {
+      color:#b9b9b9;
+    }
+  }
+
+  .social-links {
+    padding-top:12px;
+    text-align:center;
+    display:none;
+
+    a {
+      &.social-links-twitter {
+        width:21px;
+        padding:22px 0px 0px 0px;
+        height:0px;
+        overflow:hidden;
+        background:url(app.graphics.landing.stress.v0.png) center 0px no-repeat;
+        background-size:500px 2500px;
+        display:inline-block;
+        vertical-align:top;
+
+        &:hover {
+          background:url(app.graphics.landing.stress.v0.png) center -2425px no-repeat;
+          background-size:500px 2500px;
+        }
+      }
+
+      &.social-links-fb {
+        width:21px;
+        padding:22px 0px 0px 0px;
+        height:0px;
+        overflow:hidden;
+        background:url(app.graphics.landing.stress.v0.png) center -50px no-repeat;
+        background-size:500px 2500px;
+        display:inline-block;
+        vertical-align:top;
+
+        &:hover {
+          background:url(app.graphics.landing.stress.v0.png) center -2475px no-repeat;
+          background-size:500px 2500px;
+        }
+      }
+
+    }
+  }
+
+}
+
+
+
+
+@media only screen and (max-width : 770px) {
+
+  #nav-modal {
+    box-shadow:none;
+    border-radius:0px;
+    border:0px;
+
+    .modal-body {
+      padding:38px;
+    }
+
+    .link-list {
+      font-size:16px;
+
+      li {
+        padding-top:5px;
+        &:first-child {
+          padding-top:0px;
+        }
+
+        ul {
+          li {
+            &:first-child {
+              padding-top:5px;
+            }
+          }
+        }
+      }
+
+      &.left {
+        width:auto;
+        border:0px;
+        float:none;
+        padding-left:0px;
+      }
+
+      &.right {
+        max-width:115px;
+        float:none;
+        font-size:14px;
+        padding:5px 0px 0px 0px;
+      }
+
+    }
+
+    .button-list {
+      width:123px;
+      padding-top:5px;
+      position:static;
+
+      li {
+        padding-top:10px;
+      }
+
+    }
+
+  }
+
+
+  #header {
+    #product-site-top-nav-container {
+      img.main-logo {
+
+        width:120px;
+        height:40px;
+
+      }
+
+      .button-menu {
+        display:block;
+      }
+
+      .top-nav-links {
+        display:none;
+      }
+
+      .header-logo-link {
+        display:block;
+        margin:12px auto 12px auto;
+        width:120px;
+        position:relative;
+        top:4px;
+      }
+
+      .social-links {
+        padding-top:15px;
+        .social-links-twitter { display:none !important; }
+        .social-links-fb { display:none !important; }
+        .social-links-login { border:0px !important; }
+      }
+    }
+  }
+
+
+  #product-site-footer {
+
+    .social-links {
+      display:block;
+    }
+
+  }
+
+}
+
+
+@media only screen and (min-width : 768px) {
+    #nav-modal {
+      width:680px;
+      margin-left:-340px;
+    }
+}

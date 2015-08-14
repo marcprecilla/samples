@@ -1,0 +1,85 @@
+<% content_for :header_bar do %>
+
+<input type="button" href="action:toggleSideBar" id="navbar-button-left" class="navbar-button menu" app-data-state="app" value="Previous" />
+<span id="title">Feedback</span>
+<input type="button" href="" id="navbar-button-right" class="navbar-button none" app-data-state="none" value="Next" />
+
+<% end %>
+
+<%= form_tag("/intervention/#{@intervention.uuid}", method: :put, id:'intervention-feedback-form', class:'') do  %>
+<%= hidden_field_tag 'user_enjoys', '' %>
+<%= hidden_field_tag 'user_values', '' %>
+
+<% if @show_feedback %>
+<div class="screen feedback-question">
+
+  <h1 class="style-6" style="padding-bottom:20px;">
+    <span class="pam-question" app-data-question-index="0" style="display:block;">Did you enjoy completing this exercise?</span>
+  </h1>
+
+  <div data-toggle="buttons-radio" class="btn-group next short-delay btn-group-radio btn-group-circle-simple with-label">
+    <button type="button" class="btn btn-jump" href="2" data-user-enjoys="true" data-user-values="true">Yes</button>
+    <button type="button" class="btn btn-jump" href="1" data-user-enjoys="false" data-user-values="false">No</button>
+  </div>
+
+</div>
+
+<div class="screen feedback-question">
+
+  <h1 class="style-6" style="padding-bottom:20px;">
+    <span class="pam-question" app-data-question-index="0" style="display:block;">Did you find this exercise valuable?</span>
+  </h1>
+
+  <div data-toggle="buttons-radio" class="btn-group next short-delay btn-group-radio btn-group-circle-simple with-label">
+    <button type="button" class="btn btn-jump" href="2" data-user-enjoys="false" data-user-values="true">Yes</button>
+    <button type="button" class="btn btn-jump" href="2" data-user-enjoys="false" data-user-values="false">No</button>
+  </div>
+
+</div>
+
+<% end %>
+<% end %>
+
+<div id="summary-screen" class="screen">
+
+
+<h3 class="row-header-2">
+  TODAY'S EXERCISE: <%= @intervention.name.html_safe %>
+</h3>
+
+<div class="share-body">
+  <div class="share-header-container cf">
+       <div class="img-container">
+        <div class="img" style="background:url(<%= activity_image_url(@activity)%>) 0px 0px no-repeat; background-size:cover">&nbsp;</div>
+        <label class="complete">Complete</label>
+      </div>
+  </div>
+
+  <div class="container-fluid description-container">
+    <div class="row-fluid">
+      <div class="span12">
+        <%=@activity.text ? @activity.text.html_safe : ''%>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+  <div class="section-row light-top-border-only share-button-section">
+
+    <div class="share-button-container cf">
+      <a class="fb button-left fb_js_sdk_share_link ga-tracked" href="http://www.myapp.com/?lp=v01%26s=facebook" app-data-fbshare-picture="<%= activity_image_url(@activity)%>"  app-data-fbshare-name="Prime the Mind"  app-data-fbshare-description="<%=social_share_text(@intervention)%>" data-ga-category="buttons" data-ga-action="share" data-ga-label="fbshare"><span>Facebook</span></a>
+
+
+      <a class="email email_share_link button-right ga-tracked" href="mailto:?subject=Prime the Mind&body=<%=social_share_text(@intervention)%> http://myapp.com/?lp=v01%26s=email" data-ga-category="buttons" data-ga-action="share" data-ga-label="emailshare"><span>Email</span></a>
+    </div>
+
+    <a href="/dashboard?skip_intro=1" id="intervention-feedback-form-submit" class="btn btn-border-simple lime pill btn-right-arrow btn-block size-plus-1">Continue</a>
+  </div>
+
+</div>
+
+</div>
+
+<%= render "layouts/fb_sdk" %>
+

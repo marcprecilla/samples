@@ -1,0 +1,53 @@
+<% if current_user %>
+  <% content_for :header_bar do %>
+    <input type="button" href="action:toggleSideBar" id="navbar-button-left" class="navbar-button menu" app-data-state="menu" value="Previous" />
+    <span id="title">FAQ</span>
+  <% end %>
+<% end %>
+
+<div class="container">
+  <div id="faq-screen" class="screen"><div class="content-wrapper">
+
+    <h2>Frequently Asked Questions</h2>
+    <ul class="faq-list">
+      <li>
+        <h3 class="style-2">Is my information private?</h3>
+        Your information is absolutely private. Your name, e-mail address, demographic data and answers to questions are never shared publicly with anyone. Data is only used (anonymously) to collect information about how the community is progressing as a whole.
+      </li>
+      <li>
+        <h3 class="style-2">What is Focus?</h3>
+        Many of us find ourselves rushing through days where our mind is preoccupied with the past or the future, lowering our attention to sensory input of the present moment. Focus is the skill of being fully present and immersed "in the now", deeply aware of the events around us, and our body-sensations, thoughts, and feelings. Focus is a powerful psychological resource that promotes the abilities to deal with negative and stressful events.
+      </li>
+      <li>
+        <h3 class="style-2">What is Gratitude?</h3>
+        Gratitude is both the mindset of being aware of your good fortune and the behavior of thanking others. A great body of research in the past two decades has shown that a grateful mindset along with grateful behavior reduces the secretion of stress hormones in adverse situations, and serve as a source of mental strength.
+      </li>
+      <li>
+        <h3 class="style-2">What is Positive Emotion?</h3>
+        Positive emotions comprise the spectrum of all emotions that improve your psychological well-being, for example: joy, pride, elation, engagement, fascination, awe, and love. Research on resilience shows that an ample repository of positive emotions serves as a counter-balance to negative emotions and helps to fend-off stressful events. Most people are exposed to many more positive events than negative ones during the course of an average day. A simple shift in perspective to be receptive to these events is a powerful tool in building your positive repository.
+      </li>
+      <li>
+        <h3 class="style-2">Why is Sleep important?</h3>
+        Several physiological and mental processes take place during sleep, replenishing the necessary energy of the body and mind. A good night's sleep keeps you alert and helps promote mindfulness, brings about a more grateful perspective, and helps evoke positive emotions during your day. While good sleep is a major contributor to your Stress Shield, poor sleep has the opposite impact, contributing to your perceived level of stress, and resulting in stronger negative emotional responses.
+      </li>
+      <li>
+        <h3 class="style-2">Can I update my profile?</h3>
+        You sure can. To update your profile, simply go to the "Settings" tab found within in the app sidebar menu and click "Edit Profile."
+      </li>
+
+      <li>
+        <h3 class="style-2">Can I update my Settings?</h3>
+        Yes. To update your setting simply go to the "Settings" tab
+        found in the app sidebar menu. You will be able
+        to edit your profile, invite others, change your password and
+        change your email notification status.
+      </li>
+
+      <li>
+        <h3 class="style-2">How do I cancel?</h3>
+         If you currently have an active subscription, you can prevent additional charges by going to "Settings > Cancel Subscription".  If you do not have an active subscription, then you will not see the option to cancel and you will not be charged again.
+      </li>
+    </ul>
+
+  </div></div>
+</div>

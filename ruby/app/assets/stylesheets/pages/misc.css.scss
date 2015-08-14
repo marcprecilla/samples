@@ -1,0 +1,129 @@
+body {
+  &.no_ie {
+
+  .hero-container {
+    padding-top:50px;
+  }
+
+    h1.style-1 {
+      font-family: Novecento;
+      font-size:40px;
+      font-weight:100;
+      line-height:normal;
+      text-align:center;
+      padding-bottom:20px;
+    }
+
+    .stack-container {
+      margin:0px auto;
+      max-width:640px;
+      padding-bottom:50px;
+    }
+
+    .content-stack {
+      width:300px;
+      display:block;
+      float:left;
+      vertical-align:top;
+      background-color:#fff;
+      box-shadow: 0px 0px 3px rgba(0,0,0,0.6);
+      margin:10px 10px;
+      border-radius:10px;
+      zoom: 1;
+      filter:
+        progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=0),
+        progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=90),
+        progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=180),
+        progid:DXImageTransform.Microsoft.Shadow(Color=#cccccc, Strength=5, Direction=270);
+
+      h5.style-1 {
+        font-size:18px;
+        font-weight:100;
+        min-height:70px;
+        text-align:left;
+        padding:10px 20px 0px 20px;
+      }
+
+      ul {
+        margin:0px;
+        padding:0px 30px;
+
+        li {
+          list-style-type:none;
+          padding:30px 0px;
+          border-bottom:1px #dddddd solid;
+
+          &:first-child {
+            padding-top:0px;
+          }
+
+          &:last-child {
+            border-bottom:0px;
+          }
+
+          &.expanded {
+            padding:39px 0px 40px 0px;
+          }
+
+          label {
+            font-size:18px;
+            color:#666666;
+            font-weight:100;
+            text-align:center;
+          }
+
+          .graphic-ie {
+            padding:95px 0px 0px 0px;
+            height:0px;
+            overflow:hidden;
+            background:url(mvp.graphics.no_ie.png) center 0px no-repeat;
+          }
+
+          .graphic-ff {
+            padding:95px 0px 0px 0px;
+            height:0px;
+            overflow:hidden;
+            background:url(mvp.graphics.no_ie.png) center -100px no-repeat;
+          }
+
+          .graphic-chrome {
+            padding:95px 0px 0px 0px;
+            height:0px;
+            overflow:hidden;
+            background:url(mvp.graphics.no_ie.png) center -200px no-repeat;
+          }
+
+          .graphic-safari {
+            padding:95px 0px 0px 0px;
+            height:0px;
+            overflow:hidden;
+            background:url(mvp.graphics.no_ie.png) center -300px no-repeat;
+          }
+
+          .graphic-iphone {
+            padding:160px 0px 0px 0px;
+            height:0px;
+            overflow:hidden;
+            background:url(mvp.graphics.no_ie.png) center -400px no-repeat;
+          }
+
+          .graphic-android {
+            padding:180px 0px 0px 0px;
+            height:0px;
+            overflow:hidden;
+            background:url(mvp.graphics.no_ie.png) center -600px no-repeat;
+          }
+
+          .graphic-ipad {
+            padding:180px 0px 0px 0px;
+            height:0px;
+            overflow:hidden;
+            background:url(mvp.graphics.no_ie.png) center -800px no-repeat;
+          }
+
+        }
+      }
+    }
+
+  }
+}

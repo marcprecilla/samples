@@ -1,0 +1,159 @@
+<div class="action-plan-container">
+
+  <div id="activity-screens" class="activity-screens">
+
+    <div class="top-container"><div class="top-content">
+
+      <div class="meter-container-outer">
+      <div class="meter-container">
+        <label><%= theme_title_for_week(@week) %> Week</label>
+        <div class="meter"><div class="value" style="width:<%= ((@current_action_plan_points.to_f/700.0)*100).to_i %>%">&nbsp;</div></div>
+        <span class="values"><b><%= @current_action_plan_points %></b> / 700</span>
+      </div>
+      </div>
+
+      <% if @show_three_sixty_link %>
+          <a href="<%=invitations_path({invitation_type: 'three_sixty'})%>" class="action-plan-message three-sixty desktop-modal-load">
+            <div class="message-outer">
+              <div class="message-inner">
+                Build Your Inner 360 Network
+              </div>
+            </div>
+          </a>
+      <% end %>
+
+      <% if @show_week_splash_page %>
+        <div class="screen cover-screen">
+
+          <div class="graphic">This Week</div>
+          <h1 class="cover-header"><b><%= theme_title_for_week(@week) %></b>WEEK</h1>
+          <div class="button-container">
+            <!-- Rediscover &amp; enhance your creative energy -->
+            <%= theme_detail_for_week(@week) %>
+            <strong>700 points to complete</strong>
+
+            <a href="1" class="btn btn-jump btn-border-simple pill silver size-plus-1 btn-block btn-right-arrow">Start Week</a>
+
+          </div>
+
+        </div>
+        <% end %>
+
+
+
+        <div class="screen" id="modules-screen">
+
+
+          <%  if @intervention  %>
+            <div class="activity-module intervention-module <% if @intervention_action_item.performed? %>complete<% end %>">
+              <a href="#" class="tooltip-modal-trigger" data-toggle="popover" data-original-title="Meditation" data-content="<%=why_text(@intervention.key)%>"><%=@intervention.description%></a>
+              <h3 class="module-header"><%=@intervention.name%></h3>
+              <div class="graphic" data-img-src="<%=image_for_intervention(@intervention)%>">graphic</div>
+              <div class="description">
+                <span class="time"><%=@intervention.duration%></span>
+                <span class="tag"><%=category_for_intervention_sym @intervention.key%></span>
+                <!--<%=@intervention.description%>-->
+              </div>
+              <div class="button-container"><a href="<%= url_for_new_activity(@intervention.key) %>" class="btn btn-border-simple pill silver btn-right-arrow desktop-modal-load">Start</a></div>
+          </div>
+          <% end %>
+
+
+          <% if @visionboard_action_item %>
+          <div class="activity-module vb-module <% if @visionboard_action_item.performed? %>complete<% end %>">
+            <a href="#" class="tooltip-modal-trigger" data-toggle="popover" data-original-title="<%=title_for_visionboard_action_item(@visionboard_action_item)%>" data-content="<%=activity_description_for_visionboard_action_item(@visionboard_action_item)%>">i</a>
+            <h3 class="module-header"><%=title_for_visionboard_action_item(@visionboard_action_item)%></h3>
+            <div class="graphic-vb graphic <%=type_for_visionboard_action_item(@visionboard_action_item) %>">graphic</div>
+            <div class="description">
+              <span class="time">1 min</span>
+              <span class="tag">Vision</span>
+              <!--<%=description_for_visionboard_action_item(@visionboard_action_item)%>-->
+            </div>
+            <div class="button-container"><a href="<%=url_for_visionboard_action_item(@visionboard_action_item)%>" class="btn btn-border-simple pill silver btn-right-arrow desktop-modal-load">Start</a></div>
+          </div>
+          <% end %>
+
+          <% if @checkin_action_item && @checkin_type %>
+          <div class="activity-module checkin-module <% if @checkin_action_item && @checkin_action_item.performed? %>complete<% end %>">
+            <a href="#" class="tooltip-modal-trigger" data-toggle="popover" data-original-title="Check-In" data-content="<%=checkin_description_for_symbol @checkin_type%>">i</a>
+            <h3 class="module-header"><%=checkin_title_for_symbol @checkin_type%></h3>
+            <div class="graphic-checkin <%=@checkin_type%> graphic">graphic</div>
+            <div class="description">
+              <span class="time">2 min</span>
+              <span class="tag">Check-in</span>
+              <!--You have <%=@remaining_questions_count.try(:to_words)%> unanswered questions.-->
+            </div>
+            <div class="button-container"><% unless @checkin_action_item && @checkin_action_item.performed? %>
+            <a href='<%= new_checkin_path%>?day=<%=@force_checkin_day%>' class="btn btn-border-simple pill silver btn-right-arrow desktop-modal-load">Start</a>
+            <% end %>
+            </div>
+          </div>
+          <% end %>
+
+          <% if @baseline_assessment_action_item %>
+            <div class="activity-module baseline-assessment-module <% if @baseline_assessment_action_item && @baseline_assessment_action_item.performed? %>complete<% end %>">
+            <a href="#" class="tooltip-modal-trigger" data-toggle="popover" data-original-title="Baseline Assessment" data-content="Find your Starting Point.">i</a>
+            <h3 class="module-header">Find your Starting Point</h3>
+            <div class="graphic-checkin graphic baseline">graphic</div>
+            <div class="description">
+              <span class="time">10 min</span>
+              <span class="tag">Assessment</span>
+              <!--Let's get you some baseline assessing, dawg.-->
+            </div>
+            <div class="button-container"><% unless @baseline_assessment_action_item && @baseline_assessment_action_item.performed? %>
+            <a href='<%= new_baseline_assessment_path%>' class="btn btn-border-simple pill silver btn-right-arrow">Start</a>
+            <% end %>
+            </div>
+          </div>
+
+          <% end %>
+
+          <% if @three_sixty_assessment_action_item %>
+            <div class="activity-module baseline-assessment-module <% if @three_sixty_assessment_action_item && @three_sixty_assessment_action_item.performed? %>complete<% end %>">
+            <a href="#" class="tooltip-modal-trigger" data-toggle="popover" data-original-title="360 Assessment" data-content="Take 360 .....">i</a>
+            <h3 class="module-header">Take 360 .....</h3>
+            <div class="graphic-checkin graphic three_sixty">graphic</div>
+            <div class="description">
+              <span class="time">7 min</span>
+              <span class="tag">Assessment</span>
+            </div>
+            <div class="button-container"><% unless @three_sixty_assessment_action_item && @three_sixty_assessment_action_item.performed? %>
+              <%= link_to 'Start', invitations_path({invitation_type: 'three_sixty'}), class: 'btn btn-border-simple pill silver btn-right-arrow' %>
+            <% end %>
+            </div>
+          </div>
+
+          <% end %>
+
+
+          <!-- only show the botton if we are on the current day -->
+          <div class="bottom-container">
+          <% if @showing_current_day %>
+            <% if !@plan.all_prescribed_items_complete? %>
+              <%= link_to @day==7 ? "I'm done for today" : "I’m done, please start next day", skip_day_url, method: :put, class:"btn btn-block btn-border-simple size-minus-2 silver btn-check" %>
+            <% elsif ! @plan.older_than_one_week? %>
+                <div class="bottom-notification"><div class="content">
+                You’ve completed your week! See you <%=@days_until_next_action_plan == 1 ? 'tomorrow' : "in #{@days_until_next_action_plan.to_words} days"%>. In the meantime, get some bonus points and redo some of this week's activities.</div></div>
+            <% end %>
+          <% end %>
+          </div>
+
+
+        </div>
+
+
+
+
+
+
+  </div></div>
+
+</div>
+
+<div class="week-navigation-container"><div class="week-navigation-content">
+  <ul class="week-navigation <% if !(defined? params[:day]) %>disabled<% end %>" data-day-index="<%=@day%>" data-current-day-index="<%=@current_day%>">
+    <% @day_navigation_states.each do |day_state| %><li class="<%=day_state %>"></li><% end %>
+  </ul>
+</div></div>
+
+</div>

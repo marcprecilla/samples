@@ -1,0 +1,35 @@
+<div class="container">
+
+  <%= render 'marketing/marketing_report_header' %>
+
+  <div class="well">
+    <table class="table">
+      <thead>
+        <th>Visitors</th>
+        <th>Conversion Rate</th>
+        <th>Paid Users</th>
+        <th>Revenue</th>
+        <th>Avg. Monthly Price/User</th>
+        <th>Avg. Time on Site</th>
+        <th>Virality (unique users)</th>
+        <th>Viral Coefficient</th>
+        <th>Engagement %</th>
+      </thead>
+      <% for row in @rows %>
+        <tr>
+          <td><%=row.visitors%></td>
+          <td><%=row.conversion_rate%></td>
+          <td><%=row.paid_users%></td>
+          <td><%=row.revenue%></td>
+          <td><%=row.avg_monthly_price_per_user%></td>
+          <td><%=row.avg_time_on_site%></td>
+          <td><%=row.virality%></td>
+          <td><%=row.viral_coefficient%></td>
+          <td><%=row.engagement_percent%></td>
+        </tr>
+      <% end %>
+
+    </table>
+  </div>
+
+</div>

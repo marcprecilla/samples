@@ -1,0 +1,32 @@
+<% content_for :header_bar do %>
+
+<input type="button" href="action:toggleSideBar" id="navbar-button-left" class="navbar-button menu" app-data-state="app" value="Previous" />
+<span id="title">Be Thankful</span>
+<input type="button" href="#" id="navbar-button-right" class="navbar-button none" app-data-state="none" value="Invite" />
+
+<% end %>
+
+<div class="screen index-screen">
+
+  <div class="dark-header-row"><div class="content">
+    Select one of the things you are grateful for below and add photos to visualize it on your Vision Board.
+  </div></div>
+
+  <div class="content">
+
+  <div class="label-text">Last Week You Said...</div>
+
+  <div data-toggle="buttons-radio" class="btn-group btn-group-radio btn-group-square-simple">
+    <%for item in @items%>
+    <a href="<%=thank_path(item.uuid)%>" class="btn <%=(item.color.nil? || item.color == '') ? 'random-color' : item.color %> word-overflow-shrink desktop-modal-load" char-limit="8">I am grateful for... <b><%=item.text%></b></a>
+    <%end%>
+  </div>
+
+  <div class="bottom-button-container" style="display:none;">
+    <ul class="buttons">
+      <li><a href="/thanks/new" class="btn btn-border-simple btn-block pill size-plus-1">Add Intention</a></li>
+    </ul>
+  </div>
+
+</div>
+

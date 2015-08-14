@@ -1,0 +1,172 @@
+<% content_for :title do %>app - Baseline Assessment<% end %>
+
+
+<% content_for :header do %>
+  <%= render "layouts/desktop_header" %>
+<% end %>
+
+<% content_for :header_bar do %>
+
+    <input type="button" href="#" id="navbar-button-left" class="navbar-button none" app-data-state="none" value="Previous" />
+    <span id="title"></span>
+    <input type="button" href="" id="navbar-button-right" class="navbar-button none" app-data-state="none" value="Next" />
+
+<% end %>
+
+<% content_for :additional_body_css_classes do %>assessment-layout-1 bluebg<% end %>
+
+
+<%= render "three_sixty_assessments/assessment_navigation" %>
+
+
+<div class="screen message-screen" id="assessment-intro-screen" data-add-body-class="bluebg" data-title="">
+
+  <h1 class="screen-title">About this assessment</h1>
+  <div class="screen-description">You’ll be rating <%=@subject.first_name%> based on the following...</div>
+
+  <ul class="category-list cf">
+    <li class="focus">
+      <div class="graphic">graphic</div>
+      Focus
+    </li>
+    <li class="positivity">
+      <div class="graphic">graphic</div>
+      Positivity
+    </li>
+    <li class="sleep">
+      <div class="graphic">graphic</div>
+      Sleep
+    </li>
+    <li class="social">
+      <div class="graphic">graphic</div>
+      Relationships
+    </li>
+  </ul>
+
+  <div class="message-button-container">
+    <a href="#" class="btn btn-block btn-border-simple lime next size-plus-1 pill">Answer questions</a>
+  </div>
+
+
+</div>
+
+
+
+  <%= form_tag three_sixty_assessment_path, id:'pam-question-form', class: "baseline_assessment assessment-questions" do |f| %>
+
+
+      <%
+          previous_category = "";
+          @questions.each_with_index do |question, index|
+          category = BaselineAssessment.category_for_subcatagory(question.category)
+          description = description_for_category(category)
+          description = "Letting us know your observations helps a lot."
+          need_transition_screen = (previous_category != category && previous_category != "")
+          transition_message = ""
+
+          if category == :focus
+              transition_message = "Now we’re going to ask you some questions about your ability to <b>focus</b>...";
+          elsif category ==  :positivity
+              transition_message = "Now we’re going to ask you some questions about your ability to be <b>positive</b>...";
+          elsif category ==  :sleep
+              transition_message = "Now we’re going to ask you some questions about your ability to <b>sleep</b>...";
+          elsif category ==  :social
+              transition_message = "Now we’re going to ask you some questions about your ability to be <b>social</b>...";
+          end
+
+      %>
+
+        <% if need_transition_screen %>
+
+          <div class="screen transition-screen" data-rel="<%=category %>" data-title="<%=category %>" data-add-body-class="darkbluebg" style="border-top:0px;">
+            <h1 class="style-7">You’re doing great!</h1>
+            <ul class="section-list cf">
+              <li>
+                <div class="transition-graphic active <%=previous_category %>"><%=previous_category %></div>
+                <div class="left-fade">fade</div>
+              </li>
+              <li class="">
+                <div class="transition-graphic <%=category %>"><%=category %></div>
+              </li>
+            </ul>
+            <div class="content">
+              <%=transition_message.html_safe %>
+            </div>
+            <div class="button-container cf">
+              <a href="#" class="visible-desktop button-white-arrow-left back-link">Back</a>
+              <a href="#" class="btn next btn-block btn-border-simple size-plus-1 lime-2 pill btn-right-arrow">Continue</a>
+            </div>
+          </div>
+
+        <% end %>
+
+          <div id="single-select-question-<%=index %>" class="screen single-select-question group-<%= category %> <%= (@questions.length - 1) == index ? ' last' : '' %>" data-rel="<%= category %>" data-title="<%= category %>" data-add-body-class="" data-directions="<%= description %>" style="border-top:0px;">
+              <%= render "three_sixty_assessments/question_slider", index: index, question: question %>
+          </div>
+      <%
+
+      previous_category = category
+
+      end
+
+      %>
+
+      <!--<%= button_tag "Submit Answers", type: 'submit', class: 'btn btn-border-simple lime btn-block size-plus-1' %>-->
+
+  <div class="screen assessment-rank-screen group-social" data-rel="social" data-title="social" data-add-body-class="" data-directions="Letting us know your observations helps a lot." style="border-top:0px;">
+
+    <%= render "three_sixty_assessments/question_rank" %>
+
+  </div>
+
+  <div class="screen open-question-screen group-social" data-rel="social" data-title="social" data-add-body-class="" data-directions="Letting us know your observations helps a lot." style="border-top:0px;">
+
+    <%= render "three_sixty_assessments/question_open" %>
+
+  </div>
+
+
+
+  <div class="screen" id="three-sixty-congratulations-screen" data-rel="welcome" data-title="" data-add-body-class="bluebg">
+    <div class="content">
+      <h1 class="style-7 screen-header">You're Done! <span class="dynamic-name"></span></h1>
+      You’ve given <%=@subject.first_name%> valuable
+      insights that will help him
+      in his training.
+    </div>
+
+    <div class="graphic">graphic</div>
+    <div class="screen-description">Would you like to get the app treatment as well?</div>
+
+   <div class="button-container">
+     <%=link_to "Get a app account", registration_path(:name => @invitee_name,:email => @invitee_email), :class => "btn btn-border-simple size-plus-1 btn-block lime-2 pill btn-right-arrow" %>
+     <br /><a href="http://www.myapp.com">or Visit the app Homepage</a>
+    </div>
+
+  </div>
+
+
+  <%end%>
+
+
+  <div class="screen">
+    welcome to the 360 assessment, friend of other person... answer these questions please...
+
+
+      <%= form_for @assessment do |f| %>
+        <div class="actions">
+          <%= f.submit 'Submit 360 Friend Assessment', class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+  </div>
+
+
+<% content_for :footer do %>
+  <%= render "layouts/desktop_footer" %>
+<% end %>
+
+
+
+
+
+

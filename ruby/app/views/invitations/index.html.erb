@@ -1,0 +1,177 @@
+<% content_for :title do %>app - 360 Assessment<% end %>
+
+
+<% content_for :header_bar do %>
+
+<input type="button" href="action:previousState" id="navbar-button-left" class="navbar-button back" app-data-state="app" value="Previous" />
+<span id="title"><%=@window_title%></span>
+<input type="button" href="" id="navbar-button-right" class="navbar-button none" app-data-state="none" value="Next" />
+
+<% end %>
+
+<% content_for :additional_body_css_classes do %>bluebg<% end %>
+
+<div class="screen" id="welcome-screen" data-add-body-class="bluebg" data-title="">
+
+  <h1 class="welcome-title">Welcome <%=current_user.first_name%>, to the Inner 360</h1>
+  <div class="welcome-graphic">Welcome</div>
+  <div class="welcome-description">Invite friends to answer questions about you.</div>
+
+  <ul class="message-button-container">
+    <li style="display:none;"><a href="1" class="btn btn-block btn-border-simple lime btn-jump size-plus-1 pill">Invite via SMS</a></li>
+    <li><a href="2" class="btn btn-block btn-border-simple lime btn-jump size-plus-1 pill">Invite via Email</a></li>
+    <li style="display:none;"><a href="3" class="btn btn-block btn-border-simple lime btn-jump size-plus-1 pill">Invite via Facebook</a></li>
+  </ul>
+
+
+</div>
+
+<div class="screen" id="sms-screen" data-add-body-class="" data-title="SMS Invite">
+
+
+  <%= form_tag invitations_path, method: :create, remote: true, id: 'sms-invite-form', class: 'invite-form sms-invite' do %>
+    <%= hidden_field_tag "subject_type", "three_sixty" %>
+
+    <div class="screen-description">
+      Enter name & email then tap keyboard “Enter”.
+      Tap “Send” when done.
+    </div>
+
+
+    <div class="input-container cf">
+      <div class="padded-content">
+        <input type="text" name="input-name" class="text-input-1" placeholder="Name" />
+      </div>
+
+      <div class="padded-content">
+        <input type="text" name="input-number" class="text-input-1" placeholder="Phone #" />
+      </div>
+    </div>
+
+
+
+    <ul class="invite-list">
+
+    </ul>
+
+
+    <div class="message-button-container">
+      <button type="submit" class="btn btn-block btn-border-simple lime size-plus-1 btn-right-arrow pill">Send Invite</button>
+      <!--<%= submit_tag 'Invite', class: 'btn btn-block btn-border-simple lime size-plus-1 pill' %>-->
+    </div>
+  <% end %>
+
+
+</div>
+
+<div class="screen" id="email-screen" data-add-body-class="" data-title="Email Invite">
+
+  <%= form_tag invitations_path, method: :create, remote: true, id: 'email-invite-form', class: 'invite-form email-invite' do %>
+    <%= hidden_field_tag :recipient_type, 'email' %>
+
+    <div class="screen-description">
+      Enter friend's name &amp; email
+    </div>
+
+    <div class="input-container">
+      <div id="dynamic-messages" class="padded-content">
+      </div>
+    </div>
+
+    <div class="input-container cf">
+      <div class="padded-content">
+        <div class="text-input-container-1"><div class="padding-outer">
+        <%= text_field_tag :recipient_name, nil, placeholder: "Name" %>
+        </div></div>
+      </div>
+
+      <div class="padded-content">
+        <div class="text-input-container-1"><div class="padding-outer">
+        <%= email_field_tag :recipient, nil, placeholder: "Email" %>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="input-container"><div class="padded-content">
+      <button type="submit" class="btn btn-block btn-border-simple thin size-plus-1">Send Invite</button>
+    </div></div>
+
+
+    <% end %>
+
+
+</div>
+
+<div class="screen" id="fb-screen" data-add-body-class="" data-title="Facebook Invite">
+
+  <% if @no_data_available %>
+
+    <div class="fullscreen-error-message">
+      We don’t have access to your Facebook friends.
+      <div class="graphic">!</div>
+      <div class="message-button-container">
+        <a href="#" class="btn btn-block btn-border-simple size-plus-1 btn-right-arrow-dark pill">Get Friends List</a>
+      </div>
+    </div>
+
+  <% else %>
+
+  <%= render 'new_three_sixty_facebook_send' %>
+
+
+  <% if false %>
+    <%= form_tag invitations_path, id:'', method: :post, class:"invite-form email-invite" do %>
+      <%= hidden_field_tag "subject_type", "three_sixty" %>
+
+    <div class="screen-description">
+      Select some friends from the list, then tap Send when done.
+    </div>
+    <ul class="facebook-list image-list">
+
+      <li data-img-src="/assets/mvp.splash.guru.jpg">Lex White <div class="checkbox-switch">x</div><input type="checkbox" name="invitees[][facebook_id]" value="1234567" /></li>
+      <li data-img-src="/assets/mvp.splash.guru.jpg">Lex White <div class="checkbox-switch">x</div><input type="checkbox" name="invitees[][facebook_id]" value="1234567" /></li>
+
+    </ul>
+
+    <div class="message-button-container">
+      <button type="submit" class="btn btn-block btn-border-simple lime size-plus-1 btn-right-arrow pill">Send Invite</button>
+      <!--<%= submit_tag 'Invite', class: 'btn btn-block btn-border-simple lime size-plus-1 pill' %>-->
+    </div>
+
+    <% end %>
+    <% end %>
+
+  <% end %>
+
+</div>
+
+<div class="screen">
+
+  welcome to the 360 assessment, enter some emails of go through fb....
+
+
+    <%= form_tag invitations_path, id:'', method: :post, class:"" do %>
+      <%= hidden_field_tag "subject_type", "three_sixty" %>
+      <!-- #= hidden_field_tag "subject", "three_sixty" % -->
+
+      <%= hidden_field_tag "invitees[][name]", "Garrett1" %>
+      <%= hidden_field_tag "invitees[][email]", "garrett+i1@appinc.com" %>
+
+      <%= hidden_field_tag "invitees[][name]", "Garrett2" %>
+      <%= hidden_field_tag "invitees[][email]", "garrett+i2@appinc.com" %>
+
+      <%= hidden_field_tag "invitees[][name]", "Garrett3" %>
+      <%= hidden_field_tag "invitees[][mobile_number]", "6177521772" %>
+
+      <%= hidden_field_tag "invitees[][name]", "Garrett4" %>
+      <%= hidden_field_tag "invitees[][facebook_id]", "1234567" %>  <!-- ??? -->
+
+
+
+      <div class="actions">
+        <%= submit_tag 'Invite', class: 'btn btn-primary' %>
+      </div>
+    <% end %>
+
+</div>
+

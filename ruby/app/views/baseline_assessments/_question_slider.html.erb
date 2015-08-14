@@ -1,0 +1,30 @@
+  <% if !@is_mini_assessment %>
+  <div class="page-description visible-desktop">
+    <h5>We are learning...</h5>
+    The app program adapts to you and learns from how you respond to these assessment questions over a period of time. The more we know about you, the more comprehensive your experience will be.
+  </div>
+  <% end %>
+
+  <h3 class="style-2" style="padding-bottom:20px;">
+    <span class="pam-question" app-data-question-index="0" style="display:block;"><%="#{question.text}..." %></span>
+  </h3>
+
+  <ul class="answer-list" style="display:none;">
+    <% question.response_descriptions.each_pair do |response_index, response_description| %>
+      <li class="answer-<%=response_index%>"><%=response_description%></li>
+      <% end %>
+
+  </ul>
+  <span class="submit-value"><%= hidden_field_tag "answers[#{question.uuid}]", "" %></span>
+
+  <div class="desktop-focus-area" style="<% if @is_mini_assessment %>margin:0px auto;<% end %>">
+    <div class="answer-label">Neutral</div>
+    <div class="question-slider-container"><div class="question-slider-track"><div class="question-slider"></div></div></div>
+  </div>
+
+  <div class="button-container cf">
+    <div class="back-button-container visible-desktop back-link" style=""><a href="#" class="button-blue-arrow-left">Back</a></div>
+    <div class="continue-button-container">
+      <a href="#" class="btn next btn-block btn-border-simple size-plus-1 lime-2 pill btn-right-arrow">Continue</a>
+    </div>
+  </div>

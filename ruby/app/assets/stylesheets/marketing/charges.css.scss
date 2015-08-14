@@ -1,0 +1,21 @@
+// Place all the styles related to the marketing/charges controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body#charges {
+
+  form{
+    margin-bottom:0px;
+
+    input[type="text"] {
+      width:25px;
+      height:12px;
+      font-family: $sansFontFamily;
+      box-shadow:0 0 5px rgba(0, 0, 0, 0.15) inset;
+      border-radius:5px;
+      margin-bottom:0px;
+    }
+  }
+
+
+
+}

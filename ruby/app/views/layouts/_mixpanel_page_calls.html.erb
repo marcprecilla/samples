@@ -1,0 +1,67 @@
+  <script type="text/javascript">
+    <% 
+        enrollment = current_enrollment
+        user = current_user
+        if user && user.email
+        intervention_preferences = enrollment.intervention_preferences.collect {|k,v| "#{k}:#{v}" }.join(', ')
+    %>
+
+            mixpanel.identify('<%=user.uuid%>');
+
+
+            user_properties = {
+                "$email": "<%=user.email%>", 
+                "$created": "<%=user.created_at%>",
+                "$last_login": new Date(),      
+                "uuid": "<%=user.uuid%>",
+                "gender": "<%=user.gender%>",
+                "date_of_birth": "<%=user.date_of_birth%>",
+                "relationship_status": "<%=user.relationship_status%>",
+                "children": "<%=user.children%>",
+                "workplace_environment": "<%=user.workplace_environment%>",
+                "home_environment": "<%=user.home_environment%>",
+                "facebook_identifier": "<%=user.facebook_identifier%>",
+                "facebook_photo_album_id": "<%=user.facebook_photo_album_id%>",
+                "age_demographic": "<%=user.age_demographic%>",
+                "name": "<%=user.name%>",
+                "profile_image_url": "<%=user.profile_image_url%>",
+                "source": "<%=user.source%>",
+                "campaign": "<%=user.campaign%>",
+                "landing_page": "<%=user.landing_page%>",
+                "subscription_plan": "<%=user.subscription_plan ? user.subscription_plan.name : '' %>",
+                "offer": "<%=user.subscription_plan ? user.subscription_plan.offer.name : '' %>",
+                "stripe_customer_id": "<%=user.stripe_customer_id %>",
+                "terms_accepted_on": "<%=user.terms_accepted_on %>",
+                "receive_email_notifications": "<%=user.receive_email_notifications %>",
+                "intervention_preferences": "<%= intervention_preferences %>",
+
+                "request-user-agent": "<%=request.env['HTTP_USER_AGENT']%>"
+            };
+
+
+            // for the People Analytics
+            // https://mixpanel.com/docs/managing-users/managing-user_specific-properties
+            // If you want to segment both your events and People profiles by the same property, you’ll want to use both methods in conjunction.
+            //mixpanel.register({'Email': 'jeffrey@stuff.biz'});
+            //mixpanel.people.set({'$email': 'jeffrey@stuff.biz'});
+            mixpanel.people.set(user_properties);
+
+            // For the normal analytics
+            mixpanel.register(user_properties);
+
+            // Important: do not fire alias every time a user authenticates. This is not how the method is designed to be used and will only cause problems. Alias should be called exactly once per user, at signup.
+            // mixpanel.alias('<%=user.uuid%>');
+
+            mixpanel.name_tag('<%=user.email%>');
+
+        <% end %>
+
+        mixpanel.track('Page View', {
+        'action': '<%= controller.controller_name %>/<%= controller.action_name %>',
+        'url': '<%= request.url %>'
+        });
+
+        <%= raw session.delete(:mixpanel_events) %>
+
+  </script>
+

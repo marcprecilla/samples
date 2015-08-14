@@ -1,0 +1,25 @@
+  <%= render "three_sixty_assessments/question_side_description" %>
+
+  <h3 class="style-2" style="padding-bottom:20px;">
+    <span class="textleft" app-data-question-index="0" style="display:block;">Think of a time where <%=@subject.first_name%> and you were together that was amazing. It could be related to work or just play. What were you two doing? What was so great about it? If you wish to share your memory, please do so below:</span>
+  </h3>
+
+  <div class="desktop-focus-area">
+        <%= hidden_field_tag "invitation_uuid", @invitation_uuid %>
+
+    <div class="textarea-container-1"><div class="padding-container">
+      <textarea name="good_times" placeholder="Share your memory..."></textarea>
+    </div></div>
+
+  </div>
+
+
+  <span class="submit-value"></span>
+
+
+  <div class="question-button-container cf">
+    <div class="back-button-container visible-desktop back-link" style=""><a href="#" class="button-blue-arrow-left">Back</a></div>
+    <div class="continue-button-container">
+      <a href="#" class="btn next btn-block btn-border-simple size-plus-1 lime-2 pill btn-right-arrow">Continue</a>
+    </div>
+  </div>

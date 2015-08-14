@@ -1,0 +1,35 @@
+<div class="container">
+
+  <%= render 'marketing/marketing_report_header' %>
+
+  <div class="well">
+    <table class="table">
+      <thead>
+          <th>Email</th>
+          <th>Plan</th>
+          <th>Created</th>
+          <th>First Name</th>
+          <th>Fast Name</th>
+          <th>Age</th>
+          <th>Source</th>
+          <th>Campaign</th>
+          <th>Landing Page</th>
+      </thead>
+      <% for c in @charges %>
+        <tr>
+          <td><%=c.email%></td>
+          <td><%=c.plan_id%></td>
+          <td><%=c.created_at.strftime("%d %b %y")%></td>
+          <td><%=c.user_first_name%></td>
+          <td><%=c.user_last_name%></td>
+          <td><%=c.user_age_demographic%></td>
+          <td><%=c.source%></td>
+          <td><%=c.campaign%></td>
+          <td><%=c.landing_page%></td>
+        </tr>
+      <% end %>
+
+    </table>
+  </div>
+
+</div>

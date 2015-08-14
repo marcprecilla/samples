@@ -1,0 +1,111 @@
+// Place all the styles related to the identities controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#home {
+  #main {
+    padding-top: 0; /* remove padding to account for lack of navbar */
+  }
+
+  .container {
+    max-width: 768px;
+    text-align: center;
+    padding:0px;
+    display:block;
+  }
+
+  strong {
+    font-weight: normal;
+  }
+
+  div.stress-less-title {
+    background: rgb(255,255,255);
+    background: -moz-linear-gradient(top,  rgba(255,255,255,1) 76%, rgba(240,240,240,1) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(76%,rgba(255,255,255,1)), color-stop(100%,rgba(240,240,240,1)));
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 76%,rgba(240,240,240,1) 100%);
+    background: -o-linear-gradient(top,  rgba(255,255,255,1) 76%,rgba(240,240,240,1) 100%);
+    background: -ms-linear-gradient(top,  rgba(255,255,255,1) 76%,rgba(240,240,240,1) 100%);
+    background: linear-gradient(to bottom,  rgba(255,255,255,1) 76%,rgba(240,240,240,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f0f0f0',GradientType=0 );
+  }
+
+
+  #buttons {
+    @include gradient-vertical(white, #dddddd);
+    position:fixed;
+    bottom:0px;
+    width:100%;
+
+    .content-wrapper {
+      padding: 10px;
+      max-width:320px;
+      margin:0px auto;
+    }
+  }
+
+  .activity-list {
+    border-top:1px #666666 solid;
+    overflow:auto;
+  }
+
+  #bookmark_screen {
+
+    text-align:center;
+
+    h1 {
+      padding:33px 0px 0px 0px;
+    }
+
+    .description {
+      font-size:130%;
+      line-height:140%;
+      padding:160px 10px 0px 10px;
+      background: url(mvp.graphics.onboarding.png) no-repeat center -279px;
+      background-size:500px 1500px;
+
+    }
+
+  }
+
+
+
+  #faq-screen {
+
+    .content-wrapper {
+      padding:0px 20px;
+    }
+
+    h2 {
+      font-size:178%;
+      color:#10a0de;
+      font-weight:100;
+      line-height:normal;
+      margin:0px;
+      padding:20px 0px 10px 0px;
+    }
+
+    .faq-list {
+      margin:0px;
+      li {
+        text-align:left;
+        list-style-type:none;
+        padding-bottom:20px;
+
+        h3 {
+          text-align:center;
+        }
+      }
+    }
+
+
+  }
+
+}
+
+.modal-body #home.faq {
+  #main {
+    .container {
+      width:auto;
+    }
+  }
+}

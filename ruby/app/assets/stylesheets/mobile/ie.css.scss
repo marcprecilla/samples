@@ -1,0 +1,59 @@
+// Place all the styles related to the Mobile/ActivityFeed controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+html.no_ie {
+
+  #main {
+    -ms-filter: progid:DXImageTransform.Microsoft.Shadow(enabled='0') !important;
+    filter: progid:DXImageTransform.Microsoft.Shadow(enabled='0') !important;
+  }
+
+  .activity-list li.subitem .img-padding .img {
+    -ms-background-position-x: center !important;
+    -ms-background-position-y: center !important;
+  }
+
+  div.stress-less-title {
+
+    h1.stress-less-logo {
+      background: url(lores/mvp.graphics.home.png) 0px -1182px no-repeat;
+      background-size:300px 1500px;
+    }
+
+    .logo-container-outer {
+
+      .logo-container {
+
+        .small-logo-own {
+          background: url(lores/mvp.graphics.home.png) 0px -1000px no-repeat;
+          background-size:300px 1500px;
+        }
+
+        .small-logo-secret {
+          background: url(lores/mvp.graphics.home.png) 0px -1100px no-repeat;
+          background-size:300px 1500px;
+        }
+
+      }
+
+    }
+
+  }
+
+  #home {
+
+    #buttons {
+      .layout-50-left {
+        width:48%;
+      }
+
+      .layout-50-right {
+        width:48%;
+      }
+    }
+
+  }
+
+
+}

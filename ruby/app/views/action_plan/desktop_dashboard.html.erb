@@ -1,0 +1,77 @@
+<% content_for :section_header do %>
+  <%= render "layouts/desktop/header_user" %>
+<% end %>
+
+<% if @show_three_sixty_link %>
+
+<h1 class="section-header">
+  Training
+</h1>
+
+  <div class="notification notes-icon with-button"><div class="notification-content">
+    <a href="#" class="close-button">x</a>
+    <div class="button-container">
+      <a class="btn btn-border-simple size-minus-1 btn-block silver pill desktop-modal-load" href="<%=invitations_path({invitation_type: 'three_sixty'})%>" data-toggle="modal">Start Now</a>
+    </div>
+    <h5>Build Your Inner 360 Network</h5>
+    Get valuable feedback on your emotional state from your close friends and family.
+  </div></div>
+
+<% end %>
+
+<div class="cf">
+
+  <div class="left-container">
+
+    <div class="activity-screen-container shadow-container">
+      <% if current_user.stripe_subscription_active? %>
+        <%= render "action_plan/action_plan_screens" %>
+      <% else %>
+        <%= render "action_plan/locked_content" %>
+      <% end %>
+      <!--<div class="inner-shadow">&nbsp;</div>-->
+    </div>
+
+  </div>
+
+  <div class="right-container">
+
+
+    <%= render "layouts/desktop/metrics_engagement" %>
+
+    <% if current_user.stripe_subscription_active? %>
+
+    <div class="container-module with-border progress-container">
+      <h3 class="container-header">Points</h3>
+
+      <%= render "progress/activity_graph" %>
+
+      <% if @timeline.length > 0 && false %>
+        <h3 class="container-header">Timeline</h3>
+        <div id="timeline" class="">
+          <%= render "progress/timeline" %>
+        </div>
+      <% end %>
+
+    </div>
+
+    <% end %>
+
+    <br class="clearboth" />
+
+
+  </div>
+
+</div>
+
+<%= render "layouts/desktop/footer_content", :hide_community => true %>
+
+<% if @show_action_plan_walkthrough %>
+  <% content_for :footer do %>
+    <%= render "action_plan/action_plan_walkthrough_desktop" %>
+    <%= render "layouts/desktop/footer" %>
+  <% end %>
+<% end %>
+
+<%= render "layouts/video_modal" %>
+<%= render "layouts/video_modal_tedx" %>

@@ -1,0 +1,347 @@
+// Place all the styles related to the intentions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#intentions, #thanks {
+
+  .screen {
+
+    .dark-header-row {
+      font-size:15px;
+      text-align:left;
+      margin:0px;
+      padding:10px 0px;
+    }
+
+    .bottom-button-container {
+      padding:15px 0px;
+      text-align:center;
+      border-top:1px #c2c2c2 solid;
+
+      ul.buttons {
+        max-width:300px;
+        margin:0px auto;
+
+        li {
+          list-style-type:none;
+        }
+      }
+    }
+
+    form {
+      margin:0px;
+    }
+
+    .gallery-carousel {
+      width:300px;
+      padding:7px 0px 17px 0px;
+      margin:0px auto;
+      position:relative;
+      top:0px;
+
+      img {
+        border:1px #717171 solid;
+      }
+
+      .flex-control-nav {
+        bottom:5px;
+        display:none;
+      }
+
+      @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+        .flex-control-nav {
+          display:none;
+        }
+      }
+
+      @media only screen and (min-device-width : 480px) {
+        .flex-control-nav {
+          bottom:-5px;
+          display:block;
+        }
+      }
+
+      li {
+        position:relative;
+        top:0px;
+      }
+
+      .remove-button {
+        display:block;
+        padding:12px 0px 0px 0px;
+        height:0px;
+        overflow:hidden;
+        width:12px;
+        background: url(/img/mobile/close.png) 0px 0px no-repeat;
+        background-size:12px 12px;
+        position:absolute;
+        top:6px;
+        right:14px;
+      }
+
+      #button-take-photo {
+        margin:0px;
+        outline:none;
+      }
+
+      .img-container {
+        .img-container-content {
+          padding:97px 0px 0px 0px;
+          width:97px;
+        }
+      }
+
+    }
+
+    &.index-screen {
+
+      .content {
+        max-width:300px;
+        padding-left:10px;
+        padding-right:10px;
+        margin:0px auto;
+
+        .label-text {
+          padding:20px 0px 20px 0px;
+          font-size:142%;
+          color:#042d43;
+          line-height:normal;
+          text-align:center;
+        }
+
+        .btn-group {
+          text-align:center;
+          width:100%;
+          white-space: normal;
+          display:block;
+        }
+
+      }
+    }
+
+    &.add-image-screen {
+
+      .content {
+        max-width:300px;
+        padding-left:10px;
+        padding-right:10px;
+        margin:0px auto;
+      }
+
+      .header-row {
+
+        position:relative;
+        top:0px;
+        left:0px;
+        padding:30px 0px 0px 91px;
+        margin-top:13px;
+        min-height:57px;
+
+        .btn {
+          position:absolute;
+          top:0px;
+          left:0px;
+        }
+
+        font-size:20px;
+        line-height:24px;
+      }
+
+    }
+
+    &.question-screen {
+
+      .content {
+        max-width:300px;
+        padding-left:10px;
+        padding-right:10px;
+        margin:0px auto;
+
+        .label-text {
+          padding:20px 0px 20px 0px;
+          font-size:142%;
+          color:#042d43;
+          font-weight:bold;
+          line-height:normal;
+          text-align:center;
+        }
+
+        .input-container {
+          width:288px;
+          margin:0px auto;
+
+          .textarea-container {
+            padding:3px;
+            border-radius:11px;
+            @include gradient-vertical(#dadada,#ffffff);
+            position:relative;
+            top:0px;
+            left:0px;
+            margin-bottom:25px;
+
+            input {
+              box-shadow: 0px 0px 3px rgba(0,0,0,0.25) inset;
+              -webkit-appearance: none;
+              padding:15px 17px;
+              width:100%;
+              height:15px;
+              margin:0px;
+              background-color:#fbfbfb;
+              border-radius: 8px;
+              font-size:15px;
+              line-height:15px;
+              color:#a8a8a8;
+              width:246px;
+            }
+
+            textarea {
+              box-shadow: 0px 0px 3px rgba(0,0,0,0.75) inset;
+              padding:15px 17px;
+              width:100%;
+              height:45px;
+              margin:0px;
+              background-color:#fbfbfb;
+              border-radius: 8px;
+              font-size:15px;
+              line-height:15px;
+              color:#a8a8a8;
+              width:246px;
+            }
+
+            .char-counter {
+              text-align:right;
+              font-size:11px;
+              color:#666666;
+              position:absolute;
+              bottom:-20px;
+              right:15px;
+              width:60px;
+            }
+
+            .instructions {
+              text-align:left;
+              font-size:11px;
+              color:#666666;
+              position:absolute;
+              bottom:-20px;
+              left:0px;
+              width:250px;
+            }
+
+          }
+        }
+
+        .buttons-label {
+          width:296px;
+          margin:0px auto;
+          font-size:12px;
+          color:#666666;
+          padding-bottom:4px;
+          padding-left:6px;
+          text-align:left;
+        }
+
+        .btn-group {
+          text-align:center;
+          width:100%;
+          padding-bottom:6px;
+
+          .btn {
+            margin-right:7px;
+
+            &:last-child {
+              margin-right:0px;
+            }
+          }
+        }
+
+        .skip-button-container {
+          max-width:320px;
+          padding:0px 0px;
+          text-align:center;
+
+          a {
+            font-weight:bold;
+            font-size:12px;
+            text-decoration:underline;
+          }
+
+        }
+      }
+    }
+
+    &.answer-screen {
+
+      .content {
+
+        .top-content {
+
+          text-align:center;
+          padding-bottom:30px;
+          background: #f6f6f6;
+          background: -moz-linear-gradient(top,  #f6f6f6 0%, #efefef 86%, #e6e6e6 100%);
+          background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f6f6f6), color-stop(86%,#efefef), color-stop(100%,#e6e6e6));
+          background: -webkit-linear-gradient(top,  #f6f6f6 0%,#efefef 86%,#e6e6e6 100%);
+          background: -o-linear-gradient(top,  #f6f6f6 0%,#efefef 86%,#e6e6e6 100%);
+          background: -ms-linear-gradient(top,  #f6f6f6 0%,#efefef 86%,#e6e6e6 100%);
+          background: linear-gradient(to bottom,  #f6f6f6 0%,#efefef 86%,#e6e6e6 100%);
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', endColorstr='#e6e6e6',GradientType=0 );
+
+          .label-text {
+            padding:20px 0px 20px 0px;
+            font-size:142%;
+            line-height:normal;
+            text-align:center;
+          }
+
+          .btn {
+            margin:0px auto;
+          }
+        }
+
+      }
+
+    }
+
+    &.completion-screen {
+
+      .content {
+
+        .top-content {
+
+          text-align:center;
+          padding-bottom:30px;
+          background: #011c29;
+          background: -moz-linear-gradient(top,  #011c29 0%, #042d43 8%, #042d43 92%, #011c29 100%);
+          background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#011c29), color-stop(8%,#042d43), color-stop(92%,#042d43), color-stop(100%,#011c29));
+          background: -webkit-linear-gradient(top,  #011c29 0%,#042d43 8%,#042d43 92%,#011c29 100%);
+          background: -o-linear-gradient(top,  #011c29 0%,#042d43 8%,#042d43 92%,#011c29 100%);
+          background: -ms-linear-gradient(top,  #011c29 0%,#042d43 8%,#042d43 92%,#011c29 100%);
+          background: linear-gradient(to bottom,  #011c29 0%,#042d43 8%,#042d43 92%,#011c29 100%);
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#011c29', endColorstr='#011c29',GradientType=0 );
+          color:#cccccc;
+
+          h1 {
+            padding:20px 0px 155px 0px;
+            font-size:167%;
+            line-height:normal;
+            text-align:center;
+            background:url(mvp.graphics.vb.png) center 35px no-repeat;
+            background-size:500px 2000px;
+            font-weight:100;
+            color:#fff;
+            margin:0px;
+          }
+
+          .message {
+            margin:0px auto;
+            max-width:300px;
+          }
+        }
+
+      }
+
+    }
+
+  }
+}

@@ -1,0 +1,57 @@
+<% content_for :header_bar do %>
+
+<input type="button" href="action:toggleSideBar" id="navbar-button-left" class="navbar-button menu" app-data-state="app" value="Previous" />
+<span id="title">Exercises</span>
+<input type="button" href="" id="navbar-button-right" class="navbar-button none" app-data-state="none" value="Next" />
+
+<% end %>
+
+<div class="list-content-container relative-position">
+
+  <div class="nav-container shift-with-sidenav">
+    <a id="activity-nav-button" class="header-button" href="#">
+      <h2>ALL ACTIVITIES</h2>
+      <span class="arrow down">v</span>
+    </a>
+
+
+    <ul class="nav-list">
+      <li><a href="all">All Activities</a></li>
+      <% for week in 1..@interventions_by_week.count+1 %>
+      <li><a href="<%=week%>">Week <%=week%></a></li>
+    <% end %>
+    </ul>
+
+
+  </div>
+
+<ul class="activity-list blue as-blue-buttons">
+
+      <% for category in ["Positivity", "Focus", "Social", "Sleep"] %>
+      <li class="label-row <%= category.downcase %>"><%= category %></li>
+      <%
+        for intervention in @interventions[category]
+
+          associated_week = 0
+
+          @interventions_by_week.each_with_index do |interventions_for_week, index|
+            for week_intervention in interventions_for_week
+              if intervention.name == week_intervention.name
+                associated_week = index + 1
+              end
+            end
+          end
+
+      %>
+
+      <li href="<%= url_for_new_activity(intervention.key) %>" data-img-src="<%=image_for_intervention(intervention)%>" class="subitem has-icon blue green-arrow <%= category_for_intervention_sym intervention.key %> desktop-modal-load" data-time="<%= intervention.duration %>" data-tag="<%= intervention_type_for_intervention_sym intervention.key %>" data-week="<%=associated_week%>"><%= intervention.name %></li>
+
+      <% end %>
+
+      <% end %>
+
+
+</ul>
+
+
+</div>

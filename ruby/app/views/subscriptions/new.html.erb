@@ -1,0 +1,47 @@
+<% @body_id = 'subscriptions' %>
+<% @selected_tab ||= 'registration-tab' %>
+<%= content_for :javascript do %>
+  <script type="text/javascript">
+  $(function(){
+    $('#<%= @selected_tab %>').tab('show');
+    $('html, body').animate({scrollTop: $(".plan:first").offset().top - 10}, 500);
+  })
+  </script>
+<% end %>
+
+<% content_for :additional_body_css_classes do %>skip-resize-canvas<% end %>
+
+<div class="container">
+  <div class="page-header">
+    <%= image_tag 'app.logo.02.png', alt: 'app', class: 'main-logo-solo hidden-tablet hidden-phone' %>
+  </div>
+
+  <%= render 'subscriptions/hero' %>
+
+  <div class="offer-container">
+    <%= render 'subscriptions/features' %>
+
+    <div class="plans-container">
+      <div class="plan">
+        <div class="plan-border">
+          <%= render 'subscriptions/plan_info', plan: current_plan %>
+
+          <% unless current_user %>
+            <h5>
+              <ul class="nav nav-tabs">
+                <li><%= link_to 'Register', '#registration', id: 'registration-tab', data: {toggle: 'tab'} %></li>
+                <li><%= link_to 'Login', '#login', id: 'login-tab', data: {toggle: 'tab'} %></li>
+              </ul>
+            </h5>
+            <div class="tab-content">
+              <div id="registration" class="tab-pane"><%= render 'users/registration_form' %></div>
+              <div id="login" class="tab-pane"><%= render 'sessions/login_form' %></div>
+            </div>
+          <% else %>
+            <%= render 'subscriptions/cc_form' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

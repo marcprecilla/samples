@@ -1,0 +1,97 @@
+  <ul class="mind-metrics cf  <%=@show_action_plan_walkthrough ? 'showone' : '' %>">
+
+    <% if @focus_change %>
+
+    <li class="focus <%=@focus_change_indicator%>"><a href="0">
+      <label>Focus</label>
+      <div class="value"><%=@focus_change.abs%><super>%</super></div>
+      <div class="time">This Week</div>
+      <div class="exclamation tooltip-modal-trigger" data-toggle="popover" data-original-title="Not Enough Data Yet" data-content="Each week we'll ask you a number of &quot;Check-In&quot; questions to track your progress. Once we have collected enough information, you'll see this area populated with your weekly trends.">!</div>
+      <div class="selected-arrow">v</div>
+      </a></li>
+
+    <% else %>
+
+    <li class="focus disabled"><a href="0">
+      <label>Focus</label>
+      <div class="value">Click to start</div>
+      <div class="time">This Week</div>
+      <div class="exclamation tooltip-modal-trigger" data-toggle="popover" data-original-title="Not Enough Data Yet" data-content="Each week we'll ask you a number of &quot;Check-In&quot; questions to track your progress. Once we have collected enough information, you'll see this area populated with your weekly trends.">!</div>
+      <div class="selected-arrow">v</div>
+    </a></li>
+    <% end %>
+
+
+
+   <% if @positivity_change %>
+
+   <li class="positivity <%=@positivity_change_indicator%>"><a href="1">
+      <label>Positivity</label>
+      <div class="value"><%=@positivity_change.abs%><super>%</super></div>
+      <div class="time">This Week</div>
+      <div class="exclamation tooltip-modal-trigger" data-toggle="popover" data-original-title="Not Enough Data Yet" data-content="Each week we'll ask you a number of &quot;Check-In&quot; questions to track your progress. Once we have collected enough information, you'll see this area populated with your weekly trends.">!</div>
+      <div class="selected-arrow">v</div>
+    </a></li>
+
+    <% else %>
+
+    <li class="positivity disabled"><a href="1">
+      <label>Positivity</label>
+      <div class="value">Click to start</div>
+      <div class="time">This Week</div>
+      <div class="exclamation tooltip-modal-trigger" data-toggle="popover" data-original-title="Not Enough Data Yet" data-content="Each week we'll ask you a number of &quot;Check-In&quot; questions to track your progress. Once we have collected enough information, you'll see this area populated with your weekly trends.">!</div>
+      <div class="selected-arrow">v</div>
+    </a></li>
+
+    <% end %>
+
+
+
+   <% if @social_change %>
+
+    <li class="social <%=@social_change_indicator%>"><a href="2">
+      <label>Social</label>
+      <div class="value"><%=@social_change.abs%><super>%</super></div>
+      <div class="time">This Week</div>
+      <div class="exclamation tooltip-modal-trigger" data-toggle="popover" data-original-title="Not Enough Data Yet" data-content="Each week we'll ask you a number of &quot;Check-In&quot; questions to track your progress. Once we have collected enough information, you'll see this area populated with your weekly trends.">!</div>
+      <div class="selected-arrow">v</div>
+    </a></li>
+
+    <% else %>
+
+    <li class="social disabled"><a href="2">
+      <label>Social</label>
+      <div class="value">Click to start</div>
+      <div class="time">This Week</div>
+      <div class="exclamation tooltip-modal-trigger" data-toggle="popover" data-original-title="Not Enough Data Yet" data-content="Each week we'll ask you a number of &quot;Check-In&quot; questions to track your progress. Once we have collected enough information, you'll see this area populated with your weekly trends.">!</div>
+      <div class="selected-arrow">v</div>
+    </a></li>
+    <% end %>
+
+
+   <% if @sleep_change %>
+
+    <li class="sleep <%=@sleep_change_indicator%>"><a href="3">
+      <label>Sleep</label>
+      <div class="value"><%=@sleep_change.abs%><super>%</super></div>
+      <div class="time">This Week</div>
+      <div class="exclamation tooltip-modal-trigger" data-toggle="popover" data-original-title="Not Enough Data Yet" data-content="Each week we'll ask you a number of &quot;Check-In&quot; questions to track your progress. Once we have collected enough information, you'll see this area populated with your weekly trends.">!</div>
+      <div class="selected-arrow">v</div>
+    </a></li>
+
+    <% else %>
+
+    <li class="sleep disabled"><a href="3">
+      <label>Sleep</label>
+      <div class="value">Click to start</div>
+      <div class="time">This Week</div>
+      <div class="exclamation tooltip-modal-trigger" data-toggle="popover" data-original-title="Not Enough Data Yet" data-content="Each week we'll ask you a number of &quot;Check-In&quot; questions to track your progress. Once we have collected enough information, you'll see this area populated with your weekly trends.">!</div>
+      <div class="selected-arrow">v</div>
+    </a></li>
+    <% end %>
+
+  </ul>
+
+
+
+<%= render "layouts/locked_feature", feature:"trends",  classes: 'layout-horizontal no-padding' %>

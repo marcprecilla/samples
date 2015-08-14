@@ -1,0 +1,111 @@
+<% content_for :header_bar do %>
+
+<input type="button" href="action:previousState" id="navbar-button-left" class="navbar-button back" app-data-state="app" value="Previous" />
+<span id="title">Set Intention</span>
+<input type="button" href="#" id="navbar-button-right" class="navbar-button none" app-data-state="none" value="Invite" />
+
+<% end %>
+
+
+
+
+<%= form_tag intentions_path, class: "intention-questions", html:{id:'', style:""} do |f| %>
+
+      <span class="submit-value"></span>
+
+      <div class="screen question-screen">
+
+        <div class="dark-header-row"><div class="content">
+          Reflect upon the life you have now and the life you want in the future.
+        </div></div>
+
+        <div class="content">
+
+        <div class="label-text">I intend to be...</div>
+
+        <div class="input-container">
+          <div class="textarea-container">
+            <%= text_field_tag "other_intention", '', id: 'other-intention-text', placeholder: 'Fill in the blank...', class: 'use-char-counter disable-enterkey-submit', maxlength: '20' %>
+            <%= hidden_field_tag "other_color", "", id: 'other-intention-color' %>
+            <div class="char-counter"></div>
+          </div>
+        </div>
+
+        <div class="buttons-label">Or pick one below</div>
+        <div data-toggle="buttons-radio" class="btn-group btn-group-radio btn-group-square-simple size-minus-1">
+        <%
+        color_array = %w{red green purple magenta orange}
+        color_array = color_array.shuffle.take(3)
+        for color in color_array; intention = @sample_intentions.shift.upcase
+        %>
+          <button value="<%= intention %>" type="button" name="button" class="btn <%= color %> word-overflow-shrink" char-limit="8"><b><%= intention %></b></button>
+        <% end %>
+        </div>
+
+        <div class="bottom-button-container">
+          <div class="error-container errortext-1"></div>
+          <ul class="buttons">
+            <li><a href="#" class="btn continue btn-border-simple btn-block lime pill size-plus-1">Continue</a></li>
+          </ul>
+        </div>
+
+        <div class="skip-button-container"><a href="/toolkit" class="">Skip This Exercise</a></div>
+
+        </div>
+      </div>
+
+
+      <div class="screen answer-screen">
+
+        <div class="dark-header-row desktop-results-header"><div class="content">
+          Reflect upon the life you have now and the life you want in the future.
+        </div></div>
+
+        <div class="content">
+
+          <div class="top-content">
+
+            <div class="label-text">You just said...</div>
+
+            <div class="buttons-container"></div>
+
+          </div>
+
+        </div>
+
+        <div class="bottom-button-container">
+          <ul class="buttons">
+            <li><a href="#" id="button-add-another" class="btn btn-border-simple btn-block pill size-plus-1">Add Another</a></li>
+            <li><a href="#" id="button-finish" class="btn btn-border-simple btn-block lime pill size-plus-1">Save and Finish</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="screen completion-screen">
+
+        <div class="content">
+
+          <div class="top-content">
+
+            <h1><%=encouragement_salutation%>, <%=current_user.first_name%>!</h1>
+
+            <div class="message"><%=humorous_encouragement%></div>
+
+          </div>
+
+        </div>
+
+        <div class="bottom-button-container">
+          <ul class="buttons">
+            <li><a href="/visionboard" class="btn btn-border-simple btn-block lime pill size-plus-1">View Vision Board</a></li>
+            <li><a href="/toolkit" class="btn btn-border-simple btn-block lime pill size-plus-1">Continue Training</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+
+
+  <%end%>
+

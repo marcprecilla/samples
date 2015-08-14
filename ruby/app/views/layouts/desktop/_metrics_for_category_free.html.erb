@@ -1,0 +1,110 @@
+<div class="metric-screen cf <%= active ? 'active' : '' %>">
+
+  <div class="column check-in-results">
+
+    <h5 class="description-header">Positivity Baseline</h5>
+    <span class="graytext">Your results based off of your answers.</span>
+
+    <div class="relative-position">
+
+      <div class="content-container">
+
+
+
+        <% if @baseline_levels %>
+          <% baseline_meter_level = baseline_dial_meter_class_for_level @baseline_levels[category]%>
+
+        <div class="dial-meter">
+
+                    <div class="user-results <%=baseline_meter_level%>">^</div>
+                    <!--<span href="#" class="chat-button">x</span>-->
+        </div>
+
+        <div class="legend-container">
+          <div class="legend-<%=baseline_meter_level%>"><%=baseline_meter_level.try(:titlecase)%></div>
+        </div>
+
+        <div class="check-in-result-explanation"><div class="scrollable-content">
+          <%= score_explination_for(@baseline_levels[category], category)%>
+        </div></div>
+
+        <%else%>
+
+          <div class="dial-meter empty highlight">dial</div>
+          <div class="button-container"><a href="/mini_baseline" class="btn btn-border-simple lime pill size-minus-1">Start Here</a></div>
+
+        <%end%>
+
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <% if @show_three_sixty_link %>
+
+  <div class="column check-in-results ">
+
+    <h5 class="description-header">Inner 360</h5>
+    <span class="graytext">But what do your friends &amp; family think?</span>
+
+    <div class="relative-position">
+
+      <div class="content-container">
+
+          <div class="dial-meter empty highlight">dial</div>
+          <div class="button-container"><a href="/invitations?invitation_type=three_sixty" class="btn btn-border-simple lime pill size-minus-1 desktop-modal-load">Start Here</a></div>
+
+
+          <!--  TODO: Add the 360 invite popup -->
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <%else%>
+
+  <div class="column check-in-results disabled">
+
+    <h5 class="description-header">Inner 360</h5>
+    <span class="graytext">But what do your friends &amp; family think?</span>
+
+    <div class="relative-position">
+
+      <div class="content-container">
+
+          <div class="dial-meter empty">dial</div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <% end %>
+
+
+
+
+  <div class="column disabled">
+      <h5 class="description-header">Insights</h5>
+      <span class="graytext">Data will be available after week 1</span>
+
+      <div class="relative-position">
+
+      <div class="content-container">
+        <div class="no-data-container">
+        </div>
+      </div>
+
+      </div>
+
+  </div>
+
+
+</div>

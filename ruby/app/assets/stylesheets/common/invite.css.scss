@@ -1,0 +1,66 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#invite {
+  .container {
+    max-width: 300px;
+    padding: 0 10px;
+    text-align: center;
+  }
+
+  #invite-container {
+    .btn {
+
+      &.invite-facebook {
+        margin-left:0px;
+
+         .image {
+          background: url(mvp.graphics.onboarding.png) no-repeat center 5px;
+          background-size:500px 1500px;
+        }
+      }
+
+      &.invite-facebook:hover {
+
+        .inner {
+          @include gradient-vertical(#3b5998, #5977b5);
+           .image {
+            background: url(mvp.graphics.onboarding.png) no-repeat center -95px;
+            background-size:500px 1500px;
+          }
+
+        }
+      }
+
+      &.invite-email {
+        margin-right:0px;
+
+        .image {
+          background: url(mvp.graphics.onboarding.png) no-repeat center -185px;
+          background-size:500px 1500px;
+        }
+      }
+    }
+
+    h1 {
+      margin-bottom:20px;
+      line-height:120%;
+    }
+
+    .description {
+      font-size:86%;
+      padding:18px 0px 40px 0px;
+    }
+  }
+
+}
+
+.modal-body #invite {
+  #main {
+    .container {
+      padding:0px;
+      max-width:320px;
+    }
+  }
+}

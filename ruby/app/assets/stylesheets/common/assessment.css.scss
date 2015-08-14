@@ -1,0 +1,3274 @@
+// Place all the styles related to the Own/Pmr controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body.assessment-layout-1 {
+
+  .canvas-bottom {
+    text-align:center;
+  }
+
+  .navbar.navbar-fixed-top #title {
+    text-transform:capitalize;
+  }
+
+  &.bluebg {
+    #main {
+      box-shadow:none;
+
+      h1.style-7 {
+        font-size:28px;
+        text-shadow: -1px -1px rgba(0,0,0,.25);
+        color:#fff;
+        font-family: $sansFontFamily;
+        padding-bottom:28px;
+      }
+
+      .navbar.navbar-fixed-top {
+        background:none;
+        border:0px;
+
+        #navbar-button-left {
+          border:0px;
+        }
+
+        #navbar-button-right {
+          border:0px;
+        }
+
+        .navbar-button.back {
+          background:url(mvp.graphics.assessment.png) center -584px no-repeat;
+          background-size:500px 1500px;
+        }
+
+      }
+
+      .screen {
+        border-top:0px;
+      }
+
+    }
+
+  }
+
+  &.darkbluebg {
+    #main {
+      .dark-header-row {
+        background:url(product.assessment.nav.bg.png) 0px bottom repeat-x;
+        background-size:50px 3px;
+      }
+
+      h1.style-7 {
+        font-size:30px;
+        color:#fff;
+        font-family: $sansFontFamily;
+        padding-bottom:28px;
+      }
+
+      #main-assessment-navigation {
+        ul#current-section-nav {
+          li {
+            height:53px;
+            &.active {
+              .pointer {
+                display:block;
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+
+  #gender {
+    .btn {
+
+      .inner {
+        padding-top:12px;
+        padding-bottom:18px;
+        @include gradient-vertical(#20a3f6,#1b86ca);
+
+        .image {
+          height:85px;
+        }
+      }
+
+      &.male .image {
+        background:url(mvp.graphics.general2.png) -109px -1200px no-repeat;
+        background-size:500px 2000px;
+      }
+
+      &.female .image {
+        background:url(mvp.graphics.general2.png) 12px -1200px no-repeat;
+        background-size:500px 2000px;
+      }
+
+      &:hover, &.active {
+        .inner {
+          @include gradient-vertical(#b6eb01,#b0e300);
+        }
+      }
+
+    }
+  }
+
+  #birthdate {
+    max-width:300px;
+    padding:0px 10px;
+    margin:0px auto;
+  }
+
+  #relationship_status {
+    .btn-circle-simple {
+      &.pos-1 {
+        .label {
+          display:block;
+        }
+      }
+      &.pos-2 {
+        .label {
+          display:block;
+        }
+      }
+    }
+  }
+
+  .btn-circle-simple {
+    .outer {
+      @include gradient-vertical(#20a3f6,#1b86ca);
+    }
+
+    &.pos-1 {
+      .label {
+        display:none;
+      }
+    }
+    &.pos-2 {
+      .label {
+        display:none;
+      }
+    }
+    &.pos-3 {
+      .label {
+        display:none;
+      }
+    }
+
+
+    &.active {
+      .outer {
+        @include gradient-vertical(#b6eb01,#b0e300);
+      }
+    }
+
+    .label {
+      font-size:107%;
+      font-family: $sansFontFamily;
+    }
+
+    &.size-minus-1 {
+
+      &.active {
+        .outer {
+          .image {
+            background:url(mvp.graphics.general2.png) 6px 11px no-repeat;
+            background-size:500px 2000px;
+          }
+        }
+      }
+
+    }
+
+  }
+
+  .btn-group.btn-group-radio.btn-group-5 {
+
+    .btn {
+
+      width:51px;
+
+        .outer {
+          .image {
+            padding-top:49px;
+            width:49px;
+          }
+        }
+
+    }
+
+  }
+
+  .rank-list {
+    margin:0px;
+    li {
+      list-style-type:none;
+      padding:10px 10px;
+      border-bottom:1px #c2c2c2 solid;
+      background: #fafafa;
+      background: -moz-linear-gradient(top,  #fafafa 25%, #ececec 100%);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(25%,#fafafa), color-stop(100%,#ececec));
+      background: -webkit-linear-gradient(top,  #fafafa 25%,#ececec 100%);
+      background: -o-linear-gradient(top,  #fafafa 25%,#ececec 100%);
+      background: -ms-linear-gradient(top,  #fafafa 25%,#ececec 100%);
+      background: linear-gradient(to bottom,  #fafafa 25%,#ececec 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fafafa', endColorstr='#ececec',GradientType=0 );
+      position:relative;
+      top:0px;
+      left:0px;
+      font-size:15px;
+      font-weight:bold;
+      color:#000;
+      text-align:left;
+
+      .icon {
+        float:right;
+        display:block;
+        padding:20px 0px 0px 0px;
+        width:30px;
+        height:0px;
+        overflow:hidden;
+        background:url(mvp.graphics.360.png) 0px -1450px no-repeat;
+        background-size:500px 1500px;
+      }
+    }
+  }
+
+  .screen {
+
+    .question-button-container {
+      max-width:300px;
+      margin:0px auto;
+      text-align:center;
+      padding:10px 10px;
+      border-top:1px #c2c2c2 solid;
+
+      .skip-button-container {
+        padding-top:10px;
+        a {
+          text-decoration:underline;
+          font-weight:bold;
+        }
+      }
+
+      .instructions {
+        color:#000;
+        padding:10px 0px;
+      }
+
+    }
+
+    &.transition-screen {
+      max-width:320px;
+      margin:10px auto;
+      text-align:center;
+      padding:10px 0px;
+
+      .button-container {
+        max-width:300px;
+        padding:15px 10px;
+      }
+
+      .content {
+        padding:10px 25px;
+        color:#fff;
+        font-size:142%;
+        line-height:normal;
+        text-align:left;
+
+        b {
+          text-transform:captitalize;
+        }
+      }
+
+      .section-list {
+        overflow:hidden;
+        width:320px;
+        margin:0px;
+
+        li {
+          list-style-type:none;
+          float:left;
+          position:relative;
+          top:0px;
+          left:-18px;
+          width:99px;
+          padding:0px 9px;
+
+          .left-fade {
+            width:126px;
+            height:0px;
+            padding:110px 0px 0px 0px;
+            overflow:hidden;
+            position:absolute;
+            top:0px;
+            left:0px;
+            @include gradient-horizontal(rgba(4,45,67,1.0),rgba(4,45,67,0.3));
+          }
+        }
+      }
+
+      .transition-graphic {
+        display:inline-block;
+        border-radius: 99px;
+        padding: 6px;
+        border: 0px;
+        width:93px;
+        height:93px;
+        @include gradient-vertical(#022436,#043651);
+        box-shadow: none;
+        -moz-box-shadow: none;
+
+          .inner {
+            display:inline-block;
+            border-radius: 93px;
+            width:93px;
+            height:93px;
+            box-shadow: 0px 0px 3px rgba(0,0,0,.75) inset;
+            -moz-box-shadow: 0px 0px 3px rgba(0,0,0,.75) inset;
+            @include gradient-vertical(#042d43,#021c2a);
+
+            .icon {
+              display:inline-block;
+              width:93px;
+              padding:93px 0px 0px 0px;
+              height:0px;
+              overflow:hidden;
+            }
+          }
+
+        &.active {
+          .inner {
+            background: #c5fe01;
+            background: -moz-linear-gradient(top,  #c5fe01 41%, #a0ce00 58%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(41%,#c5fe01), color-stop(58%,#a0ce00));
+            background: -webkit-linear-gradient(top,  #c5fe01 41%,#a0ce00 58%);
+            background: -o-linear-gradient(top,  #c5fe01 41%,#a0ce00 58%);
+            background: -ms-linear-gradient(top,  #c5fe01 41%,#a0ce00 58%);
+            background: linear-gradient(to bottom,  #c5fe01 41%,#a0ce00 58%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c5fe01', endColorstr='#a0ce00',GradientType=0 );
+          }
+        }
+
+        &.demographics {
+          .icon {
+            background:url(mvp.icons.categories.png) center -883px no-repeat;
+            background-size:500px 1500px;
+          }
+
+          &.active {
+            .icon {
+              background:url(mvp.icons.categories.png) center -383px no-repeat;
+              background-size:500px 1500px;
+            }
+          }
+        }
+
+        &.positivity {
+          .icon {
+            background:url(mvp.icons.categories.png) center -980px no-repeat;
+            background-size:500px 1500px;
+          }
+
+          &.active {
+            .icon {
+              background:url(mvp.icons.categories.png) center -480px no-repeat;
+              background-size:500px 1500px;
+            }
+          }
+        }
+
+        &.focus {
+          .icon {
+            background:url(mvp.icons.categories.png) center -1075px no-repeat;
+            background-size:500px 1500px;
+          }
+
+          &.active {
+            .icon {
+              background:url(mvp.icons.categories.png) center -575px no-repeat;
+              background-size:500px 1500px;
+            }
+          }
+        }
+
+        &.sleep {
+          .icon {
+            background:url(mvp.icons.categories.png) center -1183px no-repeat;
+            background-size:500px 1500px;
+          }
+
+          &.active {
+            .icon {
+              background:url(mvp.icons.categories.png) center -683px no-repeat;
+              background-size:500px 1500px;
+            }
+          }
+        }
+
+        &.social {
+          .icon {
+            background:url(mvp.icons.categories.png) center -1273px no-repeat;
+            background-size:500px 1500px;
+          }
+
+          &.active {
+            .icon {
+              background:url(mvp.icons.categories.png) center -773px no-repeat;
+              background-size:500px 1500px;
+            }
+          }
+        }
+
+
+      }
+    }
+
+
+  }
+
+  #start-screen {
+
+    max-width:300px;
+    padding:0px 10px;
+    margin:0px auto;
+    color:#fff;
+    text-align:center;
+
+    .content {
+      padding:0px 0px;
+      font-size:143%;
+      line-height:normal;
+      background:url(mvp.graphics.assessment2.png) center bottom no-repeat;
+      background-size:500px 1500px;
+      padding-bottom:30px;
+      border-bottom:1px #2f8cc5 solid;
+
+      .assessment-category-list {
+        text-align:center;
+        padding:30px 0px 0px 0px;
+        margin:0px;
+
+        li {
+          display:inline-block;
+          width:65px;
+          padding:63px 0px 0px 0px;
+          font-size:16px;
+          font-weight:100;
+          color:#fff;
+
+          &.focus {
+            background:url(mvp.graphics.assessment2.png) center -500px no-repeat;
+            background-size:500px 1500px;
+          }
+
+          &.positivity {
+            background:url(mvp.graphics.assessment2.png) center -600px no-repeat;
+            background-size:500px 1500px;
+          }
+
+          &.sleep {
+            background:url(mvp.graphics.assessment2.png) center -700px no-repeat;
+            background-size:500px 1500px;
+          }
+
+          &.social {
+            background:url(mvp.graphics.assessment2.png) center -800px no-repeat;
+            background-size:500px 1500px;
+          }
+        }
+
+      }
+    }
+
+    .button-container {
+      max-width:300px;
+      padding:15px 0px;
+      margin:0px auto;
+    }
+
+  }
+
+  #name-screen {
+    max-width:300px;
+    padding:0px 10px;
+    margin:0px auto;
+    color:#fff;
+    text-align:center;
+
+    .content {
+      padding:0px 0px;
+      font-size:143%;
+      line-height:normal;
+    }
+
+    .input-container {
+      padding-top:10px;
+
+      input {
+        width:268px;
+      }
+    }
+
+    .button-container {
+      max-width:300px;
+      padding:15px 0px;
+      margin:0px auto;
+    }
+  }
+
+  #welcome-screen {
+    max-width:300px;
+    padding:0px 10px;
+    margin:0px auto;
+    text-align:center;
+    color:#fff;
+
+    .content {
+      padding:0px 0px;
+      font-size:143%;
+      line-height:normal;
+
+      .graphic {
+        background:url(mvp.graphics.assessment.png) center -650px no-repeat;
+        background-size:500px 1500px;
+        padding:140px 0px 0px 0px;
+        height:0px;
+        overflow:hidden;
+      }
+
+    }
+
+    .button-container {
+      max-width:300px;
+      padding:15px 0px;
+      margin:0px auto;
+    }
+  }
+
+  #congratulations-screen {
+    max-width:300px;
+    padding:0px 10px;
+    margin:0px auto;
+    text-align:center;
+    color:#fff;
+
+    .content {
+      padding:0px 0px;
+      font-size:143%;
+      line-height:normal;
+
+      background:url(mvp.graphics.assessment.congratulations.png) center bottom no-repeat;
+      background-size:300px 196px;
+      padding-bottom:200px;
+      border-bottom:1px #2f8cc5 solid;
+    }
+
+    .button-container {
+      max-width:300px;
+      padding:15px 0px;
+    }
+  }
+
+  #three-sixty-congratulations-screen {
+    max-width:300px;
+    padding:0px 10px;
+    margin:0px auto;
+    text-align:center;
+    color:#fff;
+
+    a {
+      color:#fff;
+    }
+
+    .screen-header {
+      font-size:30px;
+    }
+
+    .graphic {
+      background:url(mvp.graphics.360.png) center -1300px;
+      background-size:500px 1500px;
+      padding:120px 0px 0px 0px;
+      height:0px;
+      overflow:hidden;
+    }
+
+    .content {
+      padding:0px 0px 24px 0px;
+      font-size:143%;
+      line-height:normal;
+    }
+
+    .button-container {
+      max-width:300px;
+      padding:15px 0px;
+    }
+  }
+
+  #pam-widget {
+    width:325px;
+
+    ul {
+     margin: 0px;
+     -webkit-padding-start: 0px;
+    }
+    ul li {
+      list-style: none;
+      float:left;
+      width:80px;
+      height:80px;
+      margin: 0px;
+    }
+  }
+
+  .pam-container {
+    padding:10px 0px 15px 0px;
+  }
+
+  .pam-grid-small {
+    text-align:center;
+
+    ul {
+      width:216px;
+      margin:0px auto;
+
+      li {
+        width:50px;
+        padding:2px;
+        height:50px;
+        list-style: none;
+        display:block;
+        float:left;
+
+        div {
+          background-color:#d0d0ce;
+          padding:50px 0px 0px 0px;
+          width:50px;
+          height:0px;
+          overflow:hidden;
+
+          background-size:50px 50px;
+        }
+      }
+    }
+  }
+
+  #pam-assessment form {
+    margin:0px;
+  }
+
+    .pam-grid {
+      text-align:center;
+
+      .grid-mask {
+        width:304px;
+        margin:0px auto;
+        overflow:hidden;
+      }
+
+      ul {
+        width:304px;
+        margin:0px;
+        position:relative;
+        top:0px;
+        left:0px;
+
+        li {
+          width:72px;
+          padding:2px;
+          height:72px;
+          list-style: none;
+          display:block;
+          float:left;
+
+          div {
+            background-color:#d0d0ce;
+            padding:70px 0px 0px 0px;
+            width:70px;
+            height:0px;
+            overflow:hidden;
+            border:1px #000 solid;
+            background-size:70px 70px;
+          }
+        }
+
+        li:hover div {
+          border:3px #109fdd solid;
+          width:66px;
+          padding-top:66px;
+        }
+
+        li.active div {
+          width:68px;
+          padding-top:68px;
+          background-size:68px 68px;
+          border:1px #032438 solid;
+        }
+
+      }
+
+      .btn {
+        -moz-border-radius: 0px; -webkit-border-radius: 0px; -khtml-border-radius: 0px; border-radius: 0px;
+        border:0px;
+        box-shadow:none;
+      }
+
+  }
+
+  .continue-screen {
+    max-width:300px;
+    padding:0px 10px;
+    margin:0px auto;
+
+    .animated-meter {
+      margin-top:23px;
+      label {
+        font-size:142%;
+        color:#000000;
+        font-weight:700;
+        text-align:left;
+      }
+    }
+
+    .instructions {
+      margin:35px 0px 90px 0px;
+    }
+  }
+
+  &.index,
+  &.new,
+  &.edit {
+    #main-assessment-navigation {
+      display:none;
+
+      ul#current-section-nav {
+
+        margin:0px auto;
+        max-width:320px;
+        position:relative;
+        top:0px;
+        left:17px;
+        overflow:hidden;
+
+        li {
+          display:block;
+          float:left;
+          width:45px;
+          height:45px;
+          padding:0px 6px;
+          position:relative;
+          top:0px;
+          left:0px;
+
+          .img-on {
+            display:none;
+            position:absolute;
+            top:0px;
+            right:8px;
+            width:45px;
+          }
+
+          .img-off {
+            position:absolute;
+            top:0px;
+            right:8px;
+            width:45px;
+            height:45px;
+          }
+
+          &.demographics {
+            background:url(product.assessment.nav.demo.png) 6px 0px no-repeat;
+            background-size:44px 44px;
+          }
+
+          &.focus {
+            background:url(product.assessment.nav.focus.png) 6px 0px no-repeat;
+            background-size:44px 44px;
+          }
+
+          &.positivity {
+            background:url(product.assessment.nav.positivity.png) 6px 0px no-repeat;
+            background-size:44px 44px;
+          }
+
+          &.sleep {
+            background:url(product.assessment.nav.sleep.png) 6px 0px no-repeat;
+            background-size:44px 44px;
+          }
+
+          &.social {
+            background:url(product.assessment.nav.social.png) 6px 0px no-repeat;
+            background-size:44px 44px;
+          }
+
+          .pointer {
+            background:url(mvp.graphics.assessment.png) center -1000px no-repeat;
+            background-size:500px 1500px;
+            width:45px;
+            padding:11px 0px 0px 0px;
+            position:absolute;
+            bottom:-7px;
+            height:0px;
+            overflow:hidden;
+            display:none;
+          }
+
+        }
+
+      }
+
+
+    }
+  }
+
+  &.show,
+  &.new {
+
+    .dark-header-row .content {
+      padding:5px 15px;
+    }
+
+    .intro-page {
+      .button-container {
+        max-width:320px;
+        margin:0px auto;
+        padding:10px 0px;
+        border-top:1px #c2c2c2 solid;
+      }
+    }
+
+    .personality-intro-page {
+      .button-container {
+        max-width:320px;
+        margin:0px auto;
+        padding:10px 0px;
+        border-top:1px #c2c2c2 solid;
+      }
+    }
+
+    .personality-page {
+
+      .personality-header {
+        padding:25px 20px 25px 90px;
+        max-width:210px;
+        margin:0px auto;
+        position:relative;
+        top:0px;
+        left:0px;
+
+        .marker-icon {
+          display:block;
+          position:absolute;
+          top:9px;
+          left:6px;
+
+          .outer-1 {
+            box-shadow: 0px 0px 12px rgba(0,0,0,0.67);
+          }
+        }
+      }
+
+      ul.personality-list {
+        max-width:320px;
+        margin:0px auto;
+
+        li {
+          font-family: "Open Sans",Helvetica,sans-serif;
+          font-weight:300;
+          font-size:86%;
+          padding:12px 12px 12px 77px;
+          list-style-type:none;
+          background: #f6f6f6;
+          background: -moz-linear-gradient(top,  #f6f6f6 0%, #efefef 86%, #e6e6e6 100%);
+          background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f6f6f6), color-stop(86%,#efefef), color-stop(100%,#e6e6e6));
+          background: -webkit-linear-gradient(top,  #f6f6f6 0%,#efefef 86%,#e6e6e6 100%);
+          background: -o-linear-gradient(top,  #f6f6f6 0%,#efefef 86%,#e6e6e6 100%);
+          background: -ms-linear-gradient(top,  #f6f6f6 0%,#efefef 86%,#e6e6e6 100%);
+          background: linear-gradient(to bottom,  #f6f6f6 0%,#efefef 86%,#e6e6e6 100%);
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6f6f6', endColorstr='#e6e6e6',GradientType=0 );
+          border:1px #c2c2c2 solid;
+          position:relative;
+          top:0px;
+          left:0px;
+
+          h3 {
+            font-family:Novecento;
+            font-weight:300;
+            font-size:129%;
+            margin:0px;
+            line-height:normal;
+          }
+
+          .marker-icon {
+            position:absolute;
+            top:10px;
+            left:10px;
+          }
+
+          &.label {
+            padding:5px 5px 5px 77px;
+            color:#666666;
+            font-size:12px;
+            background:url(mvp.graphics.assessment.results.png) 15px -1466px no-repeat;
+            background-size:500px 1500px;
+            border-radius:0px;
+            display:block;
+            background-color:#f2f2f2;
+          }
+        }
+      }
+
+
+      .button-container {
+        max-width:320px;
+        margin:0px auto;
+        padding:10px 0px;
+        border-top:1px #c2c2c2 solid;
+
+        .left-content {
+          float:left;
+          width:75px;
+        }
+
+        .right-content {
+          float:left;
+          width:225px;
+        }
+
+      }
+
+    }
+
+    .email-page {
+
+      .content {
+        max-width:300px;
+        margin:0px auto;
+        padding:190px 10px 10px 10px;
+        background:url(mvp.graphics.assessment.results2.png) center -200px no-repeat;
+        background-size:500px 1500px;
+        text-align:center;
+        color:#fff;
+      }
+
+      .input-container {
+        padding:10px 0px 0px 0px;
+
+        .error-container {
+          text-align:center;
+          color:red;
+          padding:10px;
+          font-size:12px;
+        }
+      }
+
+      .button-container {
+        max-width:320px;
+        margin:0px auto;
+        padding:10px 0px;
+      }
+    }
+
+    .skills-intro-page {
+      .button-container {
+        max-width:320px;
+        margin:0px auto;
+        padding:10px 0px;
+        border-top:1px #c2c2c2 solid;
+      }
+    }
+
+    .characteristics-page {
+
+      #characteristics-summary {
+        background:url(mvp.graphics.assessment.png) center 25px no-repeat;
+        background-size:500px 1500px;
+        padding:230px 0px 20px 0px;
+        text-align:center;
+        font-size:107%;
+        color:#999999;
+        font-weight:300;
+
+        b {
+          font-size:178%;
+          color:#042d43;
+          display:block;
+          font-weight:300;
+        }
+      }
+
+      .button-container {
+        max-width:320px;
+        margin:0px auto;
+        padding:10px 0px;
+        border-top:1px #c2c2c2 solid;
+
+        .left-content {
+          float:left;
+          width:75px;
+        }
+
+        .right-content {
+          float:left;
+          width:225px;
+        }
+
+      }
+
+    }
+
+    .summary {
+      max-width:320px;
+      padding:0px 10px;
+      margin:0px auto;
+      padding-bottom:24px;
+      color:#042d43;
+
+      b {
+        font-weight:700;
+      }
+    }
+
+    .flex-control-nav {
+      position:static;
+      margin-top:15px;
+    }
+
+    .skill-page {
+
+      .core-skills {
+        margin:0px auto;
+        background:url(mvp.graphics.assessment.png) center -300px no-repeat;
+        background-size:500px 1500px;
+        position:relative;
+        top:0px;
+        left:0px;
+        height:280px;
+        width:320px;
+
+        li {
+          list-style-type:none;
+          width:96px;
+          height:96px;
+          text-align:center;
+          padding:0px 0px 0px 0px;
+
+          label {
+            position:absolute;
+            top:63px;
+            left:0px;
+            width:96px;
+            text-align:center;
+            font-size:79%;
+          }
+
+          .active-img {
+            position:absolute;
+            bottom:0px;
+            left:0px;
+            width:96px;
+            padding:0px 0px 0px 0px;
+            height:0px;
+            overflow:hidden;
+          }
+
+          &.skill-focus {
+            background:url(mvp.graphics.assessment.png) 0px -1300px no-repeat;
+            background-size:500px 1500px;
+            position:absolute;
+            top:8px;
+            left:111px;
+
+            .active-img {
+              background:url(mvp.graphics.assessment.png) 0px bottom no-repeat;
+              background-size:500px 1500px;
+            }
+          }
+
+          &.skill-positivity {
+            background:url(mvp.graphics.assessment.png) -375px -1300px no-repeat;
+            background-size:500px 1500px;
+            position:absolute;
+            top:87px;
+            left:190px;
+
+            .active-img {
+              background:url(mvp.graphics.assessment.png) -375px bottom no-repeat;
+              background-size:500px 1500px;
+            }
+          }
+
+          &.skill-sleep {
+            background:url(mvp.graphics.assessment.png) -250px -1300px no-repeat;
+            background-size:500px 1500px;
+            position:absolute;
+            top:165px;
+            left:111px;
+
+            .active-img {
+              background:url(mvp.graphics.assessment.png) -250px bottom no-repeat;
+              background-size:500px 1500px;
+            }
+          }
+
+          &.skill-social {
+            background:url(mvp.graphics.assessment.png) -125px -1300px no-repeat;
+            background-size:500px 1500px;
+            position:absolute;
+            top:87px;
+            left:33px;
+
+            .active-img {
+              background:url(mvp.graphics.assessment.png) -125px bottom no-repeat;
+              background-size:500px 1500px;
+            }
+          }
+
+          &.marker-icon {
+            position:absolute;
+            top:108px;
+            left:110px;
+            .inner {
+              @include gradient-vertical(#a6d603, #d2f55a);
+            }
+          }
+
+
+        }
+      }
+
+      .summary {
+        padding-top:30px;
+      }
+
+      .button-container {
+        text-align:center;
+        max-width:300px;
+        margin:0px auto;
+        padding:30px 10px 0px 10px;
+      }
+
+    }
+
+    .action-plan-page {
+      .button-container {
+        text-align:center;
+        max-width:300px;
+        margin:0px auto;
+        padding:30px 10px 0px 10px;
+      }
+    }
+
+    .circle-icon {
+      padding:6px;
+      display:inline-block;
+      border-radius:50%;
+      @include gradient-vertical(#fff, #e4e4e4);
+
+      .outer {
+        border-radius:50%;
+        border:1px #a9a9a9 solid;
+        background: #022233;
+        background: -moz-linear-gradient(top,  #022233 44%, #042d43 59%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(44%,#022233), color-stop(59%,#042d43));
+        background: -webkit-linear-gradient(top,  #022233 44%,#042d43 59%);
+        background: -o-linear-gradient(top,  #022233 44%,#042d43 59%);
+        background: -ms-linear-gradient(top,  #022233 44%,#042d43 59%);
+        background: linear-gradient(to bottom,  #022233 44%,#042d43 59%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#022233', endColorstr='#042d43',GradientType=0 );
+        box-shadow: 0px 0px 7px rgba(0,0,0,0.15) inset;
+
+        .inner {
+          border-radius:50%;
+          width:60px;
+          padding:60px 0px 0px 0px;
+          height:0px;
+          overflow:hidden;
+        }
+      }
+
+      &.focus {
+        .outer .inner {
+          background:url(mvp.icons.categories.png) center 16px no-repeat;
+          background-size:500px 1500px;
+        }
+      }
+
+      &.positivity {
+        .outer .inner {
+          background:url(mvp.icons.categories.png) center -87px no-repeat;
+          background-size:500px 1500px;
+        }
+      }
+
+      &.sleep {
+        .outer .inner {
+          background:url(mvp.icons.categories.png) center -184px no-repeat;
+          background-size:500px 1500px;
+        }
+      }
+
+      &.social {
+        .outer .inner {
+          background:url(mvp.icons.categories.png) center -287px no-repeat;
+          background-size:500px 1500px;
+        }
+      }
+
+    }
+
+    .training-intro-page {
+      .button-container {
+        max-width:320px;
+        margin:0px auto;
+        padding:10px 0px;
+        border-top:1px #c2c2c2 solid;
+      }
+    }
+
+
+
+    .brainmap {
+      background:url(mvp.graphics.assessment.results.png) center 0px no-repeat;
+      background-size:500px 1500px;
+      height:295px;
+
+      .map {
+        width:320px;
+        margin:0px auto;
+        background:url(mvp.graphics.assessment.results2.png) center 0px no-repeat;
+        background-size:500px 1500px;
+        height:110px;
+        position:relative;
+        top:84px;
+        left:0px;
+
+        &.personality {
+          background:url(mvp.graphics.assessment.results.png) center -550px no-repeat;
+          background-size:500px 1500px;
+        }
+
+        &.skills {
+          background:url(mvp.graphics.assessment.results.png) center -700px no-repeat;
+          background-size:500px 1500px;
+        }
+
+        &.training {
+          background:url(mvp.graphics.assessment.results.png) center -850px no-repeat;
+          background-size:500px 1500px;
+        }
+      }
+    }
+
+    .marker-label {
+      display:inline-block;
+      background-color:#2198e4;
+      border:2px #fff solid;
+      padding:6px 8px;
+      font-family: "Open Sans",Helvetica,sans-serif;
+      font-size:12px;
+      font-weight:bold;
+      box-shadow: 0px 0px 12px rgba(0,0,0,0.85);
+      position:relative;
+      top:0px;
+      left:0px;
+      border-radius:5px;
+      color:#fff;
+
+      .pointer {
+        display:block;
+        padding:14px 0px 0px 0px;
+        width:100%;
+        height:0px;
+        overflow:hidden;
+        background:url(mvp.graphics.assessment.results.png) center -1400px no-repeat;
+        background-size:500px 1500px;
+        position:absolute;
+        bottom:-14px;
+        left:0px;
+      }
+
+      &.personality {
+        position:absolute;
+        top:27px;
+        left:36px;
+      }
+
+      &.skills {
+        position:absolute;
+        top:-22px;
+        left:136px;
+      }
+
+      &.action-plan {
+        position:absolute;
+        top:-37px;
+        left:207px;
+      }
+
+      &.active {
+
+        background-color:#10374c;
+        padding:12px 14px;
+        font-size:17px;
+        border-radius:6px;
+
+        .pointer {
+          padding:12px 0px 0px 0px;
+          background:url(mvp.graphics.assessment.results.png) center -1450px no-repeat;
+          background-size:500px 1500px;
+          position:absolute;
+          bottom:-12px;
+          left:0px;
+        }
+
+        &.personality {
+          position:absolute;
+          top:-16px;
+          left:16px;
+        }
+
+        &.skills {
+          position:absolute;
+          top:-52px;
+          left:120px;
+        }
+
+        &.action-plan {
+          position:absolute;
+          top:-57px;
+          left:157px;
+        }
+
+      }
+
+    }
+
+    .marker-icon {
+      display:inline-block;
+
+      .outer-3 {
+        display:inline-block;
+        padding:10px;
+        border-radius:50%;
+        background-color:rgba(255,255,255,0.3);
+        height:84px;
+      }
+
+      .outer-2 {
+        display:inline-block;
+        padding:7px;
+        border-radius:50%;
+        background-color:rgba(255,255,255,0.6);
+        height:70px;
+      }
+
+      .outer-1 {
+        display:inline-block;
+        padding:3px;
+        border-radius:50%;
+        background-color:#fff;
+        height:64px;
+      }
+
+      .outer-0 {
+        display:inline-block;
+        padding:1px;
+        border-radius:50%;
+        border:1px #b0b0b0 solid;
+        background-color:#e6e6e5;
+        height:60px;
+
+        .inner {
+          width:60px;
+          height:60px;
+          display:inline-block;
+          border-radius:50%;
+          @include gradient-vertical(#a6d603, #d2f55a);
+          box-shadow: inset 0px 0px 3px rgba(0,0,0,0.75);
+
+          .image {
+            width:60px;
+            height:60px;
+
+            .shine {
+              padding:60px 0px 0px 0px;
+              width:60px;
+              height:0px;
+              overflow:hidden;
+              background:url(mvp.graphics.assessment.results.png) -477px -999px no-repeat;
+              background-size:500px 1500px;
+            }
+          }
+        }
+      }
+
+      &.size-minus-1 {
+
+        .outer-1 {
+          height:44px;
+        }
+
+        .outer-0 {
+          height:40px;
+
+          .inner {
+            width:40px;
+            height:40px;
+            @include gradient-vertical(#1c8dd4, #20a3f7);
+
+            .image {
+              width:40px;
+              height:40px;
+
+              .shine {
+                padding:40px 0px 0px 0px;
+                width:40px;
+                background:url(mvp.graphics.assessment.results.png) -486px -1250px no-repeat;
+                background-size:500px 1500px;
+              }
+            }
+          }
+        }
+
+        &.introverted, &.reserved {
+
+          .image {
+            background:url(mvp.graphics.assessment.results.png) center -1292px no-repeat;
+            background-size:500px 1500px;
+          }
+
+        }
+
+        &.extroverted {
+
+          .image {
+            background:url(mvp.graphics.assessment.results.png) -90px -1292px no-repeat;
+            background-size:500px 1500px;
+          }
+
+        }
+
+        &.agreeable, &.friendly {
+
+          .image {
+            background:url(mvp.graphics.assessment.results.png) center -1344px no-repeat;
+            background-size:500px 1500px;
+          }
+
+        }
+
+        &.spirited, &.free_spirited {
+
+          .image {
+            background:url(mvp.graphics.assessment.results.png) 12px -1292px no-repeat;
+            background-size:500px 1500px;
+          }
+
+        }
+
+        &.emotional {
+
+          .image {
+            background:url(mvp.graphics.assessment.results.png) 10px -1340px no-repeat;
+            background-size:500px 1500px;
+          }
+
+        }
+
+        &.independent {
+
+          .image {
+            background:url(mvp.graphics.assessment.results.png) -386px -1291px no-repeat;
+            background-size:500px 1500px;
+          }
+
+        }
+
+        &.traditional, &.practical {
+
+          .image {
+            background:url(mvp.graphics.assessment.results.png) -384px -1344px no-repeat;
+            background-size:500px 1500px;
+          }
+
+        }
+
+        &.stable, &.resilient {
+
+          .image {
+            background:url(mvp.graphics.assessment.results.png) -293px -1291px no-repeat;
+            background-size:500px 1500px;
+          }
+
+        }
+
+        &.conscientious {
+
+          .image {
+            background:url(mvp.graphics.assessment.results.png) -92px -1340px no-repeat;
+            background-size:500px 1500px;
+          }
+
+        }
+
+        &.open, &.imaginative {
+
+          .image {
+            background:url(mvp.graphics.assessment.results.png) -292px -1342px no-repeat;
+            background-size:500px 1500px;
+          }
+
+        }
+
+        &.skills {
+
+          .image {
+            background:url(mvp.graphics.assessment.results.png) center -914px no-repeat;
+            background-size:400px 1200px;
+          }
+
+        }
+
+      }
+
+      &.puzzle {
+
+        position:absolute;
+        top:27px;
+        left:28px;
+
+        .image {
+          background:url(mvp.graphics.assessment.results.png) center -1088px no-repeat;
+          background-size:500px 1500px;
+        }
+
+      }
+
+      &.skills {
+
+        position:absolute;
+        top:-10px;
+        left:105px;
+
+        .image {
+          background:url(mvp.graphics.assessment.results.png) center -1138px no-repeat;
+          background-size:500px 1500px;
+        }
+
+      }
+
+      &.training {
+
+        position:absolute;
+        top:-10px;
+        left:170px;
+
+        .image {
+          background:url(mvp.graphics.assessment.results.png) center -1188px no-repeat;
+          background-size:500px 1500px;
+        }
+
+      }
+
+    }
+
+
+  }
+
+
+  .category-nav-list {
+    margin:0px auto;
+    max-width:300px;
+    text-align:center;
+    li {
+      list-style-type:none;
+      display:inline-block;
+    }
+  }
+
+
+}
+
+
+#baseline_assessments,
+#three_sixty_assessments {
+
+  color:#fff;
+  text-align:center;
+
+  #main {
+    box-shadow:none !important;
+  }
+
+  h2.style-1 {
+    font-size:23px;
+    font-weight:bold;
+    color:#fff;
+    padding-top:10px;
+  }
+
+  .header-container {
+    max-width:300px;
+    margin:0px auto;
+    padding:0px 0px 10px 0px;
+  }
+
+  .screen {
+    border-top:1px #409dd6 solid;
+    padding-bottom:10px;
+    max-width:300px;
+    margin:0px auto;
+
+    .score-header {
+      font-size:17px;
+    }
+  }
+
+  .baseline-results-button-container {
+    .buttons {
+      max-width:300px;
+      margin:0px auto;
+    }
+  }
+
+  .single-select-question {
+    .answer-label {
+      color:#000;
+    }
+  }
+
+   ul#current-section-nav {
+    position:relative;
+    top:0px;
+    left:42px !important;
+  }
+
+
+}
+
+
+#skip-assessment-modal {
+  width:280px;
+  margin-left:-140px;
+  text-align:center;
+  font-size:129%;
+  line-height:normal;
+  font-weight:bold;
+  border-radius:35px;
+
+  .text-content {
+    padding:5px 0px;
+  }
+
+  .button-container {
+    max-width:300px;
+    margin:0px auto;
+    padding:10px 10px;
+
+    .left-content {
+      float:left;
+      width:50%;
+    }
+
+    .right-content {
+      float:left;
+      width:50%;
+    }
+
+    .btn-border-simple {
+        @include gradient-vertical(#022131,#07354e);
+        color: white;
+        text-shadow: -1px -1px rgba(0,0,0,.25);
+
+          .inner-border {
+            @include gradient-vertical(#0b4769,#000f17);
+            padding:1px;
+
+            .inner {
+              border:0px #959595 solid;
+              @include gradient-vertical(#07344d,#022232);
+            }
+        }
+
+        &:hover {
+            .inner {
+              @include gradient-vertical(#0c4a6d,#042c40);
+            }
+        }
+
+        &.close {
+          opacity:1.0;
+        }
+
+    }
+
+  }
+
+}
+
+#results-submit-modal {
+  width:280px;
+  margin-left:-140px;
+  text-align:center;
+  font-size:129%;
+  line-height:normal;
+  font-weight:bold;
+  border-radius:35px;
+
+  .text-content {
+    padding:0px 0px 15px 0px;
+
+    font-size:15px;
+    font-weight:300;
+    line-height:normal;
+
+    h3 {
+      font-size:18px;
+      line-height:normal;
+    }
+  }
+
+  form {
+    .error-container {
+      text-align:center;
+      color:red;
+      padding:10px;
+      font-size:12px;
+    }
+  }
+
+  .button-container {
+    max-width:300px;
+    margin:0px auto;
+    padding:0px 10px 0px 10px;
+
+    .btn-border-simple {
+        @include gradient-vertical(#022131,#07354e);
+        color: white;
+        text-shadow: -1px -1px rgba(0,0,0,.25);
+
+          .inner-border {
+            @include gradient-vertical(#0b4769,#000f17);
+            padding:1px;
+
+            .inner {
+              border:0px #959595 solid;
+              @include gradient-vertical(#ccee54,#8fb801);
+            }
+        }
+
+        &:hover {
+            .inner {
+              @include gradient-vertical(#0c4a6d,#042c40);
+            }
+        }
+
+        &.pill {
+          border-radius: 42px;
+          .inner-border {
+            border-radius: 60px;
+            .inner {
+              border-radius: 60px;
+            }
+          }
+        }
+
+    }
+
+  }
+
+}
+
+@media only screen and (max-width : 960px) {
+  #skip-assessment-modal {
+    width:auto;
+    margin-left:0px;
+  }
+
+  #results-submit-modal {
+    width:auto;
+    margin-left:0px;
+  }
+
+  #main-assessment-navigation-large {
+    display:none !important;
+  }
+
+  .desktop-results-header {
+    display:none;
+  }
+
+}
+
+#pam .audio-slideshow {
+  margin:10px auto;
+}
+
+
+
+@media only screen and (min-width : 960px) {
+  body.assessment-layout-1 {
+    background: url(bg.texture-1.gif) 0px 0px repeat !important;
+
+    #main-assessment-navigation {
+      display:none !important;
+    }
+
+    &.bluebg {
+      #main {
+
+        background: #55b3ec;
+        background: -moz-linear-gradient(top,  #55b3ec 25%, #05619a 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(25%,#55b3ec), color-stop(100%,#05619a));
+        background: -webkit-linear-gradient(top,  #55b3ec 25%,#05619a 100%);
+        background: -o-linear-gradient(top,  #55b3ec 25%,#05619a 100%);
+        background: -ms-linear-gradient(top,  #55b3ec 25%,#05619a 100%);
+        background: linear-gradient(to bottom,  #55b3ec 25%,#05619a 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#55b3ec', endColorstr='#05619a',GradientType=0 );
+
+      }
+
+      .desktop-header {
+        .btn.btn-border-simple {
+          background: -moz-linear-gradient(top,  rgba(222,222,222,0.5) 0%, rgba(255,255,255,0.5) 100%);
+          background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(222,222,222,0.5)), color-stop(100%,rgba(255,255,255,0.5)));
+          background: -webkit-linear-gradient(top,  rgba(222,222,222,0.5) 0%,rgba(255,255,255,0.5) 100%);
+          background: -o-linear-gradient(top,  rgba(222,222,222,0.5) 0%,rgba(255,255,255,0.5) 100%);
+          background: -ms-linear-gradient(top,  rgba(222,222,222,0.5) 0%,rgba(255,255,255,0.5) 100%);
+          background: linear-gradient(to bottom,  rgba(222,222,222,0.5) 0%,rgba(255,255,255,0.5) 100%);
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80dedede', endColorstr='#80ffffff',GradientType=0 );
+        }
+      }
+
+      .desktop-results-header {
+        display:none;
+      }
+
+    }
+
+    &.darkbluebg {
+      #main {
+        background: #042d43;
+      }
+
+      .desktop-header {
+        .btn.btn-border-simple {
+          background: -moz-linear-gradient(top,  rgba(222,222,222,0.5) 0%, rgba(255,255,255,0.5) 100%);
+          background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(222,222,222,0.5)), color-stop(100%,rgba(255,255,255,0.5)));
+          background: -webkit-linear-gradient(top,  rgba(222,222,222,0.5) 0%,rgba(255,255,255,0.5) 100%);
+          background: -o-linear-gradient(top,  rgba(222,222,222,0.5) 0%,rgba(255,255,255,0.5) 100%);
+          background: -ms-linear-gradient(top,  rgba(222,222,222,0.5) 0%,rgba(255,255,255,0.5) 100%);
+          background: linear-gradient(to bottom,  rgba(222,222,222,0.5) 0%,rgba(255,255,255,0.5) 100%);
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80dedede', endColorstr='#80ffffff',GradientType=0 );
+        }
+      }
+
+      .desktop-results-header {
+        display:block;
+      }
+
+    }
+
+    #main-canvas {
+
+      #main {
+        height:665px !important;
+        box-shadow:none;
+
+        .navbar.navbar-fixed-top {
+          display:none;
+        }
+
+        #start-screen {
+          padding-top:35px;
+
+          h1.style-7 {
+            font-size:260%;
+            padding-bottom:14px;
+          }
+
+          .content {
+            background:url(mvp.graphics.assessment2.png) center bottom no-repeat;
+            background-size:1000px 3000px;
+            padding-bottom:65px;
+            min-height:360px;
+
+            .assessment-category-list {
+              padding-top:80px;
+
+              li {
+
+                width:150px;
+                padding:125px 0px 0px 0px;
+
+                &.focus {
+                  background:url(mvp.graphics.assessment2.png) center -1000px no-repeat;
+                }
+
+                &.positivity {
+                  background:url(mvp.graphics.assessment2.png) center -1200px no-repeat;
+                }
+
+                &.sleep {
+                  background:url(mvp.graphics.assessment2.png) center -1400px no-repeat;
+                }
+
+                &.social {
+                  background:url(mvp.graphics.assessment2.png) center -1600px no-repeat;
+                }
+
+              }
+            }
+          }
+
+          .button-container {
+            padding-top:23px;
+          }
+
+        }
+
+        #name-screen {
+          h1.style-7 {
+            font-size:260%;
+            padding-bottom:14px;
+          }
+
+          padding-top:130px;
+        }
+
+        #welcome-screen {
+          padding-top:70px;
+
+          .content {
+            max-width:400px;
+            margin:0px auto;
+          }
+
+          h1.style-7 {
+            font-size:260%;
+            padding-bottom:24px;
+          }
+
+          .graphic {
+            background:url(mvp.graphics.assessment.png) center -943px no-repeat;
+            background-size:725px 2175px;
+            padding:213px 0px 0px 0px;
+          }
+
+          .button-container {
+            position:relative;
+            top:0px;
+            left:0px;
+
+            .button-white-arrow-left {
+              position:absolute;
+              top:40px;
+              left:-90px;
+            }
+          }
+        }
+
+        #congratulations-screen {
+          padding-top:70px;
+
+          h1.style-7 {
+            font-size:260%;
+            padding-bottom:24px;
+          }
+
+          .button-container {
+            margin:0px auto;
+            padding-top:23px;
+          }
+
+          .content {
+            background:url(mvp.graphics.assessment.congratulations.png) center bottom no-repeat;
+            background-size:600px 392px;
+            padding-bottom:350px;
+          }
+        }
+
+        #three-sixty-congratulations-screen {
+          padding-top:70px;
+
+          .content {
+            padding-bottom:45px;
+          }
+
+          .button-container {
+            margin:0px auto;
+            padding-top:23px;
+          }
+
+          .graphic {
+            background:url(mvp.graphics.360.png) center -2600px;
+            padding:240px 0px 0px 0px;
+          }
+
+        }
+
+
+        .screen {
+
+          margin:0px auto;
+          max-width:945px;
+
+          .question-button-container {
+            clear:both;
+            width:100%;
+            max-width:none;
+            border:0px;
+            padding:30px 0px 0px 0px;
+
+            .continue-button-container {
+              margin:0px auto;
+              max-width:300px;
+            }
+
+            .back-button-container {
+              width:280px;
+              float:left;
+              text-align:left;
+              padding-top:20px;
+            }
+
+            .skip-button-container {
+              width:280px;
+              float:right;
+              text-align:left;
+              position:relative;
+              top:-50px;
+
+              a {
+                font-family: "Open Sans",Helvetica,sans-serif;
+                font-size:120%;
+                font-weight:100;
+              }
+            }
+
+          }
+
+        }
+
+
+      }
+
+    }
+
+
+    &.index,
+    &.new,
+    &.edit {
+      #main-assessment-navigation-large {
+        display:none;
+        padding-bottom:0px;
+
+        .content {
+          margin:0px auto;
+          max-width:945px;
+          padding:10px 0px 0px 0px;
+        }
+
+        h3 {
+          font-family:Novecento;
+          font-weight:300;
+          font-size:200%;
+          margin:0px;
+          width:500px;
+          text-align:left;
+        }
+
+        h4 {
+          font-family: "Open Sans",Helvetica,sans-serif;
+          font-weight:300;
+          font-size:120%;
+          margin:0px;
+          width:500px;
+          text-align:left;
+        }
+
+        ul#current-section-nav-large {
+
+          max-width:450px;
+          float:right;
+          position:relative;
+          top:0px;
+          left:17px;
+          overflow:hidden;
+          margin:0px;
+
+          li {
+            display:block;
+            float:left;
+            width:70px;
+            height:105px;
+            padding:0px 6px;
+            position:relative;
+            top:0px;
+            left:0px;
+            opacity:0.2;
+
+            label {
+              position:absolute;
+              bottom:15px;
+              left:2px;
+              width:70px;
+              text-align:center;
+              display:block;
+            }
+
+            .img-on {
+              display:none;
+              position:absolute;
+              top:0px;
+              right:8px;
+              width:45px;
+            }
+
+            .img-off {
+              position:absolute;
+              top:0px;
+              right:8px;
+              width:45px;
+              height:45px;
+            }
+
+            &:first-child {
+              opacity:1.0;
+            }
+
+            &.demographics {
+              background:url(product.assessment.nav.demo.png) 6px 0px no-repeat;
+              background-size:64px 64px;
+            }
+
+            &.focus {
+              background:url(product.assessment.nav.focus.png) 6px 0px no-repeat;
+              background-size:64px 64px;
+            }
+
+            &.positivity {
+              background:url(product.assessment.nav.positivity.png) 6px 0px no-repeat;
+              background-size:64px 64px;
+            }
+
+            &.sleep {
+              background:url(product.assessment.nav.sleep.png) 6px 0px no-repeat;
+              background-size:64px 64px;
+            }
+
+            &.social {
+              background:url(product.assessment.nav.social.png) 6px 0px no-repeat;
+              background-size:64px 64px;
+            }
+
+            .pointer {
+              background:url(mvp.graphics.assessment.png) center -1450px no-repeat;
+              background-size:725px 2175px;
+              width:65px;
+              padding:16px 0px 0px 0px;
+              position:absolute;
+              bottom:0px;
+              height:0px;
+              overflow:hidden;
+              display:none;
+            }
+
+            &.active {
+
+              opacity:1.0;
+
+              .pointer {
+                display:block;
+              }
+            }
+
+            &.complete {
+              opacity:1.0;
+            }
+
+          }
+
+        }
+
+      }
+
+      .screen {
+
+        .desktop-focus-area {
+          width:520px;
+          height:155px;
+          padding:10px 50px;
+          border:1px #d6d6d6 solid;
+          border-radius: 6px;
+          background-color:#fff;
+          text-align:center;
+        }
+
+        .page-description {
+          color:#666666;
+          font-size:110%;
+          line-height:24px;
+          width:280px;
+          float:right;
+          padding:105px 0px 0px 0px;
+          height:405px;
+          position:relative;
+          top:0px;
+          left:0px;
+
+          h5 {
+            font-weight:bold;
+            padding:0px 0px 20px 0px;
+            font-size:120%;
+            line-height:normal;
+            margin:0px;
+          }
+
+          a {
+            display:block;
+
+            &.skip-link {
+              position:absolute;
+              bottom:0px;
+            }
+          }
+
+        }
+
+      }
+
+      .transition-screen {
+        text-align:center;
+
+        .button-container {
+          max-width:320px;
+          margin:0px auto;
+
+          position:relative;
+          top:0px;
+          left:0px;
+
+          .button-white-arrow-left {
+            position:absolute;
+            top:40px;
+            left:-90px;
+          }
+
+        }
+
+        .section-list {
+          width:464px;
+          margin:0px auto;
+
+          li {
+            position:relative;
+            top:0px;
+            left:-22px;
+            width:144px;
+            padding:0px 13px;
+
+            .left-fade {
+              width:183px;
+              padding:160px 0px 0px 0px;
+            }
+
+          }
+
+        }
+
+        .content {
+          text-align:center;
+          max-width:410px;
+          margin:0px auto;
+        }
+
+        .transition-graphic {
+          border-radius: 144px;
+          padding: 9px;
+          border: 0px;
+          width:135px;
+          height:135px;
+
+            .inner {
+              border-radius: 135px;
+              width:135px;
+              height:135px;
+              box-shadow: 0px 0px 4px rgba(0,0,0,.75) inset;
+              -moz-box-shadow: 0px 0px 4px rgba(0,0,0,.75) inset;
+
+              .icon {
+                width:135px;
+                padding:135px 0px 0px 0px;
+              }
+            }
+
+          &.demographics {
+            .icon {
+              background:url(mvp.icons.categories.png) center -1280px no-repeat;
+              background-size:725px 2175px;
+            }
+
+            &.active {
+              .icon {
+                background:url(mvp.icons.categories.png) center -555px no-repeat;
+                background-size:725px 2175px;
+              }
+            }
+          }
+
+          &.positivity {
+            .icon {
+              background:url(mvp.icons.categories.png) center -1421px no-repeat;
+              background-size:725px 2175px;
+            }
+
+            &.active {
+              .icon {
+                background:url(mvp.icons.categories.png) center -696px no-repeat;
+                background-size:725px 2175px;
+              }
+            }
+          }
+
+          &.focus {
+            .icon {
+              background:url(mvp.icons.categories.png) center -1559px no-repeat;
+              background-size:725px 2175px;
+            }
+
+            &.active {
+              .icon {
+                background:url(mvp.icons.categories.png) center -834px no-repeat;
+                background-size:725px 2175px;
+              }
+            }
+          }
+
+          &.sleep {
+            .icon {
+              background:url(mvp.icons.categories.png) center -1715px no-repeat;
+              background-size:725px 2175px;
+            }
+
+            &.active {
+              .icon {
+                background:url(mvp.icons.categories.png) center -990px no-repeat;
+                background-size:725px 2175px;
+              }
+            }
+          }
+
+          &.social {
+            .icon {
+              background:url(mvp.icons.categories.png) center -1846px no-repeat;
+              background-size:725px 2175px;
+            }
+
+            &.active {
+              .icon {
+                background:url(mvp.icons.categories.png) center -1121px no-repeat;
+                background-size:725px 2175px;
+              }
+            }
+          }
+
+
+        }
+
+      }
+
+      .single-select-question,
+      .assessment-rank-screen,
+      .open-question-screen {
+
+        .page-description {
+          height:auto;
+        }
+
+        .answer-label {
+          color:#000;
+        }
+      }
+
+
+      .multi-select-question {
+
+        .page-description {
+          height:auto;
+        }
+      }
+
+      #gender,
+      #birthdate,
+      #relationship_status {
+        text-align:left;
+
+        .btn-group {
+          padding:80px 178px;
+          border:1px #d6d6d6 solid;
+          border-radius: 6px;
+          background-color:#fff;
+        }
+
+        h3.style-2 {
+          font-size:213%;
+          font-weight:bold;
+          padding:45px 0px 20px 0px;
+          margin:0px;
+        }
+
+        select {
+          display:block;
+          margin:10px auto;
+        }
+      }
+
+      #birthdate {
+        .desktop-focus-area {
+          padding:72px 50px;
+
+          select {
+            height: auto;
+            font-size: 16px;
+          }
+        }
+
+        .button-container {
+          max-width:300px;
+          margin:0px auto;
+        }
+
+      }
+
+      #relationship_status {
+
+        .page-description {
+          height:265px;;
+        }
+
+        .btn.btn-circle-simple {
+          .image {
+            width:70px;
+            padding-top:70px;
+          }
+        }
+
+      }
+
+    }
+
+    &.show {
+
+      #main-canvas {
+        #main {
+          .screen {
+            max-width:none;
+
+            .desktop-results-header {
+              .content {
+                margin:0px auto;
+                max-width:945px;
+                position:relative;
+                top:0px;
+                left:0px;
+                color:#e3e3e3;
+                padding:25px 0px;
+
+                h1.style-7 {
+                  font-family:Novecento;
+                  font-weight:100;
+                  font-size:30px;
+                }
+
+                .results-progress-indicator {
+                  width:260px;
+                  height:100px;
+                  position:absolute;
+                  top:15px;
+                  right:50px;
+                  background:url(mvp.graphics.assessment.results2.png) 19px -1380px no-repeat;
+                  background-size:1000px 3000px;
+                  margin:0px;
+
+                  li {
+                    list-style-type:none;
+                    float:left;
+                    width:86px;
+                    height:100px;
+                    position:relative;
+                    top:0px;
+                    left:0px;
+                    text-align:center;
+
+                    &.active {
+                      label,
+                      .marker-icon  {
+                        display:block;
+                      }
+                    }
+
+                    label {
+                      display:none;
+                      text-align:center;
+                      font-family:Novecento;
+                      font-size:12px;
+                      font-weight:bold;
+                      color:#fff;
+                    }
+
+                    .marker-icon {
+                      display:none;
+                      position:absolute;
+                      left:17px;
+                      top:22px;
+
+                      .outer-1 {
+                        height:44px;
+                        padding:2px;
+                      }
+
+                      .outer-0 {
+                        height:40px;
+
+                        .inner {
+                          width:40px;
+                          height:40px;
+
+                          .image {
+                            width:40px;
+                            height:40px;
+
+                            .shine {
+                              padding:40px 0px 0px 0px;
+                              width:40px;
+                              background:url(mvp.graphics.assessment.results.png) -186px -800px no-repeat;
+                              background-size:400px 1200px;
+                            }
+                          }
+                        }
+                      }
+
+                      &.puzzle {
+                        .image {
+                          background:url(mvp.graphics.assessment.results.png) center -874px no-repeat;
+                          background-size:400px 1200px;
+                        }
+                      }
+
+                      &.skills {
+                        .image {
+                          background:url(mvp.graphics.assessment.results.png) center -914px no-repeat;
+                          background-size:400px 1200px;
+                        }
+                      }
+
+                      &.training {
+                        .image {
+                          background:url(mvp.graphics.assessment.results.png) center -955px no-repeat;
+                          background-size:400px 1200px;
+                        }
+                      }
+
+                    }
+
+                    .flex-nav-container {
+                      display:none;
+                      position:absolute;
+                      bottom:10px;
+                      left:0px;
+                      width:100%;
+
+                      a {
+                        width:6px;
+                        padding:6px 0px 0px 0px;
+                        height:0px;
+                        overflow:hidden;
+                        border-radius:3px;
+                        background-color:#1b88cf;
+                        display:inline-block;
+                        margin:0px 1px;
+
+                        &.active {
+                          background-color:#cce966;
+                        }
+                      }
+
+                    }
+
+                  }
+                }
+              }
+            }
+
+            .desktop-focus-area {
+              width:620px;
+              border:1px #d6d6d6 solid;
+              border-radius: 6px;
+              background-color:#fff;
+            }
+
+            .page-description {
+              color:#666666;
+              font-size:110%;
+              line-height:24px;
+              width:280px;
+              float:right;
+              padding:105px 0px 0px 0px;
+              height:405px;
+              position:relative;
+              top:0px;
+              left:0px;
+
+              h5 {
+                font-weight:bold;
+                padding:0px 0px 20px 0px;
+                font-size:120%;
+                line-height:normal;
+                margin:0px;
+              }
+
+              a {
+                display:block;
+
+                &.skip-link {
+                  position:absolute;
+                  bottom:0px;
+                }
+              }
+
+            }
+
+            .page-flexslider {
+
+              .slides {
+
+                .slide-content {
+                  margin:0px auto;
+                  max-width:945px;
+                }
+
+                .dark-header-row {
+                  display:none;
+                }
+
+                .button-container {
+                  border-top:0px;
+                }
+
+                li {
+
+                  .desktop-slide-header {
+                    max-width:530px;
+                    height:54px;
+                    font-size:133%;
+                    font-weight:bold;
+                    margin:0px;
+                    padding:35px 20px 15px 90px;
+                    position:relative;
+                    top:0px;
+                    left:0px;
+
+                    .marker-icon {
+                      position:absolute;
+                      left:12px;
+                      top:25px;
+
+                      .outer-1 {
+                        height:55px;
+                        padding:2px;
+                      }
+
+                      .outer-0 {
+                        height:50px;
+
+                        .inner {
+                          width:50px;
+                          height:50px;
+
+                          .image {
+                            width:50px;
+                            height:50px;
+
+                            .shine {
+                              padding:50px 0px 0px 0px;
+                              width:50px;
+                              background:url(mvp.graphics.assessment.results.png) -233px -1000px no-repeat;
+                              background-size:500px 1500px;
+                            }
+                          }
+                        }
+                      }
+
+                      &.puzzle {
+                        .image {
+                          background:url(mvp.graphics.assessment.results.png) center -980px no-repeat;
+                          background-size:450px 1350px;
+                        }
+                      }
+
+                      &.training {
+                        .image {
+                          background:url(mvp.graphics.assessment.results.png) center -1026px no-repeat;
+                          background-size:450px 1350px;
+                        }
+                      }
+
+                    }
+                  }
+
+
+                  &.personality-page {
+
+                    .personality-list {
+                      max-width:none;
+                      border-radius: 6px;
+                      background:#fff;
+                      height:340px;
+                      overflow:auto;
+                      li {
+                        border-left:0px;
+                        border-right:0px;
+                        border-bottom:0px;
+                        background:none;
+                        font-size:17px;
+                        font-family: "Open Sans",Helvetica,sans-serif;
+                        line-height:26px;
+
+                        &:first-child {
+                          border-top:0px;
+                        }
+
+                        h3 {
+                          font-family:Novecento;
+                          font-size:28px;
+                          padding-bottom:10px;
+                        }
+
+                        &.label {
+                          background:url(mvp.graphics.assessment.results2.png) 13px -1685px no-repeat;
+                          background-size:1000px 3000px;
+                          font-size:12px;
+                        }
+
+                      }
+                    }
+
+                    .button-container {
+                      .right-content {
+                        float:none;
+                        width:auto;
+                      }
+                    }
+                  }
+
+                  &.email-page {
+                    padding-top:35px;
+
+                    .content {
+                      max-width:400px;
+                    }
+                  }
+
+                  &.skill-page {
+                    .desktop-slide-header {
+
+                      padding-top:25px;
+
+                      .marker-icon {
+                        position:absolute;
+                        left:12px;
+                        top:17px;
+                      }
+
+                      b {
+                        color:#011C29;
+                        font-weight:bold;
+                      }
+                    }
+
+                    .desktop-focus-area {
+                      padding:20px 0px;
+
+                      .core-skills {
+                        .marker-icon {
+                          position:absolute;
+                          top:108px;
+                          left:110px;
+                          .inner {
+                            @include gradient-vertical(#a6d603, #d2f55a);
+                          }
+                        }
+                      }
+                    }
+                  }
+
+                  &.action-plan-page {
+                    .desktop-slide-header {
+                      padding-left:0px;
+                      font-size:32px;
+                    }
+
+                    .desktop-focus-area {
+                      .activity-list {
+                        clear:none;
+                        border-radius: 6px;
+                        background:#fff;
+
+                        li {
+                          border-left:0px;
+                          border-right:0px;
+                          background:none;
+
+                          &:last-child {
+                            border-bottom:0px;
+                          }
+                        }
+                      }
+                    }
+                  }
+
+                }
+
+                .brainmap {
+                  background:url(mvp.graphics.assessment.results.png) center 0px no-repeat;
+                  background-size:725px 2175px;
+                  height:428px;
+                  max-width:945px;
+                  margin:0px auto;
+                  border-bottom:1px #c2c2c2 solid;
+
+                  .map {
+                    width:464px;
+                    background:url(mvp.graphics.assessment.results2.png) center 0px no-repeat;
+                    background-size:725px 2175px;
+                    height:160px;
+                    position:relative;
+                    top:122px;
+                    left:0px;
+
+                    &.personality {
+                      background:url(mvp.graphics.assessment.results.png) center -798px no-repeat;
+                      background-size:725px 2175px;
+                    }
+
+                    &.skills {
+                      background:url(mvp.graphics.assessment.results.png) center -1015px no-repeat;
+                      background-size:725px 2175px;
+                    }
+
+                    &.training {
+                      background:url(mvp.graphics.assessment.results.png) center -1233px no-repeat;
+                      background-size:725px 2175px;
+                    }
+                  }
+                }
+
+                .marker-label {
+                  border:3px #fff solid;
+                  padding:9px 12px;
+                  font-size:17px;
+                  box-shadow: 0px 0px 17px rgba(0,0,0,0.85);
+                  border-radius:7px;
+
+                  .pointer {
+                    padding:20px 0px 0px 0px;
+                    background:url(mvp.graphics.assessment.results.png) center -2030px no-repeat;
+                    background-size:725px 2175px;
+                    position:absolute;
+                    bottom:-20px;
+                    left:0px;
+                  }
+
+                  &.personality {
+                    position:absolute;
+                    top:39px;
+                    left:52px;
+                  }
+
+                  &.skills {
+                    position:absolute;
+                    top:-32px;
+                    left:197px;
+                  }
+
+                  &.action-plan {
+                    position:absolute;
+                    top:-54px;
+                    left:300px;
+                  }
+
+                  &.active {
+
+                    padding:17px 20px;
+                    font-size:25px;
+                    border-radius:9px;
+
+                    .pointer {
+                      padding:17px 0px 0px 0px;
+                      background:url(mvp.graphics.assessment.results.png) center -2102px no-repeat;
+                      background-size:725px 2175px;
+                      position:absolute;
+                      bottom:-16px;
+                      left:0px;
+                    }
+
+                    &.personality {
+                      position:absolute;
+                      top:-32px;
+                      left:5px;
+                    }
+
+                    &.skills {
+                      position:absolute;
+                      top:-75px;
+                      left:124px;
+                    }
+
+                    &.action-plan {
+                      position:absolute;
+                      top:-83px;
+                      left:228px;
+                    }
+
+                  }
+
+                }
+
+                .marker-icon {
+
+                  .outer-3 {
+                    padding:15px;
+                    height:122px;
+                  }
+
+                  .outer-2 {
+                    padding:10px;
+                    height:102px;
+                  }
+
+                  .outer-1 {
+                    padding:4px;
+                    height:93px;
+                  }
+
+                  .outer-0 {
+                    height:87px;
+
+                    .inner {
+                      width:87px;
+                      height:87px;
+                      box-shadow: inset 0px 0px 4px rgba(0,0,0,0.75);
+
+                      .image {
+                        width:87px;
+                        height:87px;
+
+                        .shine {
+                          padding:87px 0px 0px 0px;
+                          width:87px;
+                          height:0px;
+                          background:url(mvp.graphics.assessment.results.png) -692px -1449px no-repeat;
+                          background-size:725px 2175px;
+                        }
+                      }
+                    }
+                  }
+
+                  &.size-minus-1 {
+
+                    .outer-1 {
+                      height:44px;
+                    }
+
+                    .outer-0 {
+                      height:40px;
+
+                      .inner {
+                        width:40px;
+                        height:40px;
+                        @include gradient-vertical(#1c8dd4, #20a3f7);
+
+                        .image {
+                          width:40px;
+                          height:40px;
+
+                          .shine {
+                            padding:40px 0px 0px 0px;
+                            width:40px;
+                            background:url(mvp.graphics.assessment.results.png) -186px -800px no-repeat;
+                            background-size:400px 1200px;
+                          }
+                        }
+                      }
+                    }
+
+                    &.skills {
+
+                      .image {
+                        background:url(mvp.graphics.assessment.results.png) center -914px no-repeat;
+                        background-size:400px 1200px;
+                      }
+
+                    }
+
+                  }
+
+                  &.puzzle {
+
+                    position:absolute;
+                    top:27px;
+                    left:28px;
+
+                    .image {
+                      background:url(mvp.graphics.assessment.results.png) center -1578px no-repeat;
+                      background-size:725px 2175px;
+                    }
+
+                  }
+
+                  &.skills {
+
+                    position:absolute;
+                    top:-10px;
+                    left:105px;
+
+                    .image {
+                      background:url(mvp.graphics.assessment.results.png) center -1650px no-repeat;
+                      background-size:725px 2175px;
+                    }
+
+                  }
+
+                  &.training {
+
+                    position:absolute;
+                    top:-10px;
+                    left:246px;
+
+                    .image {
+                      background:url(mvp.graphics.assessment.results.png) center -1723px no-repeat;
+                      background-size:725px 2175px;
+                    }
+
+                  }
+
+                }
+
+              }
+
+            }
+
+          }
+        }
+      }
+
+    }
+
+
+  }
+
+
+  #baseline_assessments,
+  #three_sixty_assessments {
+
+    &.show,
+    &.edit {
+
+      #main-canvas {
+
+        #main {
+
+
+          .header-container {
+            max-width:500px;
+            font-size:20px;
+            padding:0px 0px 20px 0px;
+            border-bottom:1px #409dd6 solid;
+
+            h2.style-1 {
+              font-size:48px;
+              font-weight:normal;
+              color:#fff;
+              padding-top:10px;
+            }
+
+          }
+
+
+          .screen {
+
+            max-width:940px;
+            border-top:0px;
+            border-bottom:0px #409dd6 solid;
+
+            .score-header {
+              font-size:34px;
+            }
+
+            .meter-container {
+              float:left;
+              width:450px;
+              position:relative;
+
+              .color-meter {
+                width:330px;
+                padding:173px 0px 0px 0px;
+                background:url(mvp.graphics.assessment2.png) center 0px no-repeat;
+                background-size:660px 1980px;
+                position:absolute;
+                top:10px;
+                right:15px;
+                margin:0px;
+                left:auto;
+
+                .needle {
+                  width:13px;
+                  padding:98px 0px 0px 0px;
+                  background:url(mvp.graphics.assessment2.png) center -298px no-repeat;
+                  background-size:660px 1980px;
+                  position:absolute;
+                  bottom:-7px;
+                  left:88px;
+                }
+
+                &.medium-low {
+                  .needle {
+                    position:absolute;
+                    bottom:26px;
+                    left:131px;
+                  }
+                }
+
+                &.medium-high {
+                  .needle {
+                    position:absolute;
+                    bottom:26px;
+                    left:183px;
+                  }
+                }
+
+                &.high {
+                  .needle {
+                    position:absolute;
+                    bottom:-7px;
+                    left:228px;
+                  }
+                }
+              }
+
+            }
+
+            .info-container {
+              font-size:15px;
+              float:right;
+              width:360px;
+              padding:10px 20px;
+              text-align:left;
+              border-left:1px #409dd6 solid;
+              min-height:300px;
+            }
+          }
+
+          .category-nav-list {
+            position:relative;
+            top:-140px;
+            left:-200px;
+            max-width:400px;
+
+            li {
+              width:83px;
+            }
+
+            .btn.btn-circle {
+              .outer {
+                padding:7px;
+                  .inner {
+                    padding: 0px;
+
+                    .image {
+                      width: 70px;
+                      height: 70px;
+                      margin: 0 auto;
+                    }
+
+                  }
+              }
+
+              &.mindfulness {
+                .image {
+                  background:url(mvp.icons.categories2.png) center 18px no-repeat;
+                  background-size:833px 2500px;
+                }
+
+                &.active {
+                  .image {
+                    background:url(mvp.icons.categories2.png) center -315px no-repeat;
+                    background-size:833px 2500px;
+                  }
+                }
+              }
+
+              &.positivity {
+                .image {
+                  background:url(mvp.icons.categories2.png) center -65px no-repeat;
+                  background-size:833px 2500px;
+                }
+
+                &.active {
+                  .image {
+                    background:url(mvp.icons.categories2.png) center -398px no-repeat;
+                    background-size:833px 2500px;
+                  }
+                }
+              }
+
+              &.social {
+                .image {
+                  background:url(mvp.icons.categories2.png) center -232px no-repeat;
+                  background-size:833px 2500px;
+                }
+
+                &.active {
+                  .image {
+                    background:url(mvp.icons.categories2.png) center -565px no-repeat;
+                    background-size:833px 2500px;
+                  }
+                }
+              }
+
+              &.sleep {
+                .image {
+                  background:url(mvp.icons.categories2.png) center -148px no-repeat;
+                  background-size:833px 2500px;
+                }
+
+                &.active {
+                  .image {
+                    background:url(mvp.icons.categories2.png) center -482px no-repeat;
+                    background-size:833px 2500px;
+                  }
+                }
+              }
+            }
+
+          }
+
+
+        }
+
+      }
+
+    }
+
+  }
+
+  .baseline-results-button-container {
+    position:absolute;
+    bottom:15px;
+    width:100%;
+  }
+
+
+}

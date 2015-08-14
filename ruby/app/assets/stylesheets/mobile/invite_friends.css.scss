@@ -1,0 +1,101 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#invite_friends {
+  .invite-friend-type {
+    width: 100%;
+    text-align: center;
+    h2 {
+      font-style: italic;
+      font-size: 110%;
+    }
+  }
+
+  .icon-camera {
+    background: url(sprite-icon.png) no-repeat -140px -65px;
+    width: 85px;
+    height: 67px;
+    float: left;
+    margin: 23px 17%;
+  }
+
+  .camera-wrapper {
+    list-style: none;
+    text-align: center;
+    width: 100%;
+    li {
+      position: relative;
+      display: inline-block;
+      font-size: 125%;
+      widthh: 49%;
+      &:before {
+        content: "";
+        display: block;
+        /*border-top: 1px solid #ddd; border-bottom: 1px solid #fff; */
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        top: 50%;
+        z-index: -1;
+      }
+    }
+    a {
+      display: block;
+      background-color: #f7f7f7;
+      background-image: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#e7e7e7));
+      background-image: -webkit-linear-gradient(top, #f7f7f7, #e7e7e7);
+      background-image: -moz-linear-gradient(top, #f7f7f7, #e7e7e7);
+      background-image: -ms-linear-gradient(top, #f7f7f7, #e7e7e7);
+      background-image: -o-linear-gradient(top, #f7f7f7, #e7e7e7);
+      color: #a7a7a7;
+      margin: 36px 10px 20px 10px;
+      width: 122px;
+      height: 122px;
+      position: relative;
+      text-align: center;
+      line-height: 144px;
+      border-radius: 50%;
+      box-shadow: 0px 0px 10px #626262 inset;
+      &:before {
+        content: "";
+        display: block;
+        background: #fff;
+        border-top: 2px solid #ddd;
+        position: absolute;
+        top: -8px;
+        left: -8px;
+        bottom: -8px;
+        right: -8px;
+        z-index: -1;
+        border-radius: 50%;
+        box-shadow: inset 0px 8px 48px #ddd;
+      }
+    }
+  }
+
+  .invite-button-wrapper {
+    -moz-border-radius: 40px;
+    -webkit-border-radius: 40px;
+    border-radius: 40px;
+    width: 100%;
+    padding: 5px;
+    float: left;
+    background: -moz-linear-gradient(top, #dddddd 0%, white);
+    background: -webkit-gradient(linear, left top, left bottom, from(#dddddd), to(white));
+  }
+
+  .invite-button {
+    font-size: 140%;
+    text-align: center;
+    color: #cccccc;
+    padding: 10px 4.7%;
+    background: -moz-linear-gradient(top, #ececec 0%, #e2e2e2);
+    background: -webkit-gradient(linear, left top, left bottom, from(#ececec), to(#e2e2e2));
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    border: 3px solid #bcbcbc;
+    text-shadow: 0 2px 0 rgba(255, 255, 255, 0.6);
+  }
+}

@@ -1,0 +1,5 @@
+<%- require 'csv' -%>
+<%= @csv_header -%>
+<%- @rows.each do |row| -%>
+<%=   CSV.generate_line row.csv_row_array -%>
+<%- end -%>

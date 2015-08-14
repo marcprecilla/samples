@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <div id="<%= @body_id || controller.controller_name %>" class="<%= controller.action_name %> <%= content_for :additional_body_css_classes%>">
+  <div id="main-canvas">
+    <div id="main" role="main" class="">
+      <%= render "layouts/tooltip" %>
+
+      <% if content_for? :header_bar %>
+        <div class="navbar navbar-fixed-top override-bs">
+          <div class="navbar-container">
+            <%= content_for :header_bar %>
+          </div>
+        </div>
+      <% end %>
+
+      <%= yield %>
+
+      <% if content_for? :canvas_footer %>
+        <div class="canvas-bottom">
+          <%= content_for :canvas_footer %>
+        </div>
+      <% end %>
+    </div><!--! end of #main -->
+  </div><!--! end of #main-canvas -->
+  </div>
+
+</body>
+</html>

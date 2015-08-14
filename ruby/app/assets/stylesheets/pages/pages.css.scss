@@ -1,0 +1,365 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*
+  Hero Title : bold 38px / 44px #A3F741 (Happiness starts with self-discovery)
+  Hero text: 18/24 #FFF  (One way to start discovering... )
+  Excerpt title : 36/44 #78C8CD ("app?")
+  Section title (h2) : bold all-caps 18/24 #4BE5DB (The science of wellbeing)
+  Body subtitles (h5) : bold 18/24 #16353D (A Holistic Approach to Human Thriving)
+  Body subtitles (h6) : bold 14/24 #16353D (Neuroscience: Hitting the right nerves)
+  Tagline : 30/44 #307593 (app is commited to...)
+  Bio names: 24px #307593
+  Bio titles: 14/16 #16353D
+  Bio excerpt: 16/24 #4C4C4C
+  Full bio title: 26/32 #FFF
+  Full bio head text: 18/24 #307593
+  Full CV link: Courier bold 18px #FFF
+  Body text : 14/24 #16353D
+  Links : bold #329DA4
+*/
+
+body#pages {
+
+  background:url(pages/bg.texture-1.gif) 0px 0px repeat;
+
+  &.paywall {
+
+    h5 {
+      font-size:20px;
+      color:#999999;
+    }
+
+    .hero-container {
+
+      .centered-layout-container {
+        padding-top:0px;
+        text-align:center;
+        padding-bottom:40px;
+      }
+
+      h1 {
+        font-family: Novecento;
+        font-size:31px;
+        font-weight:300;
+        line-height:normal;
+        width:650px;
+        margin:0px auto;
+      }
+
+
+    }
+
+    .features-container {
+      position:absolute;
+      top:0px;
+      left:20px;
+      width:215px;
+      color:#333333;
+
+      h3 {
+        font-size:20px;
+        font-weight:300;
+        line-height:normal;
+      }
+
+      ul {
+        margin:0px;
+
+        li {
+          background:url(pages/app.graphics.pages.png) 0px -992px no-repeat;
+          padding:0px 0px 30px 18px;
+          font-size:18px;
+          line-height:normal;
+          list-style-type:none;
+        }
+
+      }
+    }
+
+    .form-container {
+      margin:0px auto;;
+      width:377px;
+
+      form {
+        box-shadow: 1px 1px 10px rgba(0,0,0,.15);
+        -moz-box-shadow: 1px 10px 1px rgba(0,0,0,.15);
+        -moz-border-radius: 8px; -webkit-border-radius: 8px; -khtml-border-radius: 8px; border-radius: 8px;
+        font-size:20px;
+        @include gradient-vertical(white,#dddddd);
+        padding:1px;
+        position:relative;
+        top:0px;
+        left:0px;
+
+        .form-border {
+          background-color:#fff;
+          -moz-border-radius: 8px; -webkit-border-radius: 8px; -khtml-border-radius: 8px; border-radius: 8px;
+          padding:25px 35px;
+        }
+
+        .best-value {
+          display:block;
+          width:90px;
+          padding:90px 0px 0px 0px;
+          height:0px;
+          overflow:hidden;
+          background:url(pages/app.graphics.pages.png) right -1600px no-repeat;
+          position:absolute;
+          top:0px;
+          right:0px;
+        }
+
+        h5 {
+          font-family: Novecento;
+          font-size:24px;
+          font-weight:300;
+          line-height:normal;
+        }
+
+        h3 {
+          font-weight:300;
+          b {
+            font-size:47px;
+            font-weight:300;
+          }
+        }
+
+        .features-list {
+          margin:0px;
+
+          li {
+            list-style-type:none;
+            padding:0px 0px 10px 0px;
+            font-size:20px;
+          }
+        }
+
+        .paywall-flexslider {
+          margin:0px;
+          overflow:hidden;
+          position:relative;
+          top:0px;
+
+          h5 {
+            padding-bottom:30px;
+          }
+
+          .btn-border-simple {
+            margin:20px 0px;
+          }
+
+          label {
+            font-family: Novecento;
+            font-size:20px;
+            font-weight:300;
+            line-height:normal;
+            margin:12px 0px 7px 0px;
+
+            &.use_cc_icons {
+              background:url(pages/app.graphics.pages.png) right -1800px no-repeat;
+            }
+
+          }
+
+          input[type="text"], input[type="email"], input[type="password"] {
+            width:92%;
+            font-family: $sansFontFamily;
+            font-size:20px;
+            font-weight:300;
+            box-shadow:0 0 5px rgba(0, 0, 0, 0.15) inset;
+            border-radius:5px;
+            padding:10px;
+          }
+
+          .layout-50-left input[type="text"],
+          .layout-50-right input[type="text"]{
+            width:80%;
+          }
+
+          select {
+            width:auto;
+          }
+
+          .input-box {
+            background-color:#fafafa;
+            padding:20px 15px;
+            border-radius:5px;
+            border:1px #dedede solid;
+            margin:12px 0px 7px 0px;
+
+            label {
+              display:inline;
+              font-size:16px;
+              margin:0px 10px 0px 0px;
+            }
+
+            input {
+              width:108px;
+              display:inline-block;
+              vertical-align:middle;
+              margin:0px;
+            }
+          }
+
+          .terms-container {
+            font-size:18px;
+
+            input {
+              vertical-align:middle;
+              margin:0px;
+              position:relative;
+              top:-2px;
+            }
+          }
+
+
+          .flex-direction-nav {
+            display:none;
+          }
+
+          .flex-control-nav {
+            position:absolute;
+            top:50px;
+            height:15px;
+
+            li {
+              a {
+                width:11px;
+                padding:11px 0px 0px 0px;
+                height:0px;
+                overflow:hidden;
+                background:url(pages/app.graphics.pages.png) -500px -1000px no-repeat;
+
+                &.flex-active {
+                  background:url(pages/app.graphics.pages.png) 0px -1000px no-repeat;
+                }
+              }
+            }
+
+          }
+
+        }
+
+      }
+    }
+
+    .paywall-flexslider {
+      box-shadow:none;
+      background:none;
+      border:0px;
+    }
+
+  }
+
+}
+
+@media only screen and (max-width : 850px) {
+
+  body#pages {
+
+    &.paywall {
+
+      padding-left:10px;
+      padding-right:10px;
+
+      .centered-layout-container {
+        padding-left:0px;
+        padding-right:0px;
+      }
+
+      .hero-container {
+        .centered-layout-container {
+          padding-bottom:20px;
+          h1 {
+            font-size:24px;
+            width:auto;
+          }
+        }
+      }
+
+      .features-container {
+        position:static;
+        width:377px;
+        margin:20px auto;
+
+        ul {
+          li {
+            font-size:14px;
+            padding-top:3px;
+            padding-bottom:10px;
+          }
+        }
+      }
+
+
+    }
+  }
+
+}
+
+
+@media only screen and (max-width : 400px) {
+
+  body#pages {
+
+    &.paywall {
+
+
+      .form-container {
+        width:300px;
+
+        form {
+
+          .paywall-flexslider {
+
+            h5 {
+              font-size:20px;
+            }
+
+            label {
+              font-size:16px;
+            }
+
+            input[type="text"], input[type="email"], input[type="password"] {
+              width:90%;
+              font-size:16px;
+            }
+
+            .layout-50-left input[type="text"],
+            .layout-50-right input[type="text"]{
+              width:75%;
+            }
+
+            .input-box {
+              padding:15px 10px;
+
+              label {
+                font-size:16px;
+              }
+
+              input {
+                width:58px;
+              }
+            }
+
+            .terms-container {
+              font-size:14px;
+            }
+
+          }
+
+        }
+      }
+
+      .features-container {
+        width:300px;
+      }
+
+    }
+  }
+
+}
+
+

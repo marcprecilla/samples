@@ -1,0 +1,213 @@
+#facebook-connect {
+  &.container {
+    margin: 0 auto;
+    max-width: 320px;
+    padding-top: 0px;
+  }
+
+  h2 {
+    font-family: $sansFontFamily;
+    font-size: 24px;
+    line-height: 100%;
+    font-weight:300;
+    color:#fefefe;
+  }
+
+  .panel {
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  .fancy-facebook-image {
+    margin: 20px auto 10px auto;
+  }
+
+  .button-container {
+    max-width:275px;
+    margin:0px auto;
+  }
+
+  a.accordion-toggle {
+    margin: 10px 0;
+    text-decoration: underline;
+    text-align: left;
+    color:#fff;
+    font-size:15px;
+    padding-left:31px;
+    background:url(mvp.graphics.assessment.results2.png) 10px -1135px no-repeat;
+    background-size:500px 1500px;
+
+    &.collapsed {
+      background:url(mvp.graphics.assessment.results2.png) 10px -1235px no-repeat;
+      background-size:500px 1500px;
+    }
+  }
+
+  .input-large {
+    font-size: 18px;
+    line-height: 27px;
+    height: 40px;
+  }
+
+  .accordion-group {
+    border-radius: 0;
+    border: none;
+    border-top: 1px solid #55b3ec;
+
+    .text-input-2 {
+      width:88%;
+      clear:both;
+    }
+
+    .accordion-heading,
+    #link-account-body {
+      max-width:275px;
+      margin:0px auto;
+    }
+
+
+  }
+
+  .fancy-facebook-image {
+    background:url(mvp.graphics.assessment.results2.png) center -1000px no-repeat;
+    background-size:500px 1500px;
+    padding:92px 0px 0px 0px;
+    height:0px;
+    overflow:hidden;
+  }
+
+  .alert.alert-error {
+    background-color:#c51515;
+    color:#fff;
+    border:2px #fff solid;
+    font-family: $sansFontFamily;
+    font-size:18px;
+    text-align:left;
+    padding:12px 12px 12px 55px;
+    font-weight:bold;
+    text-shadow:none;
+    position:relative;
+    top:0px;
+    left:0px;
+
+    a.close {
+      display:block;
+      width:30px;
+      height:27px;
+      text-align:center;
+      border-radius:15px;
+      background-color:#fff;
+      color:#c51515;
+      position:absolute;
+      top:10px;
+      left:10px;
+      font-size:24px;
+      line-height:24px;
+      padding-top:3px;
+      opacity:1;
+    }
+  }
+
+}
+
+@media only screen and (min-width : 960px) {
+  body#omniauth, body#sessions {
+    background: url(bg.texture-1.gif) 0px 0px repeat !important;
+
+    &.bluebg {
+      #main {
+
+        background: #55b3ec;
+        background: -moz-linear-gradient(top,  #55b3ec 25%, #05619a 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(25%,#55b3ec), color-stop(100%,#05619a));
+        background: -webkit-linear-gradient(top,  #55b3ec 25%,#05619a 100%);
+        background: -o-linear-gradient(top,  #55b3ec 25%,#05619a 100%);
+        background: -ms-linear-gradient(top,  #55b3ec 25%,#05619a 100%);
+        background: linear-gradient(to bottom,  #55b3ec 25%,#05619a 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#55b3ec', endColorstr='#05619a',GradientType=0 );
+
+      }
+
+      .desktop-header {
+        .btn.btn-border-simple {
+          background: -moz-linear-gradient(top,  rgba(222,222,222,0.5) 0%, rgba(255,255,255,0.5) 100%);
+          background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(222,222,222,0.5)), color-stop(100%,rgba(255,255,255,0.5)));
+          background: -webkit-linear-gradient(top,  rgba(222,222,222,0.5) 0%,rgba(255,255,255,0.5) 100%);
+          background: -o-linear-gradient(top,  rgba(222,222,222,0.5) 0%,rgba(255,255,255,0.5) 100%);
+          background: -ms-linear-gradient(top,  rgba(222,222,222,0.5) 0%,rgba(255,255,255,0.5) 100%);
+          background: linear-gradient(to bottom,  rgba(222,222,222,0.5) 0%,rgba(255,255,255,0.5) 100%);
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80dedede', endColorstr='#80ffffff',GradientType=0 );
+        }
+      }
+
+    }
+
+    &.darkbluebg {
+      #main {
+        background: #042d43;
+      }
+
+      .desktop-header {
+        .btn.btn-border-simple {
+          background: -moz-linear-gradient(top,  rgba(222,222,222,0.5) 0%, rgba(255,255,255,0.5) 100%);
+          background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(222,222,222,0.5)), color-stop(100%,rgba(255,255,255,0.5)));
+          background: -webkit-linear-gradient(top,  rgba(222,222,222,0.5) 0%,rgba(255,255,255,0.5) 100%);
+          background: -o-linear-gradient(top,  rgba(222,222,222,0.5) 0%,rgba(255,255,255,0.5) 100%);
+          background: -ms-linear-gradient(top,  rgba(222,222,222,0.5) 0%,rgba(255,255,255,0.5) 100%);
+          background: linear-gradient(to bottom,  rgba(222,222,222,0.5) 0%,rgba(255,255,255,0.5) 100%);
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80dedede', endColorstr='#80ffffff',GradientType=0 );
+        }
+      }
+
+    }
+
+    #main-canvas {
+
+      #main {
+        height:735px !important;
+        box-shadow:none;
+      }
+
+    }
+
+
+  }
+
+  #facebook-connect {
+
+    &.container {
+      margin:0px auto;
+      max-width:945px;
+      padding-top:20px;
+
+      .button-container {
+        max-width:320px;
+        margin:0px auto;
+      }
+    }
+
+    h2 {
+      font-size:38px;
+    }
+
+    .accordion-group {
+      .accordion-heading,
+      #link-account-body {
+        max-width:325px;
+        margin:0px auto;
+      }
+
+      a.accordion-toggle {
+        font-size:18px;
+      }
+
+    }
+
+    .fancy-facebook-image {
+      background:url(mvp.graphics.assessment.results2.png) center -2000px no-repeat;
+      background-size:1000px 3000px;
+      padding:190px 0px 0px 0px;
+    }
+
+  }
+}

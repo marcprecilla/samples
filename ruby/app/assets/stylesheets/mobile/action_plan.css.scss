@@ -1,0 +1,148 @@
+// Place all the styles related to the Mobile/Offline controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#action_plan {
+
+  .navbar.navbar-fixed-top {
+    box-shadow: 1px 1px 8px rgba(0,0,0,.75);
+  }
+
+  .action-plan-walkthrough {
+    color:#fff;
+
+    .daily-action-plan-container {
+      width:300px;
+      margin:57px auto 0px auto;
+      height:176px;
+      padding:95px 0px 0px 0px;
+      text-align:center;
+      border:1px #fff dashed;
+      position:relative;
+      top:0px;
+
+      h3.overlay-header {
+        font-size:20px;
+        font-weight:bold;
+        line-height:normal;
+      }
+
+      h4.overlay-header {
+        font-size:12px;
+        font-weight:bold;
+        line-height:normal;
+      }
+
+      a {
+        display:inline-block;
+        font-size:14px;
+        font-weight:800;
+        padding:6px 17px;
+        border:2px #fff solid;
+        border-radius:20px;
+        color:#fff;
+        margin-top:15px;
+      }
+    }
+
+    .pointer {
+      font-weight:12px;
+      font-weight:300;
+      display:inline-block;
+
+      b {
+        font-weight:bold;
+      }
+
+      &.left {
+        background:url('mvp.graphics.dashboard.png') 0px -797px no-repeat;
+        background-size:300px 1500px;
+        padding-left:40px;
+      }
+
+      &.right {
+        background:url('mvp.graphics.dashboard.png') right -797px no-repeat;
+        background-size:300px 1500px;
+        padding-right:40px;
+      }
+
+      &.up {
+        background:url('mvp.graphics.dashboard.png') center -750px no-repeat;
+        background-size:300px 1500px;
+        padding-top:28px;
+      }
+
+      &.down {
+        background:url('mvp.graphics.dashboard.png') center bottom no-repeat;
+        background-size:300px 1500px;
+        padding-bottom:28px;
+      }
+
+      &.menu {
+        position:absolute;
+        top:15px;
+        left:45px;
+      }
+
+      &.friends {
+        position:absolute;
+        top:15px;
+        right:45px;
+      }
+
+      &.educational {
+        position:absolute;
+        top:290px;
+        right:10px;
+        text-align:center;
+        width:75px;
+      }
+
+      &.daily-progress {
+        position:absolute;
+        top:300px;
+        left:50px;
+        text-align:center;
+        width:150px;
+      }
+
+      &.add-app {
+        position:absolute;
+        bottom:10px;
+        left:0px;
+        text-align:center;
+        width:100%;
+      }
+
+    }
+
+  }
+
+  h3.list-header {
+    background: #f0f0f0;
+    background: -moz-linear-gradient(top,  #f0f0f0 0%, #dcdcdc 85%, #c8c8c8 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f0f0f0), color-stop(85%,#dcdcdc), color-stop(100%,#c8c8c8));
+    background: -webkit-linear-gradient(top,  #f0f0f0 0%,#dcdcdc 85%,#c8c8c8 100%);
+    background: -o-linear-gradient(top,  #f0f0f0 0%,#dcdcdc 85%,#c8c8c8 100%);
+    background: -ms-linear-gradient(top,  #f0f0f0 0%,#dcdcdc 85%,#c8c8c8 100%);
+    background: linear-gradient(to bottom,  #f0f0f0 0%,#dcdcdc 85%,#c8c8c8 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f0f0', endColorstr='#c8c8c8',GradientType=0 );
+    padding:8px 13px;
+    margin:0px;
+    font-size:15px;
+    line-height:15px;
+    font-weight:bold;
+    color:#999999;
+    text-shadow:none !important;
+    text-shadow: -1px -1px rgba(0,0,0,.25);
+    border-bottom:1px #c2c2c2 solid;
+  }
+
+  .article-list {
+    max-width:320px;
+    margin:0px auto;
+  }
+
+
+
+}

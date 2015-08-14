@@ -1,0 +1,78 @@
+<% content_for :header_bar do %>
+
+<input type="button" href="action:previousState" id="navbar-button-left" class="navbar-button back" app-data-state="app" value="Previous" />
+<span id="title">Vision</span>
+<input type="button" href="/invite/new" id="navbar-button-right" class="navbar-button invite" app-data-state="none" value="Invite" />
+
+<% end %>
+
+<div class="screen question-screen">
+
+  <div class="dark-header-row desktop-results-header"><div class="content">
+    Take a moment to pause &amp; think about things you want to affirm in your life.
+  </div></div>
+
+  <div class="content">
+
+  <div class="label-text">My Body Is...</div>
+
+  <div data-toggle="buttons-radio" class="btn-group btn-group-radio btn-group-square-simple size-minus-1 next">
+    <button value="1" type="button" name="button" class="btn red"><b>STRONG</b></button>
+    <button value="2" type="button" name="button" class="btn green"><b>ACTIVE</b></button>
+    <button value="3" type="button" name="button" class="btn purple"><b>ELEGANT</b></button>
+  </div>
+
+  <div class="canvas-bottom skip-button-container"><a href="#">Skip This Intention</a></div>
+
+  </div>
+</div>
+
+<div class="screen answer-screen">
+
+  <div class="dark-header-row desktop-results-header"><div class="content">
+    Take a moment to pause &amp; think about things you want to affirm in your life.
+  </div></div>
+
+  <div class="content">
+
+    <div class="top-content">
+
+      <div class="label-text">You Said</div>
+
+      <div class="btn purple btn-square-simple">My body is <b>ELEGANT</b></div>
+
+    </div>
+
+  </div>
+
+  <div class="bottom-button-container">
+    <ul class="buttons">
+      <li><a href="#" class="btn back btn-border-simple btn-block pill size-plus-1">Add New Intention</a></li>
+      <li><a href="#" class="btn next btn-border-simple btn-block lime pill size-plus-1">I'm done for now</a></li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="screen completion-screen">
+
+  <div class="content">
+
+    <div class="top-content">
+
+      <h1><%=encouragement_salutation%>, <%=current_user.first_name%>!</h1>
+
+      <div class="message"><%=humorous_encouragement%></div>
+
+    </div>
+
+  </div>
+
+  <div class="bottom-button-container">
+    <ul class="buttons">
+      <li><a href="#" class="btn back btn-border-simple btn-block lime pill size-plus-1">View Vision Board</a></li>
+      <li><a href="#" class="btn next btn-border-simple btn-block lime pill size-plus-1">Continue Training</a></li>
+    </ul>
+  </div>
+
+</div>

@@ -1,0 +1,81 @@
+<% content_for :section_header do %>
+
+ <div class="notification header-notification play-icon with-button"><div class="notification-content">
+   <a href="#" class="close-button">x</a>
+   <div class="button-container">
+     <a class="btn btn-border-simple size-minus-1 btn-block lime pill" href="#video-modal" data-toggle="modal">Watch Video</a>
+   </div>
+   <h5>Watch a video tutorial about how to use your dashboard</h5>
+   app has a lot to offer and the fastest way our other customers have become familiar with our features is by watching this tutorial. It's really short and can save you a lot of time.
+ </div></div>
+
+ <%= render "layouts/desktop/header_user" %>
+
+<% end %>
+
+<h1 class="section-header">
+  <div class="detail-right">Last Login  <%=last_login_string%></div>
+  Week 1
+</h1>
+
+<div class="cf">
+
+  <div class="left-container">
+
+      <% if @positivity_level %>
+          <div class="activity-screen-container shadow-container">
+          <%= render "action_plan/locked_content" %>
+          </div>
+      <% else %>
+
+        <div class="action-plan-container-unlock">
+
+          <h1 class="container-header">Action Plan</h1>
+          <h2 class="container-subheader">You're on the path to unlocking your plan</h2>
+          <div class="graphic-unlock">Graphic</div>
+          <div class="unlock-progress-bar-container">
+            <div class="unlock-progress-bar"><div class="fill" style="width:0%;">0</div></div>
+             0% Unlocked
+          </div>
+
+          <div class="message">
+            <b>Step 1:</b> Take a Baseline Assessment
+          </div>
+          <div class="button-container">
+            <a href="/mini_baseline" class="btn btn-border-simple lime pill btn-block size-plus-1">Start Now</a>
+          </div>
+
+        </div>
+
+
+      <% end %>
+
+    &nbsp;
+
+  </div>
+
+  <div class="right-container">
+
+    <%= render "layouts/desktop/metrics_engagement" %>
+
+    <div class="column">
+
+      <%= render "layouts/desktop/community" %>
+
+    </div>
+
+
+    <!--<div class="graphic-locked-progress">Progress</div>-->
+
+
+    <br class="clearboth" />
+
+  </div>
+
+</div>
+
+<%= render "layouts/desktop/footer_content", :hide_community => true %>
+
+
+<%= render "layouts/video_modal" %>
+<%= render "layouts/video_modal_tedx" %>

@@ -1,0 +1,114 @@
+$open-sans: 'Open Sans', sans-serif;
+$courier: Courier, monospace;
+
+$light-gray: #cccccc;
+$dark-gray: #4C4C4C;
+$radioactive-green: #A3F741;
+$radioactive-blue: #0caeff;
+$turquoise: #329DA4;
+$light-green: #009807;
+$light-blue: #78C8CD;
+$med-blue: #307593;
+$dark-blue: #16353D;
+$section-titles-background: #16333B;
+
+.graytext {
+  color:#666;
+}
+
+/*******************/
+/*****  typeface  *****/
+/*******************/
+
+@font-face {
+  font-family: Novecento;
+  src: url('/fonts/Novecentowide-Normal.otf');
+}
+
+@font-face {
+  font-family: Novecento;
+  font-weight: bold;
+  src: url('/fonts/Novecentowide-Bold.otf');
+}
+
+@font-face {
+  font-family: Novecento;
+  font-weight: 300;
+  src: url('/fonts/Novecentowide-Book.otf');
+}
+
+@font-face {
+  font-family: Novecento;
+  font-weight: 100;
+  src: url('/fonts/Novecentowide-Light.otf');
+}
+
+
+/*******************/
+/*****  clearfix  *****/
+/*******************/
+
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
+
+
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
+
+
+/*overlays*/
+.fulloverlay {
+  background:url(background-trans.001e30.90.png) 0px 0px repeat;
+  width:100%;
+  position:fixed;
+  top:0px;
+  left:0px;
+  z-index:4000;
+
+  .centered-container {
+    width:945px;
+    margin:0px auto;
+    position:relative;
+  }
+
+  .close-button {
+    width:33px;
+    height:0px;
+    padding:32px 0px 0px 0px;
+    overflow:hidden;
+    background:url(mvp.icons.general.png) 0px -350px no-repeat;
+    background-size:500px 2000px;
+    position:absolute;
+    top:8px;
+    right:8px;
+  }
+}
+
+body {
+  &.texture-1 {
+    background:url(pages/bg.texture-1.gif) 0px 0px repeat !important;
+  }
+}
+

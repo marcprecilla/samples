@@ -1,0 +1,72 @@
+// Place all the styles related to the checkins controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#checkins {
+
+.progress-meter-1 {
+  margin:10px 0px;
+  text-align:center;
+
+  li {
+    list-style-type:none;
+    display:inline-block;
+
+    .circle-outer {
+      padding:2px;
+      width:13px;
+      height:13px;
+      @include gradient-vertical(#022131,#07354e);
+      border-radius:15px;
+
+      .circle-inner {
+        width:13px;
+        padding:13px 0px 0px 0px;
+        height:0px;
+        overflow:hidden;
+        background: #042d43;
+        border-radius:13px;
+        box-shadow: inset 0px 0px 3px rgba(0,0,0,0.3);
+      }
+
+      &.active {
+        .circle-inner {
+          background-color:#b1e500;
+        }
+      }
+
+      &.current {
+        .circle-inner {
+          background-color:#0caeff;
+        }
+      }
+
+    }
+  }
+}
+
+h3.style-2 {
+  font-size:25px;
+  line-height:33px;
+}
+
+.button-container {
+  .skip-button-container {
+    padding-top:5px;
+    a {
+      text-decoration:underline;
+      font-weight:100;
+    }
+  }
+}
+
+
+@media only screen and (min-width : 960px) {
+
+  .single-select-question {
+    text-align:center;
+  }
+
+}
+
+}

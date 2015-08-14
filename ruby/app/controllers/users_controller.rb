@@ -311,8 +311,8 @@ class UsersController < ApplicationController
     m = Mandrill::API.new
     message = {
       subject: 'Password Reset Instructions',
-      from_name: 'App Support',
-      from_email: 'support@myApp.com',
+      from_name: 'app Support',
+      from_email: 'support@myapp.com',
       to: [email: @user.email, name: @user.name],
       html: render_to_string(file: 'app/views/mandrill/password_reset_instructions', layout: false),
       track_opens: false,

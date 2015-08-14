@@ -1,0 +1,458 @@
+// Place all the styles related to the Mobile/Offline controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body#visionboard_items {
+
+  font-family: $sansFontFamily;
+
+  .section-header {
+    font-size:30px;
+    font-weight:100;
+    padding-top:30px;
+    padding-bottom:5px;
+
+    .detail-right {
+      float:right;
+      width:200px;
+      text-align:right;
+      font-size:14px;
+      color:#666666;
+    }
+  }
+
+  .left-container {
+    width:620px;
+    float:left;
+
+    .shadow-container {
+      border-radius:10px;
+      overflow:hidden;
+      width:620px;
+      position:relative;
+      top:0px;
+    }
+
+  }
+
+  .right-container {
+    padding:0px 0px 0px 25px;
+    width:300px;
+    float:left;
+
+    .container-module {
+
+      border-top:1px #d5d5d5 solid;
+      padding-top:10px;
+      clear:both;
+
+      h3.container-header {
+        font-size:18px;
+        font-weight:bold;
+        margin:0px;
+        padding-bottom:5px;
+      }
+
+      .button-container {
+        margin:0px;
+        li {
+          list-style-type:none;
+        }
+      }
+
+      &.with-border {
+        padding:15px;
+        border:1px #e8e8e8 solid;
+        border-radius:5px;
+        background:#fff;
+
+        h3.container-header {
+          font-size:20px;
+          line-height:20px;
+          font-weight:100;
+        }
+      }
+
+    }
+  }
+
+  .shadow-container {
+    border-radius:10px;
+    overflow:hidden;
+    width:945px;
+    position:relative;
+    top:0px;
+  }
+
+  .inner-shadow {
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    box-shadow: 0px 0px 9px rgba(0,0,0,.6) inset;
+    pointer-events:none;
+  }
+
+  .graphic-locked-progress {
+    width:300px;
+    padding:340px 0px 0px 0px;
+    height:0px;
+    overflow:hidden;
+    background:url(mvp.graphics.desktop.locked.png) 0px 20px no-repeat;
+  }
+
+  .graphic-video-ted {
+    width:300px;
+    padding:220px 0px 0px 0px;
+    height:0px;
+    overflow:hidden;
+    display:block;
+    background:url(mvp.graphics.desktop.general.png) 0px -3100px no-repeat;
+    margin:0px auto;
+  }
+
+  .action-plan-container-unlock {
+
+    padding:30px;
+    border:1px #e8e8e8 solid;
+    border-radius:5px;
+    background:#fff;
+    font-size:24px;
+    font-weight:100;
+    font-family: $open-sans;
+
+    h1.container-header {
+      font-family: $open-sans;
+      font-size:30px;
+      font-weight:100;
+      line-height:36px;
+      padding:0px 0px 0px 0px;
+      color:#000;
+      margin:0px;
+    }
+
+    h2.container-subheader {
+      font-family: $open-sans;
+      font-size:24px;
+      line-height:28px;
+      padding:12px 0px 50px 0px;
+      color:#666;
+      font-weight:100;
+      margin:0px;
+    }
+
+    .graphic-unlock {
+      padding:180px 0px 0px 0px;
+      height:0px;
+      overflow:hidden;
+      background:url(mvp.graphics.desktop.general.png) center -2900px no-repeat;
+    }
+
+    .unlock-progress-bar-container {
+      padding:45px 0px 40px 0px;
+      text-align:center;
+
+      .unlock-progress-bar {
+        display:inline-block;
+        border-radius:18px;
+        width:222px;
+        @include gradient-vertical(#d3d3d3,#efefef);
+        height:18px;
+        overflow:hidden;
+        margin-right:20px;
+
+        .fill {
+          display:block;
+          padding:18px 0px 0px 0px;
+          height:0px;
+          overflow:hidden;
+          background:#3ab1fc;
+        }
+      }
+    }
+
+    .message {
+      padding:0px 0px 33px 0px;
+      text-align:center;
+    }
+
+    .button-container {
+      margin:0px auto;
+      max-width:395px;
+    }
+
+  }
+
+  .visionboard-container {
+
+    .vb-row {
+      overflow:hidden;
+      width:945px;
+
+      ul:first-child {
+        li {
+          border-top:0px;
+        }
+      }
+
+      ul {
+        width:945px;
+        li {
+          width:187px;
+          height:187px;
+
+          a.label-text {
+            width:167px;
+            height:167px;
+            padding:10px;
+
+            b {
+              width:auto;
+              display:block;
+            }
+          }
+
+          &.image {
+            a {
+              width:187px;
+              padding-top:187px;
+            }
+          }
+
+          .btn-circle-simple {
+            margin-top:68px;
+          }
+
+        }
+      }
+    }
+
+    .two-row {
+      overflow:hidden;
+      width:945px;
+
+      ul {
+        li {
+          width:460px;
+          border:1px #E5E5E5 solid;
+
+          &.button-container {
+            width:290px;
+            padding:40px 90px 0px 90px;
+          }
+
+          .quote {
+            background:url(mvp.icons.general.png) center -1280px no-repeat;
+            background-size: 500px 2000px;
+            padding-top:60px;
+          }
+
+        }
+      }
+    }
+
+  }
+
+  .progress-container {
+
+    .timeline-viewport {
+      width:280px;
+
+      &::-webkit-scrollbar {
+          -webkit-appearance: none;
+      }
+
+      &::-webkit-scrollbar:vertical {
+          width: 11px;
+      }
+
+      &::-webkit-scrollbar:horizontal {
+          height: 11px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+          border-radius: 8px;
+          border: 2px solid white; /* should match background, can't be transparent */
+          background-color: rgba(0, 0, 0, .5);
+      }
+    }
+
+    .points-summary {
+
+      .points-container {
+        list-style-type:none;
+        margin-bottom:10px;
+        margin-right:10px;
+        padding:15px;
+        background: #ffffff;
+        width:92px;
+        border-radius:6px;
+        border:1px #e8e8e8 solid;
+
+        .content {
+          background:none;
+          padding:0px;
+          border:0px;
+          box-shadow:none;
+        }
+
+        label {
+          font-size:14px;
+          color:#999999;
+          float:none;
+          display:block;
+        }
+
+        b {
+          float:none;
+          display:block;
+          text-align:left;
+          color:#000;
+          font-size:24px;
+          line-height:normal;
+          font-weight:normal;
+        }
+      }
+    }
+  }
+
+  #timeline {
+    .timeline-list {
+      display:none;
+    }
+  }
+
+
+
+  .action-plan-walkthrough {
+    color:#fff;
+
+    h3.overlay-header {
+      font-size:36px;
+      font-weight:bold;
+      line-height:normal;
+    }
+
+    h4.overlay-header {
+      font-size:22px;
+      font-weight:bold;
+      line-height:normal;
+    }
+
+    h5.overlay-header {
+      font-size:25px;
+      font-weight:bold;
+      line-height:normal;
+    }
+
+    h6.overlay-header {
+      font-size:20px;
+      font-weight:normal;
+      line-height:normal;
+    }
+
+    .daily-action-plan-container {
+      width:618px;
+      margin:0px;
+      padding:200px 0px 0px 0px;
+      height:400px;
+      text-align:center;
+      border:1px #fff dashed;
+      position:absolute;
+      top:170px;
+      left:0px;
+
+      a {
+        display:inline-block;
+        font-size:14px;
+        font-weight:800;
+        padding:6px 17px;
+        border:2px #fff solid;
+        border-radius:20px;
+        color:#fff;
+        margin-top:15px;
+      }
+    }
+
+    .your-vision-board-container {
+      width:618px;
+      margin:0px;
+      padding:200px 0px 0px 0px;
+      height:400px;
+      text-align:center;
+      border:1px #fff dashed;
+      position:absolute;
+      top:800px;
+      left:0px;
+    }
+
+    .progress-container {
+      width:312px;
+      margin:0px;
+      padding:200px 0px 0px 0px;
+      height:300px;
+      text-align:center;
+      border:1px #fff dashed;
+      position:absolute;
+      top:170px;
+      right:0px;
+    }
+
+    .research-container {
+      width:312px;
+      margin:0px;
+      padding:200px 0px 0px 0px;
+      height:400px;
+      text-align:center;
+      border:1px #fff dashed;
+      position:absolute;
+      top:860px;
+      right:0px;
+    }
+
+    .pointer {
+      font-size:25px;
+      font-weight:300;
+      display:inline-block;
+
+      b {
+        font-weight:bold;
+      }
+
+      &.left {
+        background:url('mvp.graphics.dashboard.png') 0px -797px no-repeat;
+        background-size:300px 1500px;
+        padding-left:40px;
+      }
+
+      &.right {
+        background:url('mvp.graphics.dashboard.png') right -797px no-repeat;
+        background-size:300px 1500px;
+        padding-right:40px;
+      }
+
+      &.up {
+        background:url('mvp.graphics.dashboard.png') center -750px no-repeat;
+        background-size:300px 1500px;
+        padding-top:28px;
+      }
+
+      &.down {
+        background:url('mvp.graphics.dashboard.png') center bottom no-repeat;
+        background-size:300px 1500px;
+        padding-bottom:28px;
+      }
+
+      &.your-metrics {
+        position:absolute;
+        top:115px;
+        left:655px;
+      }
+
+
+    }
+
+  }
+
+}

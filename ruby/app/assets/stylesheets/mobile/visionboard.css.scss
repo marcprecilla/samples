@@ -1,0 +1,91 @@
+// Place all the styles related to the Mobile/Progress controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#visionboard {
+
+  .visionboard-container {
+
+    text-align:center;
+
+    .vb-row {
+      margin:0px auto;
+      display:block;
+      width:520px;
+      overflow:auto;
+      overflow-y:hidden;
+
+      ul {
+        width:520px;
+        height:125px;
+        margin:0px;
+
+        li {
+          list-style-type:none;
+          height:0px;
+          width:125px;
+          padding:125px 0px 0px 0px;
+          overflow:hidden;
+          border:2px #fff solid;
+          float:left;
+          background-color:#f0f0f0;
+
+          &.label {
+            padding-top:0px;
+            height:125px;
+
+            label {
+              width:125px;
+              height:125px;
+              display:table-cell;
+              text-align:center;
+              vertical-align:middle;
+              padding:0px;
+              margin:0px;
+
+              b {
+                font-size:18px;
+                font-weight:bold;
+                text-shadow:none;
+                display:block;
+              }
+            }
+          }
+
+        }
+
+      }
+
+      &.red {
+        ul {
+          li {
+            background-color:#ffd7d7;
+
+            &.label {
+              background-color:#d00000;
+              color:#fff;
+            }
+          }
+        }
+      }
+
+      &.orange {
+        ul {
+          li {
+            background-color:#ffefcf;
+
+            &.label {
+              background-color:#e89900;
+              color:#fff;
+            }
+          }
+        }
+      }
+
+    }
+
+  }
+
+
+
+}
