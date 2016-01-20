@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Scene 1-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="Scene 1" id="BYZ-38-t0r" customClass="ViewController" customModule="SwiftBeacon" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NuH-bU-7hX">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="To receive location-based SMS messages " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e01-O9-u5a" userLabel="To receive location-based SMS messages">
+                                        <rect key="frame" x="163" y="64" width="274" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="274" id="UIt-bY-4KX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
+                                        <color key="textColor" red="0.40000000000000002" green="0.1764705882352941" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="please enter your phone number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaH-1C-iU7">
+                                        <rect key="frame" x="177" y="96" width="248" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="248" id="a01-53-F4T"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
+                                        <color key="textColor" red="0.40000000000000002" green="0.1764705882352941" blue="0.56862745098039214" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ilp-3p-Egk">
+                                        <rect key="frame" x="201" y="127" width="200" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="Gbh-Pu-XP3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qyK-aF-Etm" customClass="MyCustomButton" customModule="SwiftBeacon" customModuleProvider="target">
+                                        <rect key="frame" x="246" y="165" width="109" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.47999999999999998" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="109" id="n5K-Td-Z0F"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
+                                        <inset key="contentEdgeInsets" minX="12" minY="10" maxX="12" maxY="10"/>
+                                        <size key="titleShadowOffset" width="3" height="3"/>
+                                        <state key="normal" title="Submit">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="keyPath">
+                                                <color key="value" red="0.0" green="0.0" blue="0.77808902138157898" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="phoneNumberSubmitted:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Tj-Tx-5qD"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="logo.cvc" translatesAutoresizingMaskIntoConstraints="NO" id="BH0-mV-WFq">
+                                        <rect key="frame" x="151" y="227" width="301" height="282"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="301" id="S47-qF-oxy"/>
+                                            <constraint firstAttribute="height" constant="300" id="l6p-39-qoZ"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="qyK-aF-Etm" firstAttribute="top" secondItem="ilp-3p-Egk" secondAttribute="bottom" constant="8" id="0JE-gW-Lzw"/>
+                                    <constraint firstItem="ilp-3p-Egk" firstAttribute="top" secondItem="VaH-1C-iU7" secondAttribute="bottom" constant="14" id="0fk-Pt-nGa"/>
+                                    <constraint firstItem="VaH-1C-iU7" firstAttribute="centerX" secondItem="NuH-bU-7hX" secondAttribute="centerX" id="1WD-FY-YlX"/>
+                                    <constraint firstAttribute="bottom" secondItem="BH0-mV-WFq" secondAttribute="bottom" constant="50" id="1sc-Te-8We"/>
+                                    <constraint firstItem="qyK-aF-Etm" firstAttribute="centerX" secondItem="NuH-bU-7hX" secondAttribute="centerX" id="APC-Tx-UAb"/>
+                                    <constraint firstItem="BH0-mV-WFq" firstAttribute="centerX" secondItem="NuH-bU-7hX" secondAttribute="centerX" id="CCf-iY-ijA"/>
+                                    <constraint firstItem="e01-O9-u5a" firstAttribute="centerX" secondItem="NuH-bU-7hX" secondAttribute="centerX" id="heY-yH-tMY"/>
+                                    <constraint firstItem="e01-O9-u5a" firstAttribute="top" secondItem="NuH-bU-7hX" secondAttribute="top" constant="64" id="kPO-0M-6DL"/>
+                                    <constraint firstItem="VaH-1C-iU7" firstAttribute="top" secondItem="e01-O9-u5a" secondAttribute="bottom" constant="15" id="uwF-7g-nbj"/>
+                                    <constraint firstItem="ilp-3p-Egk" firstAttribute="centerX" secondItem="NuH-bU-7hX" secondAttribute="centerX" id="vRd-kq-8Qh"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="NuH-bU-7hX" secondAttribute="trailing" id="Qn1-Xx-AqK"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NuH-bU-7hX" secondAttribute="bottom" id="bON-Ue-maG"/>
+                            <constraint firstItem="NuH-bU-7hX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="g47-sH-rxT"/>
+                            <constraint firstItem="NuH-bU-7hX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="wb9-Hm-aR2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="phoneSubmitButton" destination="qyK-aF-Etm" id="nZw-bo-qp1"/>
+                        <outlet property="phoneTextField" destination="ilp-3p-Egk" id="gaD-cB-wzv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="361" y="379"/>
+        </scene>
+        <!--Pin View Controller-->
+        <scene sceneID="aas-R3-1kf">
+            <objects>
+                <viewController storyboardIdentifier="PinViewController" id="Qfj-Qg-2wE" customClass="PinViewController" customModule="SwiftBeacon" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="93q-aN-9ya"/>
+                        <viewControllerLayoutGuide type="bottom" id="dle-Nt-bet"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="99k-tv-koK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hgP-ey-QkG">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="A security pin has been sent to your phone. Please enter it to complete your registration." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXJ-Hx-6d4">
+                                        <rect key="frame" x="194" y="0.0" width="260" height="102"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="260" id="D8b-of-e3u"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DKf-Fs-UXO">
+                                        <rect key="frame" x="235" y="118" width="179" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="179" id="JNG-d1-MkU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWs-CP-5GI" customClass="MyCustomButton" customModule="SwiftBeacon" customModuleProvider="target">
+                                        <rect key="frame" x="260" y="182" width="128" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="frb-ey-0O8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <state key="normal" title="Submit">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pinSubmitButton:" destination="Qfj-Qg-2wE" eventType="touchUpInside" id="jFL-oJ-yPf"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="logo.cvc" translatesAutoresizingMaskIntoConstraints="NO" id="qFj-5F-h0N">
+                                        <rect key="frame" x="174" y="227" width="300" height="300"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="8lt-Zp-jHp"/>
+                                            <constraint firstAttribute="width" constant="300" id="Blq-kL-v7k"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="DKf-Fs-UXO" firstAttribute="top" secondItem="iXJ-Hx-6d4" secondAttribute="bottom" constant="30" id="3K3-jm-3en"/>
+                                    <constraint firstItem="aWs-CP-5GI" firstAttribute="top" secondItem="DKf-Fs-UXO" secondAttribute="bottom" constant="30" id="664-WI-7zk"/>
+                                    <constraint firstItem="DKf-Fs-UXO" firstAttribute="centerX" secondItem="hgP-ey-QkG" secondAttribute="centerX" id="6fD-Zc-WcN"/>
+                                    <constraint firstItem="aWs-CP-5GI" firstAttribute="centerX" secondItem="hgP-ey-QkG" secondAttribute="centerX" id="Nrs-xB-j0a"/>
+                                    <constraint firstItem="iXJ-Hx-6d4" firstAttribute="top" secondItem="hgP-ey-QkG" secondAttribute="top" constant="50" id="mNQ-a2-euP"/>
+                                    <constraint firstAttribute="bottom" secondItem="qFj-5F-h0N" secondAttribute="bottom" constant="50" id="qGs-k6-c8e"/>
+                                    <constraint firstItem="iXJ-Hx-6d4" firstAttribute="centerX" secondItem="hgP-ey-QkG" secondAttribute="centerX" id="qXC-Ky-Il5"/>
+                                    <constraint firstItem="qFj-5F-h0N" firstAttribute="centerX" secondItem="hgP-ey-QkG" secondAttribute="centerX" id="vsH-ct-4Ih"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dle-Nt-bet" firstAttribute="top" secondItem="hgP-ey-QkG" secondAttribute="bottom" id="ZQw-yR-ndr"/>
+                            <constraint firstAttribute="trailing" secondItem="hgP-ey-QkG" secondAttribute="trailing" id="ad1-Ie-SWb"/>
+                            <constraint firstItem="hgP-ey-QkG" firstAttribute="top" secondItem="99k-tv-koK" secondAttribute="top" id="q29-Lw-sJl"/>
+                            <constraint firstItem="hgP-ey-QkG" firstAttribute="leading" secondItem="99k-tv-koK" secondAttribute="leading" id="zKN-ly-I1i"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pinTextField" destination="DKf-Fs-UXO" id="tUX-lb-H4z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cPD-dA-yVM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1001" y="379"/>
+        </scene>
+        <!--Listener View Controller-->
+        <scene sceneID="IAc-Le-BRb">
+            <objects>
+                <viewController storyboardIdentifier="ListenerViewController" id="HkQ-Zg-GH7" customClass="ListenerViewController" customModule="SwiftBeacon" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="x1N-Fn-e9C"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lwe-mw-Tbs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xmx-YD-ZI5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0R1-Gt-qI5">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Listening For Beacons. Please enable bluetooth." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSM-ff-Zs7">
+                                        <rect key="frame" x="160" y="34" width="280" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="280" id="Vyu-eM-OxL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZ1-Db-YH9" customClass="MyCustomButton" customModule="SwiftBeacon" customModuleProvider="target">
+                                        <rect key="frame" x="218" y="115" width="164" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="164" id="811-0j-RSK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <state key="normal" title="Stop Listening">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="rangeButton:" destination="HkQ-Zg-GH7" eventType="touchUpInside" id="LTH-gj-LeD"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="logo.cvc" translatesAutoresizingMaskIntoConstraints="NO" id="h3d-lb-Bl9">
+                                        <rect key="frame" x="150" y="229" width="300" height="300"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="300" id="0Py-Bz-EbN"/>
+                                            <constraint firstAttribute="width" constant="300" id="Ixi-Ug-f87"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WgG-0t-zKr">
+                                        <rect key="frame" x="200" y="74" width="200" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="VNs-hL-Ke2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="h3d-lb-Bl9" secondAttribute="bottom" constant="50" id="5Yz-gO-ODz"/>
+                                    <constraint firstItem="FSM-ff-Zs7" firstAttribute="centerX" secondItem="0R1-Gt-qI5" secondAttribute="centerX" id="8wW-pn-dKo"/>
+                                    <constraint firstItem="iZ1-Db-YH9" firstAttribute="top" secondItem="WgG-0t-zKr" secondAttribute="bottom" constant="30" id="AnO-ku-wYK"/>
+                                    <constraint firstItem="FSM-ff-Zs7" firstAttribute="top" secondItem="0R1-Gt-qI5" secondAttribute="top" constant="50" id="HFb-KY-lRC"/>
+                                    <constraint firstItem="h3d-lb-Bl9" firstAttribute="centerX" secondItem="0R1-Gt-qI5" secondAttribute="centerX" id="VGv-j0-Y4d"/>
+                                    <constraint firstItem="WgG-0t-zKr" firstAttribute="centerX" secondItem="0R1-Gt-qI5" secondAttribute="centerX" id="VgX-KE-uBR"/>
+                                    <constraint firstItem="WgG-0t-zKr" firstAttribute="top" secondItem="FSM-ff-Zs7" secondAttribute="bottom" constant="30" id="aSY-Ng-TaU"/>
+                                    <constraint firstItem="iZ1-Db-YH9" firstAttribute="centerX" secondItem="0R1-Gt-qI5" secondAttribute="centerX" id="vsy-gm-EQh"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="0R1-Gt-qI5" secondAttribute="trailing" id="FV9-jJ-Tc5"/>
+                            <constraint firstItem="Lwe-mw-Tbs" firstAttribute="top" secondItem="0R1-Gt-qI5" secondAttribute="bottom" id="MlB-54-qb6"/>
+                            <constraint firstItem="0R1-Gt-qI5" firstAttribute="leading" secondItem="Xmx-YD-ZI5" secondAttribute="leading" id="UB6-Fe-gz5"/>
+                            <constraint firstItem="0R1-Gt-qI5" firstAttribute="top" secondItem="Xmx-YD-ZI5" secondAttribute="top" id="khj-gk-oMk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="beaconStatusLabel" destination="WgG-0t-zKr" id="N6I-Pe-s8h"/>
+                        <outlet property="rangeButtonOutlet" destination="iZ1-Db-YH9" id="sjl-UJ-jrI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IRB-1Q-P0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1635" y="379"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logo.cvc" width="445" height="442"/>
+    </resources>
+</document>

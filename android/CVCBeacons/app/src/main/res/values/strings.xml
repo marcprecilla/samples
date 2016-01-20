@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CVC Beacons</string>
+    <string name="edit_phone_number">Phone Number</string>
+    <string name="edit_pin_number">Pin Number</string>
+    <string name="button_send">Submit</string>
+    <string name="button_range">Stop Searching</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_pin_confirmation">PinConfirmation</string>
+    <string name="title_activity_beacon_listener">BeaconListener</string>
+</resources>
