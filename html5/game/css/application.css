@@ -1,0 +1,280 @@
+body {
+  /*demo fix*/ }
+  body.demo {
+    zoom: 1 !important; }
+  body > #ad {
+    position: absolute;
+    top: 58px; }
+  body #ad {
+    position: static;
+    width: 960px;
+    height: 500px;
+    overflow: hidden;
+    background-color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-size: 26px;
+    color: #191919;
+    font-weight: 400;
+    letter-spacing: 0.005em; }
+    body #ad img.video-safari-thumbnail {
+      pointer-events: none;
+      position: absolute;
+      top: 0px;
+      left: 0px; }
+    body #ad .step {
+      opacity: 0.0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      width: 960px;
+      height: 500px; }
+      body #ad .step.active {
+        opacity: 1.0;
+        pointer-events: auto;
+        transition: opacity 0.5s ease; }
+      body #ad .step .main-logo {
+        width: 181px;
+        padding: 61px 0 0 0;
+        height: 0;
+        overflow: hidden;
+        box-sizing: border-box;
+        background: url(../assets/sprite.windstream.png) 0 0 no-repeat;
+        position: absolute;
+        top: 28px;
+        left: 33px; }
+    body #ad #f1 .graphic-buffer {
+      width: 100%;
+      height: 0;
+      padding: 150px 0 0 0;
+      overflow: hidden;
+      box-sizing: border-box;
+      background: url(../assets/sprite.windstream.png) center -100px no-repeat;
+      margin-top: 30px; }
+    body #ad #f1 .text-with-windstream {
+      width: 100%;
+      height: 0;
+      padding: 160px 0 0 0;
+      overflow: hidden;
+      box-sizing: border-box;
+      background: url(../assets/sprite.windstream.png) center -300px no-repeat;
+      margin-top: 65px;
+      opacity: 1.0; }
+    body #ad #f1 .button-start-game {
+      width: 277px;
+      height: 0;
+      padding: 87px 0 0 0;
+      overflow: hidden;
+      box-sizing: border-box;
+      background: url(../assets/sprite.windstream.png) center -500px no-repeat;
+      margin: 20px auto 0 auto;
+      display: block;
+      cursor: pointer;
+      opacity: 1.0; }
+    body #ad #f1 .game-container {
+      width: 100%;
+      height: 375px;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      top: 124px;
+      left: 0;
+      pointer-events: none; }
+    body #ad #f1 #gameZone {
+      font-size: 1em;
+      color: #fff;
+      height: 100%;
+      transform: translate(0px, -175px) scale(0.7, 0.7);
+      transition: all 0.5s ease; }
+    body #ad #f1 #message {
+      opacity: 0;
+      width: 100%;
+      position: absolute;
+      top: 89px;
+      text-align: center;
+      font-size: 28px;
+      color: #81bc00;
+      pointer-events: none; }
+      body #ad #f1 #message b {
+        display: block;
+        font-size: 94px; }
+    body #ad #f1 #svgRoot {
+      position: absolute;
+      width: 100%;
+      height: 100%; }
+      body #ad #f1 #svgRoot circle {
+        opacity: 0.0; }
+      body #ad #f1 #svgRoot rect {
+        opacity: 0.0; }
+      body #ad #f1 #svgRoot image {
+        animation-name: pulse;
+        animation-duration: 1.2s;
+        animation-iteration-count: infinite;
+        -webkit-animation-name: pulse;
+        -webkit-animation-duration: 1.2s;
+        -webkit-animation-iteration-count: infinite;
+        opacity: 0.4; }
+        body #ad #f1 #svgRoot image:nth-child(4) {
+          -webkit-animation-delay: 0.0s;
+          animation-delay: 0.0s; }
+        body #ad #f1 #svgRoot image:nth-child(5) {
+          -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s; }
+        body #ad #f1 #svgRoot image:nth-child(6) {
+          -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+        body #ad #f1 #svgRoot image:nth-child(7) {
+          -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s; }
+        body #ad #f1 #svgRoot image:nth-child(8) {
+          -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s; }
+        body #ad #f1 #svgRoot image:nth-child(9) {
+          -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s; }
+        body #ad #f1 #svgRoot image:nth-child(10) {
+          -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s; }
+        body #ad #f1 #svgRoot image:nth-child(11) {
+          -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s; }
+        body #ad #f1 #svgRoot image:nth-child(12) {
+          -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s; }
+        body #ad #f1 #svgRoot image:nth-child(13) {
+          -webkit-animation-delay: 0.9s;
+          animation-delay: 0.9s; }
+        body #ad #f1 #svgRoot image:nth-child(14) {
+          -webkit-animation-delay: 1.0s;
+          animation-delay: 1.0s; }
+        body #ad #f1 #svgRoot image:nth-child(15) {
+          -webkit-animation-delay: 1.1s;
+          animation-delay: 1.1s; }
+    body #ad #f1 #ball {
+      fill: #60b400; }
+    body #ad #f1 #pad {
+      stroke: #FFF;
+      stroke-width: 2; }
+    body #ad #f1 .top-header {
+      max-width: 896px;
+      margin: 0 auto;
+      border-bottom: 1px #b3b3b3 solid;
+      height: 123px;
+      position: relative;
+      opacity: 0.0;
+      pointer-events: none; }
+      body #ad #f1 .top-header .text-buffer-breaker {
+        width: 580px;
+        height: 0;
+        padding: 70px 0 0 0;
+        overflow: hidden;
+        box-sizing: border-box;
+        background: url(../assets/sprite.windstream.png) 0 -600px no-repeat;
+        display: block;
+        position: absolute;
+        left: 240px;
+        top: 32px; }
+      body #ad #f1 .top-header .graphic-arrow-keys {
+        width: 41px;
+        height: 0;
+        padding: 41px 0 0 0;
+        overflow: hidden;
+        box-sizing: border-box;
+        display: block;
+        cursor: pointer;
+        display: none; }
+        body #ad #f1 .top-header .graphic-arrow-keys.disabled {
+          opacity: 0.7;
+          pointer-events: none;
+          cursor: auto; }
+        body #ad #f1 .top-header .graphic-arrow-keys.up {
+          background: url(../assets/sprite.windstream.png) 0 -700px no-repeat;
+          position: absolute;
+          right: 45px;
+          top: 16px; }
+        body #ad #f1 .top-header .graphic-arrow-keys.down {
+          background: url(../assets/sprite.windstream.png) -200px -700px no-repeat;
+          position: absolute;
+          right: 45px;
+          top: 60px; }
+        body #ad #f1 .top-header .graphic-arrow-keys.left {
+          background: url(../assets/sprite.windstream.png) -100px -700px no-repeat;
+          position: absolute;
+          right: 89px;
+          top: 60px; }
+        body #ad #f1 .top-header .graphic-arrow-keys.right {
+          background: url(../assets/sprite.windstream.png) -300px -700px no-repeat;
+          position: absolute;
+          right: 0;
+          top: 60px; }
+    body #ad #f1 #message.show {
+      transition: all 0.5 ease;
+      animation-name: pulse;
+      animation-duration: 0.5s;
+      animation-iteration-count: 6;
+      -webkit-animation-name: pulse;
+      -webkit-animation-duration: 0.5s;
+      -webkit-animation-iteration-count: 6; }
+    body #ad #f1.gameon .text-with-windstream,
+    body #ad #f1.gameon .button-start-game {
+      opacity: 0.0;
+      pointer-events: none;
+      transition: all 0.5s ease; }
+    body #ad #f1.gameon .top-header {
+      opacity: 1.0;
+      pointer-events: auto;
+      transition: all 0.5s ease 1.0s; }
+    body #ad #f1.gameon .game-container {
+      pointer-events: auto; }
+      body #ad #f1.gameon .game-container #gameZone {
+        transform: translate(0px, 0px) scale(1, 1);
+        transition: all 1.0s ease 0.4s; }
+        body #ad #f1.gameon .game-container #gameZone #svgRoot-disabled circle, body #ad #f1.gameon .game-container #gameZone #svgRoot-disabled rect {
+          opacity: 1.0; }
+    body #ad #f2 .text-stream {
+      width: 100%;
+      height: 0;
+      padding: 165px 0 0 0;
+      overflow: hidden;
+      box-sizing: border-box;
+      background: url(../assets/sprite.windstream.png) center -1000px no-repeat;
+      margin-top: 125px;
+      opacity: 0.0; }
+    body #ad #f2 .text-container {
+      margin-top: 45px;
+      text-align: center; }
+      body #ad #f2 .text-container .text-speed {
+        display: inline-block;
+        width: 328px;
+        height: 0;
+        padding: 87px 0 0 0;
+        overflow: hidden;
+        box-sizing: border-box;
+        background: url(../assets/sprite.windstream.png) center -1184px no-repeat;
+        opacity: 0.0;
+        margin-right: 20px; }
+      body #ad #f2 .text-container .button-learn-more {
+        display: inline-block;
+        width: 277px;
+        height: 0;
+        padding: 87px 0 0 0;
+        overflow: hidden;
+        box-sizing: border-box;
+        background: url(../assets/sprite.windstream.png) center -1300px no-repeat;
+        opacity: 0.0;
+        margin-left: 20px;
+        cursor: pointer; }
+    body #ad #f2.active .text-stream,
+    body #ad #f2.active .text-speed,
+    body #ad #f2.active .button-learn-more {
+      opacity: 1.0;
+      transition: all 1.0s ease; }
+
+@keyframes pulse {
+  50% {
+    opacity: 1.0; } }
+@-webkit-keyframes pulse {
+  50% {
+    opacity: 1.0; } }
+
+/*# sourceMappingURL=application.css.map */

@@ -1,0 +1,407 @@
+body {
+  &.demo {
+    zoom:1 !important;
+  }
+
+  /*demo fix*/
+  > #ad {
+    position:absolute;
+    top:58px;
+  }
+
+  #ad {
+    position:static;
+    width:960px;
+    height:500px;
+    overflow:hidden;
+    background-color:#fff;
+    font-family: 'Lato', sans-serif;
+    font-size:26px;
+    color:#191919;
+    font-weight:400;
+    letter-spacing:0.005em;
+
+    img.video-safari-thumbnail {
+      pointer-events:none;
+      position:absolute;
+      top:0px;
+      left:0px;
+    }
+
+    .step {
+      opacity:0.0;
+      position:absolute;
+      top:0;
+      left:0;
+      pointer-events: none;
+      width:960px;
+      height:500px;
+
+      &.active {
+        opacity:1.0;
+        pointer-events: auto;
+        transition:opacity 0.5s ease;
+      }
+
+      .main-logo {
+        width:181px;
+        padding:61px 0 0 0;
+        height:0;
+        overflow:hidden;
+        box-sizing:border-box;
+        background:url(../assets/sprite.windstream.png) 0 0 no-repeat;
+        position:absolute;
+        top:28px;
+        left:33px;
+      }
+    }
+
+    #f1 {
+
+      .graphic-buffer {
+        width:100%;
+        height:0;
+        padding:150px 0 0 0;
+        overflow:hidden;
+        box-sizing:border-box;
+        background:url(../assets/sprite.windstream.png) center -100px no-repeat;
+        margin-top:30px;
+      }
+
+      .text-with-windstream {
+        width:100%;
+        height:0;
+        padding:160px 0 0 0;
+        overflow:hidden;
+        box-sizing:border-box;
+        background:url(../assets/sprite.windstream.png) center -300px no-repeat;
+        margin-top:65px;
+        opacity:1.0;
+      }
+
+      .button-start-game {
+        width:277px;
+        height:0;
+        padding:87px 0 0 0;
+        overflow:hidden;
+        box-sizing:border-box;
+        background:url(../assets/sprite.windstream.png) center -500px no-repeat;
+        margin:20px auto 0 auto;
+        display:block;
+        cursor:pointer;
+        opacity:1.0;
+      }
+
+      .game-container {
+        width: 100%;
+        height: 375px;
+        margin: 0;
+        padding: 0;
+        position:absolute;
+        top:124px;
+        left:0;
+        pointer-events:none;
+      }
+
+      #gameZone {
+        font-size: 1em;
+        color: #fff;
+        height: 100%;
+        transform:translate(0px,-175px) scale(0.7,0.7);
+        transition:all 0.5s ease;
+      }
+
+      #message {
+        opacity:0;
+        width:100%;
+        position:absolute;
+        top:89px;
+        text-align:center;
+        font-size:28px;
+        color:#81bc00;
+        pointer-events:none;
+
+        b {
+          display:block;
+          font-size:94px;
+        }
+      }
+
+      #svgRoot {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+        circle {
+          opacity:0.0;
+        }
+
+        rect {
+          opacity:0.0;
+        }
+
+        image {
+            animation-name: pulse;
+            animation-duration: 1.2s;
+            animation-iteration-count: infinite;
+            -webkit-animation-name: pulse;
+            -webkit-animation-duration: 1.2s;
+            -webkit-animation-iteration-count: infinite;
+            opacity:0.4;
+
+            &:nth-child(4) {
+              -webkit-animation-delay: 0.0s;
+              animation-delay: 0.0s;
+            }
+
+            &:nth-child(5) {
+              -webkit-animation-delay: 0.1s;
+              animation-delay: 0.1s;
+            }
+
+            &:nth-child(6) {
+              -webkit-animation-delay: 0.2s;
+              animation-delay: 0.2s;
+            }
+
+            &:nth-child(7) {
+              -webkit-animation-delay: 0.3s;
+              animation-delay: 0.3s;
+            }
+
+            &:nth-child(8) {
+              -webkit-animation-delay: 0.4s;
+              animation-delay: 0.4s;
+            }
+
+            &:nth-child(9) {
+              -webkit-animation-delay: 0.5s;
+              animation-delay: 0.5s;
+            }
+
+            &:nth-child(10) {
+              -webkit-animation-delay: 0.6s;
+              animation-delay: 0.6s;
+            }
+
+            &:nth-child(11) {
+              -webkit-animation-delay: 0.7s;
+              animation-delay: 0.7s;
+            }
+
+            &:nth-child(12) {
+              -webkit-animation-delay: 0.8s;
+              animation-delay: 0.8s;
+            }
+
+            &:nth-child(13) {
+              -webkit-animation-delay: 0.9s;
+              animation-delay: 0.9s;
+            }
+
+            &:nth-child(14) {
+              -webkit-animation-delay: 1.0s;
+              animation-delay: 1.0s;
+            }
+
+            &:nth-child(15) {
+              -webkit-animation-delay: 1.1s;
+              animation-delay: 1.1s;
+            }
+        }
+      }
+
+      #ball {
+        fill: #60b400;
+      }
+
+      #pad {
+        stroke: #FFF;
+        stroke-width: 2;
+      }
+
+      .top-header {
+        max-width:896px;
+        margin:0 auto;
+        border-bottom:1px #b3b3b3 solid;
+        height:123px;
+        position:relative;
+        opacity:0.0;
+        pointer-events:none;
+
+        .text-buffer-breaker {
+          width:580px;
+          height:0;
+          padding:70px 0 0 0;
+          overflow:hidden;
+          box-sizing:border-box;
+          background:url(../assets/sprite.windstream.png) 0 -600px no-repeat;
+          display:block;
+          position:absolute;
+          left:240px;
+          top:32px;
+        }
+
+        .graphic-arrow-keys {
+          width:41px;
+          height:0;
+          padding:41px 0 0 0;
+          overflow:hidden;
+          box-sizing:border-box;
+          display:block;
+          cursor:pointer;
+          display:none;
+
+          &.disabled {
+            opacity:0.7;
+            pointer-events:none;
+            cursor:auto;
+          }
+
+          &.up {
+            background:url(../assets/sprite.windstream.png) 0 -700px no-repeat;
+            position:absolute;
+            right:45px;
+            top:16px;
+          }
+
+          &.down {
+            background:url(../assets/sprite.windstream.png) -200px -700px no-repeat;
+            position:absolute;
+            right:45px;
+            top:60px;
+          }
+
+          &.left {
+            background:url(../assets/sprite.windstream.png) -100px -700px no-repeat;
+            position:absolute;
+            right:89px;
+            top:60px;
+          }
+
+          &.right {
+            background:url(../assets/sprite.windstream.png) -300px -700px no-repeat;
+            position:absolute;
+            right:0;
+            top:60px;
+          }
+        }
+      }
+
+      #message.show {
+          transition:all 0.5 ease;
+          animation-name: pulse;
+          animation-duration: 0.5s;
+          animation-iteration-count: 6;
+          -webkit-animation-name: pulse;
+          -webkit-animation-duration: 0.5s;
+          -webkit-animation-iteration-count: 6;
+      }
+
+      &.active {
+
+      }
+
+      &.gameon {
+        .text-with-windstream,
+        .button-start-game {
+          opacity:0.0;
+          pointer-events:none;
+          transition:all 0.5s ease;
+        }
+
+        .top-header {
+          opacity:1.0;
+          pointer-events:auto;
+          transition:all 0.5s ease 1.0s;
+        }
+
+        .game-container {
+          pointer-events:auto;
+
+          #gameZone {
+            transform:translate(0px,0px) scale(1.0,1.0);
+            transition:all 1.0s ease 0.4s;
+
+            #svgRoot-disabled {
+              circle, rect {
+                opacity:1.0;
+              }
+            }
+          }
+
+        }
+
+      }
+
+
+    }
+
+    #f2 {
+
+      .text-stream {
+        width:100%;
+        height:0;
+        padding:165px 0 0 0;
+        overflow:hidden;
+        box-sizing:border-box;
+        background:url(../assets/sprite.windstream.png) center -1000px no-repeat;
+        margin-top:125px;
+        opacity:0.0;
+      }
+
+      .text-container {
+        margin-top:45px;
+        text-align:center;
+
+        .text-speed {
+          display:inline-block;
+          width:328px;
+          height:0;
+          padding:87px 0 0 0;
+          overflow:hidden;
+          box-sizing:border-box;
+          background:url(../assets/sprite.windstream.png) center -1184px no-repeat;
+          opacity:0.0;
+          margin-right:20px;
+        }
+
+
+        .button-learn-more {
+          display:inline-block;
+          width:277px;
+          height:0;
+          padding:87px 0 0 0;
+          overflow:hidden;
+          box-sizing:border-box;
+          background:url(../assets/sprite.windstream.png) center -1300px no-repeat;
+          opacity:0.0;
+          margin-left:20px;
+          cursor:pointer;
+        }
+      }
+
+
+      &.active {
+        .text-stream,
+        .text-speed,
+        .button-learn-more {
+          opacity:1.0;
+          transition:all 1.0s ease;
+        }
+      }
+
+    }
+
+  }
+
+}
+
+
+@keyframes pulse {
+    50% { opacity:1.0; }
+}
+
+@-webkit-keyframes pulse {
+    50% { opacity:1.0; }
+}
